@@ -1,0 +1,14 @@
+NET "COLOUR_OUT<0>" LOC = "C14"; //Exact colour going to VGA
+NET "COLOUR_OUT<1>" LOC = "D13"; //port
+NET "COLOUR_OUT<2>" LOC = "F13";
+NET "COLOUR_OUT<3>" LOC = "F14";
+NET "COLOUR_OUT<4>" LOC = "G13";
+NET "COLOUR_OUT<5>" LOC = "G14";
+NET "COLOUR_OUT<6>" LOC = "H13";
+NET "COLOUR_OUT<7>" LOC = "J13";
+
+
+NET "CLK" LOC = "B8"; //Internal Clock of 25MHz
+
+NET "HS" LOC = "J14"; //Horizontal Synch output
+NET "VS" LOC = "K13"; //Vertical Synch output
