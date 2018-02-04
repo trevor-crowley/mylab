@@ -1,0 +1,76 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Feb  3 19:26:48 2018
+# Process ID: 4934
+# Current directory: /home/trevor/mylab/experiments/20180203-tmc-video/vivado
+# Command line: vivado
+# Log file: /home/trevor/mylab/experiments/20180203-tmc-video/vivado/vivado.log
+# Journal file: /home/trevor/mylab/experiments/20180203-tmc-video/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project video . -part xc7a35tcpg236-1
+set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
+add_files -fileset constrs_1 -norecurse /home/trevor/mylab/Basys3/Basys3_Master.xdc
+create_bd_design "system"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.4 clk_wiz_0
+apply_board_connection -board_interface "sys_clock" -ip_intf "clk_wiz_0/clock_CLK_IN1" -diagram "system" 
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:10.0 microblaze_0
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:microblaze -config {preset "None" local_mem "16KB" ecc "None" cache "None" debug_module "Debug Only" axi_periph "Enabled" axi_intc "1" clk "/clk_wiz_0/clk_out1 (100 MHz)" }  [get_bd_cells microblaze_0]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uartlite:2.0 axi_uartlite_0
+apply_board_connection -board_interface "usb_uart" -ip_intf "axi_uartlite_0/UART" -diagram "system" 
+endgroup
+apply_board_connection -board_interface "reset" -ip_intf "clk_wiz_0/reset" -diagram "system" 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+apply_board_connection -board_interface "dip_switches_16bits" -ip_intf "axi_gpio_0/GPIO" -diagram "system" 
+endgroup
+apply_board_connection -board_interface "led_16bits" -ip_intf "axi_gpio_0/GPIO2" -diagram "system" 
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config {Board_Interface "reset ( Reset Signal (BTNC) ) " }  [get_bd_pins rst_clk_wiz_0_100M/ext_reset_in]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/microblaze_0 (Periph)" intc_ip "/microblaze_0_axi_periph" Clk_xbar "Auto" Clk_master "Auto" Clk_slave "Auto" }  [get_bd_intf_pins axi_uartlite_0/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/microblaze_0 (Periph)" intc_ip "/microblaze_0_axi_periph" Clk_xbar "Auto" Clk_master "Auto" Clk_slave "Auto" }  [get_bd_intf_pins axi_gpio_0/S_AXI]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_1
+apply_board_connection -board_interface "push_buttons_4bits" -ip_intf "axi_gpio_1/GPIO" -diagram "system" 
+endgroup
+apply_board_connection -board_interface "seven_seg_led_an" -ip_intf "axi_gpio_1/GPIO2" -diagram "system" 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_2
+apply_board_connection -board_interface "seven_seg_led_disp" -ip_intf "axi_gpio_2/GPIO" -diagram "system" 
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/microblaze_0 (Periph)" intc_ip "/microblaze_0_axi_periph" Clk_xbar "Auto" Clk_master "Auto" Clk_slave "Auto" }  [get_bd_intf_pins axi_gpio_1/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/microblaze_0 (Periph)" intc_ip "/microblaze_0_axi_periph" Clk_xbar "Auto" Clk_master "Auto" Clk_slave "Auto" }  [get_bd_intf_pins axi_gpio_2/S_AXI]
+endgroup
+validate_bd_design
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:v_tc:6.1 v_tc_0
+endgroup
+set_property location {3 1392 -539} [get_bd_cells v_tc_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:v_tpg:7.0 v_tpg_0
+endgroup
+delete_bd_objs [get_bd_cells v_tpg_0]
+report_ip_status -name ip_status 
+report_ip_status -name ip_status 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:v_tpg:7.0 v_tpg_0
+endgroup
+report_ip_status -name ip_status 
+delete_bd_objs [get_bd_cells v_tpg_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:v_tpg:7.0 v_tpg_0
+endgroup
+delete_bd_objs [get_bd_cells v_tpg_0]
+save_bd_design
