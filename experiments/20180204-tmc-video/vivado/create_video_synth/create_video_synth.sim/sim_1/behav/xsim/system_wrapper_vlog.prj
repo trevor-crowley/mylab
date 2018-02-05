@@ -1,0 +1,45 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../create_video_synth.ip_user_files/bd/system/ipshared/68f7/hdl/sim_clk_gen.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_sim_clk_gen_0_0/sim/system_sim_clk_gen_0_0.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_sim_clk_gen_0_1/sim/system_sim_clk_gen_0_1.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_xlconstant_0_0/sim/system_xlconstant_0_0.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternSolidBlbkb.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCheckercud.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCheckerdEe.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCheckereOg.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCheckerfYi.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCheckerg8j.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCheckerhbi.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCheckeribs.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCrossHajbC.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternTartanClbW.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCrossHayd2.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_fifo_w12_d1_A.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_v_tpg_CTRL_s_axi.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternSolidBlack.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPRBS.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCheckerBoa.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_reg_ap_uint_10_s.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCrossHatch.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternTartanColo.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternColorBars.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgBackground.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternBox.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternCrossHair.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgPatternMask.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_tpgForeground.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_reg_unsigned_short_s.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_MultiPixStream2AXIvi.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/hdl/verilog/system_v_tpg_0_0_v_tpg.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_tpg_0_0/sim/system_v_tpg_0_0.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_v_axi4s_vid_out_0_0/sim/system_v_axi4s_vid_out_0_0.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/ip/system_xlconstant_1_0/sim/system_xlconstant_1_0.v" \
+"../../../../create_video_synth.ip_user_files/bd/system/sim/system.v" \
+"../../../../create_video_synth.srcs/sim_1/bd/system/hdl/system_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

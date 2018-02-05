@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Sun Feb  4 18:10:13 2018
+# Process ID: 30338
+# Current directory: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2
+# Command line: vivado
+# Log file: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/vivado.log
+# Journal file: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.xpr
+launch_simulation
+source system_wrapper.tcl
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd}
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd] -top
+reset_target all [get_files  /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd]
+export_ip_user_files -of_objects  [get_files  /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd] -sync -no_script -force -quiet
+generate_target all [get_files  /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd]
+export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd] -directory /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+close_sim
+launch_simulation
+source system_wrapper.tcl
+add_bp {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.sim/sim_1/behav/glbl.v} 42
+remove_bps -file {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.sim/sim_1/behav/glbl.v} -line 42
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd}
+startgroup
+make_bd_pins_external  [get_bd_cells sim_clk_gen_0]
+make_bd_intf_pins_external  [get_bd_cells sim_clk_gen_0]
+endgroup
+save_bd_design
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd] -top
+generate_target all [get_files  /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd]
+export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd] -directory /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd}
+close_sim
+launch_simulation
+source system_wrapper.tcl
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd}
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.2/video_ip_2017_2/video_ip_2017_2.srcs/sim_1/bd/system/system.bd}
+close_sim

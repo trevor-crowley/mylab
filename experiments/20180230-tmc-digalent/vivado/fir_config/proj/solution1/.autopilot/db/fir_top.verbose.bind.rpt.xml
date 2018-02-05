@@ -1,0 +1,48 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'fir_top'" level="0">
+<item name = "Date">Sun Feb  4 23:54:54 2018
+</item>
+<item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
+<item name = "Project">proj</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a200tfbg676-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.75, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">32, 32, 30, 30, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_p_fir_config_cpp_lin_fu_136">p_fir_config_cpp_lin, 29, 29, 29, 29, none</column>
+<column name="grp_dummy_fe_fu_143">dummy_fe, 21, 22, 21, 21, loop rewind</column>
+<column name="grp_dummy_be_fu_153">dummy_be, 20, 21, 21, 21, loop rewind</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

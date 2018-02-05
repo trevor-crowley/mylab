@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Feb  4 16:01:28 2018
+# Process ID: 19781
+# Current directory: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/video_ip/video_ip.runs/design_1_xlslice_0_1_synth_1
+# Command line: vivado -log design_1_xlslice_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_xlslice_0_1.tcl
+# Log file: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/video_ip/video_ip.runs/design_1_xlslice_0_1_synth_1/design_1_xlslice_0_1.vds
+# Journal file: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/video_ip/video_ip.runs/design_1_xlslice_0_1_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_xlslice_0_1.tcl -notrace
