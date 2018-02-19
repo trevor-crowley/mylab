@@ -5,7 +5,7 @@ then
 else
 	echo "Backup Start: " $(date)
 
-	mount /dev/sdb2 /mnt/backup
+	mount /dev/sdg2 /mnt/backup
 
 	if mountpoint -q /mnt/backup
 	then

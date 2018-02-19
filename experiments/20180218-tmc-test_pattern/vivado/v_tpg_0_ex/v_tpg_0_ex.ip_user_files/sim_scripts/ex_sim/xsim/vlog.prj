@@ -1,0 +1,14 @@
+sv xil_defaultlib --include "../../../../v_tpg_0_ex.srcs/sources_1/bd/ex_sim/ipshared/ec67/hdl" --include "../../../../v_tpg_0_ex.srcs/sources_1/bd/ex_sim/ipshared/02c8/hdl/verilog" \
+"../../../bd/ex_sim/ip/ex_sim_axi_vip_0_0/sim/ex_sim_axi_vip_0_0_pkg.sv" \
+"../../../bd/ex_sim/ip/ex_sim_axi_vip_0_0/sim/ex_sim_axi_vip_0_0.sv" \
+
+verilog xil_defaultlib --include "../../../../v_tpg_0_ex.srcs/sources_1/bd/ex_sim/ipshared/ec67/hdl" --include "../../../../v_tpg_0_ex.srcs/sources_1/bd/ex_sim/ipshared/02c8/hdl/verilog" \
+"../../../bd/ex_sim/ip/ex_sim_v_axi4s_vid_out_0_0/sim/ex_sim_v_axi4s_vid_out_0_0.v" \
+"../../../bd/ex_sim/ip/ex_sim_v_tpg_1_0/sim/ex_sim_v_tpg_1_0.v" \
+"../../../bd/ex_sim/ip/ex_sim_v_tpg_0_0/sim/ex_sim_v_tpg_0_0.v" \
+"../../../bd/ex_sim/ip/ex_sim_xbar_0/sim/ex_sim_xbar_0.v" \
+"../../../bd/ex_sim/sim/ex_sim.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

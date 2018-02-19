@@ -1,9 +1,0 @@
-run
-fifo_w16_d1_A
-fifo_w8_d1_A
-fifo_w24_d1_A
-dummy_fe
-run
-p_fir_config_cpp_lin
-dummy_be
-fir_top
