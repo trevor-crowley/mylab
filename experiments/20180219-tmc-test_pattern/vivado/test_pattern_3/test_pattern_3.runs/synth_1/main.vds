@@ -1,0 +1,506 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue Feb 20 01:25:01 2018
+# Process ID: 21540
+# Current directory: /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1
+# Command line: vivado -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+# Log file: /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/main.vds
+# Journal file: /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source main.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2017.4/data/ip'.
+Command: synth_design -top main -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 21557 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1296.047 ; gain = 86.988 ; free physical = 1500 ; free virtual = 7684
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'main' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/new/main.v:23]
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+INFO: [Synth 8-638] synthesizing module 'design_1' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axi_gpio_0_0' (1#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_uartlite_0_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axi_uartlite_0_0' (2#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_axi_uartlite_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'axi_uartlite_0' of module 'design_1_axi_uartlite_0_0' requires 22 connections, but only 21 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:237]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'design_1_clk_wiz_0_0' (3#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'design_1_mdm_1_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_mdm_1_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_mdm_1_0' (4#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_mdm_1_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'design_1_microblaze_0_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_microblaze_0_0' (5#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_microblaze_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'microblaze_0' of module 'design_1_microblaze_0_0' requires 52 connections, but only 51 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:278]
+INFO: [Synth 8-638] synthesizing module 'design_1_microblaze_0_axi_periph_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:576]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_8RVYHO' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1302]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_8RVYHO' (6#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1302]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_1UTB3Y5' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1434]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1UTB3Y5' (7#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1434]
+INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_7ANRHB' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1566]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_7ANRHB' (8#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1566]
+INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_1W07O72' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1698]
+INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_1W07O72' (9#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1698]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1RZP34U' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:2064]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1RZP34U' (10#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:2064]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_xbar_0' (11#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_xbar_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'xbar' of module 'design_1_xbar_0' requires 40 connections, but only 38 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1261]
+INFO: [Synth 8-256] done synthesizing module 'design_1_microblaze_0_axi_periph_0' (12#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:576]
+INFO: [Synth 8-638] synthesizing module 'microblaze_0_local_memory_imp_1K0VQXK' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1830]
+INFO: [Synth 8-638] synthesizing module 'design_1_dlmb_bram_if_cntlr_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_dlmb_bram_if_cntlr_0' (13#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'design_1_dlmb_v10_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_dlmb_v10_0' (14#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_dlmb_v10_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'dlmb_v10' of module 'design_1_dlmb_v10_0' requires 25 connections, but only 24 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1976]
+INFO: [Synth 8-638] synthesizing module 'design_1_ilmb_bram_if_cntlr_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_ilmb_bram_if_cntlr_0' (15#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'design_1_ilmb_v10_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_ilmb_v10_0' (16#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_ilmb_v10_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'ilmb_v10' of module 'design_1_ilmb_v10_0' requires 25 connections, but only 24 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:2022]
+INFO: [Synth 8-638] synthesizing module 'design_1_lmb_bram_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_lmb_bram_0' (17#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_lmb_bram_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'lmb_bram' of module 'design_1_lmb_bram_0' requires 16 connections, but only 14 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:2047]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_0_local_memory_imp_1K0VQXK' (18#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:1830]
+INFO: [Synth 8-638] synthesizing module 'design_1_proc_sys_reset_0_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_proc_sys_reset_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_proc_sys_reset_0_0' (19#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_proc_sys_reset_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'proc_sys_reset_0' of module 'design_1_proc_sys_reset_0_0' requires 10 connections, but only 6 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:452]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_clk_wiz_0_100M_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_rst_clk_wiz_0_100M_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_rst_clk_wiz_0_100M_0' (20#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_rst_clk_wiz_0_100M_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'rst_clk_wiz_0_100M' of module 'design_1_rst_clk_wiz_0_100M_0' requires 10 connections, but only 9 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:459]
+INFO: [Synth 8-638] synthesizing module 'design_1_v_axi4s_vid_out_0_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_v_axi4s_vid_out_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_v_axi4s_vid_out_0_0' (21#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_v_axi4s_vid_out_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'v_axi4s_vid_out_0' of module 'design_1_v_axi4s_vid_out_0_0' requires 30 connections, but only 27 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:469]
+INFO: [Synth 8-638] synthesizing module 'design_1_v_tc_0_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_v_tc_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_v_tc_0_0' (22#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_v_tc_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'v_tc_0' of module 'design_1_v_tc_0_0' requires 10 connections, but only 9 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:497]
+INFO: [Synth 8-638] synthesizing module 'design_1_v_tpg_0_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_v_tpg_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_v_tpg_0_0' (23#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_v_tpg_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'v_tpg_0' of module 'design_1_v_tpg_0_0' requires 29 connections, but only 28 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:507]
+INFO: [Synth 8-638] synthesizing module 'design_1_v_tpg_0_1' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_v_tpg_0_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_v_tpg_0_1' (24#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_v_tpg_0_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'v_tpg_1' of module 'design_1_v_tpg_0_1' requires 38 connections, but only 33 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:536]
+INFO: [Synth 8-638] synthesizing module 'design_1_xlconstant_0_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_xlconstant_0_0' (25#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'design_1_xlconstant_1_0' [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_xlconstant_1_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_xlconstant_1_0' (26#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/realtime/design_1_xlconstant_1_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (27#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (28#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+WARNING: [Synth 8-350] instance 'design_1_wrapper_i' of module 'design_1_wrapper' requires 13 connections, but only 10 given [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/new/main.v:51]
+INFO: [Synth 8-256] done synthesizing module 'main' (29#1) [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/new/main.v:23]
+WARNING: [Synth 8-3331] design s00_couplers_imp_1RZP34U has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_1RZP34U has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s00_couplers_imp_1RZP34U has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_1RZP34U has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m03_couplers_imp_1W07O72 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m03_couplers_imp_1W07O72 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m03_couplers_imp_1W07O72 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m03_couplers_imp_1W07O72 has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_7ANRHB has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_7ANRHB has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_7ANRHB has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_7ANRHB has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_1UTB3Y5 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_1UTB3Y5 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_1UTB3Y5 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_1UTB3Y5 has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_8RVYHO has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_8RVYHO has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_8RVYHO has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_8RVYHO has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design main has unconnected port sw[1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1338.586 ; gain = 129.527 ; free physical = 1509 ; free virtual = 7693
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1338.586 ; gain = 129.527 ; free physical = 1511 ; free virtual = 7695
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp19/design_1_clk_wiz_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/clk_wiz_0'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp19/design_1_clk_wiz_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/clk_wiz_0'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp20/design_1_proc_sys_reset_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/proc_sys_reset_0'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp20/design_1_proc_sys_reset_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/proc_sys_reset_0'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp21/design_1_v_tc_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/v_tc_0'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp21/design_1_v_tc_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/v_tc_0'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp22/design_1_microblaze_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp22/design_1_microblaze_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp23/design_1_mdm_1_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/mdm_1'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp23/design_1_mdm_1_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/mdm_1'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp24/design_1_rst_clk_wiz_0_100M_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/rst_clk_wiz_0_100M'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp24/design_1_rst_clk_wiz_0_100M_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/rst_clk_wiz_0_100M'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp25/design_1_axi_uartlite_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/axi_uartlite_0'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp25/design_1_axi_uartlite_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/axi_uartlite_0'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp26/design_1_dlmb_v10_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/dlmb_v10'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp26/design_1_dlmb_v10_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/dlmb_v10'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp27/design_1_dlmb_v10_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/ilmb_v10'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp27/design_1_dlmb_v10_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/ilmb_v10'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp28/design_1_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp28/design_1_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp29/design_1_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp29/design_1_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp30/design_1_lmb_bram_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/lmb_bram'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp30/design_1_lmb_bram_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/lmb_bram'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp31/design_1_axi_gpio_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/axi_gpio_0'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp31/design_1_axi_gpio_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/axi_gpio_0'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp32/design_1_xbar_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_axi_periph/xbar'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp32/design_1_xbar_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/microblaze_0_axi_periph/xbar'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp33/design_1_v_tpg_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/v_tpg_0'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp33/design_1_v_tpg_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/v_tpg_0'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp34/design_1_v_tpg_0_1_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/v_tpg_1'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp34/design_1_v_tpg_0_1_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/v_tpg_1'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp35/design_1_v_axi4s_vid_out_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp35/design_1_v_axi4s_vid_out_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp36/design_1_xlconstant_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/xlconstant_0'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp36/design_1_xlconstant_0_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/xlconstant_0'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp37/design_1_xlconstant_1_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/xlconstant_1'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp37/design_1_xlconstant_1_0_in_context.xdc] for cell 'design_1_wrapper_i/design_1_i/xlconstant_1'
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/imports/Basys3/Basys3_Master.xdc]
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/imports/Basys3/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/imports/Basys3/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc]
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1666.801 ; gain = 0.004 ; free physical = 1248 ; free virtual = 7432
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'design_1_wrapper_i/design_1_i/axi_gpio_0' at clock pin 's_axi_aclk' is different from the actual clock period '5.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '5.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:39 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 1118 ; free virtual = 7308
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:39 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 1118 ; free virtual = 7308
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clock. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp19/design_1_clk_wiz_0_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clock. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/.Xil/Vivado-21540-luigilinux/dcp19/design_1_clk_wiz_0_0_in_context.xdc, line 5).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/active_video_out. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 1).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/hsync_out. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 2).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/vsync_out. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 3).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/v_tc_0_vtiming_out_HSYNC. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 5).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/v_tc_0_vtiming_out_VSYNC. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 6).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/v_tc_0_vtiming_out_ACTIVE_VIDEO. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 7).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0_locked. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 8).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/v_tpg_1_m_axis_video_TLAST. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 9).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/v_tpg_1_m_axis_video_TVALID. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 10).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/v_tpg_0_m_axis_video_TLAST. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 11).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/v_tpg_0_m_axis_video_TVALID. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 12).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/microblaze_0_axi_periph_M01_AXI_BVALID. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 13).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/v_tpg_0_m_axis_video_TREADY. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 15).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/v_tpg_1_m_axis_video_TREADY. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 16).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/v_tpg_0_m_axis_video_TSTRB[0]. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 17).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/overflow. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 21).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/status[0]. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 22).
+Applied set_property MARK_DEBUG = true for design_1_wrapper_i/design_1_i/underflow. (constraint file  /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/constrs_1/new/debug.xdc, line 54).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/axi_gpio_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/axi_uartlite_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/mdm_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/microblaze_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/microblaze_0_axi_periph. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/microblaze_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/microblaze_0_local_memory/dlmb_v10. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/microblaze_0_local_memory/ilmb_v10. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/microblaze_0_local_memory/lmb_bram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/proc_sys_reset_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/rst_clk_wiz_0_100M. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/v_tc_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/v_tpg_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/v_tpg_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/xlconstant_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_wrapper_i/design_1_i/xlconstant_1. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:39 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 1121 ; free virtual = 7310
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'v_tc_0'. This will prevent further optimization [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:497]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'v_axi4s_vid_out_0'. This will prevent further optimization [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:469]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'axi_gpio_0'. This will prevent further optimization [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:215]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'microblaze_0_axi_periph'. This will prevent further optimization [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:330]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'v_tpg_1'. This will prevent further optimization [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:536]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'v_tpg_0'. This will prevent further optimization [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/synth/design_1.v:507]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'design_1_i'. This will prevent further optimization [/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:54]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:40 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 1311 ; free virtual = 7500
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module main 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port M00_ARESETN
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port M01_ACLK
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port M01_ARESETN
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port M02_ACLK
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port M02_ARESETN
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port M03_ACLK
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port M03_ARESETN
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port S00_ACLK
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port S00_ARESETN
+WARNING: [Synth 8-3331] design main has unconnected port sw[1]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 1269 ; free virtual = 7458
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_wrapper_i/design_1_i/clk_wiz_0/clk_ap' to pin 'design_1_wrapper_i/design_1_i/clk_wiz_0/bbstub_clk_ap/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_wrapper_i/design_1_i/clk_wiz_0/clk_vid' to pin 'design_1_wrapper_i/design_1_i/clk_wiz_0/bbstub_clk_vid/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_wrapper_i/design_1_i/mdm_1/Dbg_Clk_0' to pin 'design_1_wrapper_i/design_1_i/mdm_1/bbstub_Dbg_Clk_0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_wrapper_i/design_1_i/mdm_1/Dbg_Update_0' to pin 'design_1_wrapper_i/design_1_i/mdm_1/bbstub_Dbg_Update_0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr/BRAM_Clk_A' to pin 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr/bbstub_BRAM_Clk_A/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr/BRAM_Clk_A' to pin 'design_1_wrapper_i/design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr/bbstub_BRAM_Clk_A/O'
+INFO: [Synth 8-5819] Moved 6 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:49 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 986 ; free virtual = 7175
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:49 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 986 ; free virtual = 7175
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:49 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 984 ; free virtual = 7173
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:50 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 984 ; free virtual = 7173
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:50 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 984 ; free virtual = 7173
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:50 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 984 ; free virtual = 7173
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:50 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 984 ; free virtual = 7173
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:50 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 984 ; free virtual = 7173
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:50 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 984 ; free virtual = 7173
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+------------------------------+----------+
+|      |BlackBox name                 |Instances |
++------+------------------------------+----------+
+|1     |design_1_xbar_0               |         1|
+|2     |design_1_axi_gpio_0_0         |         1|
+|3     |design_1_axi_uartlite_0_0     |         1|
+|4     |design_1_clk_wiz_0_0          |         1|
+|5     |design_1_mdm_1_0              |         1|
+|6     |design_1_microblaze_0_0       |         1|
+|7     |design_1_proc_sys_reset_0_0   |         1|
+|8     |design_1_rst_clk_wiz_0_100M_0 |         1|
+|9     |design_1_v_axi4s_vid_out_0_0  |         1|
+|10    |design_1_v_tc_0_0             |         1|
+|11    |design_1_v_tpg_0_0            |         1|
+|12    |design_1_v_tpg_0_1            |         1|
+|13    |design_1_xlconstant_0_0       |         1|
+|14    |design_1_xlconstant_1_0       |         1|
+|15    |design_1_dlmb_bram_if_cntlr_0 |         1|
+|16    |design_1_dlmb_v10_0           |         1|
+|17    |design_1_ilmb_bram_if_cntlr_0 |         1|
+|18    |design_1_ilmb_v10_0           |         1|
+|19    |design_1_lmb_bram_0           |         1|
++------+------------------------------+----------+
+
+Report Cell Usage: 
++------+------------------------------+------+
+|      |Cell                          |Count |
++------+------------------------------+------+
+|1     |design_1_axi_gpio_0_0         |     1|
+|2     |design_1_axi_uartlite_0_0     |     1|
+|3     |design_1_clk_wiz_0_0          |     1|
+|4     |design_1_dlmb_bram_if_cntlr_0 |     1|
+|5     |design_1_dlmb_v10_0           |     1|
+|6     |design_1_ilmb_bram_if_cntlr_0 |     1|
+|7     |design_1_ilmb_v10_0           |     1|
+|8     |design_1_lmb_bram_0           |     1|
+|9     |design_1_mdm_1_0              |     1|
+|10    |design_1_microblaze_0_0       |     1|
+|11    |design_1_proc_sys_reset_0_0   |     1|
+|12    |design_1_rst_clk_wiz_0_100M_0 |     1|
+|13    |design_1_v_axi4s_vid_out_0_0  |     1|
+|14    |design_1_v_tc_0_0             |     1|
+|15    |design_1_v_tpg_0_0            |     1|
+|16    |design_1_v_tpg_0_1            |     1|
+|17    |design_1_xbar_0               |     1|
+|18    |design_1_xlconstant_0_0       |     1|
+|19    |design_1_xlconstant_1_0       |     1|
+|20    |LUT4                          |    12|
+|21    |IBUF                          |     4|
+|22    |OBUF                          |    15|
++------+------------------------------+------+
+
+Report Instance Areas: 
++------+--------------------------------+--------------------------------------+------+
+|      |Instance                        |Module                                |Cells |
++------+--------------------------------+--------------------------------------+------+
+|1     |top                             |                                      |  1590|
+|2     |  design_1_wrapper_i            |design_1_wrapper                      |  1571|
+|3     |    design_1_i                  |design_1                              |  1559|
+|4     |      microblaze_0_axi_periph   |design_1_microblaze_0_axi_periph_0    |   485|
+|5     |      microblaze_0_local_memory |microblaze_0_local_memory_imp_1K0VQXK |   496|
++------+--------------------------------+--------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:50 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 984 ; free virtual = 7173
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 1666.801 ; gain = 129.527 ; free physical = 1038 ; free virtual = 7227
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:50 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 1044 ; free virtual = 7233
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+88 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:53 . Memory (MB): peak = 1666.801 ; gain = 457.742 ; free physical = 1025 ; free virtual = 7214
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+INFO: [Common 17-1381] The checkpoint '/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_3/test_pattern_3.runs/synth_1/main.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1666.801 ; gain = 0.000 ; free physical = 1025 ; free virtual = 7214
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 20 01:26:04 2018...
