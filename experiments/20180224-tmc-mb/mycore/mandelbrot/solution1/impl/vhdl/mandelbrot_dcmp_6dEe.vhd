@@ -8,9 +8,9 @@
 Library ieee;
 use ieee.std_logic_1164.all;
 
-entity mandelbrot_dcmp_6eOg is
+entity mandelbrot_dcmp_6dEe is
     generic (
-        ID         : integer := 6;
+        ID         : integer := 4;
         NUM_STAGE  : integer := 1;
         din0_WIDTH : integer := 64;
         din1_WIDTH : integer := 64;
@@ -24,7 +24,7 @@ entity mandelbrot_dcmp_6eOg is
     );
 end entity;
 
-architecture arch of mandelbrot_dcmp_6eOg is
+architecture arch of mandelbrot_dcmp_6dEe is
     --------------------- Component ---------------------
     component mandelbrot_ap_dcmp_0_no_dsp_64 is
         port (

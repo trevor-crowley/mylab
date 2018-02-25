@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'mandelbrot'" level="0">
-<item name = "Date">Sun Feb 25 13:41:45 2018
+<item name = "Date">Sun Feb 25 18:18:45 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">mandelbrot</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">6657, 6657, 6657, 6657, none</column>
+<column name="">6662, 6662, 6662, 6662, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">6656, 6656, 26, -, -, 256, no</column>
+<column name="- myloop">6656, 6656, 26, -, -, 256, no</column>
 </table>
 </item>
 </section>

@@ -4,7 +4,7 @@ set moduleIsExternC "0"
 set rawDecl ""
 set globalVariable ""
 set PortList ""
-set PortName0 "z_re"
+set PortName0 "re"
 set BitWidth0 "64"
 set ArrayOpt0 ""
 set Const0 "0"
@@ -16,7 +16,7 @@ set Interface0 "wire"
 set DataType0 "double"
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
-set PortName1 "z_im"
+set PortName1 "im"
 set BitWidth1 "64"
 set ArrayOpt1 ""
 set Const1 "0"
@@ -37,7 +37,7 @@ set Pointer2 "1"
 set Reference2 "0"
 set Dims2 [list 0]
 set Interface2 "wire"
-set DataType2 "unsigned char"
+set DataType2 "short"
 set Port2 [list $PortName2 $Interface2 $DataType2 $Pointer2 $Dims2 $Const2 $Volatile2 $ArrayOpt2]
 lappend PortList $Port2
 set globalAPint "" 

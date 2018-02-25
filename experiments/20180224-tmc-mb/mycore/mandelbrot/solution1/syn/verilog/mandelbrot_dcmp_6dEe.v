@@ -8,9 +8,9 @@
 
 `timescale 1ns/1ps
 
-module mandelbrot_dcmp_6eOg
+module mandelbrot_dcmp_6dEe
 #(parameter
-    ID         = 6,
+    ID         = 4,
     NUM_STAGE  = 1,
     din0_WIDTH = 64,
     din1_WIDTH = 64,

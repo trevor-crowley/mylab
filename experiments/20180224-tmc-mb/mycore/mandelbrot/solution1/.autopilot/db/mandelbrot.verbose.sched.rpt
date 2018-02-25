@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'mandelbrot'
 ================================================================
-* Date:           Sun Feb 25 13:41:45 2018
+* Date:           Sun Feb 25 18:18:45 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        mandelbrot
@@ -29,7 +29,7 @@
     |   Latency   |   Interval  | Pipeline|
     |  min |  max |  min |  max |   Type  |
     +------+------+------+------+---------+
-    |  6657|  6657|  6657|  6657|   none  |
+    |  6662|  6662|  6662|  6662|   none  |
     +------+------+------+------+---------+
 
     + Detail: 
@@ -41,7 +41,7 @@
         |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
         | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
         +----------+------+------+----------+-----------+-----------+------+----------+
-        |- Loop 1  |  6656|  6656|        26|          -|          -|   256|    no    |
+        |- myloop  |  6656|  6656|        26|          -|          -|   256|    no    |
         +----------+------+------+----------+-----------+-----------+------+----------+
 
 ============================================================
@@ -70,7 +70,7 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 27
+* Number of FSM states : 32
 * Pipeline : 0
 * Dataflow Pipeline: 0
 
@@ -78,7 +78,7 @@ IsGatedGlobalClock: 0
 1 --> 
 	2  / true
 2 --> 
-	3  / (!exitcond)
+	3  / true
 3 --> 
 	4  / true
 4 --> 
@@ -88,7 +88,7 @@ IsGatedGlobalClock: 0
 6 --> 
 	7  / true
 7 --> 
-	8  / true
+	8  / (!exitcond)
 8 --> 
 	9  / true
 9 --> 
@@ -128,141 +128,165 @@ IsGatedGlobalClock: 0
 26 --> 
 	27  / true
 27 --> 
-	2  / true
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	7  / true
 
 * FSM state operations: 
 
- <State 1> : 1.35ns
-ST_1 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(double %z_re) nounwind, !map !37"
-ST_1 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(double %z_im) nounwind, !map !43"
-ST_1 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %outp) nounwind, !map !47"
-ST_1 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @mandelbrot_str) nounwind"
-ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%z_im_read = call double @_ssdm_op_Read.ap_auto.double(double %z_im) nounwind"
-ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%z_re_read = call double @_ssdm_op_Read.ap_auto.double(double %z_re) nounwind"
-ST_1 : Operation 34 [1/1] (1.35ns)   --->   "br label %1" [mandelbrot/C/mandelbrot.cpp:19]
+ <State 1> : 8.57ns
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%im_read = call double @_ssdm_op_Read.ap_auto.double(double %im) nounwind"
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%re_read = call double @_ssdm_op_Read.ap_auto.double(double %re) nounwind"
+ST_1 : Operation 35 [5/5] (8.56ns)   --->   "%tmp = fmul double %re_read, %re_read" [mandelbrot/C/mandelbrot.cpp:28]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 36 [5/5] (8.56ns)   --->   "%tmp_1 = fmul double %im_read, %im_read" [mandelbrot/C/mandelbrot.cpp:29]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
  <State 2> : 8.57ns
-ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%x_complex_re_read_as = phi double [ %z_re_read, %0 ], [ %z_re_4, %2 ]"
-ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%x_complex_im_read_as = phi double [ %z_im_read, %0 ], [ %z_im_5, %2 ]"
-ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%mandelbrot_double_d = phi i8 [ 0, %0 ], [ %tmp_6, %2 ]" [mandelbrot/C/mandelbrot.cpp:22]
-ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%i = phi i9 [ 0, %0 ], [ %i_1, %2 ]"
-ST_2 : Operation 39 [1/1] (1.34ns)   --->   "%exitcond = icmp eq i9 %i, -256" [mandelbrot/C/mandelbrot.cpp:19]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256) nounwind"
-ST_2 : Operation 41 [1/1] (1.73ns)   --->   "%i_1 = add i9 %i, 1" [mandelbrot/C/mandelbrot.cpp:19]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 42 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %3, label %2" [mandelbrot/C/mandelbrot.cpp:19]
-ST_2 : Operation 43 [5/5] (8.56ns)   --->   "%m1 = fmul double %x_complex_re_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 44 [5/5] (8.56ns)   --->   "%m2 = fmul double %x_complex_im_read_as, %x_complex_im_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:114]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 45 [5/5] (8.56ns)   --->   "%m3 = fmul double %x_complex_im_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:115]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 46 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i8P(i8* %outp, i8 %mandelbrot_double_d) nounwind" [mandelbrot/C/mandelbrot.cpp:25]
-ST_2 : Operation 47 [1/1] (0.00ns)   --->   "ret void" [mandelbrot/C/mandelbrot.cpp:30]
+ST_2 : Operation 37 [4/5] (8.56ns)   --->   "%tmp = fmul double %re_read, %re_read" [mandelbrot/C/mandelbrot.cpp:28]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 38 [4/5] (8.56ns)   --->   "%tmp_1 = fmul double %im_read, %im_read" [mandelbrot/C/mandelbrot.cpp:29]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
  <State 3> : 8.57ns
-ST_3 : Operation 48 [4/5] (8.56ns)   --->   "%m1 = fmul double %x_complex_re_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 49 [4/5] (8.56ns)   --->   "%m2 = fmul double %x_complex_im_read_as, %x_complex_im_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:114]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 50 [4/5] (8.56ns)   --->   "%m3 = fmul double %x_complex_im_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:115]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 39 [3/5] (8.56ns)   --->   "%tmp = fmul double %re_read, %re_read" [mandelbrot/C/mandelbrot.cpp:28]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 40 [3/5] (8.56ns)   --->   "%tmp_1 = fmul double %im_read, %im_read" [mandelbrot/C/mandelbrot.cpp:29]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
  <State 4> : 8.57ns
-ST_4 : Operation 51 [3/5] (8.56ns)   --->   "%m1 = fmul double %x_complex_re_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 52 [3/5] (8.56ns)   --->   "%m2 = fmul double %x_complex_im_read_as, %x_complex_im_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:114]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 53 [3/5] (8.56ns)   --->   "%m3 = fmul double %x_complex_im_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:115]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 41 [2/5] (8.56ns)   --->   "%tmp = fmul double %re_read, %re_read" [mandelbrot/C/mandelbrot.cpp:28]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 42 [2/5] (8.56ns)   --->   "%tmp_1 = fmul double %im_read, %im_read" [mandelbrot/C/mandelbrot.cpp:29]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
  <State 5> : 8.57ns
-ST_5 : Operation 54 [2/5] (8.56ns)   --->   "%m1 = fmul double %x_complex_re_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_5 : Operation 55 [2/5] (8.56ns)   --->   "%m2 = fmul double %x_complex_im_read_as, %x_complex_im_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:114]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_5 : Operation 56 [2/5] (8.56ns)   --->   "%m3 = fmul double %x_complex_im_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:115]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 43 [1/5] (8.56ns)   --->   "%tmp = fmul double %re_read, %re_read" [mandelbrot/C/mandelbrot.cpp:28]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 44 [1/5] (8.56ns)   --->   "%tmp_1 = fmul double %im_read, %im_read" [mandelbrot/C/mandelbrot.cpp:29]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 6> : 8.57ns
-ST_6 : Operation 57 [1/5] (8.56ns)   --->   "%m1 = fmul double %x_complex_re_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 58 [1/5] (8.56ns)   --->   "%m2 = fmul double %x_complex_im_read_as, %x_complex_im_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:114]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 59 [1/5] (8.56ns)   --->   "%m3 = fmul double %x_complex_im_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:115]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 6> : 1.35ns
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(double %re) nounwind, !map !14"
+ST_6 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(double %im) nounwind, !map !20"
+ST_6 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %outp) nounwind, !map !24"
+ST_6 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @mandelbrot_str) nounwind"
+ST_6 : Operation 49 [1/1] (1.35ns)   --->   "br label %1" [mandelbrot/C/mandelbrot.cpp:31]
 
- <State 7> : 7.06ns
-ST_7 : Operation 60 [5/5] (7.05ns)   --->   "%sum_re = fsub double %m1, %m2" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 61 [5/5] (7.05ns)   --->   "%sum_im = fadd double %m3, %m3" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:118]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 7> : 8.57ns
+ST_7 : Operation 50 [1/1] (0.00ns)   --->   "%mandelbrot_double_d = phi i9 [ 0, %0 ], [ %tmp_15, %2 ]" [mandelbrot/C/mandelbrot.cpp:40]
+ST_7 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_2 = phi double [ %tmp_1, %0 ], [ %tmp_11, %2 ]" [mandelbrot/C/mandelbrot.cpp:29]
+ST_7 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_3 = phi double [ %tmp, %0 ], [ %tmp_10, %2 ]" [mandelbrot/C/mandelbrot.cpp:28]
+ST_7 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_4 = phi double [ %im_read, %0 ], [ %tmp_9, %2 ]" [mandelbrot/C/mandelbrot.cpp:33]
+ST_7 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_5 = phi double [ %re_read, %0 ], [ %tmp_6, %2 ]" [mandelbrot/C/mandelbrot.cpp:34]
+ST_7 : Operation 55 [1/1] (0.00ns)   --->   "%i = phi i9 [ 0, %0 ], [ %i_1, %2 ]"
+ST_7 : Operation 56 [1/1] (1.34ns)   --->   "%exitcond = icmp eq i9 %i, -256" [mandelbrot/C/mandelbrot.cpp:31]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 57 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256) nounwind"
+ST_7 : Operation 58 [1/1] (1.73ns)   --->   "%i_1 = add i9 %i, 1" [mandelbrot/C/mandelbrot.cpp:31]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 59 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %3, label %2" [mandelbrot/C/mandelbrot.cpp:31]
+ST_7 : Operation 60 [5/5] (8.56ns)   --->   "%tmp_7 = fmul double %tmp_5, 2.000000e+00" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 61 [5/5] (7.05ns)   --->   "%tmp_s = fsub double %tmp_3, %tmp_2" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 62 [1/1] (0.00ns)   --->   "%mandelbrot_double_d_1 = zext i9 %mandelbrot_double_d to i16" [mandelbrot/C/mandelbrot.cpp:31]
+ST_7 : Operation 63 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i16P(i16* %outp, i16 %mandelbrot_double_d_1) nounwind" [mandelbrot/C/mandelbrot.cpp:43]
+ST_7 : Operation 64 [1/1] (0.00ns)   --->   "ret void" [mandelbrot/C/mandelbrot.cpp:47]
 
- <State 8> : 7.06ns
-ST_8 : Operation 62 [4/5] (7.05ns)   --->   "%sum_re = fsub double %m1, %m2" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_8 : Operation 63 [4/5] (7.05ns)   --->   "%sum_im = fadd double %m3, %m3" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:118]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 8> : 8.57ns
+ST_8 : Operation 65 [4/5] (8.56ns)   --->   "%tmp_7 = fmul double %tmp_5, 2.000000e+00" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 66 [4/5] (7.05ns)   --->   "%tmp_s = fsub double %tmp_3, %tmp_2" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 9> : 7.06ns
-ST_9 : Operation 64 [3/5] (7.05ns)   --->   "%sum_re = fsub double %m1, %m2" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_9 : Operation 65 [3/5] (7.05ns)   --->   "%sum_im = fadd double %m3, %m3" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:118]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 9> : 8.57ns
+ST_9 : Operation 67 [3/5] (8.56ns)   --->   "%tmp_7 = fmul double %tmp_5, 2.000000e+00" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 68 [3/5] (7.05ns)   --->   "%tmp_s = fsub double %tmp_3, %tmp_2" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 10> : 7.06ns
-ST_10 : Operation 66 [2/5] (7.05ns)   --->   "%sum_re = fsub double %m1, %m2" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_10 : Operation 67 [2/5] (7.05ns)   --->   "%sum_im = fadd double %m3, %m3" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:118]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 10> : 8.57ns
+ST_10 : Operation 69 [2/5] (8.56ns)   --->   "%tmp_7 = fmul double %tmp_5, 2.000000e+00" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 70 [2/5] (7.05ns)   --->   "%tmp_s = fsub double %tmp_3, %tmp_2" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 11> : 7.06ns
-ST_11 : Operation 68 [1/5] (7.05ns)   --->   "%sum_re = fsub double %m1, %m2" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_11 : Operation 69 [1/5] (7.05ns)   --->   "%sum_im = fadd double %m3, %m3" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:118]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 11> : 8.57ns
+ST_11 : Operation 71 [1/5] (8.56ns)   --->   "%tmp_7 = fmul double %tmp_5, 2.000000e+00" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 72 [1/5] (7.05ns)   --->   "%tmp_s = fsub double %tmp_3, %tmp_2" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 12> : 7.06ns
-ST_12 : Operation 70 [5/5] (7.05ns)   --->   "%z_re_4 = fadd double %sum_re, %z_re_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_12 : Operation 71 [5/5] (7.05ns)   --->   "%z_im_5 = fadd double %sum_im, %z_im_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 12> : 8.57ns
+ST_12 : Operation 73 [5/5] (8.56ns)   --->   "%tmp_8 = fmul double %tmp_7, %tmp_4" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 74 [5/5] (7.05ns)   --->   "%tmp_6 = fadd double %tmp_s, %re_read" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 13> : 7.06ns
-ST_13 : Operation 72 [4/5] (7.05ns)   --->   "%z_re_4 = fadd double %sum_re, %z_re_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_13 : Operation 73 [4/5] (7.05ns)   --->   "%z_im_5 = fadd double %sum_im, %z_im_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 13> : 8.57ns
+ST_13 : Operation 75 [4/5] (8.56ns)   --->   "%tmp_8 = fmul double %tmp_7, %tmp_4" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 76 [4/5] (7.05ns)   --->   "%tmp_6 = fadd double %tmp_s, %re_read" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 14> : 7.06ns
-ST_14 : Operation 74 [3/5] (7.05ns)   --->   "%z_re_4 = fadd double %sum_re, %z_re_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_14 : Operation 75 [3/5] (7.05ns)   --->   "%z_im_5 = fadd double %sum_im, %z_im_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 14> : 8.57ns
+ST_14 : Operation 77 [3/5] (8.56ns)   --->   "%tmp_8 = fmul double %tmp_7, %tmp_4" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 78 [3/5] (7.05ns)   --->   "%tmp_6 = fadd double %tmp_s, %re_read" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 15> : 7.06ns
-ST_15 : Operation 76 [2/5] (7.05ns)   --->   "%z_re_4 = fadd double %sum_re, %z_re_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_15 : Operation 77 [2/5] (7.05ns)   --->   "%z_im_5 = fadd double %sum_im, %z_im_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 15> : 8.57ns
+ST_15 : Operation 79 [2/5] (8.56ns)   --->   "%tmp_8 = fmul double %tmp_7, %tmp_4" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 80 [2/5] (7.05ns)   --->   "%tmp_6 = fadd double %tmp_s, %re_read" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 16> : 7.06ns
-ST_16 : Operation 78 [1/5] (7.05ns)   --->   "%z_re_4 = fadd double %sum_re, %z_re_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_16 : Operation 79 [1/5] (7.05ns)   --->   "%z_im_5 = fadd double %sum_im, %z_im_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 16> : 8.57ns
+ST_16 : Operation 81 [1/5] (8.56ns)   --->   "%tmp_8 = fmul double %tmp_7, %tmp_4" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 82 [1/5] (7.05ns)   --->   "%tmp_6 = fadd double %tmp_s, %re_read" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 17> : 8.57ns
-ST_17 : Operation 80 [5/5] (8.56ns)   --->   "%tmp_1 = fmul double %z_im_5, %z_im_5" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_17 : Operation 81 [5/5] (8.56ns)   --->   "%tmp_2 = fmul double %z_re_4, %z_re_4" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 17> : 7.06ns
+ST_17 : Operation 83 [5/5] (7.05ns)   --->   "%tmp_9 = fadd double %tmp_8, %im_read" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 18> : 8.57ns
-ST_18 : Operation 82 [4/5] (8.56ns)   --->   "%tmp_1 = fmul double %z_im_5, %z_im_5" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_18 : Operation 83 [4/5] (8.56ns)   --->   "%tmp_2 = fmul double %z_re_4, %z_re_4" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 18> : 7.06ns
+ST_18 : Operation 84 [4/5] (7.05ns)   --->   "%tmp_9 = fadd double %tmp_8, %im_read" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 19> : 8.57ns
-ST_19 : Operation 84 [3/5] (8.56ns)   --->   "%tmp_1 = fmul double %z_im_5, %z_im_5" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 85 [3/5] (8.56ns)   --->   "%tmp_2 = fmul double %z_re_4, %z_re_4" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 19> : 7.06ns
+ST_19 : Operation 85 [3/5] (7.05ns)   --->   "%tmp_9 = fadd double %tmp_8, %im_read" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 20> : 8.57ns
-ST_20 : Operation 86 [2/5] (8.56ns)   --->   "%tmp_1 = fmul double %z_im_5, %z_im_5" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 87 [2/5] (8.56ns)   --->   "%tmp_2 = fmul double %z_re_4, %z_re_4" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 20> : 7.06ns
+ST_20 : Operation 86 [2/5] (7.05ns)   --->   "%tmp_9 = fadd double %tmp_8, %im_read" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 21> : 8.57ns
-ST_21 : Operation 88 [1/5] (8.56ns)   --->   "%tmp_1 = fmul double %z_im_5, %z_im_5" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_21 : Operation 89 [1/5] (8.56ns)   --->   "%tmp_2 = fmul double %z_re_4, %z_re_4" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 21> : 7.06ns
+ST_21 : Operation 87 [1/5] (7.05ns)   --->   "%tmp_9 = fadd double %tmp_8, %im_read" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 22> : 7.06ns
-ST_22 : Operation 90 [5/5] (7.05ns)   --->   "%tmp_3 = fadd double %tmp_1, %tmp_2" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 22> : 8.57ns
+ST_22 : Operation 88 [5/5] (8.56ns)   --->   "%tmp_10 = fmul double %tmp_6, %tmp_6" [mandelbrot/C/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 89 [5/5] (8.56ns)   --->   "%tmp_11 = fmul double %tmp_9, %tmp_9" [mandelbrot/C/mandelbrot.cpp:36]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 23> : 7.06ns
-ST_23 : Operation 91 [4/5] (7.05ns)   --->   "%tmp_3 = fadd double %tmp_1, %tmp_2" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 23> : 8.57ns
+ST_23 : Operation 90 [4/5] (8.56ns)   --->   "%tmp_10 = fmul double %tmp_6, %tmp_6" [mandelbrot/C/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 91 [4/5] (8.56ns)   --->   "%tmp_11 = fmul double %tmp_9, %tmp_9" [mandelbrot/C/mandelbrot.cpp:36]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 24> : 7.06ns
-ST_24 : Operation 92 [3/5] (7.05ns)   --->   "%tmp_3 = fadd double %tmp_1, %tmp_2" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 24> : 8.57ns
+ST_24 : Operation 92 [3/5] (8.56ns)   --->   "%tmp_10 = fmul double %tmp_6, %tmp_6" [mandelbrot/C/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 93 [3/5] (8.56ns)   --->   "%tmp_11 = fmul double %tmp_9, %tmp_9" [mandelbrot/C/mandelbrot.cpp:36]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 25> : 7.06ns
-ST_25 : Operation 93 [2/5] (7.05ns)   --->   "%tmp_3 = fadd double %tmp_1, %tmp_2" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 25> : 8.57ns
+ST_25 : Operation 94 [2/5] (8.56ns)   --->   "%tmp_10 = fmul double %tmp_6, %tmp_6" [mandelbrot/C/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 95 [2/5] (8.56ns)   --->   "%tmp_11 = fmul double %tmp_9, %tmp_9" [mandelbrot/C/mandelbrot.cpp:36]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 26> : 7.06ns
-ST_26 : Operation 94 [1/5] (7.05ns)   --->   "%tmp_3 = fadd double %tmp_1, %tmp_2" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 26> : 8.57ns
+ST_26 : Operation 96 [1/5] (8.56ns)   --->   "%tmp_10 = fmul double %tmp_6, %tmp_6" [mandelbrot/C/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 97 [1/5] (8.56ns)   --->   "%tmp_11 = fmul double %tmp_9, %tmp_9" [mandelbrot/C/mandelbrot.cpp:36]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 27> : 7.32ns
-ST_27 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_3_to_int = bitcast double %tmp_3 to i64" [mandelbrot/C/mandelbrot.cpp:21]
-ST_27 : Operation 96 [1/1] (0.00ns)   --->   "%tmp = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %tmp_3_to_int, i32 52, i32 62)" [mandelbrot/C/mandelbrot.cpp:21]
-ST_27 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_4 = trunc i64 %tmp_3_to_int to i52" [mandelbrot/C/mandelbrot.cpp:21]
-ST_27 : Operation 98 [1/1] (1.52ns)   --->   "%notlhs = icmp ne i11 %tmp, -1" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 99 [1/1] (2.34ns)   --->   "%notrhs = icmp eq i52 %tmp_4, 0" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node tmp_6)   --->   "%tmp_7 = or i1 %notrhs, %notlhs" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 101 [1/1] (5.60ns)   --->   "%tmp_8 = fcmp ole double %tmp_3, 4.000000e+00" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 114 'DCmp' <Latency = 0> <II = 1> <Delay = 5.60> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 102 [1/1] (0.00ns) (grouped into LUT with out node tmp_6)   --->   "%tmp_9 = and i1 %tmp_7, %tmp_8" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 103 [1/1] (0.00ns) (grouped into LUT with out node tmp_6)   --->   "%tmp_5 = zext i1 %tmp_9 to i8" [mandelbrot/C/mandelbrot.cpp:21]
-ST_27 : Operation 104 [1/1] (1.71ns) (out node of the LUT)   --->   "%tmp_6 = add i8 %tmp_5, %mandelbrot_double_d" [mandelbrot/C/mandelbrot.cpp:22]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 105 [1/1] (0.00ns)   --->   "br label %1" [mandelbrot/C/mandelbrot.cpp:19]
+ <State 27> : 7.06ns
+ST_27 : Operation 98 [5/5] (7.05ns)   --->   "%tmp_12 = fadd double %tmp_10, %tmp_11" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 28> : 7.06ns
+ST_28 : Operation 99 [4/5] (7.05ns)   --->   "%tmp_12 = fadd double %tmp_10, %tmp_11" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 29> : 7.06ns
+ST_29 : Operation 100 [3/5] (7.05ns)   --->   "%tmp_12 = fadd double %tmp_10, %tmp_11" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 30> : 7.06ns
+ST_30 : Operation 101 [2/5] (7.05ns)   --->   "%tmp_12 = fadd double %tmp_10, %tmp_11" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 31> : 7.06ns
+ST_31 : Operation 102 [1/5] (7.05ns)   --->   "%tmp_12 = fadd double %tmp_10, %tmp_11" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 32> : 7.34ns
+ST_32 : Operation 103 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str) nounwind" [mandelbrot/C/mandelbrot.cpp:31]
+ST_32 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_12_to_int = bitcast double %tmp_12 to i64" [mandelbrot/C/mandelbrot.cpp:39]
+ST_32 : Operation 105 [1/1] (0.00ns)   --->   "%tmp_13 = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %tmp_12_to_int, i32 52, i32 62)" [mandelbrot/C/mandelbrot.cpp:39]
+ST_32 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_14 = trunc i64 %tmp_12_to_int to i52" [mandelbrot/C/mandelbrot.cpp:39]
+ST_32 : Operation 107 [1/1] (1.52ns)   --->   "%notlhs = icmp ne i11 %tmp_13, -1" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 108 [1/1] (2.34ns)   --->   "%notrhs = icmp eq i52 %tmp_14, 0" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%tmp_16 = or i1 %notrhs, %notlhs" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 110 [1/1] (5.60ns)   --->   "%tmp_17 = fcmp ole double %tmp_12, 4.000000e+00" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 114 'DCmp' <Latency = 0> <II = 1> <Delay = 5.60> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 111 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%tmp_18 = and i1 %tmp_16, %tmp_17" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 112 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%tmp_14_cast = zext i1 %tmp_18 to i9" [mandelbrot/C/mandelbrot.cpp:40]
+ST_32 : Operation 113 [1/1] (1.73ns) (out node of the LUT)   --->   "%tmp_15 = add i9 %tmp_14_cast, %mandelbrot_double_d" [mandelbrot/C/mandelbrot.cpp:40]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 114 [1/1] (0.00ns)   --->   "br label %1" [mandelbrot/C/mandelbrot.cpp:31]
 
 
 ============================================================
@@ -270,117 +294,137 @@ ST_27 : Operation 105 [1/1] (0.00ns)   --->   "br label %1" [mandelbrot/C/mandel
 ============================================================
 Target clock period: 10ns, clock uncertainty: 1.25ns.
 
- <State 1>: 1.35ns
+ <State 1>: 8.57ns
 The critical path consists of the following:
-	wire read on port 'z_im' [8]  (0 ns)
-	multiplexor before 'phi' operation ('z.re') with incoming values : ('z_re') ('agg.result.re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20) [12]  (1.35 ns)
+	wire read on port 'im' [8]  (0 ns)
+	'dmul' operation ('tmp_1', mandelbrot/C/mandelbrot.cpp:29) [11]  (8.57 ns)
 
  <State 2>: 8.57ns
 The critical path consists of the following:
-	'phi' operation ('z.re') with incoming values : ('z_re') ('agg.result.re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20) [12]  (0 ns)
-	'dmul' operation ('m1', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113) [21]  (8.57 ns)
+	'dmul' operation ('tmp', mandelbrot/C/mandelbrot.cpp:28) [10]  (8.57 ns)
 
  <State 3>: 8.57ns
 The critical path consists of the following:
-	'dmul' operation ('m1', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113) [21]  (8.57 ns)
+	'dmul' operation ('tmp', mandelbrot/C/mandelbrot.cpp:28) [10]  (8.57 ns)
 
  <State 4>: 8.57ns
 The critical path consists of the following:
-	'dmul' operation ('m1', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113) [21]  (8.57 ns)
+	'dmul' operation ('tmp', mandelbrot/C/mandelbrot.cpp:28) [10]  (8.57 ns)
 
  <State 5>: 8.57ns
 The critical path consists of the following:
-	'dmul' operation ('m1', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113) [21]  (8.57 ns)
+	'dmul' operation ('tmp', mandelbrot/C/mandelbrot.cpp:28) [10]  (8.57 ns)
 
- <State 6>: 8.57ns
+ <State 6>: 1.35ns
 The critical path consists of the following:
-	'dmul' operation ('m1', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113) [21]  (8.57 ns)
+	multiplexor before 'phi' operation ('mandelbrot_double_d', mandelbrot/C/mandelbrot.cpp:40) with incoming values : ('tmp_15', mandelbrot/C/mandelbrot.cpp:40) [14]  (1.35 ns)
 
- <State 7>: 7.06ns
+ <State 7>: 8.57ns
 The critical path consists of the following:
-	'dsub' operation ('sum_re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117) [24]  (7.06 ns)
+	'phi' operation ('tmp_5', mandelbrot/C/mandelbrot.cpp:34) with incoming values : ('re') ('tmp_6', mandelbrot/C/mandelbrot.cpp:34) [18]  (0 ns)
+	'dmul' operation ('tmp_7', mandelbrot/C/mandelbrot.cpp:33) [26]  (8.57 ns)
 
- <State 8>: 7.06ns
+ <State 8>: 8.57ns
 The critical path consists of the following:
-	'dsub' operation ('sum_re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117) [24]  (7.06 ns)
+	'dmul' operation ('tmp_7', mandelbrot/C/mandelbrot.cpp:33) [26]  (8.57 ns)
 
- <State 9>: 7.06ns
+ <State 9>: 8.57ns
 The critical path consists of the following:
-	'dsub' operation ('sum_re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117) [24]  (7.06 ns)
+	'dmul' operation ('tmp_7', mandelbrot/C/mandelbrot.cpp:33) [26]  (8.57 ns)
 
- <State 10>: 7.06ns
+ <State 10>: 8.57ns
 The critical path consists of the following:
-	'dsub' operation ('sum_re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117) [24]  (7.06 ns)
+	'dmul' operation ('tmp_7', mandelbrot/C/mandelbrot.cpp:33) [26]  (8.57 ns)
 
- <State 11>: 7.06ns
+ <State 11>: 8.57ns
 The critical path consists of the following:
-	'dsub' operation ('sum_re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117) [24]  (7.06 ns)
+	'dmul' operation ('tmp_7', mandelbrot/C/mandelbrot.cpp:33) [26]  (8.57 ns)
 
- <State 12>: 7.06ns
+ <State 12>: 8.57ns
 The critical path consists of the following:
-	'dadd' operation ('agg.result.re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20) [26]  (7.06 ns)
+	'dmul' operation ('tmp_8', mandelbrot/C/mandelbrot.cpp:33) [27]  (8.57 ns)
 
- <State 13>: 7.06ns
+ <State 13>: 8.57ns
 The critical path consists of the following:
-	'dadd' operation ('agg.result.re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20) [26]  (7.06 ns)
+	'dmul' operation ('tmp_8', mandelbrot/C/mandelbrot.cpp:33) [27]  (8.57 ns)
 
- <State 14>: 7.06ns
+ <State 14>: 8.57ns
 The critical path consists of the following:
-	'dadd' operation ('agg.result.re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20) [26]  (7.06 ns)
+	'dmul' operation ('tmp_8', mandelbrot/C/mandelbrot.cpp:33) [27]  (8.57 ns)
 
- <State 15>: 7.06ns
+ <State 15>: 8.57ns
 The critical path consists of the following:
-	'dadd' operation ('agg.result.re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20) [26]  (7.06 ns)
+	'dmul' operation ('tmp_8', mandelbrot/C/mandelbrot.cpp:33) [27]  (8.57 ns)
 
- <State 16>: 7.06ns
+ <State 16>: 8.57ns
 The critical path consists of the following:
-	'dadd' operation ('agg.result.re', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20) [26]  (7.06 ns)
+	'dmul' operation ('tmp_8', mandelbrot/C/mandelbrot.cpp:33) [27]  (8.57 ns)
 
- <State 17>: 8.57ns
+ <State 17>: 7.06ns
 The critical path consists of the following:
-	'dmul' operation ('tmp_1', mandelbrot/C/mandelbrot.cpp:21) [28]  (8.57 ns)
+	'dadd' operation ('tmp_9', mandelbrot/C/mandelbrot.cpp:33) [28]  (7.06 ns)
 
- <State 18>: 8.57ns
+ <State 18>: 7.06ns
 The critical path consists of the following:
-	'dmul' operation ('tmp_1', mandelbrot/C/mandelbrot.cpp:21) [28]  (8.57 ns)
+	'dadd' operation ('tmp_9', mandelbrot/C/mandelbrot.cpp:33) [28]  (7.06 ns)
 
- <State 19>: 8.57ns
+ <State 19>: 7.06ns
 The critical path consists of the following:
-	'dmul' operation ('tmp_1', mandelbrot/C/mandelbrot.cpp:21) [28]  (8.57 ns)
+	'dadd' operation ('tmp_9', mandelbrot/C/mandelbrot.cpp:33) [28]  (7.06 ns)
 
- <State 20>: 8.57ns
+ <State 20>: 7.06ns
 The critical path consists of the following:
-	'dmul' operation ('tmp_1', mandelbrot/C/mandelbrot.cpp:21) [28]  (8.57 ns)
+	'dadd' operation ('tmp_9', mandelbrot/C/mandelbrot.cpp:33) [28]  (7.06 ns)
 
- <State 21>: 8.57ns
+ <State 21>: 7.06ns
 The critical path consists of the following:
-	'dmul' operation ('tmp_1', mandelbrot/C/mandelbrot.cpp:21) [28]  (8.57 ns)
+	'dadd' operation ('tmp_9', mandelbrot/C/mandelbrot.cpp:33) [28]  (7.06 ns)
 
- <State 22>: 7.06ns
+ <State 22>: 8.57ns
 The critical path consists of the following:
-	'dadd' operation ('tmp_3', mandelbrot/C/mandelbrot.cpp:21) [30]  (7.06 ns)
+	'dmul' operation ('tmp_10', mandelbrot/C/mandelbrot.cpp:35) [31]  (8.57 ns)
 
- <State 23>: 7.06ns
+ <State 23>: 8.57ns
 The critical path consists of the following:
-	'dadd' operation ('tmp_3', mandelbrot/C/mandelbrot.cpp:21) [30]  (7.06 ns)
+	'dmul' operation ('tmp_10', mandelbrot/C/mandelbrot.cpp:35) [31]  (8.57 ns)
 
- <State 24>: 7.06ns
+ <State 24>: 8.57ns
 The critical path consists of the following:
-	'dadd' operation ('tmp_3', mandelbrot/C/mandelbrot.cpp:21) [30]  (7.06 ns)
+	'dmul' operation ('tmp_10', mandelbrot/C/mandelbrot.cpp:35) [31]  (8.57 ns)
 
- <State 25>: 7.06ns
+ <State 25>: 8.57ns
 The critical path consists of the following:
-	'dadd' operation ('tmp_3', mandelbrot/C/mandelbrot.cpp:21) [30]  (7.06 ns)
+	'dmul' operation ('tmp_10', mandelbrot/C/mandelbrot.cpp:35) [31]  (8.57 ns)
 
- <State 26>: 7.06ns
+ <State 26>: 8.57ns
 The critical path consists of the following:
-	'dadd' operation ('tmp_3', mandelbrot/C/mandelbrot.cpp:21) [30]  (7.06 ns)
+	'dmul' operation ('tmp_10', mandelbrot/C/mandelbrot.cpp:35) [31]  (8.57 ns)
 
- <State 27>: 7.32ns
+ <State 27>: 7.06ns
 The critical path consists of the following:
-	'dcmp' operation ('tmp_8', mandelbrot/C/mandelbrot.cpp:21) [37]  (5.6 ns)
-	'and' operation ('tmp_9', mandelbrot/C/mandelbrot.cpp:21) [38]  (0 ns)
-	'add' operation ('tmp_6', mandelbrot/C/mandelbrot.cpp:22) [40]  (1.72 ns)
+	'dadd' operation ('tmp_12', mandelbrot/C/mandelbrot.cpp:39) [33]  (7.06 ns)
+
+ <State 28>: 7.06ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_12', mandelbrot/C/mandelbrot.cpp:39) [33]  (7.06 ns)
+
+ <State 29>: 7.06ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_12', mandelbrot/C/mandelbrot.cpp:39) [33]  (7.06 ns)
+
+ <State 30>: 7.06ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_12', mandelbrot/C/mandelbrot.cpp:39) [33]  (7.06 ns)
+
+ <State 31>: 7.06ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_12', mandelbrot/C/mandelbrot.cpp:39) [33]  (7.06 ns)
+
+ <State 32>: 7.34ns
+The critical path consists of the following:
+	'dcmp' operation ('tmp_17', mandelbrot/C/mandelbrot.cpp:39) [40]  (5.6 ns)
+	'and' operation ('tmp_18', mandelbrot/C/mandelbrot.cpp:39) [41]  (0 ns)
+	'add' operation ('tmp_15', mandelbrot/C/mandelbrot.cpp:40) [43]  (1.73 ns)
 
 
 ============================================================
@@ -418,6 +462,11 @@ N/A
 	State 25
 	State 26
 	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
 
 
 ============================================================

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'mandelbrot'
 ================================================================
-* Date:           Sun Feb 25 13:41:45 2018
+* Date:           Sun Feb 25 18:18:45 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        mandelbrot
@@ -29,7 +29,7 @@
     |   Latency   |   Interval  | Pipeline|
     |  min |  max |  min |  max |   Type  |
     +------+------+------+------+---------+
-    |  6657|  6657|  6657|  6657|   none  |
+    |  6662|  6662|  6662|  6662|   none  |
     +------+------+------+------+---------+
 
     + Detail: 
@@ -41,7 +41,7 @@
         |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
         | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
         +----------+------+------+----------+-----------+-----------+------+----------+
-        |- Loop 1  |  6656|  6656|        26|          -|          -|   256|    no    |
+        |- myloop  |  6656|  6656|        26|          -|          -|   256|    no    |
         +----------+------+------+----------+-----------+-----------+------+----------+
 
 
@@ -54,18 +54,18 @@
 |       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
 +-----------------+---------+-------+--------+--------+
 |DSP              |        -|      -|       -|       -|
-|Expression       |        -|      -|       0|     102|
+|Expression       |        -|      -|       0|     103|
 |FIFO             |        -|      -|       -|       -|
-|Instance         |        -|     39|    1917|    2318|
+|Instance         |        -|     25|    1173|    1326|
 |Memory           |        -|      -|       -|       -|
-|Multiplexer      |        -|      -|       -|     300|
-|Register         |        -|      -|     565|       -|
+|Multiplexer      |        -|      -|       -|     350|
+|Register         |        -|      -|     763|       -|
 +-----------------+---------+-------+--------+--------+
-|Total            |        0|     39|    2482|    2720|
+|Total            |        0|     25|    1936|    1779|
 +-----------------+---------+-------+--------+--------+
 |Available        |      730|    740|  269200|  129000|
 +-----------------+---------+-------+--------+--------+
-|Utilization (%)  |        0|      5|   ~0   |       2|
+|Utilization (%)  |        0|      3|   ~0   |       1|
 +-----------------+---------+-------+--------+--------+
 
 + Detail: 
@@ -73,14 +73,12 @@
     +-------------------------+----------------------+---------+-------+-----+-----+
     |         Instance        |        Module        | BRAM_18K| DSP48E|  FF | LUT |
     +-------------------------+----------------------+---------+-------+-----+-----+
-    |mandelbrot_dadd_6cud_U2  |mandelbrot_dadd_6cud  |        0|      3|  445|  788|
     |mandelbrot_dadddsbkb_U1  |mandelbrot_dadddsbkb  |        0|      3|  445|  788|
-    |mandelbrot_dcmp_6eOg_U6  |mandelbrot_dcmp_6eOg  |        0|      0|  130|  130|
-    |mandelbrot_dmul_6dEe_U3  |mandelbrot_dmul_6dEe  |        0|     11|  299|  204|
-    |mandelbrot_dmul_6dEe_U4  |mandelbrot_dmul_6dEe  |        0|     11|  299|  204|
-    |mandelbrot_dmul_6dEe_U5  |mandelbrot_dmul_6dEe  |        0|     11|  299|  204|
+    |mandelbrot_dcmp_6dEe_U4  |mandelbrot_dcmp_6dEe  |        0|      0|  130|  130|
+    |mandelbrot_dmul_6cud_U2  |mandelbrot_dmul_6cud  |        0|     11|  299|  204|
+    |mandelbrot_dmul_6cud_U3  |mandelbrot_dmul_6cud  |        0|     11|  299|  204|
     +-------------------------+----------------------+---------+-------+-----+-----+
-    |Total                    |                      |        0|     39| 1917| 2318|
+    |Total                    |                      |        0|     25| 1173| 1326|
     +-------------------------+----------------------+---------+-------+-----+-----+
 
     * DSP48: 
@@ -96,58 +94,61 @@
     +--------------------+----------+-------+---+----+------------+------------+
     |    Variable Name   | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
     +--------------------+----------+-------+---+----+------------+------------+
-    |i_1_fu_166_p2       |     +    |      0|  0|  16|           9|           1|
-    |tmp_6_fu_217_p2     |     +    |      0|  0|  15|           8|           8|
-    |tmp_9_fu_207_p2     |    and   |      0|  0|   8|           1|           1|
-    |exitcond_fu_160_p2  |   icmp   |      0|  0|  13|           9|          10|
-    |notlhs_fu_189_p2    |   icmp   |      0|  0|  13|          11|           2|
-    |notrhs_fu_195_p2    |   icmp   |      0|  0|  29|          52|           1|
-    |tmp_7_fu_201_p2     |    or    |      0|  0|   8|           1|           1|
+    |i_1_fu_173_p2       |     +    |      0|  0|  16|           9|           1|
+    |tmp_15_fu_229_p2    |     +    |      0|  0|  16|           9|           9|
+    |tmp_18_fu_219_p2    |    and   |      0|  0|   8|           1|           1|
+    |exitcond_fu_167_p2  |   icmp   |      0|  0|  13|           9|          10|
+    |notlhs_fu_201_p2    |   icmp   |      0|  0|  13|          11|           2|
+    |notrhs_fu_207_p2    |   icmp   |      0|  0|  29|          52|           1|
+    |tmp_16_fu_213_p2    |    or    |      0|  0|   8|           1|           1|
     +--------------------+----------+-------+---+----+------------+------------+
-    |Total               |          |      0|  0| 102|          91|          24|
+    |Total               |          |      0|  0| 103|          92|          25|
     +--------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
-    +-----------------------------+-----+-----------+-----+-----------+
-    |             Name            | LUT | Input Size| Bits| Total Bits|
-    +-----------------------------+-----+-----------+-----+-----------+
-    |ap_NS_fsm                    |  129|         28|    1|         28|
-    |grp_fu_103_opcode            |   15|          3|    2|          6|
-    |grp_fu_103_p0                |   15|          3|   64|        192|
-    |grp_fu_103_p1                |   15|          3|   64|        192|
-    |grp_fu_107_p0                |   15|          3|   64|        192|
-    |grp_fu_107_p1                |   15|          3|   64|        192|
-    |grp_fu_111_p0                |   15|          3|   64|        192|
-    |grp_fu_111_p1                |   15|          3|   64|        192|
-    |grp_fu_117_p0                |   15|          3|   64|        192|
-    |grp_fu_117_p1                |   15|          3|   64|        192|
-    |i_reg_92                     |    9|          2|    9|         18|
-    |mandelbrot_double_d_reg_79   |    9|          2|    8|         16|
-    |x_complex_im_read_as_reg_69  |    9|          2|   64|        128|
-    |x_complex_re_read_as_reg_59  |    9|          2|   64|        128|
-    +-----------------------------+-----+-----------+-----+-----------+
-    |Total                        |  300|         63|  660|       1860|
-    +-----------------------------+-----+-----------+-----+-----------+
+    +----------------------------+-----+-----------+-----+-----------+
+    |            Name            | LUT | Input Size| Bits| Total Bits|
+    +----------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                   |  149|         33|    1|         33|
+    |grp_fu_126_opcode           |   15|          3|    2|          6|
+    |grp_fu_126_p0               |   21|          4|   64|        256|
+    |grp_fu_126_p1               |   27|          5|   64|        320|
+    |grp_fu_132_p0               |   27|          5|   64|        320|
+    |grp_fu_132_p1               |   27|          5|   64|        320|
+    |grp_fu_138_p0               |   15|          3|   64|        192|
+    |grp_fu_138_p1               |   15|          3|   64|        192|
+    |i_reg_115                   |    9|          2|    9|         18|
+    |mandelbrot_double_d_reg_63  |    9|          2|    9|         18|
+    |tmp_2_reg_75                |    9|          2|   64|        128|
+    |tmp_3_reg_85                |    9|          2|   64|        128|
+    |tmp_4_reg_95                |    9|          2|   64|        128|
+    |tmp_5_reg_105               |    9|          2|   64|        128|
+    +----------------------------+-----+-----------+-----+-----------+
+    |Total                       |  350|         73|  661|       2187|
+    +----------------------------+-----+-----------+-----+-----------+
 
     * Register: 
-    +-----------------------------+----+----+-----+-----------+
-    |             Name            | FF | LUT| Bits| Const Bits|
-    +-----------------------------+----+----+-----+-----------+
-    |ap_CS_fsm                    |  27|   0|   27|          0|
-    |i_1_reg_238                  |   9|   0|    9|          0|
-    |i_reg_92                     |   9|   0|    9|          0|
-    |m3_reg_243                   |  64|   0|   64|          0|
-    |mandelbrot_double_d_reg_79   |   8|   0|    8|          0|
-    |reg_134                      |  64|   0|   64|          0|
-    |reg_139                      |  64|   0|   64|          0|
-    |reg_144                      |  64|   0|   64|          0|
-    |reg_152                      |  64|   0|   64|          0|
-    |tmp_3_reg_249                |  64|   0|   64|          0|
-    |x_complex_im_read_as_reg_69  |  64|   0|   64|          0|
-    |x_complex_re_read_as_reg_59  |  64|   0|   64|          0|
-    +-----------------------------+----+----+-----+-----------+
-    |Total                        | 565|   0|  565|          0|
-    +-----------------------------+----+----+-----+-----------+
+    +----------------------------+----+----+-----+-----------+
+    |            Name            | FF | LUT| Bits| Const Bits|
+    +----------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                   |  32|   0|   32|          0|
+    |i_1_reg_264                 |   9|   0|    9|          0|
+    |i_reg_115                   |   9|   0|    9|          0|
+    |mandelbrot_double_d_reg_63  |   9|   0|    9|          0|
+    |reg_152                     |  64|   0|   64|          0|
+    |reg_159                     |  64|   0|   64|          0|
+    |tmp_11_reg_276              |  64|   0|   64|          0|
+    |tmp_12_reg_282              |  64|   0|   64|          0|
+    |tmp_1_reg_256               |  64|   0|   64|          0|
+    |tmp_2_reg_75                |  64|   0|   64|          0|
+    |tmp_3_reg_85                |  64|   0|   64|          0|
+    |tmp_4_reg_95                |  64|   0|   64|          0|
+    |tmp_5_reg_105               |  64|   0|   64|          0|
+    |tmp_9_reg_269               |  64|   0|   64|          0|
+    |tmp_reg_251                 |  64|   0|   64|          0|
+    +----------------------------+----+----+-----+-----------+
+    |Total                       | 763|   0|  763|          0|
+    +----------------------------+----+----+-----+-----------+
 
 
 
@@ -164,9 +165,9 @@
 |ap_done      | out |    1| ap_ctrl_hs |  mandelbrot  | return value |
 |ap_idle      | out |    1| ap_ctrl_hs |  mandelbrot  | return value |
 |ap_ready     | out |    1| ap_ctrl_hs |  mandelbrot  | return value |
-|z_re         |  in |   64|   ap_none  |     z_re     |    scalar    |
-|z_im         |  in |   64|   ap_none  |     z_im     |    scalar    |
-|outp         | out |    8|   ap_vld   |     outp     |    pointer   |
+|re           |  in |   64|   ap_none  |      re      |    scalar    |
+|im           |  in |   64|   ap_none  |      im      |    scalar    |
+|outp         | out |   16|   ap_vld   |     outp     |    pointer   |
 |outp_ap_vld  | out |    1|   ap_vld   |     outp     |    pointer   |
 +-------------+-----+-----+------------+--------------+--------------+
 
@@ -196,7 +197,7 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 27
+* Number of FSM states : 32
 * Pipeline : 0
 * Dataflow Pipeline: 0
 
@@ -204,7 +205,7 @@ IsGatedGlobalClock: 0
 1 --> 
 	2  / true
 2 --> 
-	3  / (!exitcond)
+	3  / true
 3 --> 
 	4  / true
 4 --> 
@@ -214,7 +215,7 @@ IsGatedGlobalClock: 0
 6 --> 
 	7  / true
 7 --> 
-	8  / true
+	8  / (!exitcond)
 8 --> 
 	9  / true
 9 --> 
@@ -254,141 +255,165 @@ IsGatedGlobalClock: 0
 26 --> 
 	27  / true
 27 --> 
-	2  / true
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	7  / true
 
 * FSM state operations: 
 
- <State 1> : 1.35ns
-ST_1 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(double %z_re) nounwind, !map !37"
-ST_1 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(double %z_im) nounwind, !map !43"
-ST_1 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %outp) nounwind, !map !47"
-ST_1 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @mandelbrot_str) nounwind"
-ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%z_im_read = call double @_ssdm_op_Read.ap_auto.double(double %z_im) nounwind"
-ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%z_re_read = call double @_ssdm_op_Read.ap_auto.double(double %z_re) nounwind"
-ST_1 : Operation 34 [1/1] (1.35ns)   --->   "br label %1" [mandelbrot/C/mandelbrot.cpp:19]
+ <State 1> : 8.57ns
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%im_read = call double @_ssdm_op_Read.ap_auto.double(double %im) nounwind"
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%re_read = call double @_ssdm_op_Read.ap_auto.double(double %re) nounwind"
+ST_1 : Operation 35 [5/5] (8.56ns)   --->   "%tmp = fmul double %re_read, %re_read" [mandelbrot/C/mandelbrot.cpp:28]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 36 [5/5] (8.56ns)   --->   "%tmp_1 = fmul double %im_read, %im_read" [mandelbrot/C/mandelbrot.cpp:29]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
  <State 2> : 8.57ns
-ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%x_complex_re_read_as = phi double [ %z_re_read, %0 ], [ %z_re_4, %2 ]"
-ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%x_complex_im_read_as = phi double [ %z_im_read, %0 ], [ %z_im_5, %2 ]"
-ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%mandelbrot_double_d = phi i8 [ 0, %0 ], [ %tmp_6, %2 ]" [mandelbrot/C/mandelbrot.cpp:22]
-ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%i = phi i9 [ 0, %0 ], [ %i_1, %2 ]"
-ST_2 : Operation 39 [1/1] (1.34ns)   --->   "%exitcond = icmp eq i9 %i, -256" [mandelbrot/C/mandelbrot.cpp:19]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256) nounwind"
-ST_2 : Operation 41 [1/1] (1.73ns)   --->   "%i_1 = add i9 %i, 1" [mandelbrot/C/mandelbrot.cpp:19]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 42 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %3, label %2" [mandelbrot/C/mandelbrot.cpp:19]
-ST_2 : Operation 43 [5/5] (8.56ns)   --->   "%m1 = fmul double %x_complex_re_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 44 [5/5] (8.56ns)   --->   "%m2 = fmul double %x_complex_im_read_as, %x_complex_im_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:114]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 45 [5/5] (8.56ns)   --->   "%m3 = fmul double %x_complex_im_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:115]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 46 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i8P(i8* %outp, i8 %mandelbrot_double_d) nounwind" [mandelbrot/C/mandelbrot.cpp:25]
-ST_2 : Operation 47 [1/1] (0.00ns)   --->   "ret void" [mandelbrot/C/mandelbrot.cpp:30]
+ST_2 : Operation 37 [4/5] (8.56ns)   --->   "%tmp = fmul double %re_read, %re_read" [mandelbrot/C/mandelbrot.cpp:28]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 38 [4/5] (8.56ns)   --->   "%tmp_1 = fmul double %im_read, %im_read" [mandelbrot/C/mandelbrot.cpp:29]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
  <State 3> : 8.57ns
-ST_3 : Operation 48 [4/5] (8.56ns)   --->   "%m1 = fmul double %x_complex_re_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 49 [4/5] (8.56ns)   --->   "%m2 = fmul double %x_complex_im_read_as, %x_complex_im_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:114]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 50 [4/5] (8.56ns)   --->   "%m3 = fmul double %x_complex_im_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:115]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 39 [3/5] (8.56ns)   --->   "%tmp = fmul double %re_read, %re_read" [mandelbrot/C/mandelbrot.cpp:28]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 40 [3/5] (8.56ns)   --->   "%tmp_1 = fmul double %im_read, %im_read" [mandelbrot/C/mandelbrot.cpp:29]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
  <State 4> : 8.57ns
-ST_4 : Operation 51 [3/5] (8.56ns)   --->   "%m1 = fmul double %x_complex_re_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 52 [3/5] (8.56ns)   --->   "%m2 = fmul double %x_complex_im_read_as, %x_complex_im_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:114]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 53 [3/5] (8.56ns)   --->   "%m3 = fmul double %x_complex_im_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:115]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 41 [2/5] (8.56ns)   --->   "%tmp = fmul double %re_read, %re_read" [mandelbrot/C/mandelbrot.cpp:28]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 42 [2/5] (8.56ns)   --->   "%tmp_1 = fmul double %im_read, %im_read" [mandelbrot/C/mandelbrot.cpp:29]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
  <State 5> : 8.57ns
-ST_5 : Operation 54 [2/5] (8.56ns)   --->   "%m1 = fmul double %x_complex_re_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_5 : Operation 55 [2/5] (8.56ns)   --->   "%m2 = fmul double %x_complex_im_read_as, %x_complex_im_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:114]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_5 : Operation 56 [2/5] (8.56ns)   --->   "%m3 = fmul double %x_complex_im_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:115]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 43 [1/5] (8.56ns)   --->   "%tmp = fmul double %re_read, %re_read" [mandelbrot/C/mandelbrot.cpp:28]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 44 [1/5] (8.56ns)   --->   "%tmp_1 = fmul double %im_read, %im_read" [mandelbrot/C/mandelbrot.cpp:29]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 6> : 8.57ns
-ST_6 : Operation 57 [1/5] (8.56ns)   --->   "%m1 = fmul double %x_complex_re_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 58 [1/5] (8.56ns)   --->   "%m2 = fmul double %x_complex_im_read_as, %x_complex_im_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:114]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 59 [1/5] (8.56ns)   --->   "%m3 = fmul double %x_complex_im_read_as, %x_complex_re_read_as" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:115]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 6> : 1.35ns
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(double %re) nounwind, !map !14"
+ST_6 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(double %im) nounwind, !map !20"
+ST_6 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %outp) nounwind, !map !24"
+ST_6 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @mandelbrot_str) nounwind"
+ST_6 : Operation 49 [1/1] (1.35ns)   --->   "br label %1" [mandelbrot/C/mandelbrot.cpp:31]
 
- <State 7> : 7.06ns
-ST_7 : Operation 60 [5/5] (7.05ns)   --->   "%sum_re = fsub double %m1, %m2" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 61 [5/5] (7.05ns)   --->   "%sum_im = fadd double %m3, %m3" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:118]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 7> : 8.57ns
+ST_7 : Operation 50 [1/1] (0.00ns)   --->   "%mandelbrot_double_d = phi i9 [ 0, %0 ], [ %tmp_15, %2 ]" [mandelbrot/C/mandelbrot.cpp:40]
+ST_7 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_2 = phi double [ %tmp_1, %0 ], [ %tmp_11, %2 ]" [mandelbrot/C/mandelbrot.cpp:29]
+ST_7 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_3 = phi double [ %tmp, %0 ], [ %tmp_10, %2 ]" [mandelbrot/C/mandelbrot.cpp:28]
+ST_7 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_4 = phi double [ %im_read, %0 ], [ %tmp_9, %2 ]" [mandelbrot/C/mandelbrot.cpp:33]
+ST_7 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_5 = phi double [ %re_read, %0 ], [ %tmp_6, %2 ]" [mandelbrot/C/mandelbrot.cpp:34]
+ST_7 : Operation 55 [1/1] (0.00ns)   --->   "%i = phi i9 [ 0, %0 ], [ %i_1, %2 ]"
+ST_7 : Operation 56 [1/1] (1.34ns)   --->   "%exitcond = icmp eq i9 %i, -256" [mandelbrot/C/mandelbrot.cpp:31]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 57 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256) nounwind"
+ST_7 : Operation 58 [1/1] (1.73ns)   --->   "%i_1 = add i9 %i, 1" [mandelbrot/C/mandelbrot.cpp:31]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 59 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %3, label %2" [mandelbrot/C/mandelbrot.cpp:31]
+ST_7 : Operation 60 [5/5] (8.56ns)   --->   "%tmp_7 = fmul double %tmp_5, 2.000000e+00" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 61 [5/5] (7.05ns)   --->   "%tmp_s = fsub double %tmp_3, %tmp_2" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 62 [1/1] (0.00ns)   --->   "%mandelbrot_double_d_1 = zext i9 %mandelbrot_double_d to i16" [mandelbrot/C/mandelbrot.cpp:31]
+ST_7 : Operation 63 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i16P(i16* %outp, i16 %mandelbrot_double_d_1) nounwind" [mandelbrot/C/mandelbrot.cpp:43]
+ST_7 : Operation 64 [1/1] (0.00ns)   --->   "ret void" [mandelbrot/C/mandelbrot.cpp:47]
 
- <State 8> : 7.06ns
-ST_8 : Operation 62 [4/5] (7.05ns)   --->   "%sum_re = fsub double %m1, %m2" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_8 : Operation 63 [4/5] (7.05ns)   --->   "%sum_im = fadd double %m3, %m3" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:118]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 8> : 8.57ns
+ST_8 : Operation 65 [4/5] (8.56ns)   --->   "%tmp_7 = fmul double %tmp_5, 2.000000e+00" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 66 [4/5] (7.05ns)   --->   "%tmp_s = fsub double %tmp_3, %tmp_2" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 9> : 7.06ns
-ST_9 : Operation 64 [3/5] (7.05ns)   --->   "%sum_re = fsub double %m1, %m2" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_9 : Operation 65 [3/5] (7.05ns)   --->   "%sum_im = fadd double %m3, %m3" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:118]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 9> : 8.57ns
+ST_9 : Operation 67 [3/5] (8.56ns)   --->   "%tmp_7 = fmul double %tmp_5, 2.000000e+00" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 68 [3/5] (7.05ns)   --->   "%tmp_s = fsub double %tmp_3, %tmp_2" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 10> : 7.06ns
-ST_10 : Operation 66 [2/5] (7.05ns)   --->   "%sum_re = fsub double %m1, %m2" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_10 : Operation 67 [2/5] (7.05ns)   --->   "%sum_im = fadd double %m3, %m3" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:118]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 10> : 8.57ns
+ST_10 : Operation 69 [2/5] (8.56ns)   --->   "%tmp_7 = fmul double %tmp_5, 2.000000e+00" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 70 [2/5] (7.05ns)   --->   "%tmp_s = fsub double %tmp_3, %tmp_2" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 11> : 7.06ns
-ST_11 : Operation 68 [1/5] (7.05ns)   --->   "%sum_re = fsub double %m1, %m2" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:117]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_11 : Operation 69 [1/5] (7.05ns)   --->   "%sum_im = fadd double %m3, %m3" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:118]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 11> : 8.57ns
+ST_11 : Operation 71 [1/5] (8.56ns)   --->   "%tmp_7 = fmul double %tmp_5, 2.000000e+00" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 72 [1/5] (7.05ns)   --->   "%tmp_s = fsub double %tmp_3, %tmp_2" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 12> : 7.06ns
-ST_12 : Operation 70 [5/5] (7.05ns)   --->   "%z_re_4 = fadd double %sum_re, %z_re_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_12 : Operation 71 [5/5] (7.05ns)   --->   "%z_im_5 = fadd double %sum_im, %z_im_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 12> : 8.57ns
+ST_12 : Operation 73 [5/5] (8.56ns)   --->   "%tmp_8 = fmul double %tmp_7, %tmp_4" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 74 [5/5] (7.05ns)   --->   "%tmp_6 = fadd double %tmp_s, %re_read" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 13> : 7.06ns
-ST_13 : Operation 72 [4/5] (7.05ns)   --->   "%z_re_4 = fadd double %sum_re, %z_re_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_13 : Operation 73 [4/5] (7.05ns)   --->   "%z_im_5 = fadd double %sum_im, %z_im_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 13> : 8.57ns
+ST_13 : Operation 75 [4/5] (8.56ns)   --->   "%tmp_8 = fmul double %tmp_7, %tmp_4" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 76 [4/5] (7.05ns)   --->   "%tmp_6 = fadd double %tmp_s, %re_read" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 14> : 7.06ns
-ST_14 : Operation 74 [3/5] (7.05ns)   --->   "%z_re_4 = fadd double %sum_re, %z_re_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_14 : Operation 75 [3/5] (7.05ns)   --->   "%z_im_5 = fadd double %sum_im, %z_im_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 14> : 8.57ns
+ST_14 : Operation 77 [3/5] (8.56ns)   --->   "%tmp_8 = fmul double %tmp_7, %tmp_4" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 78 [3/5] (7.05ns)   --->   "%tmp_6 = fadd double %tmp_s, %re_read" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 15> : 7.06ns
-ST_15 : Operation 76 [2/5] (7.05ns)   --->   "%z_re_4 = fadd double %sum_re, %z_re_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_15 : Operation 77 [2/5] (7.05ns)   --->   "%z_im_5 = fadd double %sum_im, %z_im_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 15> : 8.57ns
+ST_15 : Operation 79 [2/5] (8.56ns)   --->   "%tmp_8 = fmul double %tmp_7, %tmp_4" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 80 [2/5] (7.05ns)   --->   "%tmp_6 = fadd double %tmp_s, %re_read" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 16> : 7.06ns
-ST_16 : Operation 78 [1/5] (7.05ns)   --->   "%z_re_4 = fadd double %sum_re, %z_re_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
-ST_16 : Operation 79 [1/5] (7.05ns)   --->   "%z_im_5 = fadd double %sum_im, %z_im_read" [/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166->/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170->mandelbrot/C/mandelbrot.cpp:20]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 16> : 8.57ns
+ST_16 : Operation 81 [1/5] (8.56ns)   --->   "%tmp_8 = fmul double %tmp_7, %tmp_4" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 82 [1/5] (7.05ns)   --->   "%tmp_6 = fadd double %tmp_s, %re_read" [mandelbrot/C/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 17> : 8.57ns
-ST_17 : Operation 80 [5/5] (8.56ns)   --->   "%tmp_1 = fmul double %z_im_5, %z_im_5" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_17 : Operation 81 [5/5] (8.56ns)   --->   "%tmp_2 = fmul double %z_re_4, %z_re_4" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 17> : 7.06ns
+ST_17 : Operation 83 [5/5] (7.05ns)   --->   "%tmp_9 = fadd double %tmp_8, %im_read" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 18> : 8.57ns
-ST_18 : Operation 82 [4/5] (8.56ns)   --->   "%tmp_1 = fmul double %z_im_5, %z_im_5" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_18 : Operation 83 [4/5] (8.56ns)   --->   "%tmp_2 = fmul double %z_re_4, %z_re_4" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 18> : 7.06ns
+ST_18 : Operation 84 [4/5] (7.05ns)   --->   "%tmp_9 = fadd double %tmp_8, %im_read" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 19> : 8.57ns
-ST_19 : Operation 84 [3/5] (8.56ns)   --->   "%tmp_1 = fmul double %z_im_5, %z_im_5" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 85 [3/5] (8.56ns)   --->   "%tmp_2 = fmul double %z_re_4, %z_re_4" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 19> : 7.06ns
+ST_19 : Operation 85 [3/5] (7.05ns)   --->   "%tmp_9 = fadd double %tmp_8, %im_read" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 20> : 8.57ns
-ST_20 : Operation 86 [2/5] (8.56ns)   --->   "%tmp_1 = fmul double %z_im_5, %z_im_5" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 87 [2/5] (8.56ns)   --->   "%tmp_2 = fmul double %z_re_4, %z_re_4" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 20> : 7.06ns
+ST_20 : Operation 86 [2/5] (7.05ns)   --->   "%tmp_9 = fadd double %tmp_8, %im_read" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 21> : 8.57ns
-ST_21 : Operation 88 [1/5] (8.56ns)   --->   "%tmp_1 = fmul double %z_im_5, %z_im_5" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
-ST_21 : Operation 89 [1/5] (8.56ns)   --->   "%tmp_2 = fmul double %z_re_4, %z_re_4" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ <State 21> : 7.06ns
+ST_21 : Operation 87 [1/5] (7.05ns)   --->   "%tmp_9 = fadd double %tmp_8, %im_read" [mandelbrot/C/mandelbrot.cpp:33]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
 
- <State 22> : 7.06ns
-ST_22 : Operation 90 [5/5] (7.05ns)   --->   "%tmp_3 = fadd double %tmp_1, %tmp_2" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 22> : 8.57ns
+ST_22 : Operation 88 [5/5] (8.56ns)   --->   "%tmp_10 = fmul double %tmp_6, %tmp_6" [mandelbrot/C/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 89 [5/5] (8.56ns)   --->   "%tmp_11 = fmul double %tmp_9, %tmp_9" [mandelbrot/C/mandelbrot.cpp:36]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 23> : 7.06ns
-ST_23 : Operation 91 [4/5] (7.05ns)   --->   "%tmp_3 = fadd double %tmp_1, %tmp_2" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 23> : 8.57ns
+ST_23 : Operation 90 [4/5] (8.56ns)   --->   "%tmp_10 = fmul double %tmp_6, %tmp_6" [mandelbrot/C/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 91 [4/5] (8.56ns)   --->   "%tmp_11 = fmul double %tmp_9, %tmp_9" [mandelbrot/C/mandelbrot.cpp:36]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 24> : 7.06ns
-ST_24 : Operation 92 [3/5] (7.05ns)   --->   "%tmp_3 = fadd double %tmp_1, %tmp_2" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 24> : 8.57ns
+ST_24 : Operation 92 [3/5] (8.56ns)   --->   "%tmp_10 = fmul double %tmp_6, %tmp_6" [mandelbrot/C/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 93 [3/5] (8.56ns)   --->   "%tmp_11 = fmul double %tmp_9, %tmp_9" [mandelbrot/C/mandelbrot.cpp:36]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 25> : 7.06ns
-ST_25 : Operation 93 [2/5] (7.05ns)   --->   "%tmp_3 = fadd double %tmp_1, %tmp_2" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 25> : 8.57ns
+ST_25 : Operation 94 [2/5] (8.56ns)   --->   "%tmp_10 = fmul double %tmp_6, %tmp_6" [mandelbrot/C/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 95 [2/5] (8.56ns)   --->   "%tmp_11 = fmul double %tmp_9, %tmp_9" [mandelbrot/C/mandelbrot.cpp:36]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 26> : 7.06ns
-ST_26 : Operation 94 [1/5] (7.05ns)   --->   "%tmp_3 = fadd double %tmp_1, %tmp_2" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ <State 26> : 8.57ns
+ST_26 : Operation 96 [1/5] (8.56ns)   --->   "%tmp_10 = fmul double %tmp_6, %tmp_6" [mandelbrot/C/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 97 [1/5] (8.56ns)   --->   "%tmp_11 = fmul double %tmp_9, %tmp_9" [mandelbrot/C/mandelbrot.cpp:36]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 8.56> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
 
- <State 27> : 7.32ns
-ST_27 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_3_to_int = bitcast double %tmp_3 to i64" [mandelbrot/C/mandelbrot.cpp:21]
-ST_27 : Operation 96 [1/1] (0.00ns)   --->   "%tmp = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %tmp_3_to_int, i32 52, i32 62)" [mandelbrot/C/mandelbrot.cpp:21]
-ST_27 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_4 = trunc i64 %tmp_3_to_int to i52" [mandelbrot/C/mandelbrot.cpp:21]
-ST_27 : Operation 98 [1/1] (1.52ns)   --->   "%notlhs = icmp ne i11 %tmp, -1" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 99 [1/1] (2.34ns)   --->   "%notrhs = icmp eq i52 %tmp_4, 0" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node tmp_6)   --->   "%tmp_7 = or i1 %notrhs, %notlhs" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 101 [1/1] (5.60ns)   --->   "%tmp_8 = fcmp ole double %tmp_3, 4.000000e+00" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 114 'DCmp' <Latency = 0> <II = 1> <Delay = 5.60> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 102 [1/1] (0.00ns) (grouped into LUT with out node tmp_6)   --->   "%tmp_9 = and i1 %tmp_7, %tmp_8" [mandelbrot/C/mandelbrot.cpp:21]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 103 [1/1] (0.00ns) (grouped into LUT with out node tmp_6)   --->   "%tmp_5 = zext i1 %tmp_9 to i8" [mandelbrot/C/mandelbrot.cpp:21]
-ST_27 : Operation 104 [1/1] (1.71ns) (out node of the LUT)   --->   "%tmp_6 = add i8 %tmp_5, %mandelbrot_double_d" [mandelbrot/C/mandelbrot.cpp:22]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 105 [1/1] (0.00ns)   --->   "br label %1" [mandelbrot/C/mandelbrot.cpp:19]
+ <State 27> : 7.06ns
+ST_27 : Operation 98 [5/5] (7.05ns)   --->   "%tmp_12 = fadd double %tmp_10, %tmp_11" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 28> : 7.06ns
+ST_28 : Operation 99 [4/5] (7.05ns)   --->   "%tmp_12 = fadd double %tmp_10, %tmp_11" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 29> : 7.06ns
+ST_29 : Operation 100 [3/5] (7.05ns)   --->   "%tmp_12 = fadd double %tmp_10, %tmp_11" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 30> : 7.06ns
+ST_30 : Operation 101 [2/5] (7.05ns)   --->   "%tmp_12 = fadd double %tmp_10, %tmp_11" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 31> : 7.06ns
+ST_31 : Operation 102 [1/5] (7.05ns)   --->   "%tmp_12 = fadd double %tmp_10, %tmp_11" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 7.05> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 32> : 7.34ns
+ST_32 : Operation 103 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str) nounwind" [mandelbrot/C/mandelbrot.cpp:31]
+ST_32 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_12_to_int = bitcast double %tmp_12 to i64" [mandelbrot/C/mandelbrot.cpp:39]
+ST_32 : Operation 105 [1/1] (0.00ns)   --->   "%tmp_13 = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %tmp_12_to_int, i32 52, i32 62)" [mandelbrot/C/mandelbrot.cpp:39]
+ST_32 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_14 = trunc i64 %tmp_12_to_int to i52" [mandelbrot/C/mandelbrot.cpp:39]
+ST_32 : Operation 107 [1/1] (1.52ns)   --->   "%notlhs = icmp ne i11 %tmp_13, -1" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 108 [1/1] (2.34ns)   --->   "%notrhs = icmp eq i52 %tmp_14, 0" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%tmp_16 = or i1 %notrhs, %notlhs" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 110 [1/1] (5.60ns)   --->   "%tmp_17 = fcmp ole double %tmp_12, 4.000000e+00" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 114 'DCmp' <Latency = 0> <II = 1> <Delay = 5.60> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 111 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%tmp_18 = and i1 %tmp_16, %tmp_17" [mandelbrot/C/mandelbrot.cpp:39]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 112 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%tmp_14_cast = zext i1 %tmp_18 to i9" [mandelbrot/C/mandelbrot.cpp:40]
+ST_32 : Operation 113 [1/1] (1.73ns) (out node of the LUT)   --->   "%tmp_15 = add i9 %tmp_14_cast, %mandelbrot_double_d" [mandelbrot/C/mandelbrot.cpp:40]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 114 [1/1] (0.00ns)   --->   "br label %1" [mandelbrot/C/mandelbrot.cpp:31]
 
 
 ============================================================
@@ -402,8 +427,8 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 1
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ z_re]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ z_im]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ re]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ im]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ outp]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=ap_vld:ce=0
 ---------------- STG Properties END ------------------
 
@@ -411,64 +436,68 @@ Port [ outp]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; exter
 
 <LifeTime>
 <method=bitvector/>
-StgValue_28          (specbitsmap      ) [ 0000000000000000000000000000]
-StgValue_29          (specbitsmap      ) [ 0000000000000000000000000000]
-StgValue_30          (specbitsmap      ) [ 0000000000000000000000000000]
-StgValue_31          (spectopmodule    ) [ 0000000000000000000000000000]
-z_im_read            (read             ) [ 0111111111111111111111111111]
-z_re_read            (read             ) [ 0111111111111111111111111111]
-StgValue_34          (br               ) [ 0111111111111111111111111111]
-x_complex_re_read_as (phi              ) [ 0011111000000000000000000000]
-x_complex_im_read_as (phi              ) [ 0011111000000000000000000000]
-mandelbrot_double_d  (phi              ) [ 0011111111111111111111111111]
-i                    (phi              ) [ 0010000000000000000000000000]
-exitcond             (icmp             ) [ 0011111111111111111111111111]
-empty                (speclooptripcount) [ 0000000000000000000000000000]
-i_1                  (add              ) [ 0111111111111111111111111111]
-StgValue_42          (br               ) [ 0000000000000000000000000000]
-StgValue_46          (write            ) [ 0000000000000000000000000000]
-StgValue_47          (ret              ) [ 0000000000000000000000000000]
-m1                   (dmul             ) [ 0000000111110000000000000000]
-m2                   (dmul             ) [ 0000000111110000000000000000]
-m3                   (dmul             ) [ 0000000111110000000000000000]
-sum_re               (dsub             ) [ 0000000000001111100000000000]
-sum_im               (dadd             ) [ 0000000000001111100000000000]
-z_re_4               (dadd             ) [ 0110000000000000011111111111]
-z_im_5               (dadd             ) [ 0110000000000000011111111111]
-tmp_1                (dmul             ) [ 0000000000000000000000111110]
-tmp_2                (dmul             ) [ 0000000000000000000000111110]
-tmp_3                (dadd             ) [ 0000000000000000000000000001]
-tmp_3_to_int         (bitcast          ) [ 0000000000000000000000000000]
-tmp                  (partselect       ) [ 0000000000000000000000000000]
-tmp_4                (trunc            ) [ 0000000000000000000000000000]
-notlhs               (icmp             ) [ 0000000000000000000000000000]
-notrhs               (icmp             ) [ 0000000000000000000000000000]
-tmp_7                (or               ) [ 0000000000000000000000000000]
-tmp_8                (dcmp             ) [ 0000000000000000000000000000]
-tmp_9                (and              ) [ 0000000000000000000000000000]
-tmp_5                (zext             ) [ 0000000000000000000000000000]
-tmp_6                (add              ) [ 0111111111111111111111111111]
-StgValue_105         (br               ) [ 0111111111111111111111111111]
+im_read               (read             ) [ 001111111111111111111111111111111]
+re_read               (read             ) [ 001111111111111111111111111111111]
+tmp                   (dmul             ) [ 000000111111111111111111111111111]
+tmp_1                 (dmul             ) [ 000000111111111111111111111111111]
+StgValue_45           (specbitsmap      ) [ 000000000000000000000000000000000]
+StgValue_46           (specbitsmap      ) [ 000000000000000000000000000000000]
+StgValue_47           (specbitsmap      ) [ 000000000000000000000000000000000]
+StgValue_48           (spectopmodule    ) [ 000000000000000000000000000000000]
+StgValue_49           (br               ) [ 000000111111111111111111111111111]
+mandelbrot_double_d   (phi              ) [ 000000011111111111111111111111111]
+tmp_2                 (phi              ) [ 000000011111000000000000000000000]
+tmp_3                 (phi              ) [ 000000011111000000000000000000000]
+tmp_4                 (phi              ) [ 000000011111111110000000000000000]
+tmp_5                 (phi              ) [ 000000011111000000000000000000000]
+i                     (phi              ) [ 000000010000000000000000000000000]
+exitcond              (icmp             ) [ 000000011111111111111111111111111]
+empty                 (speclooptripcount) [ 000000000000000000000000000000000]
+i_1                   (add              ) [ 000000111111111111111111111111111]
+StgValue_59           (br               ) [ 000000000000000000000000000000000]
+mandelbrot_double_d_1 (zext             ) [ 000000000000000000000000000000000]
+StgValue_63           (write            ) [ 000000000000000000000000000000000]
+StgValue_64           (ret              ) [ 000000000000000000000000000000000]
+tmp_7                 (dmul             ) [ 000000000000111110000000000000000]
+tmp_s                 (dsub             ) [ 000000000000111110000000000000000]
+tmp_8                 (dmul             ) [ 000000000000000001111100000000000]
+tmp_6                 (dadd             ) [ 000000110000000001111111111111111]
+tmp_9                 (dadd             ) [ 000000110000000000000011111111111]
+tmp_10                (dmul             ) [ 000000110000000000000000000111111]
+tmp_11                (dmul             ) [ 000000110000000000000000000111111]
+tmp_12                (dadd             ) [ 000000000000000000000000000000001]
+StgValue_103          (specloopname     ) [ 000000000000000000000000000000000]
+tmp_12_to_int         (bitcast          ) [ 000000000000000000000000000000000]
+tmp_13                (partselect       ) [ 000000000000000000000000000000000]
+tmp_14                (trunc            ) [ 000000000000000000000000000000000]
+notlhs                (icmp             ) [ 000000000000000000000000000000000]
+notrhs                (icmp             ) [ 000000000000000000000000000000000]
+tmp_16                (or               ) [ 000000000000000000000000000000000]
+tmp_17                (dcmp             ) [ 000000000000000000000000000000000]
+tmp_18                (and              ) [ 000000000000000000000000000000000]
+tmp_14_cast           (zext             ) [ 000000000000000000000000000000000]
+tmp_15                (add              ) [ 000000111111111111111111111111111]
+StgValue_114          (br               ) [ 000000111111111111111111111111111]
 </LifeTime>
 
 <model>
 
 <comp_list>
-<comp id="0" class="1000" name="z_re">
+<comp id="0" class="1000" name="re">
 <pin_list>
 <pin id="1" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="z_re"/></StgValue>
+<StgValue><ssdm name="re"/></StgValue>
 </bind>
 </comp>
 
-<comp id="2" class="1000" name="z_im">
+<comp id="2" class="1000" name="im">
 <pin_list>
 <pin id="3" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="z_im"/></StgValue>
+<StgValue><ssdm name="im"/></StgValue>
 </bind>
 </comp>
 
@@ -483,10 +512,10 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 
 <comp id="6" class="1001" name="const_6">
 <pin_list>
-<pin id="7" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.double"/></StgValue>
 </bind>
 </comp>
 
@@ -495,7 +524,7 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 <pin id="9" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
 </bind>
 </comp>
 
@@ -504,16 +533,16 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 <pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="mandelbrot_str"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
 </bind>
 </comp>
 
 <comp id="12" class="1001" name="const_12">
 <pin_list>
-<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.ap_auto.double"/></StgValue>
+<StgValue><ssdm name="mandelbrot_str"/></StgValue>
 </bind>
 </comp>
 
@@ -528,7 +557,7 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 
 <comp id="16" class="1001" name="const_16">
 <pin_list>
-<pin id="17" dir="1" index="0" bw="1" slack="1"/>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name=""/></StgValue>
@@ -537,10 +566,10 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 
 <comp id="18" class="1001" name="const_18">
 <pin_list>
-<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
 </bind>
 </comp>
 
@@ -549,13 +578,13 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 <pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
 <comp id="22" class="1001" name="const_22">
 <pin_list>
-<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name=""/></StgValue>
@@ -576,25 +605,25 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 <pin id="27" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Write.ap_auto.i8P"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Write.ap_auto.i16P"/></StgValue>
 </bind>
 </comp>
 
 <comp id="28" class="1001" name="const_28">
 <pin_list>
-<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+<pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_PartSelect.i11.i64.i32.i32"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecLoopName"/></StgValue>
 </bind>
 </comp>
 
 <comp id="30" class="1001" name="const_30">
 <pin_list>
-<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+<pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="p_str"/></StgValue>
 </bind>
 </comp>
 
@@ -603,7 +632,7 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 <pin id="33" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i11.i64.i32.i32"/></StgValue>
 </bind>
 </comp>
 
@@ -634,238 +663,250 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 </bind>
 </comp>
 
-<comp id="40" class="1004" name="z_im_read_read_fu_40">
+<comp id="40" class="1001" name="const_40">
 <pin_list>
-<pin id="41" dir="0" index="0" bw="64" slack="0"/>
-<pin id="42" dir="0" index="1" bw="64" slack="0"/>
-<pin id="43" dir="1" index="2" bw="64" slack="1"/>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<opcode="read(1150) " fcode="read"/>
-<opset="z_im_read/1 "/>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
-<comp id="46" class="1004" name="z_re_read_read_fu_46">
+<comp id="42" class="1001" name="const_42">
 <pin_list>
-<pin id="47" dir="0" index="0" bw="64" slack="0"/>
-<pin id="48" dir="0" index="1" bw="64" slack="0"/>
-<pin id="49" dir="1" index="2" bw="64" slack="1"/>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<opcode="read(1150) " fcode="read"/>
-<opset="z_re_read/1 "/>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
-<comp id="52" class="1004" name="StgValue_46_write_fu_52">
+<comp id="44" class="1004" name="im_read_read_fu_44">
 <pin_list>
-<pin id="53" dir="0" index="0" bw="0" slack="0"/>
-<pin id="54" dir="0" index="1" bw="8" slack="0"/>
-<pin id="55" dir="0" index="2" bw="8" slack="0"/>
-<pin id="56" dir="1" index="3" bw="0" slack="2147483647"/>
+<pin id="45" dir="0" index="0" bw="64" slack="0"/>
+<pin id="46" dir="0" index="1" bw="64" slack="0"/>
+<pin id="47" dir="1" index="2" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="im_read/1 "/>
+</bind>
+</comp>
+
+<comp id="50" class="1004" name="re_read_read_fu_50">
+<pin_list>
+<pin id="51" dir="0" index="0" bw="64" slack="0"/>
+<pin id="52" dir="0" index="1" bw="64" slack="0"/>
+<pin id="53" dir="1" index="2" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="re_read/1 "/>
+</bind>
+</comp>
+
+<comp id="56" class="1004" name="StgValue_63_write_fu_56">
+<pin_list>
+<pin id="57" dir="0" index="0" bw="0" slack="0"/>
+<pin id="58" dir="0" index="1" bw="16" slack="0"/>
+<pin id="59" dir="0" index="2" bw="9" slack="0"/>
+<pin id="60" dir="1" index="3" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="StgValue_46/2 "/>
+<opset="StgValue_63/7 "/>
 </bind>
 </comp>
 
-<comp id="59" class="1005" name="x_complex_re_read_as_reg_59">
+<comp id="63" class="1005" name="mandelbrot_double_d_reg_63">
 <pin_list>
-<pin id="60" dir="0" index="0" bw="64" slack="1"/>
-<pin id="61" dir="1" index="1" bw="64" slack="2147483647"/>
-</pin_list>
-<bind>
-<opset="x_complex_re_read_as (phireg) "/>
-</bind>
-</comp>
-
-<comp id="62" class="1004" name="x_complex_re_read_as_phi_fu_62">
-<pin_list>
-<pin id="63" dir="0" index="0" bw="64" slack="1"/>
-<pin id="64" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="65" dir="0" index="2" bw="64" slack="1"/>
-<pin id="66" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="67" dir="1" index="4" bw="64" slack="0"/>
-</pin_list>
-<bind>
-<opcode="phi(47) " fcode="phi"/>
-<opset="x_complex_re_read_as/2 "/>
-</bind>
-</comp>
-
-<comp id="69" class="1005" name="x_complex_im_read_as_reg_69">
-<pin_list>
-<pin id="70" dir="0" index="0" bw="64" slack="1"/>
-<pin id="71" dir="1" index="1" bw="64" slack="2147483647"/>
-</pin_list>
-<bind>
-<opset="x_complex_im_read_as (phireg) "/>
-</bind>
-</comp>
-
-<comp id="72" class="1004" name="x_complex_im_read_as_phi_fu_72">
-<pin_list>
-<pin id="73" dir="0" index="0" bw="64" slack="1"/>
-<pin id="74" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="75" dir="0" index="2" bw="64" slack="1"/>
-<pin id="76" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="77" dir="1" index="4" bw="64" slack="0"/>
-</pin_list>
-<bind>
-<opcode="phi(47) " fcode="phi"/>
-<opset="x_complex_im_read_as/2 "/>
-</bind>
-</comp>
-
-<comp id="79" class="1005" name="mandelbrot_double_d_reg_79">
-<pin_list>
-<pin id="80" dir="0" index="0" bw="8" slack="1"/>
-<pin id="81" dir="1" index="1" bw="8" slack="1"/>
+<pin id="64" dir="0" index="0" bw="9" slack="1"/>
+<pin id="65" dir="1" index="1" bw="9" slack="1"/>
 </pin_list>
 <bind>
 <opset="mandelbrot_double_d (phireg) "/>
 </bind>
 </comp>
 
-<comp id="83" class="1004" name="mandelbrot_double_d_phi_fu_83">
+<comp id="67" class="1004" name="mandelbrot_double_d_phi_fu_67">
 <pin_list>
-<pin id="84" dir="0" index="0" bw="1" slack="1"/>
-<pin id="85" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="86" dir="0" index="2" bw="8" slack="1"/>
-<pin id="87" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="88" dir="1" index="4" bw="8" slack="0"/>
+<pin id="68" dir="0" index="0" bw="1" slack="1"/>
+<pin id="69" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="70" dir="0" index="2" bw="9" slack="1"/>
+<pin id="71" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="72" dir="1" index="4" bw="9" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
-<opset="mandelbrot_double_d/2 "/>
+<opset="mandelbrot_double_d/7 "/>
 </bind>
 </comp>
 
-<comp id="92" class="1005" name="i_reg_92">
+<comp id="75" class="1005" name="tmp_2_reg_75">
 <pin_list>
-<pin id="93" dir="0" index="0" bw="9" slack="1"/>
-<pin id="94" dir="1" index="1" bw="9" slack="1"/>
+<pin id="76" dir="0" index="0" bw="64" slack="1"/>
+<pin id="77" dir="1" index="1" bw="64" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_2 (phireg) "/>
+</bind>
+</comp>
+
+<comp id="78" class="1004" name="tmp_2_phi_fu_78">
+<pin_list>
+<pin id="79" dir="0" index="0" bw="64" slack="2"/>
+<pin id="80" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="81" dir="0" index="2" bw="64" slack="1"/>
+<pin id="82" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="83" dir="1" index="4" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="tmp_2/7 "/>
+</bind>
+</comp>
+
+<comp id="85" class="1005" name="tmp_3_reg_85">
+<pin_list>
+<pin id="86" dir="0" index="0" bw="64" slack="1"/>
+<pin id="87" dir="1" index="1" bw="64" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_3 (phireg) "/>
+</bind>
+</comp>
+
+<comp id="88" class="1004" name="tmp_3_phi_fu_88">
+<pin_list>
+<pin id="89" dir="0" index="0" bw="64" slack="2"/>
+<pin id="90" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="91" dir="0" index="2" bw="64" slack="1"/>
+<pin id="92" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="93" dir="1" index="4" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="tmp_3/7 "/>
+</bind>
+</comp>
+
+<comp id="95" class="1005" name="tmp_4_reg_95">
+<pin_list>
+<pin id="96" dir="0" index="0" bw="64" slack="5"/>
+<pin id="97" dir="1" index="1" bw="64" slack="5"/>
+</pin_list>
+<bind>
+<opset="tmp_4 (phireg) "/>
+</bind>
+</comp>
+
+<comp id="98" class="1004" name="tmp_4_phi_fu_98">
+<pin_list>
+<pin id="99" dir="0" index="0" bw="64" slack="6"/>
+<pin id="100" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="101" dir="0" index="2" bw="64" slack="1"/>
+<pin id="102" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="103" dir="1" index="4" bw="64" slack="5"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="tmp_4/7 "/>
+</bind>
+</comp>
+
+<comp id="105" class="1005" name="tmp_5_reg_105">
+<pin_list>
+<pin id="106" dir="0" index="0" bw="64" slack="1"/>
+<pin id="107" dir="1" index="1" bw="64" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_5 (phireg) "/>
+</bind>
+</comp>
+
+<comp id="108" class="1004" name="tmp_5_phi_fu_108">
+<pin_list>
+<pin id="109" dir="0" index="0" bw="64" slack="6"/>
+<pin id="110" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="111" dir="0" index="2" bw="64" slack="1"/>
+<pin id="112" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="113" dir="1" index="4" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="tmp_5/7 "/>
+</bind>
+</comp>
+
+<comp id="115" class="1005" name="i_reg_115">
+<pin_list>
+<pin id="116" dir="0" index="0" bw="9" slack="1"/>
+<pin id="117" dir="1" index="1" bw="9" slack="1"/>
 </pin_list>
 <bind>
 <opset="i (phireg) "/>
 </bind>
 </comp>
 
-<comp id="96" class="1004" name="i_phi_fu_96">
+<comp id="119" class="1004" name="i_phi_fu_119">
 <pin_list>
-<pin id="97" dir="0" index="0" bw="1" slack="1"/>
-<pin id="98" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="99" dir="0" index="2" bw="9" slack="0"/>
-<pin id="100" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="101" dir="1" index="4" bw="9" slack="0"/>
+<pin id="120" dir="0" index="0" bw="1" slack="1"/>
+<pin id="121" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="122" dir="0" index="2" bw="9" slack="0"/>
+<pin id="123" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="124" dir="1" index="4" bw="9" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
-<opset="i/2 "/>
+<opset="i/7 "/>
 </bind>
 </comp>
 
-<comp id="103" class="1004" name="grp_fu_103">
+<comp id="126" class="1004" name="grp_fu_126">
 <pin_list>
-<pin id="104" dir="0" index="0" bw="64" slack="1"/>
-<pin id="105" dir="0" index="1" bw="64" slack="1"/>
-<pin id="106" dir="1" index="2" bw="64" slack="1"/>
+<pin id="127" dir="0" index="0" bw="64" slack="0"/>
+<pin id="128" dir="0" index="1" bw="64" slack="0"/>
+<pin id="129" dir="1" index="2" bw="64" slack="1"/>
 </pin_list>
 <bind>
 <opcode="dadd(508) dsub(509) " fcode="dadd"/>
-<opset="sum_re/7 z_re_4/12 tmp_3/22 "/>
+<opset="tmp_s/7 tmp_6/12 tmp_9/17 tmp_12/27 "/>
 </bind>
 </comp>
 
-<comp id="107" class="1004" name="grp_fu_107">
+<comp id="132" class="1004" name="grp_fu_132">
 <pin_list>
-<pin id="108" dir="0" index="0" bw="64" slack="1"/>
-<pin id="109" dir="0" index="1" bw="64" slack="1"/>
-<pin id="110" dir="1" index="2" bw="64" slack="1"/>
-</pin_list>
-<bind>
-<opcode="dadd(508) " fcode="dadd"/>
-<opset="sum_im/7 z_im_5/12 "/>
-</bind>
-</comp>
-
-<comp id="111" class="1004" name="grp_fu_111">
-<pin_list>
-<pin id="112" dir="0" index="0" bw="64" slack="0"/>
-<pin id="113" dir="0" index="1" bw="64" slack="0"/>
-<pin id="114" dir="1" index="2" bw="64" slack="1"/>
+<pin id="133" dir="0" index="0" bw="64" slack="0"/>
+<pin id="134" dir="0" index="1" bw="64" slack="0"/>
+<pin id="135" dir="1" index="2" bw="64" slack="1"/>
 </pin_list>
 <bind>
 <opcode="dmul(510) " fcode="dmul"/>
-<opset="m1/2 tmp_1/17 "/>
+<opset="tmp/1 tmp_7/7 tmp_8/12 tmp_10/22 "/>
 </bind>
 </comp>
 
-<comp id="117" class="1004" name="grp_fu_117">
+<comp id="138" class="1004" name="grp_fu_138">
 <pin_list>
-<pin id="118" dir="0" index="0" bw="64" slack="0"/>
-<pin id="119" dir="0" index="1" bw="64" slack="0"/>
-<pin id="120" dir="1" index="2" bw="64" slack="1"/>
+<pin id="139" dir="0" index="0" bw="64" slack="0"/>
+<pin id="140" dir="0" index="1" bw="64" slack="0"/>
+<pin id="141" dir="1" index="2" bw="64" slack="1"/>
 </pin_list>
 <bind>
 <opcode="dmul(510) " fcode="dmul"/>
-<opset="m2/2 tmp_2/17 "/>
+<opset="tmp_1/1 tmp_11/22 "/>
 </bind>
 </comp>
 
-<comp id="123" class="1004" name="grp_fu_123">
+<comp id="147" class="1004" name="tmp_17_fu_147">
 <pin_list>
-<pin id="124" dir="0" index="0" bw="64" slack="0"/>
-<pin id="125" dir="0" index="1" bw="64" slack="0"/>
-<pin id="126" dir="1" index="2" bw="64" slack="1"/>
-</pin_list>
-<bind>
-<opcode="dmul(510) " fcode="dmul"/>
-<opset="m3/2 "/>
-</bind>
-</comp>
-
-<comp id="129" class="1004" name="tmp_8_fu_129">
-<pin_list>
-<pin id="130" dir="0" index="0" bw="64" slack="1"/>
-<pin id="131" dir="0" index="1" bw="64" slack="0"/>
-<pin id="132" dir="1" index="2" bw="1" slack="0"/>
+<pin id="148" dir="0" index="0" bw="64" slack="1"/>
+<pin id="149" dir="0" index="1" bw="64" slack="0"/>
+<pin id="150" dir="1" index="2" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <opcode="dcmp(513) " fcode="dcmp"/>
-<opset="tmp_8/27 "/>
-</bind>
-</comp>
-
-<comp id="134" class="1005" name="reg_134">
-<pin_list>
-<pin id="135" dir="0" index="0" bw="64" slack="1"/>
-<pin id="136" dir="1" index="1" bw="64" slack="1"/>
-</pin_list>
-<bind>
-<opset="m1 tmp_1 "/>
-</bind>
-</comp>
-
-<comp id="139" class="1005" name="reg_139">
-<pin_list>
-<pin id="140" dir="0" index="0" bw="64" slack="1"/>
-<pin id="141" dir="1" index="1" bw="64" slack="1"/>
-</pin_list>
-<bind>
-<opset="m2 tmp_2 "/>
-</bind>
-</comp>
-
-<comp id="144" class="1005" name="reg_144">
-<pin_list>
-<pin id="145" dir="0" index="0" bw="64" slack="1"/>
-<pin id="146" dir="1" index="1" bw="64" slack="1"/>
-</pin_list>
-<bind>
-<opset="sum_re z_re_4 "/>
+<opset="tmp_17/32 "/>
 </bind>
 </comp>
 
@@ -875,345 +916,422 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 <pin id="154" dir="1" index="1" bw="64" slack="1"/>
 </pin_list>
 <bind>
-<opset="sum_im z_im_5 "/>
+<opset="tmp_7 tmp_8 tmp_10 "/>
 </bind>
 </comp>
 
-<comp id="160" class="1004" name="exitcond_fu_160">
+<comp id="159" class="1005" name="reg_159">
 <pin_list>
-<pin id="161" dir="0" index="0" bw="9" slack="0"/>
-<pin id="162" dir="0" index="1" bw="9" slack="0"/>
-<pin id="163" dir="1" index="2" bw="1" slack="2147483647"/>
+<pin id="160" dir="0" index="0" bw="64" slack="1"/>
+<pin id="161" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_s tmp_6 "/>
+</bind>
+</comp>
+
+<comp id="167" class="1004" name="exitcond_fu_167">
+<pin_list>
+<pin id="168" dir="0" index="0" bw="9" slack="0"/>
+<pin id="169" dir="0" index="1" bw="9" slack="0"/>
+<pin id="170" dir="1" index="2" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="exitcond/2 "/>
+<opset="exitcond/7 "/>
 </bind>
 </comp>
 
-<comp id="166" class="1004" name="i_1_fu_166">
+<comp id="173" class="1004" name="i_1_fu_173">
 <pin_list>
-<pin id="167" dir="0" index="0" bw="9" slack="0"/>
-<pin id="168" dir="0" index="1" bw="1" slack="0"/>
-<pin id="169" dir="1" index="2" bw="9" slack="0"/>
+<pin id="174" dir="0" index="0" bw="9" slack="0"/>
+<pin id="175" dir="0" index="1" bw="1" slack="0"/>
+<pin id="176" dir="1" index="2" bw="9" slack="0"/>
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="i_1/2 "/>
+<opset="i_1/7 "/>
 </bind>
 </comp>
 
-<comp id="172" class="1004" name="tmp_3_to_int_fu_172">
+<comp id="179" class="1004" name="mandelbrot_double_d_1_fu_179">
 <pin_list>
-<pin id="173" dir="0" index="0" bw="64" slack="1"/>
-<pin id="174" dir="1" index="1" bw="64" slack="0"/>
-</pin_list>
-<bind>
-<opcode="bitcast(44) " fcode="bitcast"/>
-<opset="tmp_3_to_int/27 "/>
-</bind>
-</comp>
-
-<comp id="175" class="1004" name="tmp_fu_175">
-<pin_list>
-<pin id="176" dir="0" index="0" bw="11" slack="0"/>
-<pin id="177" dir="0" index="1" bw="64" slack="0"/>
-<pin id="178" dir="0" index="2" bw="7" slack="0"/>
-<pin id="179" dir="0" index="3" bw="7" slack="0"/>
-<pin id="180" dir="1" index="4" bw="11" slack="0"/>
-</pin_list>
-<bind>
-<opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp/27 "/>
-</bind>
-</comp>
-
-<comp id="185" class="1004" name="tmp_4_fu_185">
-<pin_list>
-<pin id="186" dir="0" index="0" bw="64" slack="0"/>
-<pin id="187" dir="1" index="1" bw="52" slack="0"/>
-</pin_list>
-<bind>
-<opcode="trunc(33) " fcode="trunc"/>
-<opset="tmp_4/27 "/>
-</bind>
-</comp>
-
-<comp id="189" class="1004" name="notlhs_fu_189">
-<pin_list>
-<pin id="190" dir="0" index="0" bw="11" slack="0"/>
-<pin id="191" dir="0" index="1" bw="11" slack="0"/>
-<pin id="192" dir="1" index="2" bw="1" slack="0"/>
-</pin_list>
-<bind>
-<opcode="icmp(45) " fcode="icmp"/>
-<opset="notlhs/27 "/>
-</bind>
-</comp>
-
-<comp id="195" class="1004" name="notrhs_fu_195">
-<pin_list>
-<pin id="196" dir="0" index="0" bw="52" slack="0"/>
-<pin id="197" dir="0" index="1" bw="52" slack="0"/>
-<pin id="198" dir="1" index="2" bw="1" slack="0"/>
-</pin_list>
-<bind>
-<opcode="icmp(45) " fcode="icmp"/>
-<opset="notrhs/27 "/>
-</bind>
-</comp>
-
-<comp id="201" class="1004" name="tmp_7_fu_201">
-<pin_list>
-<pin id="202" dir="0" index="0" bw="1" slack="0"/>
-<pin id="203" dir="0" index="1" bw="1" slack="0"/>
-<pin id="204" dir="1" index="2" bw="1" slack="0"/>
-</pin_list>
-<bind>
-<opcode="or(24) " fcode="or"/>
-<opset="tmp_7/27 "/>
-</bind>
-</comp>
-
-<comp id="207" class="1004" name="tmp_9_fu_207">
-<pin_list>
-<pin id="208" dir="0" index="0" bw="1" slack="0"/>
-<pin id="209" dir="0" index="1" bw="1" slack="0"/>
-<pin id="210" dir="1" index="2" bw="1" slack="0"/>
-</pin_list>
-<bind>
-<opcode="and(23) " fcode="and"/>
-<opset="tmp_9/27 "/>
-</bind>
-</comp>
-
-<comp id="213" class="1004" name="tmp_5_fu_213">
-<pin_list>
-<pin id="214" dir="0" index="0" bw="1" slack="0"/>
-<pin id="215" dir="1" index="1" bw="8" slack="0"/>
+<pin id="180" dir="0" index="0" bw="9" slack="0"/>
+<pin id="181" dir="1" index="1" bw="16" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
-<opset="tmp_5/27 "/>
+<opset="mandelbrot_double_d_1/7 "/>
 </bind>
 </comp>
 
-<comp id="217" class="1004" name="tmp_6_fu_217">
+<comp id="184" class="1004" name="tmp_12_to_int_fu_184">
 <pin_list>
-<pin id="218" dir="0" index="0" bw="1" slack="0"/>
-<pin id="219" dir="0" index="1" bw="8" slack="25"/>
-<pin id="220" dir="1" index="2" bw="8" slack="1"/>
+<pin id="185" dir="0" index="0" bw="64" slack="1"/>
+<pin id="186" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="tmp_12_to_int/32 "/>
+</bind>
+</comp>
+
+<comp id="187" class="1004" name="tmp_13_fu_187">
+<pin_list>
+<pin id="188" dir="0" index="0" bw="11" slack="0"/>
+<pin id="189" dir="0" index="1" bw="64" slack="0"/>
+<pin id="190" dir="0" index="2" bw="7" slack="0"/>
+<pin id="191" dir="0" index="3" bw="7" slack="0"/>
+<pin id="192" dir="1" index="4" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="tmp_13/32 "/>
+</bind>
+</comp>
+
+<comp id="197" class="1004" name="tmp_14_fu_197">
+<pin_list>
+<pin id="198" dir="0" index="0" bw="64" slack="0"/>
+<pin id="199" dir="1" index="1" bw="52" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="tmp_14/32 "/>
+</bind>
+</comp>
+
+<comp id="201" class="1004" name="notlhs_fu_201">
+<pin_list>
+<pin id="202" dir="0" index="0" bw="11" slack="0"/>
+<pin id="203" dir="0" index="1" bw="11" slack="0"/>
+<pin id="204" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="notlhs/32 "/>
+</bind>
+</comp>
+
+<comp id="207" class="1004" name="notrhs_fu_207">
+<pin_list>
+<pin id="208" dir="0" index="0" bw="52" slack="0"/>
+<pin id="209" dir="0" index="1" bw="52" slack="0"/>
+<pin id="210" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="notrhs/32 "/>
+</bind>
+</comp>
+
+<comp id="213" class="1004" name="tmp_16_fu_213">
+<pin_list>
+<pin id="214" dir="0" index="0" bw="1" slack="0"/>
+<pin id="215" dir="0" index="1" bw="1" slack="0"/>
+<pin id="216" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="tmp_16/32 "/>
+</bind>
+</comp>
+
+<comp id="219" class="1004" name="tmp_18_fu_219">
+<pin_list>
+<pin id="220" dir="0" index="0" bw="1" slack="0"/>
+<pin id="221" dir="0" index="1" bw="1" slack="0"/>
+<pin id="222" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="tmp_18/32 "/>
+</bind>
+</comp>
+
+<comp id="225" class="1004" name="tmp_14_cast_fu_225">
+<pin_list>
+<pin id="226" dir="0" index="0" bw="1" slack="0"/>
+<pin id="227" dir="1" index="1" bw="9" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="tmp_14_cast/32 "/>
+</bind>
+</comp>
+
+<comp id="229" class="1004" name="tmp_15_fu_229">
+<pin_list>
+<pin id="230" dir="0" index="0" bw="1" slack="0"/>
+<pin id="231" dir="0" index="1" bw="9" slack="25"/>
+<pin id="232" dir="1" index="2" bw="9" slack="1"/>
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="tmp_6/27 "/>
+<opset="tmp_15/32 "/>
 </bind>
 </comp>
 
-<comp id="223" class="1005" name="z_im_read_reg_223">
+<comp id="235" class="1005" name="im_read_reg_235">
 <pin_list>
-<pin id="224" dir="0" index="0" bw="64" slack="1"/>
-<pin id="225" dir="1" index="1" bw="64" slack="1"/>
+<pin id="236" dir="0" index="0" bw="64" slack="1"/>
+<pin id="237" dir="1" index="1" bw="64" slack="1"/>
 </pin_list>
 <bind>
-<opset="z_im_read "/>
+<opset="im_read "/>
 </bind>
 </comp>
 
-<comp id="229" class="1005" name="z_re_read_reg_229">
+<comp id="243" class="1005" name="re_read_reg_243">
 <pin_list>
-<pin id="230" dir="0" index="0" bw="64" slack="1"/>
-<pin id="231" dir="1" index="1" bw="64" slack="1"/>
+<pin id="244" dir="0" index="0" bw="64" slack="1"/>
+<pin id="245" dir="1" index="1" bw="64" slack="1"/>
 </pin_list>
 <bind>
-<opset="z_re_read "/>
+<opset="re_read "/>
 </bind>
 </comp>
 
-<comp id="238" class="1005" name="i_1_reg_238">
+<comp id="251" class="1005" name="tmp_reg_251">
 <pin_list>
-<pin id="239" dir="0" index="0" bw="9" slack="0"/>
-<pin id="240" dir="1" index="1" bw="9" slack="0"/>
+<pin id="252" dir="0" index="0" bw="64" slack="2"/>
+<pin id="253" dir="1" index="1" bw="64" slack="2"/>
+</pin_list>
+<bind>
+<opset="tmp "/>
+</bind>
+</comp>
+
+<comp id="256" class="1005" name="tmp_1_reg_256">
+<pin_list>
+<pin id="257" dir="0" index="0" bw="64" slack="2"/>
+<pin id="258" dir="1" index="1" bw="64" slack="2"/>
+</pin_list>
+<bind>
+<opset="tmp_1 "/>
+</bind>
+</comp>
+
+<comp id="264" class="1005" name="i_1_reg_264">
+<pin_list>
+<pin id="265" dir="0" index="0" bw="9" slack="0"/>
+<pin id="266" dir="1" index="1" bw="9" slack="0"/>
 </pin_list>
 <bind>
 <opset="i_1 "/>
 </bind>
 </comp>
 
-<comp id="243" class="1005" name="m3_reg_243">
+<comp id="269" class="1005" name="tmp_9_reg_269">
 <pin_list>
-<pin id="244" dir="0" index="0" bw="64" slack="1"/>
-<pin id="245" dir="1" index="1" bw="64" slack="1"/>
+<pin id="270" dir="0" index="0" bw="64" slack="1"/>
+<pin id="271" dir="1" index="1" bw="64" slack="1"/>
 </pin_list>
 <bind>
-<opset="m3 "/>
+<opset="tmp_9 "/>
 </bind>
 </comp>
 
-<comp id="249" class="1005" name="tmp_3_reg_249">
+<comp id="276" class="1005" name="tmp_11_reg_276">
 <pin_list>
-<pin id="250" dir="0" index="0" bw="64" slack="1"/>
-<pin id="251" dir="1" index="1" bw="64" slack="1"/>
+<pin id="277" dir="0" index="0" bw="64" slack="1"/>
+<pin id="278" dir="1" index="1" bw="64" slack="1"/>
 </pin_list>
 <bind>
-<opset="tmp_3 "/>
+<opset="tmp_11 "/>
 </bind>
 </comp>
 
-<comp id="255" class="1005" name="tmp_6_reg_255">
+<comp id="282" class="1005" name="tmp_12_reg_282">
 <pin_list>
-<pin id="256" dir="0" index="0" bw="8" slack="1"/>
-<pin id="257" dir="1" index="1" bw="8" slack="1"/>
+<pin id="283" dir="0" index="0" bw="64" slack="1"/>
+<pin id="284" dir="1" index="1" bw="64" slack="1"/>
 </pin_list>
 <bind>
-<opset="tmp_6 "/>
+<opset="tmp_12 "/>
+</bind>
+</comp>
+
+<comp id="288" class="1005" name="tmp_15_reg_288">
+<pin_list>
+<pin id="289" dir="0" index="0" bw="9" slack="1"/>
+<pin id="290" dir="1" index="1" bw="9" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_15 "/>
 </bind>
 </comp>
 
 </comp_list>
 
 <net_list>
-<net id="44"><net_src comp="12" pin="0"/><net_sink comp="40" pin=0"/></net>
+<net id="48"><net_src comp="6" pin="0"/><net_sink comp="44" pin=0"/></net>
 
-<net id="45"><net_src comp="2" pin="0"/><net_sink comp="40" pin=1"/></net>
+<net id="49"><net_src comp="2" pin="0"/><net_sink comp="44" pin=1"/></net>
 
-<net id="50"><net_src comp="12" pin="0"/><net_sink comp="46" pin=0"/></net>
+<net id="54"><net_src comp="6" pin="0"/><net_sink comp="50" pin=0"/></net>
 
-<net id="51"><net_src comp="0" pin="0"/><net_sink comp="46" pin=1"/></net>
+<net id="55"><net_src comp="0" pin="0"/><net_sink comp="50" pin=1"/></net>
 
-<net id="57"><net_src comp="26" pin="0"/><net_sink comp="52" pin=0"/></net>
+<net id="61"><net_src comp="26" pin="0"/><net_sink comp="56" pin=0"/></net>
 
-<net id="58"><net_src comp="4" pin="0"/><net_sink comp="52" pin=1"/></net>
+<net id="62"><net_src comp="4" pin="0"/><net_sink comp="56" pin=1"/></net>
 
-<net id="68"><net_src comp="62" pin="4"/><net_sink comp="59" pin=0"/></net>
+<net id="66"><net_src comp="14" pin="0"/><net_sink comp="63" pin=0"/></net>
 
-<net id="78"><net_src comp="72" pin="4"/><net_sink comp="69" pin=0"/></net>
+<net id="73"><net_src comp="63" pin="1"/><net_sink comp="67" pin=0"/></net>
 
-<net id="82"><net_src comp="14" pin="0"/><net_sink comp="79" pin=0"/></net>
+<net id="74"><net_src comp="67" pin="4"/><net_sink comp="63" pin=0"/></net>
 
-<net id="89"><net_src comp="79" pin="1"/><net_sink comp="83" pin=0"/></net>
+<net id="84"><net_src comp="78" pin="4"/><net_sink comp="75" pin=0"/></net>
 
-<net id="90"><net_src comp="83" pin="4"/><net_sink comp="52" pin=2"/></net>
+<net id="94"><net_src comp="88" pin="4"/><net_sink comp="85" pin=0"/></net>
 
-<net id="91"><net_src comp="83" pin="4"/><net_sink comp="79" pin=0"/></net>
+<net id="104"><net_src comp="98" pin="4"/><net_sink comp="95" pin=0"/></net>
 
-<net id="95"><net_src comp="16" pin="0"/><net_sink comp="92" pin=0"/></net>
+<net id="114"><net_src comp="108" pin="4"/><net_sink comp="105" pin=0"/></net>
 
-<net id="102"><net_src comp="92" pin="1"/><net_sink comp="96" pin=0"/></net>
+<net id="118"><net_src comp="14" pin="0"/><net_sink comp="115" pin=0"/></net>
 
-<net id="115"><net_src comp="62" pin="4"/><net_sink comp="111" pin=0"/></net>
+<net id="125"><net_src comp="115" pin="1"/><net_sink comp="119" pin=0"/></net>
 
-<net id="116"><net_src comp="62" pin="4"/><net_sink comp="111" pin=1"/></net>
+<net id="130"><net_src comp="88" pin="4"/><net_sink comp="126" pin=0"/></net>
 
-<net id="121"><net_src comp="72" pin="4"/><net_sink comp="117" pin=0"/></net>
+<net id="131"><net_src comp="78" pin="4"/><net_sink comp="126" pin=1"/></net>
 
-<net id="122"><net_src comp="72" pin="4"/><net_sink comp="117" pin=1"/></net>
+<net id="136"><net_src comp="50" pin="2"/><net_sink comp="132" pin=0"/></net>
 
-<net id="127"><net_src comp="72" pin="4"/><net_sink comp="123" pin=0"/></net>
+<net id="137"><net_src comp="50" pin="2"/><net_sink comp="132" pin=1"/></net>
 
-<net id="128"><net_src comp="62" pin="4"/><net_sink comp="123" pin=1"/></net>
+<net id="142"><net_src comp="44" pin="2"/><net_sink comp="138" pin=0"/></net>
 
-<net id="133"><net_src comp="38" pin="0"/><net_sink comp="129" pin=1"/></net>
+<net id="143"><net_src comp="44" pin="2"/><net_sink comp="138" pin=1"/></net>
 
-<net id="137"><net_src comp="111" pin="2"/><net_sink comp="134" pin=0"/></net>
+<net id="144"><net_src comp="108" pin="4"/><net_sink comp="132" pin=0"/></net>
 
-<net id="138"><net_src comp="134" pin="1"/><net_sink comp="103" pin=0"/></net>
+<net id="145"><net_src comp="24" pin="0"/><net_sink comp="132" pin=1"/></net>
 
-<net id="142"><net_src comp="117" pin="2"/><net_sink comp="139" pin=0"/></net>
+<net id="146"><net_src comp="95" pin="1"/><net_sink comp="132" pin=1"/></net>
 
-<net id="143"><net_src comp="139" pin="1"/><net_sink comp="103" pin=1"/></net>
+<net id="151"><net_src comp="42" pin="0"/><net_sink comp="147" pin=1"/></net>
 
-<net id="147"><net_src comp="103" pin="2"/><net_sink comp="144" pin=0"/></net>
+<net id="155"><net_src comp="132" pin="2"/><net_sink comp="152" pin=0"/></net>
 
-<net id="148"><net_src comp="144" pin="1"/><net_sink comp="103" pin=0"/></net>
+<net id="156"><net_src comp="152" pin="1"/><net_sink comp="132" pin=0"/></net>
 
-<net id="149"><net_src comp="144" pin="1"/><net_sink comp="62" pin=2"/></net>
+<net id="157"><net_src comp="152" pin="1"/><net_sink comp="126" pin=0"/></net>
 
-<net id="150"><net_src comp="144" pin="1"/><net_sink comp="117" pin=0"/></net>
+<net id="158"><net_src comp="152" pin="1"/><net_sink comp="88" pin=2"/></net>
 
-<net id="151"><net_src comp="144" pin="1"/><net_sink comp="117" pin=1"/></net>
+<net id="162"><net_src comp="126" pin="2"/><net_sink comp="159" pin=0"/></net>
 
-<net id="155"><net_src comp="107" pin="2"/><net_sink comp="152" pin=0"/></net>
+<net id="163"><net_src comp="159" pin="1"/><net_sink comp="126" pin=0"/></net>
 
-<net id="156"><net_src comp="152" pin="1"/><net_sink comp="107" pin=0"/></net>
+<net id="164"><net_src comp="159" pin="1"/><net_sink comp="108" pin=2"/></net>
 
-<net id="157"><net_src comp="152" pin="1"/><net_sink comp="72" pin=2"/></net>
+<net id="165"><net_src comp="159" pin="1"/><net_sink comp="132" pin=0"/></net>
 
-<net id="158"><net_src comp="152" pin="1"/><net_sink comp="111" pin=0"/></net>
+<net id="166"><net_src comp="159" pin="1"/><net_sink comp="132" pin=1"/></net>
 
-<net id="159"><net_src comp="152" pin="1"/><net_sink comp="111" pin=1"/></net>
+<net id="171"><net_src comp="119" pin="4"/><net_sink comp="167" pin=0"/></net>
 
-<net id="164"><net_src comp="96" pin="4"/><net_sink comp="160" pin=0"/></net>
+<net id="172"><net_src comp="16" pin="0"/><net_sink comp="167" pin=1"/></net>
 
-<net id="165"><net_src comp="18" pin="0"/><net_sink comp="160" pin=1"/></net>
+<net id="177"><net_src comp="119" pin="4"/><net_sink comp="173" pin=0"/></net>
 
-<net id="170"><net_src comp="96" pin="4"/><net_sink comp="166" pin=0"/></net>
+<net id="178"><net_src comp="22" pin="0"/><net_sink comp="173" pin=1"/></net>
 
-<net id="171"><net_src comp="24" pin="0"/><net_sink comp="166" pin=1"/></net>
+<net id="182"><net_src comp="67" pin="4"/><net_sink comp="179" pin=0"/></net>
 
-<net id="181"><net_src comp="28" pin="0"/><net_sink comp="175" pin=0"/></net>
+<net id="183"><net_src comp="179" pin="1"/><net_sink comp="56" pin=2"/></net>
 
-<net id="182"><net_src comp="172" pin="1"/><net_sink comp="175" pin=1"/></net>
+<net id="193"><net_src comp="32" pin="0"/><net_sink comp="187" pin=0"/></net>
 
-<net id="183"><net_src comp="30" pin="0"/><net_sink comp="175" pin=2"/></net>
+<net id="194"><net_src comp="184" pin="1"/><net_sink comp="187" pin=1"/></net>
 
-<net id="184"><net_src comp="32" pin="0"/><net_sink comp="175" pin=3"/></net>
+<net id="195"><net_src comp="34" pin="0"/><net_sink comp="187" pin=2"/></net>
 
-<net id="188"><net_src comp="172" pin="1"/><net_sink comp="185" pin=0"/></net>
+<net id="196"><net_src comp="36" pin="0"/><net_sink comp="187" pin=3"/></net>
 
-<net id="193"><net_src comp="175" pin="4"/><net_sink comp="189" pin=0"/></net>
+<net id="200"><net_src comp="184" pin="1"/><net_sink comp="197" pin=0"/></net>
 
-<net id="194"><net_src comp="34" pin="0"/><net_sink comp="189" pin=1"/></net>
+<net id="205"><net_src comp="187" pin="4"/><net_sink comp="201" pin=0"/></net>
 
-<net id="199"><net_src comp="185" pin="1"/><net_sink comp="195" pin=0"/></net>
+<net id="206"><net_src comp="38" pin="0"/><net_sink comp="201" pin=1"/></net>
 
-<net id="200"><net_src comp="36" pin="0"/><net_sink comp="195" pin=1"/></net>
+<net id="211"><net_src comp="197" pin="1"/><net_sink comp="207" pin=0"/></net>
 
-<net id="205"><net_src comp="195" pin="2"/><net_sink comp="201" pin=0"/></net>
+<net id="212"><net_src comp="40" pin="0"/><net_sink comp="207" pin=1"/></net>
 
-<net id="206"><net_src comp="189" pin="2"/><net_sink comp="201" pin=1"/></net>
+<net id="217"><net_src comp="207" pin="2"/><net_sink comp="213" pin=0"/></net>
 
-<net id="211"><net_src comp="201" pin="2"/><net_sink comp="207" pin=0"/></net>
+<net id="218"><net_src comp="201" pin="2"/><net_sink comp="213" pin=1"/></net>
 
-<net id="212"><net_src comp="129" pin="2"/><net_sink comp="207" pin=1"/></net>
+<net id="223"><net_src comp="213" pin="2"/><net_sink comp="219" pin=0"/></net>
 
-<net id="216"><net_src comp="207" pin="2"/><net_sink comp="213" pin=0"/></net>
+<net id="224"><net_src comp="147" pin="2"/><net_sink comp="219" pin=1"/></net>
 
-<net id="221"><net_src comp="213" pin="1"/><net_sink comp="217" pin=0"/></net>
+<net id="228"><net_src comp="219" pin="2"/><net_sink comp="225" pin=0"/></net>
 
-<net id="222"><net_src comp="79" pin="1"/><net_sink comp="217" pin=1"/></net>
+<net id="233"><net_src comp="225" pin="1"/><net_sink comp="229" pin=0"/></net>
 
-<net id="226"><net_src comp="40" pin="2"/><net_sink comp="223" pin=0"/></net>
+<net id="234"><net_src comp="63" pin="1"/><net_sink comp="229" pin=1"/></net>
 
-<net id="227"><net_src comp="223" pin="1"/><net_sink comp="72" pin=0"/></net>
+<net id="238"><net_src comp="44" pin="2"/><net_sink comp="235" pin=0"/></net>
 
-<net id="228"><net_src comp="223" pin="1"/><net_sink comp="107" pin=1"/></net>
+<net id="239"><net_src comp="235" pin="1"/><net_sink comp="138" pin=0"/></net>
 
-<net id="232"><net_src comp="46" pin="2"/><net_sink comp="229" pin=0"/></net>
+<net id="240"><net_src comp="235" pin="1"/><net_sink comp="138" pin=1"/></net>
 
-<net id="233"><net_src comp="229" pin="1"/><net_sink comp="62" pin=0"/></net>
+<net id="241"><net_src comp="235" pin="1"/><net_sink comp="98" pin=0"/></net>
 
-<net id="234"><net_src comp="229" pin="1"/><net_sink comp="103" pin=1"/></net>
+<net id="242"><net_src comp="235" pin="1"/><net_sink comp="126" pin=1"/></net>
 
-<net id="241"><net_src comp="166" pin="2"/><net_sink comp="238" pin=0"/></net>
+<net id="246"><net_src comp="50" pin="2"/><net_sink comp="243" pin=0"/></net>
 
-<net id="242"><net_src comp="238" pin="1"/><net_sink comp="96" pin=2"/></net>
+<net id="247"><net_src comp="243" pin="1"/><net_sink comp="132" pin=0"/></net>
 
-<net id="246"><net_src comp="123" pin="2"/><net_sink comp="243" pin=0"/></net>
+<net id="248"><net_src comp="243" pin="1"/><net_sink comp="132" pin=1"/></net>
 
-<net id="247"><net_src comp="243" pin="1"/><net_sink comp="107" pin=0"/></net>
+<net id="249"><net_src comp="243" pin="1"/><net_sink comp="108" pin=0"/></net>
 
-<net id="248"><net_src comp="243" pin="1"/><net_sink comp="107" pin=1"/></net>
+<net id="250"><net_src comp="243" pin="1"/><net_sink comp="126" pin=1"/></net>
 
-<net id="252"><net_src comp="103" pin="2"/><net_sink comp="249" pin=0"/></net>
+<net id="254"><net_src comp="132" pin="2"/><net_sink comp="251" pin=0"/></net>
 
-<net id="253"><net_src comp="249" pin="1"/><net_sink comp="172" pin=0"/></net>
+<net id="255"><net_src comp="251" pin="1"/><net_sink comp="88" pin=0"/></net>
 
-<net id="254"><net_src comp="249" pin="1"/><net_sink comp="129" pin=0"/></net>
+<net id="259"><net_src comp="138" pin="2"/><net_sink comp="256" pin=0"/></net>
 
-<net id="258"><net_src comp="217" pin="2"/><net_sink comp="255" pin=0"/></net>
+<net id="260"><net_src comp="256" pin="1"/><net_sink comp="78" pin=0"/></net>
 
-<net id="259"><net_src comp="255" pin="1"/><net_sink comp="83" pin=2"/></net>
+<net id="267"><net_src comp="173" pin="2"/><net_sink comp="264" pin=0"/></net>
+
+<net id="268"><net_src comp="264" pin="1"/><net_sink comp="119" pin=2"/></net>
+
+<net id="272"><net_src comp="126" pin="2"/><net_sink comp="269" pin=0"/></net>
+
+<net id="273"><net_src comp="269" pin="1"/><net_sink comp="98" pin=2"/></net>
+
+<net id="274"><net_src comp="269" pin="1"/><net_sink comp="138" pin=0"/></net>
+
+<net id="275"><net_src comp="269" pin="1"/><net_sink comp="138" pin=1"/></net>
+
+<net id="279"><net_src comp="138" pin="2"/><net_sink comp="276" pin=0"/></net>
+
+<net id="280"><net_src comp="276" pin="1"/><net_sink comp="78" pin=2"/></net>
+
+<net id="281"><net_src comp="276" pin="1"/><net_sink comp="126" pin=1"/></net>
+
+<net id="285"><net_src comp="126" pin="2"/><net_sink comp="282" pin=0"/></net>
+
+<net id="286"><net_src comp="282" pin="1"/><net_sink comp="184" pin=0"/></net>
+
+<net id="287"><net_src comp="282" pin="1"/><net_sink comp="147" pin=0"/></net>
+
+<net id="291"><net_src comp="229" pin="2"/><net_sink comp="288" pin=0"/></net>
+
+<net id="292"><net_src comp="288" pin="1"/><net_sink comp="67" pin=2"/></net>
 
 </net_list>
 
@@ -1222,25 +1340,25 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 
 * FSMD analyzer results:
   - Output states:
-	Port: outp | {2 }
+	Port: outp | {7 }
  - Input state : 
-	Port: mandelbrot : z_re | {1 }
-	Port: mandelbrot : z_im | {1 }
+	Port: mandelbrot : re | {1 }
+	Port: mandelbrot : im | {1 }
   - Chain level:
 	State 1
 	State 2
-		exitcond : 1
-		i_1 : 1
-		StgValue_42 : 2
-		m1 : 1
-		m2 : 1
-		m3 : 1
-		StgValue_46 : 1
 	State 3
 	State 4
 	State 5
 	State 6
 	State 7
+		exitcond : 1
+		i_1 : 1
+		StgValue_59 : 2
+		tmp_7 : 1
+		tmp_s : 1
+		mandelbrot_double_d_1 : 1
+		StgValue_63 : 2
 	State 8
 	State 9
 	State 10
@@ -1261,14 +1379,19 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 	State 25
 	State 26
 	State 27
-		tmp : 1
-		tmp_4 : 1
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+		tmp_13 : 1
+		tmp_14 : 1
 		notlhs : 2
 		notrhs : 2
-		tmp_7 : 3
-		tmp_9 : 3
-		tmp_5 : 3
-		tmp_6 : 4
+		tmp_16 : 3
+		tmp_18 : 3
+		tmp_14_cast : 3
+		tmp_15 : 4
 
 
 ============================================================
@@ -1276,83 +1399,83 @@ StgValue_105         (br               ) [ 0111111111111111111111111111]
 ============================================================
 
 * Functional unit list:
-|----------|-------------------------|---------|---------|---------|
-| Operation|     Functional Unit     |  DSP48E |    FF   |   LUT   |
-|----------|-------------------------|---------|---------|---------|
-|   dadd   |        grp_fu_103       |    3    |   445   |   788   |
-|          |        grp_fu_107       |    3    |   445   |   788   |
-|----------|-------------------------|---------|---------|---------|
-|          |        grp_fu_111       |    11   |   299   |   204   |
-|   dmul   |        grp_fu_117       |    11   |   299   |   204   |
-|          |        grp_fu_123       |    11   |   299   |   204   |
-|----------|-------------------------|---------|---------|---------|
-|   dcmp   |       tmp_8_fu_129      |    0    |   130   |   130   |
-|----------|-------------------------|---------|---------|---------|
-|          |     exitcond_fu_160     |    0    |    0    |    13   |
-|   icmp   |      notlhs_fu_189      |    0    |    0    |    13   |
-|          |      notrhs_fu_195      |    0    |    0    |    29   |
-|----------|-------------------------|---------|---------|---------|
-|    add   |        i_1_fu_166       |    0    |    0    |    16   |
-|          |       tmp_6_fu_217      |    0    |    0    |    15   |
-|----------|-------------------------|---------|---------|---------|
-|    or    |       tmp_7_fu_201      |    0    |    0    |    8    |
-|----------|-------------------------|---------|---------|---------|
-|    and   |       tmp_9_fu_207      |    0    |    0    |    8    |
-|----------|-------------------------|---------|---------|---------|
-|   read   |   z_im_read_read_fu_40  |    0    |    0    |    0    |
-|          |   z_re_read_read_fu_46  |    0    |    0    |    0    |
-|----------|-------------------------|---------|---------|---------|
-|   write  | StgValue_46_write_fu_52 |    0    |    0    |    0    |
-|----------|-------------------------|---------|---------|---------|
-|partselect|        tmp_fu_175       |    0    |    0    |    0    |
-|----------|-------------------------|---------|---------|---------|
-|   trunc  |       tmp_4_fu_185      |    0    |    0    |    0    |
-|----------|-------------------------|---------|---------|---------|
-|   zext   |       tmp_5_fu_213      |    0    |    0    |    0    |
-|----------|-------------------------|---------|---------|---------|
-|   Total  |                         |    39   |   1917  |   2420  |
-|----------|-------------------------|---------|---------|---------|
+|----------|------------------------------|---------|---------|---------|
+| Operation|        Functional Unit       |  DSP48E |    FF   |   LUT   |
+|----------|------------------------------|---------|---------|---------|
+|   dadd   |          grp_fu_126          |    3    |   445   |   788   |
+|----------|------------------------------|---------|---------|---------|
+|   dmul   |          grp_fu_132          |    11   |   299   |   204   |
+|          |          grp_fu_138          |    11   |   299   |   204   |
+|----------|------------------------------|---------|---------|---------|
+|   dcmp   |         tmp_17_fu_147        |    0    |   130   |   130   |
+|----------|------------------------------|---------|---------|---------|
+|          |        exitcond_fu_167       |    0    |    0    |    13   |
+|   icmp   |         notlhs_fu_201        |    0    |    0    |    13   |
+|          |         notrhs_fu_207        |    0    |    0    |    29   |
+|----------|------------------------------|---------|---------|---------|
+|    add   |          i_1_fu_173          |    0    |    0    |    16   |
+|          |         tmp_15_fu_229        |    0    |    0    |    16   |
+|----------|------------------------------|---------|---------|---------|
+|    or    |         tmp_16_fu_213        |    0    |    0    |    8    |
+|----------|------------------------------|---------|---------|---------|
+|    and   |         tmp_18_fu_219        |    0    |    0    |    8    |
+|----------|------------------------------|---------|---------|---------|
+|   read   |      im_read_read_fu_44      |    0    |    0    |    0    |
+|          |      re_read_read_fu_50      |    0    |    0    |    0    |
+|----------|------------------------------|---------|---------|---------|
+|   write  |    StgValue_63_write_fu_56   |    0    |    0    |    0    |
+|----------|------------------------------|---------|---------|---------|
+|   zext   | mandelbrot_double_d_1_fu_179 |    0    |    0    |    0    |
+|          |      tmp_14_cast_fu_225      |    0    |    0    |    0    |
+|----------|------------------------------|---------|---------|---------|
+|partselect|         tmp_13_fu_187        |    0    |    0    |    0    |
+|----------|------------------------------|---------|---------|---------|
+|   trunc  |         tmp_14_fu_197        |    0    |    0    |    0    |
+|----------|------------------------------|---------|---------|---------|
+|   Total  |                              |    25   |   1173  |   1429  |
+|----------|------------------------------|---------|---------|---------|
 
 Memories:
 N/A
 
 * Register list:
-+---------------------------+--------+
-|                           |   FF   |
-+---------------------------+--------+
-|        i_1_reg_238        |    9   |
-|          i_reg_92         |    9   |
-|         m3_reg_243        |   64   |
-| mandelbrot_double_d_reg_79|    8   |
-|          reg_134          |   64   |
-|          reg_139          |   64   |
-|          reg_144          |   64   |
-|          reg_152          |   64   |
-|       tmp_3_reg_249       |   64   |
-|       tmp_6_reg_255       |    8   |
-|x_complex_im_read_as_reg_69|   64   |
-|x_complex_re_read_as_reg_59|   64   |
-|     z_im_read_reg_223     |   64   |
-|     z_re_read_reg_229     |   64   |
-+---------------------------+--------+
-|           Total           |   674  |
-+---------------------------+--------+
++--------------------------+--------+
+|                          |   FF   |
++--------------------------+--------+
+|        i_1_reg_264       |    9   |
+|         i_reg_115        |    9   |
+|      im_read_reg_235     |   64   |
+|mandelbrot_double_d_reg_63|    9   |
+|      re_read_reg_243     |   64   |
+|          reg_152         |   64   |
+|          reg_159         |   64   |
+|      tmp_11_reg_276      |   64   |
+|      tmp_12_reg_282      |   64   |
+|      tmp_15_reg_288      |    9   |
+|       tmp_1_reg_256      |   64   |
+|       tmp_2_reg_75       |   64   |
+|       tmp_3_reg_85       |   64   |
+|       tmp_4_reg_95       |   64   |
+|       tmp_5_reg_105      |   64   |
+|       tmp_9_reg_269      |   64   |
+|        tmp_reg_251       |   64   |
++--------------------------+--------+
+|           Total          |   868  |
++--------------------------+--------+
 
 * Multiplexer (MUX) list: 
 |----------------------------|------|------|------|--------||---------||---------|
 |            Comp            |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
 |----------------------------|------|------|------|--------||---------||---------|
-| mandelbrot_double_d_reg_79 |  p0  |   2  |   8  |   16   ||    9    |
-|         grp_fu_103         |  p0  |   2  |  64  |   128  ||    9    |
-|         grp_fu_103         |  p1  |   2  |  64  |   128  ||    9    |
-|         grp_fu_107         |  p0  |   2  |  64  |   128  ||    9    |
-|         grp_fu_107         |  p1  |   2  |  64  |   128  ||    9    |
-|         grp_fu_111         |  p0  |   2  |  64  |   128  ||    9    |
-|         grp_fu_111         |  p1  |   2  |  64  |   128  ||    9    |
-|         grp_fu_117         |  p0  |   2  |  64  |   128  ||    9    |
-|         grp_fu_117         |  p1  |   2  |  64  |   128  ||    9    |
+| mandelbrot_double_d_reg_63 |  p0  |   2  |   9  |   18   ||    9    |
+|         grp_fu_126         |  p0  |   3  |  64  |   192  ||    15   |
+|         grp_fu_126         |  p1  |   4  |  64  |   256  ||    21   |
+|         grp_fu_132         |  p0  |   5  |  64  |   320  ||    27   |
+|         grp_fu_132         |  p1  |   5  |  64  |   320  ||    27   |
+|         grp_fu_138         |  p0  |   3  |  64  |   192  ||    15   |
+|         grp_fu_138         |  p1  |   3  |  64  |   192  ||    15   |
 |----------------------------|------|------|------|--------||---------||---------|
-|            Total           |      |      |      |  1040  ||  12.15  ||    81   |
+|            Total           |      |      |      |  1490  || 10.5693 ||   129   |
 |----------------------------|------|------|------|--------||---------||---------|
 
 
@@ -1361,10 +1484,10 @@ N/A
 +-----------+--------+--------+--------+--------+
 |           | DSP48E |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+--------+
-|  Function |   39   |    -   |  1917  |  2420  |
+|  Function |   25   |    -   |  1173  |  1429  |
 |   Memory  |    -   |    -   |    -   |    -   |
-|Multiplexer|    -   |   12   |    -   |   81   |
-|  Register |    -   |    -   |   674  |    -   |
+|Multiplexer|    -   |   10   |    -   |   129  |
+|  Register |    -   |    -   |   868  |    -   |
 +-----------+--------+--------+--------+--------+
-|   Total   |   39   |   12   |  2591  |  2501  |
+|   Total   |   25   |   10   |  2041  |  1558  |
 +-----------+--------+--------+--------+--------+

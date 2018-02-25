@@ -5,9 +5,9 @@
 // 
 // ==============================================================
 
-#ifndef __mandelbrot_dadd_6cud__HH__
-#define __mandelbrot_dadd_6cud__HH__
-#include "ACMP_dadd.h"
+#ifndef __mandelbrot_dmul_6cud__HH__
+#define __mandelbrot_dmul_6cud__HH__
+#include "ACMP_dmul.h"
 #include <systemc>
 
 template<
@@ -16,7 +16,7 @@ template<
     int din0_WIDTH,
     int din1_WIDTH,
     int dout_WIDTH>
-SC_MODULE(mandelbrot_dadd_6cud) {
+SC_MODULE(mandelbrot_dmul_6cud) {
     sc_core::sc_in_clk clk;
     sc_core::sc_in<sc_dt::sc_logic> reset;
     sc_core::sc_in<sc_dt::sc_logic> ce;
@@ -26,15 +26,15 @@ SC_MODULE(mandelbrot_dadd_6cud) {
 
 
 
-    ACMP_dadd<ID, 5, din0_WIDTH, din1_WIDTH, dout_WIDTH> ACMP_dadd_U;
+    ACMP_dmul<ID, 5, din0_WIDTH, din1_WIDTH, dout_WIDTH> ACMP_dmul_U;
 
-    SC_CTOR(mandelbrot_dadd_6cud):  ACMP_dadd_U ("ACMP_dadd_U") {
-        ACMP_dadd_U.clk(clk);
-        ACMP_dadd_U.reset(reset);
-        ACMP_dadd_U.ce(ce);
-        ACMP_dadd_U.din0(din0);
-        ACMP_dadd_U.din1(din1);
-        ACMP_dadd_U.dout(dout);
+    SC_CTOR(mandelbrot_dmul_6cud):  ACMP_dmul_U ("ACMP_dmul_U") {
+        ACMP_dmul_U.clk(clk);
+        ACMP_dmul_U.reset(reset);
+        ACMP_dmul_U.ce(ce);
+        ACMP_dmul_U.din0(din0);
+        ACMP_dmul_U.din1(din1);
+        ACMP_dmul_U.dout(dout);
 
     }
 

@@ -8,9 +8,9 @@
 
 `timescale 1ns/1ps
 
-module mandelbrot_dmul_6dEe
+module mandelbrot_dmul_6cud
 #(parameter
-    ID         = 3,
+    ID         = 2,
     NUM_STAGE  = 5,
     din0_WIDTH = 64,
     din1_WIDTH = 64,

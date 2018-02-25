@@ -21,26 +21,26 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>6657</Best-caseLatency>
-<Average-caseLatency>6657</Average-caseLatency>
-<Worst-caseLatency>6657</Worst-caseLatency>
-<Interval-min>6658</Interval-min>
-<Interval-max>6658</Interval-max>
+<Best-caseLatency>6662</Best-caseLatency>
+<Average-caseLatency>6662</Average-caseLatency>
+<Worst-caseLatency>6662</Worst-caseLatency>
+<Interval-min>6663</Interval-min>
+<Interval-max>6663</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<Loop1>
+<myloop>
 <TripCount>256</TripCount>
 <Latency>6656</Latency>
 <IterationLatency>26</IterationLatency>
-</Loop1>
+</myloop>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<DSP48E>39</DSP48E>
-<FF>2482</FF>
-<LUT>2720</LUT>
+<DSP48E>25</DSP48E>
+<FF>1936</FF>
+<LUT>1779</LUT>
 <BRAM_18K>0</BRAM_18K>
 </Resources>
 <AvailableResources>
@@ -119,8 +119,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>z_re</name>
-<Object>z_re</Object>
+<name>re</name>
+<Object>re</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -131,8 +131,8 @@
 <CType>double</CType>
 </RtlPorts>
 <RtlPorts>
-<name>z_im</name>
-<Object>z_im</Object>
+<name>im</name>
+<Object>im</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -150,7 +150,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>8</Bits>
+<Bits>16</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>

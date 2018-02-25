@@ -8,9 +8,9 @@
 Library ieee;
 use ieee.std_logic_1164.all;
 
-entity mandelbrot_dmul_6dEe is
+entity mandelbrot_dmul_6cud is
     generic (
-        ID         : integer := 3;
+        ID         : integer := 2;
         NUM_STAGE  : integer := 5;
         din0_WIDTH : integer := 64;
         din1_WIDTH : integer := 64;
@@ -26,7 +26,7 @@ entity mandelbrot_dmul_6dEe is
     );
 end entity;
 
-architecture arch of mandelbrot_dmul_6dEe is
+architecture arch of mandelbrot_dmul_6cud is
     --------------------- Component ---------------------
     component mandelbrot_ap_dmul_3_max_dsp_64 is
         port (
