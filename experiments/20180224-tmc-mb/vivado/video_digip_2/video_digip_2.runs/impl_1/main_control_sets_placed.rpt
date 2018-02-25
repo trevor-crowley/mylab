@@ -1,0 +1,73 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Sun Feb 25 09:04:30 2018
+| Host         : luigilinux running 64-bit openSUSE Leap 42.3
+| Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
+| Design       : main
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |     8 |
+| Unused register locations in slices containing registers |    33 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              34 |           14 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              14 |           10 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              87 |           30 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------------------------------+--------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+------------------+----------------+
+|                      Clock Signal                     |                                        Enable Signal                                       |                                       Set/Reset Signal                                       | Slice Load Count | Bel Load Count |
++-------------------------------------------------------+--------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+------------------+----------------+
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid |                                                                                            | design_1_wrapper_i/design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_int                            |                3 |              4 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/proc_sys_reset_0/U0/SEQ/seq_cnt_en                           | design_1_wrapper_i/design_1_i/proc_sys_reset_0/U0/SEQ/SEQ_COUNTER/clear                      |                1 |              6 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid |                                                                                            | design_1_wrapper_i/design_1_i/rgb2vga_0/U0/int_pData[11]_i_1_n_0                             |                7 |             10 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count[0]_i_2_n_0 | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count[0]_i_1_n_0   |                3 |             12 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/gen_ce             | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/h_count[0]_i_1_n_0   |                3 |             12 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/gen_ce             | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/fsync_out[0]_i_1_n_0 |                6 |             15 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid |                                                                                            |                                                                                              |               15 |             35 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/gen_ce             | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/htotal[11]_i_1_n_0   |               17 |             42 |
++-------------------------------------------------------+--------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 4      |                     1 |
+| 6      |                     1 |
+| 10     |                     1 |
+| 12     |                     2 |
+| 15     |                     1 |
+| 16+    |                     2 |
++--------+-----------------------+
+
+
