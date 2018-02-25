@@ -35,8 +35,8 @@
 <AreaEstimates>
 <Resources>
 <DSP48E>39</DSP48E>
-<FF>2483</FF>
-<LUT>2721</LUT>
+<FF>2482</FF>
+<LUT>2720</LUT>
 <BRAM_18K>0</BRAM_18K>
 </Resources>
 </AreaEstimates>
@@ -139,7 +139,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>16</Bits>
+<Bits>8</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>

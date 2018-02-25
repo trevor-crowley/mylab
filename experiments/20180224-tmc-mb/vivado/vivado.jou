@@ -252,3 +252,13 @@ set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.runs/impl_1/main.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+open_bd_design {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:cmpy:6.0 cmpy_0
+endgroup
+set_property location {2 362 -141} [get_bd_cells cmpy_0]
+delete_bd_objs [get_bd_cells cmpy_0]
+create_bd_cell -type ip -vlnv xilinx.com:ip:cordic:6.0 cordic_0
+set_property location {1.5 392 -165} [get_bd_cells cordic_0]
+delete_bd_objs [get_bd_cells cordic_0]
+close_bd_design [get_bd_designs design_1]

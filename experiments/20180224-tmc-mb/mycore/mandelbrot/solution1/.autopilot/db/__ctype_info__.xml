@@ -22,9 +22,9 @@
 <RtlPorts>
 <name>outp</name>
 <CType>
-<TypeName>short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned char</TypeName>
+<TypeWidth>8</TypeWidth>
+<PhysicalWidth>8</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>

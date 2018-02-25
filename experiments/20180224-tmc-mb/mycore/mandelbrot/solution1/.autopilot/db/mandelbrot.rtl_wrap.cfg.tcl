@@ -29,15 +29,15 @@ set DataType1 "double"
 set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
 lappend PortList $Port1
 set PortName2 "outp"
-set BitWidth2 "16"
+set BitWidth2 "64"
 set ArrayOpt2 ""
 set Const2 "0"
 set Volatile2 "0"
-set Pointer2 "2"
-set Reference2 "1"
+set Pointer2 "1"
+set Reference2 "0"
 set Dims2 [list 0]
 set Interface2 "wire"
-set DataType2 "short"
+set DataType2 "unsigned char"
 set Port2 [list $PortName2 $Interface2 $DataType2 $Pointer2 $Dims2 $Const2 $Volatile2 $ArrayOpt2]
 lappend PortList $Port2
 set globalAPint "" 

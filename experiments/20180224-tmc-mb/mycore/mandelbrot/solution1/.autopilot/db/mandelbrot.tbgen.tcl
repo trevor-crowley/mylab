@@ -1,5 +1,5 @@
 set C_TypeInfoList {{ 
-"mandelbrot" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"z_re": [[], {"scalar": "double"}] }, {"z_im": [[], {"scalar": "double"}] }, {"outp": [[], {"reference":  {"scalar": "short"}}] }],[],""]
+"mandelbrot" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"z_re": [[], {"scalar": "double"}] }, {"z_im": [[], {"scalar": "double"}] }, {"outp": [[],{ "pointer":  {"scalar": "unsigned char"}}] }],[],""]
 }}
 set moduleName mandelbrot
 set isCombinational 0
@@ -15,12 +15,12 @@ set C_modelType { void 0 }
 set C_modelArgList {
 	{ z_re double 64 regular  }
 	{ z_im double 64 regular  }
-	{ outp int 16 regular {pointer 1}  }
+	{ outp int 8 regular {pointer 1}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "z_re", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY", "bitSlice":[{"low":0,"up":63,"cElement": [{"cName": "z_re","cData": "double","bit_use": { "low": 0,"up": 63},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} , 
  	{ "Name" : "z_im", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY", "bitSlice":[{"low":0,"up":63,"cElement": [{"cName": "z_im","cData": "double","bit_use": { "low": 0,"up": 63},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} , 
- 	{ "Name" : "outp", "interface" : "wire", "bitwidth" : 16, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "outp","cData": "short","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} ]}
+ 	{ "Name" : "outp", "interface" : "wire", "bitwidth" : 8, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "outp","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} ]}
 # RTL Port declarations: 
 set portNum 10
 set portList { 
@@ -32,7 +32,7 @@ set portList {
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ z_re sc_in sc_lv 64 signal 0 } 
 	{ z_im sc_in sc_lv 64 signal 1 } 
-	{ outp sc_out sc_lv 16 signal 2 } 
+	{ outp sc_out sc_lv 8 signal 2 } 
 	{ outp_ap_vld sc_out sc_logic 1 outvld 2 } 
 }
 set NewPortList {[ 
@@ -44,7 +44,7 @@ set NewPortList {[
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "z_re", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "z_re", "role": "default" }} , 
  	{ "name": "z_im", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "z_im", "role": "default" }} , 
- 	{ "name": "outp", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "outp", "role": "default" }} , 
+ 	{ "name": "outp", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "outp", "role": "default" }} , 
  	{ "name": "outp_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "outp", "role": "ap_vld" }}  ]}
 
 set RtlHierarchyInfo {[
@@ -87,7 +87,7 @@ set PipelineEnableSignalInfo {[
 set Spec2ImplPortList { 
 	z_re { ap_none {  { z_re in_data 0 64 } } }
 	z_im { ap_none {  { z_im in_data 0 64 } } }
-	outp { ap_vld {  { outp out_data 1 16 }  { outp_ap_vld out_vld 1 1 } } }
+	outp { ap_vld {  { outp out_data 1 8 }  { outp_ap_vld out_vld 1 1 } } }
 }
 
 set busDeadlockParameterList { 

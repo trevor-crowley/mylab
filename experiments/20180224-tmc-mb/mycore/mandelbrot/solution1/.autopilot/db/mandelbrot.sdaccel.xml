@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'mandelbrot'" level="0">
-<item name = "Date">Sun Feb 25 10:36:48 2018
+<item name = "Date">Sun Feb 25 13:41:45 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">mandelbrot</item>
@@ -46,12 +46,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 103</column>
+<column name="Expression">-, -, 0, 102</column>
 <column name="FIFO">-, -, -, -</column>
 <column name="Instance">-, 39, 1917, 2318</column>
 <column name="Memory">-, -, -, -</column>
 <column name="Multiplexer">-, -, -, 300</column>
-<column name="Register">-, -, 566, -</column>
+<column name="Register">-, -, 565, -</column>
 <specialColumn name="Available">730, 740, 269200, 129000</specialColumn>
 <specialColumn name="Utilization (%)">0, 5, ~0, 2</specialColumn>
 </table>
@@ -82,47 +82,47 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_1_fu_163_p2">+, 0, 0, 16, 9, 1</column>
-<column name="tmp_6_fu_219_p2">+, 0, 0, 16, 9, 9</column>
-<column name="tmp_8_fu_209_p2">and, 0, 0, 8, 1, 1</column>
-<column name="exitcond_fu_157_p2">icmp, 0, 0, 13, 9, 10</column>
-<column name="notlhs_fu_191_p2">icmp, 0, 0, 13, 11, 2</column>
-<column name="notrhs_fu_197_p2">icmp, 0, 0, 29, 52, 1</column>
-<column name="tmp_5_fu_203_p2">or, 0, 0, 8, 1, 1</column>
+<column name="i_1_fu_166_p2">+, 0, 0, 16, 9, 1</column>
+<column name="tmp_6_fu_217_p2">+, 0, 0, 15, 8, 8</column>
+<column name="tmp_9_fu_207_p2">and, 0, 0, 8, 1, 1</column>
+<column name="exitcond_fu_160_p2">icmp, 0, 0, 13, 9, 10</column>
+<column name="notlhs_fu_189_p2">icmp, 0, 0, 13, 11, 2</column>
+<column name="notrhs_fu_195_p2">icmp, 0, 0, 29, 52, 1</column>
+<column name="tmp_7_fu_201_p2">or, 0, 0, 8, 1, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_NS_fsm">129, 28, 1, 28</column>
-<column name="grp_fu_100_opcode">15, 3, 2, 6</column>
-<column name="grp_fu_100_p0">15, 3, 64, 192</column>
-<column name="grp_fu_100_p1">15, 3, 64, 192</column>
-<column name="grp_fu_104_p0">15, 3, 64, 192</column>
-<column name="grp_fu_104_p1">15, 3, 64, 192</column>
-<column name="grp_fu_108_p0">15, 3, 64, 192</column>
-<column name="grp_fu_108_p1">15, 3, 64, 192</column>
-<column name="grp_fu_114_p0">15, 3, 64, 192</column>
-<column name="grp_fu_114_p1">15, 3, 64, 192</column>
-<column name="i_reg_89">9, 2, 9, 18</column>
-<column name="mandelbrot_double_d_reg_77">9, 2, 9, 18</column>
-<column name="x_complex_im_read_as_reg_67">9, 2, 64, 128</column>
-<column name="x_complex_re_read_as_reg_57">9, 2, 64, 128</column>
+<column name="grp_fu_103_opcode">15, 3, 2, 6</column>
+<column name="grp_fu_103_p0">15, 3, 64, 192</column>
+<column name="grp_fu_103_p1">15, 3, 64, 192</column>
+<column name="grp_fu_107_p0">15, 3, 64, 192</column>
+<column name="grp_fu_107_p1">15, 3, 64, 192</column>
+<column name="grp_fu_111_p0">15, 3, 64, 192</column>
+<column name="grp_fu_111_p1">15, 3, 64, 192</column>
+<column name="grp_fu_117_p0">15, 3, 64, 192</column>
+<column name="grp_fu_117_p1">15, 3, 64, 192</column>
+<column name="i_reg_92">9, 2, 9, 18</column>
+<column name="mandelbrot_double_d_reg_79">9, 2, 8, 16</column>
+<column name="x_complex_im_read_as_reg_69">9, 2, 64, 128</column>
+<column name="x_complex_re_read_as_reg_59">9, 2, 64, 128</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">27, 0, 27, 0</column>
-<column name="i_1_reg_240">9, 0, 9, 0</column>
-<column name="i_reg_89">9, 0, 9, 0</column>
-<column name="m3_reg_245">64, 0, 64, 0</column>
-<column name="mandelbrot_double_d_reg_77">9, 0, 9, 0</column>
-<column name="reg_131">64, 0, 64, 0</column>
-<column name="reg_136">64, 0, 64, 0</column>
-<column name="reg_141">64, 0, 64, 0</column>
-<column name="reg_149">64, 0, 64, 0</column>
-<column name="tmp_3_reg_251">64, 0, 64, 0</column>
-<column name="x_complex_im_read_as_reg_67">64, 0, 64, 0</column>
-<column name="x_complex_re_read_as_reg_57">64, 0, 64, 0</column>
+<column name="i_1_reg_238">9, 0, 9, 0</column>
+<column name="i_reg_92">9, 0, 9, 0</column>
+<column name="m3_reg_243">64, 0, 64, 0</column>
+<column name="mandelbrot_double_d_reg_79">8, 0, 8, 0</column>
+<column name="reg_134">64, 0, 64, 0</column>
+<column name="reg_139">64, 0, 64, 0</column>
+<column name="reg_144">64, 0, 64, 0</column>
+<column name="reg_152">64, 0, 64, 0</column>
+<column name="tmp_3_reg_249">64, 0, 64, 0</column>
+<column name="x_complex_im_read_as_reg_69">64, 0, 64, 0</column>
+<column name="x_complex_re_read_as_reg_59">64, 0, 64, 0</column>
 </table>
 </item>
 </section>
@@ -140,7 +140,7 @@
 <column name="ap_ready">out, 1, ap_ctrl_hs, mandelbrot, return value</column>
 <column name="z_re">in, 64, ap_none, z_re, scalar</column>
 <column name="z_im">in, 64, ap_none, z_im, scalar</column>
-<column name="outp">out, 16, ap_vld, outp, pointer</column>
+<column name="outp">out, 8, ap_vld, outp, pointer</column>
 <column name="outp_ap_vld">out, 1, ap_vld, outp, pointer</column>
 </table>
 </item>
@@ -150,7 +150,7 @@
 <item name = "Max Delay">8.57</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'z.re'">phi, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, &apos;z_re&apos;, &apos;agg.result.re&apos;, /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166-&gt;/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170-&gt;mandelbrot/C/mandelbrot.cpp:17</column>
+<column name="'z.re'">phi, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, &apos;z_re&apos;, &apos;agg.result.re&apos;, /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:166-&gt;/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:170-&gt;mandelbrot/C/mandelbrot.cpp:20</column>
 <column name="'m1', /opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_x_complex.h:113">dmul, 8.57, 8.57, -, -, -, -, -, -, -, -, -, -, -</column>
 </table>
 </item>
