@@ -10,7 +10,7 @@ add_files -tb mandelbrot/C/mandelbrot_tb.cpp
 open_solution "solution1"
 set_part {xc7a200tfbg676-2} -tool vivado
 create_clock -period 10 -name default
-#source "./mandelbrot/solution1/directives.tcl"
+source "./mandelbrot/solution1/directives.tcl"
 csim_design -compiler gcc
 csynth_design
 cosim_design -compiler gcc

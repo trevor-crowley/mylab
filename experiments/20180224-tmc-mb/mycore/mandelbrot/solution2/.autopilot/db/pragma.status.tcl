@@ -1,0 +1,3 @@
+lappend pragmaStatus0 {pragma "PIPELINE" source "/home/trevor/mylab/experiments/20180224-tmc-mb/mycore/mandelbrot/C/mandelbrot.cpp" location "mandelbrot/myloop" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
+lappend pragmaStatus1 {pragma "UNROLL" source "/home/trevor/mylab/experiments/20180224-tmc-mb/mycore/mandelbrot/C/mandelbrot.cpp" location "mandelbrot/myloop" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
+lappend pragmaStatus2 {pragma "PIPELINE" source "/home/trevor/mylab/experiments/20180224-tmc-mb/mycore/mandelbrot/C/mandelbrot.cpp" location "mandelbrot/myloop" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}

@@ -2,14 +2,23 @@
 <Messages>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;mandelbrot/C/mandelbrot.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:26 ; elapsed = 00:00:12 . Memory (MB): peak = 348.656 ; gain = 13.586 ; free physical = 451 ; free virtual = 5058" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:27 ; elapsed = 00:00:13 . Memory (MB): peak = 348.656 ; gain = 13.586 ; free physical = 422 ; free virtual = 5030" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:26 ; elapsed = 00:00:12 . Memory (MB): peak = 348.656 ; gain = 13.586 ; free physical = 502 ; free virtual = 4650" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:27 ; elapsed = 00:00:13 . Memory (MB): peak = 348.656 ; gain = 13.586 ; free physical = 497 ; free virtual = 4649" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:28 ; elapsed = 00:00:14 . Memory (MB): peak = 348.789 ; gain = 13.719 ; free physical = 480 ; free virtual = 5089" tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;ap_fixed_base&lt;32, 4, true, (ap_q_mode)0, (ap_o_mode)3, 0&gt;::quantization_adjust&apos; into &apos;ap_fixed_base&lt;32, 4, true, (ap_q_mode)0, (ap_o_mode)3, 0&gt;::ap_fixed_base&lt;97, 41, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&apos; ()." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;ap_fixed_base&lt;32, 4, true, (ap_q_mode)0, (ap_o_mode)3, 0&gt;::quantization_adjust&apos; into &apos;ap_fixed_base&lt;32, 4, true, (ap_q_mode)0, (ap_o_mode)3, 0&gt;::ap_fixed_base&lt;64, 8, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&apos; ()." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;ap_fixed_base&lt;32, 4, true, (ap_q_mode)0, (ap_o_mode)3, 0&gt;::quantization_adjust&apos; into &apos;ap_fixed_base&lt;32, 4, true, (ap_q_mode)0, (ap_o_mode)3, 0&gt;::ap_fixed_base.1&apos; ()." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:28 ; elapsed = 00:00:15 . Memory (MB): peak = 349.254 ; gain = 14.184 ; free physical = 477 ; free virtual = 4633" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:28 ; elapsed = 00:00:14 . Memory (MB): peak = 348.789 ; gain = 13.719 ; free physical = 478 ; free virtual = 5087" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:28 ; elapsed = 00:00:15 . Memory (MB): peak = 479.379 ; gain = 144.309 ; free physical = 460 ; free virtual = 5071" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:29 ; elapsed = 00:00:15 . Memory (MB): peak = 479.379 ; gain = 144.309 ; free physical = 467 ; free virtual = 5079" tag=""/>
+	<Message prefix="[SYNCHK 200-23]" severity="WARNING" keynum="579" content="mandelbrot/C/mandelbrot.cpp:19: variable-indexed range selection may cause suboptimal QoR." tag=""/>
+	<Message prefix="[SYNCHK 200-10]" severity="INFO" keynum="597" content="0 error(s), 1 warning(s)." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:29 ; elapsed = 00:00:15 . Memory (MB): peak = 477.223 ; gain = 142.152 ; free physical = 467 ; free virtual = 4625" tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (mandelbrot/C/mandelbrot.cpp:19:2) to (mandelbrot/C/mandelbrot.cpp:20:2) in function &apos;mandelbrot&apos;... converting 12 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (mandelbrot/C/mandelbrot.cpp:21:2) to (mandelbrot/C/mandelbrot.cpp:22:2) in function &apos;mandelbrot&apos;... converting 12 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (mandelbrot/C/mandelbrot.cpp:20:2) to (mandelbrot/C/mandelbrot.cpp:20:2) in function &apos;mandelbrot&apos;... converting 6 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (mandelbrot/C/mandelbrot.cpp:22:2) to (mandelbrot/C/mandelbrot.cpp:22:2) in function &apos;mandelbrot&apos;... converting 6 basic blocks." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:29 ; elapsed = 00:00:15 . Memory (MB): peak = 477.223 ; gain = 142.152 ; free physical = 432 ; free virtual = 4595" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:30 ; elapsed = 00:00:16 . Memory (MB): peak = 477.223 ; gain = 142.152 ; free physical = 428 ; free virtual = 4592" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;mandelbrot&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
@@ -17,13 +26,13 @@
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 15.11 seconds; current allocated memory: 68.521 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 16.08 seconds; current allocated memory: 94.689 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.04 seconds; current allocated memory: 68.871 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.08 seconds; current allocated memory: 95.333 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;mandelbrot&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
@@ -31,17 +40,15 @@
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;mandelbrot/im&apos; to &apos;ap_none&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;mandelbrot/outp&apos; to &apos;ap_vld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;mandelbrot&apos; to &apos;ap_ctrl_hs&apos;." tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mandelbrot_dadddsub_64ns_64ns_64_5_full_dsp_1&apos; to &apos;mandelbrot_dadddsbkb&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mandelbrot_dmul_64ns_64ns_64_5_max_dsp_1&apos; to &apos;mandelbrot_dmul_6cud&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mandelbrot_dcmp_64ns_64ns_1_1_1&apos; to &apos;mandelbrot_dcmp_6dEe&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mandelbrot_dadddsbkb&apos;: 1 instance(s)." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mandelbrot_dcmp_6dEe&apos;: 1 instance(s)." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mandelbrot_dmul_6cud&apos;: 2 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;z_re_V&apos; is power-on initialization." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;z_im_V&apos; is power-on initialization." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mandelbrot_fpext_32ns_64_1_1&apos; to &apos;mandelbrot_fpext_bkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mandelbrot_fpext_bkb&apos;: 1 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;mandelbrot&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.1 seconds; current allocated memory: 69.414 MB." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:29 ; elapsed = 00:00:16 . Memory (MB): peak = 479.383 ; gain = 144.312 ; free physical = 458 ; free virtual = 5071" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.17 seconds; current allocated memory: 96.408 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:31 ; elapsed = 00:00:17 . Memory (MB): peak = 477.223 ; gain = 142.152 ; free physical = 422 ; free virtual = 4589" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for mandelbrot." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for mandelbrot." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for mandelbrot." tag=""/>
-	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 16.04 seconds; peak allocated memory: 69.414 MB." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 17.35 seconds; peak allocated memory: 96.408 MB." tag=""/>
 </Messages>

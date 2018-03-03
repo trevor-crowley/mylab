@@ -5,6 +5,6 @@
 // ==============================================================
 
 extern void AESL_WRAP_mandelbrot (
-int xpos,
-int ypos,
-int (&outp));
+float re,
+float im,
+short* outp);
