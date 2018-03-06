@@ -1,0 +1,93 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Mon Mar  5 00:15:23 2018
+| Host         : luigilinux running 64-bit openSUSE Leap 42.3
+| Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
+| Design       : main
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    24 |
+| Unused register locations in slices containing registers |    75 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             236 |           57 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              52 |           19 |
+| Yes          | No                    | No                     |              28 |           13 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             257 |           74 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+|                      Clock Signal                     |                                                                                           Enable Signal                                                                                           |                                                                                                                     Set/Reset Signal                                                                                                                     | Slice Load Count | Bel Load Count |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | sw_IBUF[0]                                                                                                                                                                                        | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/SYNC_INST/in_data_mux_reg[0]                                                                                                                                                                        |                1 |              2 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid |                                                                                                                                                                                                   | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/fsync_out[0]_i_1_n_0                                                                                                                                                             |                2 |              4 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid |                                                                                                                                                                                                   | design_1_wrapper_i/design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_int                                                                                                                                                                                        |                2 |              4 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/proc_sys_reset_0/U0/SEQ/seq_cnt_en                                                                                                                                  | design_1_wrapper_i/design_1_i/proc_sys_reset_0/U0/SEQ/SEQ_COUNTER/clear                                                                                                                                                                                  |                1 |              6 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/SYNC_INST/vtg_sof_cnt                                                                                                                        | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/SYNC_INST/vtg_sof_cnt0                                                                                                                                                                              |                2 |              8 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/COUPLER_INST/generate_async_fifo.FIFO_INST/XPM_FIFO_ASYNC_INST/E[0]                                                                          | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/SYNC_INST/vtg_sof_cnt0                                                                                                                                                                              |                3 |              8 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_ap  | design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/ap_NS_fsm1                                                                                                                                  | design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/y_reg_91                                                                                                                                                                                           |                2 |              9 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid |                                                                                                                                                                                                   | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/COUPLER_INST/generate_async_fifo.FIFO_INST/XPM_FIFO_ASYNC_INST/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_rd_inst/gen_pipe_bit[2].pipe_bit_inst/SR[0]                   |                3 |              9 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | sw_IBUF[0]                                                                                                                                                                                        |                                                                                                                                                                                                                                                          |                7 |             10 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_ap  |                                                                                                                                                                                                   | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/COUPLER_INST/generate_async_fifo.FIFO_INST/XPM_FIFO_ASYNC_INST/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/count_value_i_reg[1]                                                          |                4 |             11 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count[0]_i_2_n_0                                                                                                        | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count[0]_i_1_n_0                                                                                                                                                               |                3 |             12 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/FORMATTER_INST/in_data_mux                                                                                                                   | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/SYNC_INST/in_data_mux_reg[0]                                                                                                                                                                        |                4 |             12 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/gen_ce                                                                                                                    | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/h_count[0]_i_1_n_0                                                                                                                                                               |                3 |             12 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/SYNC_INST/fifo_eol_cnt                                                                                                                       | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/SYNC_INST/fifo_eol_cnt[0]_i_1_n_0                                                                                                                                                                   |                4 |             13 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/gen_ce                                                                                                                    | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/fsync_out[0]_i_1_n_0                                                                                                                                                             |                3 |             16 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_ap  | design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/ap_CS_fsm_state2                                                                                                                            |                                                                                                                                                                                                                                                          |                6 |             18 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/COUPLER_INST/generate_async_fifo.FIFO_INST/XPM_FIFO_ASYNC_INST/gnuram_async_fifo.xpm_fifo_base_inst/rdpp1_inst/E[0]                          | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/COUPLER_INST/generate_async_fifo.FIFO_INST/XPM_FIFO_ASYNC_INST/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_rd_inst/gen_pipe_bit[2].pipe_bit_inst/count_value_i_reg[0][0] |                6 |             21 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid |                                                                                                                                                                                                   | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/COUPLER_INST/generate_async_fifo.FIFO_INST/XPM_FIFO_ASYNC_INST/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_rd_inst/gen_pipe_bit[2].pipe_bit_inst/count_value_i_reg[0][0] |                8 |             24 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_ap  | design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/phi_mul_reg_11404_out                                                                                                                       | design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/phi_mul_reg_1140                                                                                                                                                                                   |                8 |             29 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_ap  | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/COUPLER_INST/generate_async_fifo.FIFO_INST/XPM_FIFO_ASYNC_INST/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/count_value_i_reg[0]_0 | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/COUPLER_INST/generate_async_fifo.FIFO_INST/XPM_FIFO_ASYNC_INST/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/count_value_i_reg[1]                                                          |                9 |             31 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/SYNC_INST/vtg_lag                                                                                                                            | design_1_wrapper_i/design_1_i/v_axi4s_vid_out_0/inst/SYNC_INST/sof_ignore0                                                                                                                                                                               |                8 |             32 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/gen_ce                                                                                                                    | design_1_wrapper_i/design_1_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/htotal[11]_i_1_n_0                                                                                                                                                               |               17 |             46 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_ap  |                                                                                                                                                                                                   |                                                                                                                                                                                                                                                          |               20 |             79 |
+|  design_1_wrapper_i/design_1_i/clk_wiz_0/inst/clk_vid |                                                                                                                                                                                                   |                                                                                                                                                                                                                                                          |               39 |            159 |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 2      |                     1 |
+| 4      |                     2 |
+| 6      |                     1 |
+| 8      |                     2 |
+| 9      |                     2 |
+| 10     |                     1 |
+| 11     |                     1 |
+| 12     |                     3 |
+| 13     |                     1 |
+| 16+    |                    10 |
++--------+-----------------------+
+
+

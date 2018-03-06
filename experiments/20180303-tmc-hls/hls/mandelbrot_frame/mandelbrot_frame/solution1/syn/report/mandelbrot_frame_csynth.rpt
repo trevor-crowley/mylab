@@ -1,0 +1,156 @@
+
+
+================================================================
+== Vivado HLS Report for 'mandelbrot_frame'
+================================================================
+* Date:           Sun Mar  4 23:59:49 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        mandelbrot_frame
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a200tfbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      1.90|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  308161|  308161|  308161|  308161|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |             |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  308160|  308160|       642|          -|          -|   480|    no    |
+        | + Loop 1.1  |     640|     640|         1|          -|          -|   640|    no    |
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|     135|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |        -|      -|       -|       -|
+|Memory           |        -|      -|       -|       -|
+|Multiplexer      |        -|      -|       -|      66|
+|Register         |        -|      -|      60|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        0|      0|      60|     201|
++-----------------+---------+-------+--------+--------+
+|Available        |      730|    740|  269200|  129000|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |next_mul_fu_153_p2   |     +    |      0|  0|  26|          19|          19|
+    |x_1_fu_147_p2        |     +    |      0|  0|  17|          10|           1|
+    |y_1_fu_135_p2        |     +    |      0|  0|  16|           9|           1|
+    |ap_block_state3_io   |    and   |      0|  0|   8|           1|           1|
+    |exitcond1_fu_129_p2  |   icmp   |      0|  0|  13|           9|           7|
+    |exitcond_fu_141_p2   |   icmp   |      0|  0|  13|          10|          10|
+    |video_out_TLAST      |   icmp   |      0|  0|  13|          10|          10|
+    |video_out_TUSER      |   icmp   |      0|  0|  13|          10|           1|
+    |tmp_2_fu_167_p2      |    or    |      0|  0|  16|           9|           9|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |Total                |          |      0|  0| 135|          87|          59|
+    +---------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------+----+-----------+-----+-----------+
+    |               Name              | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                        |  21|          4|    1|          4|
+    |ap_sig_ioackin_video_out_TREADY  |   9|          2|    1|          2|
+    |phi_mul_reg_114                  |   9|          2|   19|         38|
+    |video_out_TDATA_blk_n            |   9|          2|    1|          2|
+    |x_reg_103                        |   9|          2|   10|         20|
+    |y_reg_91                         |   9|          2|    9|         18|
+    +---------------------------------+----+-----------+-----+-----------+
+    |Total                            |  66|         14|   41|         84|
+    +---------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------+----+----+-----+-----------+
+    |               Name              | FF | LUT| Bits| Const Bits|
+    +---------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                        |   3|   0|    3|          0|
+    |ap_reg_ioackin_video_out_TREADY  |   1|   0|    1|          0|
+    |phi_mul_reg_114                  |  19|   0|   19|          0|
+    |x_reg_103                        |  10|   0|   10|          0|
+    |y_1_reg_211                      |   9|   0|    9|          0|
+    |y_cast2_reg_203                  |   9|   0|   19|         10|
+    |y_reg_91                         |   9|   0|    9|          0|
+    +---------------------------------+----+----+-----+-----------+
+    |Total                            |  60|   0|   70|         10|
+    +---------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+--------------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  |    Source Object   |    C Type    |
++------------------+-----+-----+------------+--------------------+--------------+
+|ap_clk            |  in |    1| ap_ctrl_hs |  mandelbrot_frame  | return value |
+|ap_rst_n          |  in |    1| ap_ctrl_hs |  mandelbrot_frame  | return value |
+|ap_start          |  in |    1| ap_ctrl_hs |  mandelbrot_frame  | return value |
+|ap_done           | out |    1| ap_ctrl_hs |  mandelbrot_frame  | return value |
+|ap_idle           | out |    1| ap_ctrl_hs |  mandelbrot_frame  | return value |
+|ap_ready          | out |    1| ap_ctrl_hs |  mandelbrot_frame  | return value |
+|video_out_TDATA   | out |   24|    axis    | video_out_V_data_V |    pointer   |
+|video_out_TVALID  | out |    1|    axis    | video_out_V_dest_V |    pointer   |
+|video_out_TREADY  |  in |    1|    axis    | video_out_V_dest_V |    pointer   |
+|video_out_TDEST   | out |    1|    axis    | video_out_V_dest_V |    pointer   |
+|video_out_TKEEP   | out |    3|    axis    | video_out_V_keep_V |    pointer   |
+|video_out_TSTRB   | out |    3|    axis    | video_out_V_strb_V |    pointer   |
+|video_out_TUSER   | out |    1|    axis    | video_out_V_user_V |    pointer   |
+|video_out_TLAST   | out |    1|    axis    | video_out_V_last_V |    pointer   |
+|video_out_TID     | out |    1|    axis    |  video_out_V_id_V  |    pointer   |
++------------------+-----+-----+------------+--------------------+--------------+
+

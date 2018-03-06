@@ -2,263 +2,98 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Feb 24 10:52:10 2018
-# Process ID: 27207
+# Start of session at: Sun Mar  4 17:57:21 2018
+# Process ID: 7472
 # Current directory: /home/trevor/mylab/experiments/20180224-tmc-mb/vivado
 # Command line: vivado
 # Log file: /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/vivado.log
 # Journal file: /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/vivado.jou
 #-----------------------------------------------------------
 start_gui
-create_project video_digip_1 /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1 -part xc7a35tcpg236-1
-set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
-import_files -fileset constrs_1 -force -norecurse /home/trevor/mylab/Basys3/Basys3_Master.xdc
-create_bd_design "design_1"
+open_project /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.xpr
+open_bd_design {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.srcs/sources_1/bd/design_1/design_1.bd}
 update_compile_order -fileset sources_1
-set_property  ip_repo_paths  /home/trevor/mylab/Basys3/vivado-library-master [current_project]
+save_project_as mandelbrot_1 /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_1 -force
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_bd_design {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_1/mandelbrot_1.srcs/sources_1/bd/design_1/design_1.bd}
+close_bd_design [get_bd_designs design_1]
+set_property  ip_repo_paths  {/home/trevor/mylab/Basys3/vivado-library-master /home/trevor/mylab/experiments/20180303-tmc-hls/hls/hls_train/solution5 /home/trevor/mylab/experiments/20180224-tmc-mb/ip_repo} [current_project]
 update_ip_catalog
-open_bd_design {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd}
+open_bd_design {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_1/mandelbrot_1.srcs/sources_1/bd/design_1/design_1.bd}
 startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.4 clk_wiz_0
-apply_board_connection -board_interface "sys_clock" -ip_intf "clk_wiz_0/clock_CLK_IN1" -diagram "design_1" 
+create_bd_cell -type ip -vlnv tmc:hls:mandel_calc:1.0 mandel_calc_0
 endgroup
+set_property location {2.5 709 -152} [get_bd_cells mandel_calc_0]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_ap] [get_bd_pins mandel_calc_0/ap_clk]
 startgroup
-apply_board_connection -board_interface "reset" -ip_intf "/clk_wiz_0/reset" -diagram "design_1" 
-create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0
-apply_board_connection -board_interface "reset" -ip_intf "proc_sys_reset_0/ext_reset" -diagram "design_1" 
+create_bd_intf_port -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 count_out_V
+connect_bd_intf_net [get_bd_intf_pins mandel_calc_0/count_out_V] [get_bd_intf_ports count_out_V]
 endgroup
-startgroup
-create_bd_cell -type ip -vlnv digilentinc.com:ip:rgb2vga:1.0 rgb2vga_0
-endgroup
-set_property -dict [list CONFIG.kBlueDepth {4} CONFIG.kGreenDepth {4} CONFIG.kRedDepth {4} CONFIG.VID_IN_DATA_WIDTH {12}] [get_bd_cells rgb2vga_0]
-set_property location {1 103 -56} [get_bd_cells rgb2vga_0]
-create_bd_cell -type ip -vlnv digilentinc.com:ip:dvi2rgb:1.9 dvi2rgb_0
-set_property location {0.5 -281 -45} [get_bd_cells dvi2rgb_0]
-delete_bd_objs [get_bd_cells dvi2rgb_0]
-create_bd_cell -type ip -vlnv digilentinc.com:ip:rgb2dvi:1.4 rgb2dvi_0
-set_property location {0.5 -558 -136} [get_bd_cells rgb2dvi_0]
-delete_bd_objs [get_bd_cells rgb2dvi_0]
-create_bd_cell -type ip -vlnv digilentinc.com:ip:rgb2dpvid:1.0 rgb2dpvid_0
-delete_bd_objs [get_bd_cells rgb2dpvid_0]
-create_bd_cell -type ip -vlnv digilentinc.com:ip:usb2device:1.0 usb2device_0
-delete_bd_objs [get_bd_cells usb2device_0]
-startgroup
-set_property -dict [list CONFIG.CLKOUT2_USED {true} CONFIG.CLK_OUT1_PORT {clk_ap} CONFIG.CLK_OUT2_PORT {clk_vid} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {40.000} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKOUT1_DIVIDE {25} CONFIG.NUM_OUT_CLKS {2} CONFIG.CLKOUT2_JITTER {159.371} CONFIG.CLKOUT2_PHASE_ERROR {98.575}] [get_bd_cells clk_wiz_0]
-endgroup
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:v_tc:6.1 v_tc_0
-endgroup
-set_property -dict [list CONFIG.HAS_AXI4_LITE {false} CONFIG.VIDEO_MODE {800x600p} CONFIG.GEN_F0_VSYNC_VSTART {600} CONFIG.GEN_F1_VSYNC_VSTART {600} CONFIG.GEN_HACTIVE_SIZE {800} CONFIG.GEN_HSYNC_END {968} CONFIG.GEN_HFRAME_SIZE {1056} CONFIG.GEN_F0_VSYNC_HSTART {800} CONFIG.GEN_F1_VSYNC_HSTART {800} CONFIG.GEN_F0_VSYNC_HEND {800} CONFIG.GEN_F1_VSYNC_HEND {800} CONFIG.GEN_F0_VFRAME_SIZE {628} CONFIG.GEN_F1_VFRAME_SIZE {628} CONFIG.GEN_F0_VSYNC_VEND {604} CONFIG.GEN_F1_VSYNC_VEND {604} CONFIG.GEN_F0_VBLANK_HEND {800} CONFIG.GEN_F1_VBLANK_HEND {800} CONFIG.GEN_HSYNC_START {840} CONFIG.GEN_VACTIVE_SIZE {600} CONFIG.GEN_F0_VBLANK_HSTART {800} CONFIG.GEN_F1_VBLANK_HSTART {800} CONFIG.enable_detection {false} CONFIG.vertical_blank_generation {false} CONFIG.horizontal_blank_generation {false}] [get_bd_cells v_tc_0]
-set_property location {1.5 -338 -237} [get_bd_cells v_tc_0]
-set_property location {3.5 505 -197} [get_bd_cells rgb2vga_0]
-set_property location {2 127 -218} [get_bd_cells v_tc_0]
-delete_bd_objs [get_bd_cells v_tc_0]
-undo
-set_property location {0.5 -53 -441} [get_bd_cells v_tc_0]
-connect_bd_net [get_bd_pins clk_wiz_0/clk_vid] [get_bd_pins v_tc_0/clk]
-connect_bd_net [get_bd_pins v_tc_0/active_video_out] [get_bd_pins rgb2vga_0/rgb_pVDE]
-connect_bd_net [get_bd_pins v_tc_0/hsync_out] [get_bd_pins rgb2vga_0/rgb_pHSync]
-connect_bd_net [get_bd_pins v_tc_0/vsync_out] [get_bd_pins rgb2vga_0/rgb_pVSync]
-connect_bd_net [get_bd_pins clk_wiz_0/clk_vid] [get_bd_pins rgb2vga_0/PixelClk]
-regenerate_bd_layout
-regenerate_bd_layout
-connect_bd_net [get_bd_pins clk_wiz_0/clk_vid] [get_bd_pins proc_sys_reset_0/slowest_sync_clk]
-connect_bd_net [get_bd_pins clk_wiz_0/locked] [get_bd_pins proc_sys_reset_0/dcm_locked]
-connect_bd_net [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins v_tc_0/resetn]
 regenerate_bd_layout
 save_bd_design
-validate_bd_design
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+upgrade_ip -vlnv tmc:hls:mandel_calc:1.0 [get_ips  design_1_mandel_calc_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_mandel_calc_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
 startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
-endgroup
-set_property -dict [list CONFIG.CONST_WIDTH {12} CONFIG.CONST_VAL {4095}] [get_bd_cells xlconstant_0]
-connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins rgb2vga_0/rgb_pData]
-regenerate_bd_layout
-validate_bd_design
-save_bd_design
-startgroup
-make_bd_pins_external  [get_bd_pins rgb2vga_0/vga_pRed]
-endgroup
-startgroup
-make_bd_pins_external  [get_bd_pins rgb2vga_0/vga_pGreen]
-endgroup
-startgroup
-make_bd_pins_external  [get_bd_pins rgb2vga_0/vga_pBlue]
-endgroup
-startgroup
-make_bd_pins_external  [get_bd_pins rgb2vga_0/vga_pHSync]
-endgroup
-startgroup
-make_bd_pins_external  [get_bd_pins rgb2vga_0/vga_pVSync]
-endgroup
-delete_bd_objs [get_bd_nets rgb2vga_0_vga_pRed] [get_bd_ports vga_pRed_0]
-delete_bd_objs [get_bd_nets rgb2vga_0_vga_pGreen] [get_bd_ports vga_pGreen_0]
-delete_bd_objs [get_bd_nets rgb2vga_0_vga_pBlue] [get_bd_ports vga_pBlue_0]
-delete_bd_objs [get_bd_nets rgb2vga_0_vga_pHSync] [get_bd_ports vga_pHSync_0]
-delete_bd_objs [get_bd_nets rgb2vga_0_vga_pVSync] [get_bd_ports vga_pVSync_0]
-startgroup
-create_bd_port -dir O -from 3 -to 0 vga_pRed
-connect_bd_net [get_bd_pins /rgb2vga_0/vga_pRed] [get_bd_ports vga_pRed]
-endgroup
-startgroup
-create_bd_port -dir O -from 3 -to 0 vga_pGreen
-connect_bd_net [get_bd_pins /rgb2vga_0/vga_pGreen] [get_bd_ports vga_pGreen]
-endgroup
-startgroup
-create_bd_port -dir O -from 3 -to 0 vga_pBlue
-connect_bd_net [get_bd_pins /rgb2vga_0/vga_pBlue] [get_bd_ports vga_pBlue]
-endgroup
-startgroup
-create_bd_port -dir O vga_pHSync
-connect_bd_net [get_bd_pins /rgb2vga_0/vga_pHSync] [get_bd_ports vga_pHSync]
-endgroup
-startgroup
-create_bd_port -dir O vga_pVSync
-connect_bd_net [get_bd_pins /rgb2vga_0/vga_pVSync] [get_bd_ports vga_pVSync]
-endgroup
-save_bd_design
-regenerate_bd_layout
-make_wrapper -files [get_files /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd] -top
-add_files -norecurse /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
-generate_target all [get_files  /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd]
-catch { config_ip_cache -export [get_ips -all design_1_clk_wiz_0_0] }
-catch { config_ip_cache -export [get_ips -all design_1_proc_sys_reset_0_0] }
-catch { config_ip_cache -export [get_ips -all design_1_rgb2vga_0_0] }
-catch { config_ip_cache -export [get_ips -all design_1_v_tc_0_0] }
-catch { config_ip_cache -export [get_ips -all design_1_xlconstant_0_0] }
-export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd]
-launch_runs -jobs 4 {design_1_clk_wiz_0_0_synth_1 design_1_proc_sys_reset_0_0_synth_1 design_1_rgb2vga_0_0_synth_1 design_1_v_tc_0_0_synth_1 design_1_xlconstant_0_0_synth_1}
-export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1
-launch_runs impl_1 -jobs 4
-wait_on_run impl_1
-open_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-regenerate_bd_layout
-file mkdir /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/new
-close [ open /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/new/main.v w ]
-add_files /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/new/main.v
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-open_bd_design {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd}
-startgroup
-create_bd_port -dir I -type ce clken
-connect_bd_net [get_bd_pins /v_tc_0/clken] [get_bd_ports clken]
-endgroup
-startgroup
-create_bd_port -dir I gen_clken
-connect_bd_net [get_bd_pins /v_tc_0/gen_clken] [get_bd_ports gen_clken]
+create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:acc_handshake_rtl:1.0 ap_ctrl
+connect_bd_intf_net [get_bd_intf_pins mandel_calc_0/ap_ctrl] [get_bd_intf_ports ap_ctrl]
 endgroup
 regenerate_bd_layout
+delete_bd_objs [get_bd_nets xlconstant_0_dout] [get_bd_cells xlconstant_0]
+startgroup
+create_bd_port -dir I -from 11 -to 0 rgb_pData
+connect_bd_net [get_bd_pins /rgb2vga_0/rgb_pData] [get_bd_ports rgb_pData]
+endgroup
+startgroup
+create_bd_port -dir I -from 17 -to 0 -type data re_V
+set_property CONFIG.LAYERED_METADATA [get_property CONFIG.LAYERED_METADATA [get_bd_pins mandel_calc_0/re_V]] [get_bd_ports re_V]
+connect_bd_net [get_bd_pins /mandel_calc_0/re_V] [get_bd_ports re_V]
+endgroup
+startgroup
+create_bd_port -dir I -from 17 -to 0 -type data im_V
+set_property CONFIG.LAYERED_METADATA [get_property CONFIG.LAYERED_METADATA [get_bd_pins mandel_calc_0/im_V]] [get_bd_ports im_V]
+connect_bd_net [get_bd_pins /mandel_calc_0/im_V] [get_bd_ports im_V]
+endgroup
 regenerate_bd_layout
+startgroup
+create_bd_port -dir O -from 0 -to 0 fsync_out
+connect_bd_net [get_bd_pins /v_tc_0/fsync_out] [get_bd_ports fsync_out]
+endgroup
+regenerate_bd_layout
+startgroup
+create_bd_cell -type ip -vlnv digilentinc.com:ip:clock_forwarder:1.0 clock_forwarder_0
+endgroup
+set_property location {3 634 584} [get_bd_cells clock_forwarder_0]
+delete_bd_objs [get_bd_cells clock_forwarder_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_vdma:6.3 axi_vdma_0
+endgroup
+delete_bd_objs [get_bd_cells axi_vdma_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:v_axi4s_vid_out:4.0 v_axi4s_vid_out_0
+endgroup
+set_property -dict [list CONFIG.C_HAS_ASYNC_CLK {1}] [get_bd_cells v_axi4s_vid_out_0]
+delete_bd_objs [get_bd_cells v_axi4s_vid_out_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:v_tpg:7.0 v_tpg_0
+endgroup
 save_bd_design
-make_wrapper -files [get_files /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd] -top
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1
-launch_runs impl_1 -jobs 4
-wait_on_run impl_1
-open_run synth_1 -name synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-open_bd_design {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd}
-validate_bd_design -force
-save_bd_design
-close_bd_design [get_bd_designs design_1]
-close_design
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-open_bd_design {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd}
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-close_bd_design [get_bd_designs design_1]
-open_hw
-connect_hw_server
-open_hw_target
-set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.runs/impl_1/main.bit} [get_hw_devices xc7a35t_0]
-current_hw_device [get_hw_devices xc7a35t_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.runs/impl_1/main.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-close_hw
-open_bd_design {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd}
-create_bd_cell -type ip -vlnv digilentinc.com:IP:axi_ps2:1.0 axi_ps2_0
-delete_bd_objs [get_bd_cells axi_ps2_0]
-save_bd_design
+close_project
 open_project /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_5/test_pattern_5.xpr
 update_compile_order -fileset sources_1
 open_bd_design {/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_5/test_pattern_5.srcs/sources_1/bd/design_1/design_1.bd}
-close_bd_design [get_bd_designs design_1]
 close_project
-open_bd_design {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_1/video_digip_1.srcs/sources_1/bd/design_1/design_1.bd}
-save_project_as video_digip_2 /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2 -force
-ipx::create_abstraction_definition tmc user mandlebrot_rtl 1.0
-ipx::create_bus_definition tmc user mandlebrot 1.0
-set_property xml_file_name /home/trevor/mylab/experiments/20180224-tmc-mb/ip_repo/mandlebrot_rtl.xml [ipx::current_busabs]
-set_property xml_file_name /home/trevor/mylab/experiments/20180224-tmc-mb/ip_repo/mandlebrot.xml [ipx::current_busdef]
-set_property bus_type_vlnv tmc:user:mandlebrot:1.0 [ipx::current_busabs]
-ipx::save_abstraction_definition [ipx::current_busabs]
-ipx::save_bus_definition [ipx::current_busdef]
-set_property  ip_repo_paths  {/home/trevor/mylab/Basys3/vivado-library-master /home/trevor/mylab/experiments/20180224-tmc-mb/ip_repo} [current_project]
-update_ip_catalog
-ipx::unload_abstraction_definition /home/trevor/mylab/experiments/20180224-tmc-mb/ip_repo/mandlebrot_rtl.xml
-ipx::unload_bus_definition /home/trevor/mylab/experiments/20180224-tmc-mb/ip_repo/mandlebrot.xml
-close_bd_design [get_bd_designs design_1]
-open_bd_design {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.srcs/sources_1/bd/design_1/design_1.bd}
-startgroup
-set_property -dict [list CONFIG.VIDEO_MODE {640x480p} CONFIG.GEN_F0_VSYNC_VSTART {489} CONFIG.GEN_F1_VSYNC_VSTART {489} CONFIG.GEN_HACTIVE_SIZE {640} CONFIG.GEN_HSYNC_END {752} CONFIG.GEN_HFRAME_SIZE {800} CONFIG.GEN_F0_VSYNC_HSTART {640} CONFIG.GEN_F1_VSYNC_HSTART {640} CONFIG.GEN_F0_VSYNC_HEND {640} CONFIG.GEN_F1_VSYNC_HEND {640} CONFIG.GEN_F0_VFRAME_SIZE {525} CONFIG.GEN_F1_VFRAME_SIZE {525} CONFIG.GEN_F0_VSYNC_VEND {491} CONFIG.GEN_F1_VSYNC_VEND {491} CONFIG.GEN_F0_VBLANK_HEND {640} CONFIG.GEN_F1_VBLANK_HEND {640} CONFIG.GEN_HSYNC_START {656} CONFIG.GEN_VACTIVE_SIZE {480} CONFIG.GEN_F0_VBLANK_HSTART {640} CONFIG.GEN_F1_VBLANK_HSTART {640}] [get_bd_cells v_tc_0]
-endgroup
-startgroup
-set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {400.000} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {25.000} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.500} CONFIG.MMCM_CLKOUT1_DIVIDE {40} CONFIG.CLKOUT1_JITTER {101.114} CONFIG.CLKOUT2_JITTER {175.402}] [get_bd_cells clk_wiz_0]
-endgroup
-save_bd_design
-startgroup
-set_property -dict [list CONFIG.CONST_VAL {1983}] [get_bd_cells xlconstant_0]
-endgroup
-save_bd_design
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1
-startgroup
-set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {450.000} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {9.000} CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.000} CONFIG.MMCM_CLKOUT1_DIVIDE {36} CONFIG.CLKOUT1_JITTER {103.830} CONFIG.CLKOUT1_PHASE_ERROR {105.461} CONFIG.CLKOUT2_JITTER {183.467} CONFIG.CLKOUT2_PHASE_ERROR {105.461}] [get_bd_cells clk_wiz_0]
-endgroup
-save_bd_design
-reset_run synth_1
-launch_runs impl_1 -jobs 4
-wait_on_run impl_1
-open_run synth_1 -name synth_1
-report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
-open_run impl_1
-report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
-report_clock_networks -name {network_1}
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-open_hw
-connect_hw_server
-open_hw_target
-set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.runs/impl_1/main.bit} [get_hw_devices xc7a35t_0]
-current_hw_device [get_hw_devices xc7a35t_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.runs/impl_1/main.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-open_bd_design {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.srcs/sources_1/bd/design_1/design_1.bd}
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:cmpy:6.0 cmpy_0
-endgroup
-set_property location {2 362 -141} [get_bd_cells cmpy_0]
-delete_bd_objs [get_bd_cells cmpy_0]
-create_bd_cell -type ip -vlnv xilinx.com:ip:cordic:6.0 cordic_0
-set_property location {1.5 392 -165} [get_bd_cells cordic_0]
-delete_bd_objs [get_bd_cells cordic_0]
-close_bd_design [get_bd_designs design_1]
+open_project /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_1/mandelbrot_1.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_1/mandelbrot_1.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_cells v_tpg_0]
+delete_bd_objs [get_bd_nets re_V_1] [get_bd_nets im_V_1] [get_bd_intf_nets ap_ctrl_1] [get_bd_intf_nets mandel_calc_0_count_out_V] [get_bd_nets clk_wiz_0_clk_ap] [get_bd_cells mandel_calc_0]
+export_ip_user_files -of_objects  [get_files /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_1/mandelbrot_1.srcs/sources_1/bd/design_1/design_1.bd] -no_script -reset -force -quiet
+remove_files  /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_1/mandelbrot_1.srcs/sources_1/bd/design_1/design_1.bd
+close_project
+open_project /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_1/mandelbrot_1.xpr
+update_compile_order -fileset sources_1

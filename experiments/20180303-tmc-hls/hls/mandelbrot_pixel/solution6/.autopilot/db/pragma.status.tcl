@@ -1,0 +1,6 @@
+lappend pragmaStatus0 {pragma "UNROLL" source "/home/trevor/mylab/experiments/20180303-tmc-hls/hls/mandelbrot_pixel/C/mandel_calc.cpp" location "mandel_calc/myloop" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
+lappend pragmaStatus1 {pragma "PIPELINE" source "/home/trevor/mylab/experiments/20180303-tmc-hls/hls/mandelbrot_pixel/C/mandel_calc.cpp" location "mandel_calc/myloop" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
+lappend pragmaStatus2 {pragma "INTERFACE" source "/home/trevor/mylab/experiments/20180303-tmc-hls/hls/mandelbrot_pixel/C/mandel_calc.cpp" location "mandel_calc" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
+lappend pragmaStatus3 {pragma "DATA_PACK" source "/home/trevor/mylab/experiments/20180303-tmc-hls/hls/mandelbrot_pixel/C/mandel_calc.cpp" location "mandel_calc" found 1 funcFound 1 applied 1 ambiguous 0 reason "null" variable "re"}
+lappend pragmaStatus4 {pragma "DATA_PACK" source "/home/trevor/mylab/experiments/20180303-tmc-hls/hls/mandelbrot_pixel/C/mandel_calc.cpp" location "mandel_calc" found 1 funcFound 1 applied 1 ambiguous 0 reason "null" variable "im"}
+lappend pragmaStatus5 {pragma "INTERFACE" source "/home/trevor/mylab/experiments/20180303-tmc-hls/hls/mandelbrot_pixel/C/mandel_calc.cpp" location "mandel_calc" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}

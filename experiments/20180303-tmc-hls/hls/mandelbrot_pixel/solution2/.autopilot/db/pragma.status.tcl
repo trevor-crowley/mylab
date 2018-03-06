@@ -1,0 +1,1 @@
+lappend pragmaStatus0 {pragma "UNROLL" source "/home/trevor/mylab/experiments/20180303-tmc-hls/hls/mandel_calc.cpp" location "mandel_calc/myloop" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}

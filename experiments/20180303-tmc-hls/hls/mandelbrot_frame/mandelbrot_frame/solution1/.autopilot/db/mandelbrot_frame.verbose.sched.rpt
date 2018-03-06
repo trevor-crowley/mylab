@@ -1,0 +1,167 @@
+
+
+================================================================
+== Vivado HLS Report for 'mandelbrot_frame'
+================================================================
+* Date:           Sun Mar  4 23:59:49 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        mandelbrot_frame
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a200tfbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      1.90|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  308161|  308161|  308161|  308161|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |             |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  308160|  308160|       642|          -|          -|   480|    no    |
+        | + Loop 1.1  |     640|     640|         1|          -|          -|   640|    no    |
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+3 --> 
+	3  / (!exitcond)
+	2  / (exitcond)
+
+* FSM state operations: 
+
+ <State 1> : 1.35ns
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i24* %video_out_V_data_V), !map !33"
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %video_out_V_keep_V), !map !37"
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %video_out_V_strb_V), !map !41"
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %video_out_V_user_V), !map !45"
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %video_out_V_last_V), !map !49"
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %video_out_V_id_V), !map !53"
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %video_out_V_dest_V), !map !57"
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([17 x i8]* @mandelbrot_frame_str) nounwind"
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* %video_out_V_data_V, i3* %video_out_V_keep_V, i3* %video_out_V_strb_V, i1* %video_out_V_user_V, i1* %video_out_V_last_V, i1* %video_out_V_id_V, i1* %video_out_V_dest_V, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [mandelbrot_frame.cpp:13]
+ST_1 : Operation 13 [1/1] (1.35ns)   --->   "br label %.loopexit" [mandelbrot_frame.cpp:15]
+
+ <State 2> : 1.73ns
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%y = phi i9 [ 0, %codeRepl ], [ %y_1, %.loopexit.loopexit ]"
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%y_cast2 = zext i9 %y to i19" [mandelbrot_frame.cpp:15]
+ST_2 : Operation 16 [1/1] (1.34ns)   --->   "%exitcond1 = icmp eq i9 %y, -32" [mandelbrot_frame.cpp:15]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 480, i64 480, i64 480)"
+ST_2 : Operation 18 [1/1] (1.73ns)   --->   "%y_1 = add i9 %y, 1" [mandelbrot_frame.cpp:15]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %1, label %.preheader.preheader" [mandelbrot_frame.cpp:15]
+ST_2 : Operation 20 [1/1] (1.35ns)   --->   "br label %.preheader" [mandelbrot_frame.cpp:16]
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "ret void" [mandelbrot_frame.cpp:25]
+
+ <State 3> : 1.90ns
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%x = phi i10 [ %x_1, %0 ], [ 0, %.preheader.preheader ]"
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%phi_mul = phi i19 [ %next_mul, %0 ], [ 0, %.preheader.preheader ]" [mandelbrot_frame.cpp:15]
+ST_3 : Operation 24 [1/1] (1.43ns)   --->   "%exitcond = icmp eq i10 %x, -384" [mandelbrot_frame.cpp:16]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 640, i64 640, i64 640)"
+ST_3 : Operation 26 [1/1] (1.74ns)   --->   "%x_1 = add i10 %x, 1" [mandelbrot_frame.cpp:16]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.loopexit.loopexit, label %0" [mandelbrot_frame.cpp:16]
+ST_3 : Operation 28 [1/1] (1.90ns)   --->   "%next_mul = add i19 %y_cast2, %phi_mul" [mandelbrot_frame.cpp:15]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_data_V = zext i19 %phi_mul to i24" [mandelbrot_frame.cpp:17]
+ST_3 : Operation 30 [1/1] (0.00ns) (grouped into LUT with out node tmp_user_V)   --->   "%tmp = trunc i10 %x to i9" [mandelbrot_frame.cpp:16]
+ST_3 : Operation 31 [1/1] (0.00ns) (grouped into LUT with out node tmp_user_V)   --->   "%tmp_2 = or i9 %tmp, %y" [mandelbrot_frame.cpp:16]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.91> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 32 [1/1] (0.00ns) (grouped into LUT with out node tmp_user_V)   --->   "%tmp_3 = call i1 @_ssdm_op_BitSelect.i1.i10.i32(i10 %x, i32 9)" [mandelbrot_frame.cpp:16]
+ST_3 : Operation 33 [1/1] (0.00ns) (grouped into LUT with out node tmp_user_V)   --->   "%tmp_1 = call i10 @_ssdm_op_BitConcatenate.i10.i1.i9(i1 %tmp_3, i9 %tmp_2)" [mandelbrot_frame.cpp:18]
+ST_3 : Operation 34 [1/1] (1.43ns) (out node of the LUT)   --->   "%tmp_user_V = icmp eq i10 %tmp_1, 0" [mandelbrot_frame.cpp:18]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 35 [1/1] (1.43ns)   --->   "%tmp_last_V = icmp eq i10 %x, -385" [mandelbrot_frame.cpp:19]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i24P.i3P.i3P.i1P.i1P.i1P.i1P(i24* %video_out_V_data_V, i3* %video_out_V_keep_V, i3* %video_out_V_strb_V, i1* %video_out_V_user_V, i1* %video_out_V_last_V, i1* %video_out_V_id_V, i1* %video_out_V_dest_V, i24 %tmp_data_V, i3 0, i3 0, i1 %tmp_user_V, i1 %tmp_last_V, i1 false, i1 false)" [mandelbrot_frame.cpp:20]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "br label %.preheader" [mandelbrot_frame.cpp:16]
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "br label %.loopexit"
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.35ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('y') with incoming values : ('y', mandelbrot_frame.cpp:15) [19]  (1.35 ns)
+
+ <State 2>: 1.73ns
+The critical path consists of the following:
+	'phi' operation ('y') with incoming values : ('y', mandelbrot_frame.cpp:15) [19]  (0 ns)
+	'add' operation ('y', mandelbrot_frame.cpp:15) [23]  (1.73 ns)
+
+ <State 3>: 1.9ns
+The critical path consists of the following:
+	'phi' operation ('val', mandelbrot_frame.cpp:15) with incoming values : ('next_mul', mandelbrot_frame.cpp:15) [29]  (0 ns)
+	'add' operation ('next_mul', mandelbrot_frame.cpp:15) [35]  (1.9 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
