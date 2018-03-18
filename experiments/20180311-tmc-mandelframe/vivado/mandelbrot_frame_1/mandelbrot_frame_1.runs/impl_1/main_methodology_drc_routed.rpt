@@ -1,0 +1,75 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Sun Mar 11 23:29:33 2018
+| Host         : luigilinux running 64-bit openSUSE Leap 42.3
+| Command      : report_methodology -file main_methodology_drc_routed.rpt -pb main_methodology_drc_routed.pb -rpx main_methodology_drc_routed.rpx
+| Design       : main
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 8
++-----------+----------+-----------------------+------------+
+| Rule      | Severity | Description           | Violations |
++-----------+----------+-----------------------+------------+
+| TIMING-16 | Warning  | Large setup violation | 8          |
++-----------+----------+-----------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.508 ns between design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p/CLK (clocked by clk_ap_design_1_clk_wiz_0_0) and design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/tmp_9_reg_968_reg[0]/D (clocked by clk_ap_design_1_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -1.642 ns between design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p/CLK (clocked by clk_ap_design_1_clk_wiz_0_0) and design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/tmp_9_reg_968_reg[1]/D (clocked by clk_ap_design_1_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -1.658 ns between design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p/CLK (clocked by clk_ap_design_1_clk_wiz_0_0) and design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/tmp_9_reg_968_reg[3]/D (clocked by clk_ap_design_1_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -1.732 ns between design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p/CLK (clocked by clk_ap_design_1_clk_wiz_0_0) and design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/tmp_9_reg_968_reg[4]/D (clocked by clk_ap_design_1_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -1.753 ns between design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p/CLK (clocked by clk_ap_design_1_clk_wiz_0_0) and design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/tmp_9_reg_968_reg[2]/D (clocked by clk_ap_design_1_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -1.756 ns between design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p/CLK (clocked by clk_ap_design_1_clk_wiz_0_0) and design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/tmp_9_reg_968_reg[5]/D (clocked by clk_ap_design_1_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -1.772 ns between design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p/CLK (clocked by clk_ap_design_1_clk_wiz_0_0) and design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/tmp_9_reg_968_reg[7]/D (clocked by clk_ap_design_1_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -1.867 ns between design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p/CLK (clocked by clk_ap_design_1_clk_wiz_0_0) and design_1_wrapper_i/design_1_i/mandelbrot_frame_0/inst/tmp_9_reg_968_reg[6]/D (clocked by clk_ap_design_1_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+

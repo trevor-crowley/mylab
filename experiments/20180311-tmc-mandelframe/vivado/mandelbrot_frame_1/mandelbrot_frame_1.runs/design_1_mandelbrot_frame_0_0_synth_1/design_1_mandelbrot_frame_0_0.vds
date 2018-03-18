@@ -1,0 +1,651 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Mar 11 23:25:53 2018
+# Process ID: 23910
+# Current directory: /home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.runs/design_1_mandelbrot_frame_0_0_synth_1
+# Command line: vivado -log design_1_mandelbrot_frame_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_mandelbrot_frame_0_0.tcl
+# Log file: /home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.runs/design_1_mandelbrot_frame_0_0_synth_1/design_1_mandelbrot_frame_0_0.vds
+# Journal file: /home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.runs/design_1_mandelbrot_frame_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_mandelbrot_frame_0_0.tcl -notrace
+Command: synth_design -top design_1_mandelbrot_frame_0_0 -part xc7a35tcpg236-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 23913 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1239.832 ; gain = 76.996 ; free physical = 1863 ; free virtual = 6893
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_mandelbrot_frame_0_0' [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ip/design_1_mandelbrot_frame_0_0/synth/design_1_mandelbrot_frame_0_0.v:56]
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame' [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame.v:12]
+	Parameter ap_ST_fsm_state1 bound to: 4'b0001 
+	Parameter ap_ST_fsm_state2 bound to: 4'b0010 
+	Parameter ap_ST_fsm_state3 bound to: 4'b0100 
+	Parameter ap_ST_fsm_state4 bound to: 4'b1000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame.v:57]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame.v:94]
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame_bkb' [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame_bkb.v:11]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 12 - type: integer 
+	Parameter din1_WIDTH bound to: 12 - type: integer 
+	Parameter din2_WIDTH bound to: 12 - type: integer 
+	Parameter din3_WIDTH bound to: 12 - type: integer 
+	Parameter din4_WIDTH bound to: 12 - type: integer 
+	Parameter din5_WIDTH bound to: 12 - type: integer 
+	Parameter din6_WIDTH bound to: 12 - type: integer 
+	Parameter din7_WIDTH bound to: 12 - type: integer 
+	Parameter din8_WIDTH bound to: 12 - type: integer 
+	Parameter din9_WIDTH bound to: 12 - type: integer 
+	Parameter din10_WIDTH bound to: 12 - type: integer 
+	Parameter din11_WIDTH bound to: 12 - type: integer 
+	Parameter din12_WIDTH bound to: 12 - type: integer 
+	Parameter din13_WIDTH bound to: 12 - type: integer 
+	Parameter din14_WIDTH bound to: 12 - type: integer 
+	Parameter din15_WIDTH bound to: 12 - type: integer 
+	Parameter din16_WIDTH bound to: 12 - type: integer 
+	Parameter din17_WIDTH bound to: 12 - type: integer 
+	Parameter din18_WIDTH bound to: 12 - type: integer 
+	Parameter din19_WIDTH bound to: 12 - type: integer 
+	Parameter din20_WIDTH bound to: 12 - type: integer 
+	Parameter din21_WIDTH bound to: 12 - type: integer 
+	Parameter din22_WIDTH bound to: 12 - type: integer 
+	Parameter din23_WIDTH bound to: 12 - type: integer 
+	Parameter din24_WIDTH bound to: 12 - type: integer 
+	Parameter din25_WIDTH bound to: 12 - type: integer 
+	Parameter din26_WIDTH bound to: 12 - type: integer 
+	Parameter din27_WIDTH bound to: 12 - type: integer 
+	Parameter din28_WIDTH bound to: 12 - type: integer 
+	Parameter din29_WIDTH bound to: 12 - type: integer 
+	Parameter din30_WIDTH bound to: 12 - type: integer 
+	Parameter din31_WIDTH bound to: 12 - type: integer 
+	Parameter din32_WIDTH bound to: 12 - type: integer 
+	Parameter din33_WIDTH bound to: 12 - type: integer 
+	Parameter din34_WIDTH bound to: 12 - type: integer 
+	Parameter din35_WIDTH bound to: 12 - type: integer 
+	Parameter din36_WIDTH bound to: 12 - type: integer 
+	Parameter din37_WIDTH bound to: 12 - type: integer 
+	Parameter din38_WIDTH bound to: 12 - type: integer 
+	Parameter din39_WIDTH bound to: 12 - type: integer 
+	Parameter din40_WIDTH bound to: 12 - type: integer 
+	Parameter din41_WIDTH bound to: 12 - type: integer 
+	Parameter din42_WIDTH bound to: 12 - type: integer 
+	Parameter din43_WIDTH bound to: 12 - type: integer 
+	Parameter din44_WIDTH bound to: 12 - type: integer 
+	Parameter din45_WIDTH bound to: 12 - type: integer 
+	Parameter din46_WIDTH bound to: 12 - type: integer 
+	Parameter din47_WIDTH bound to: 12 - type: integer 
+	Parameter din48_WIDTH bound to: 12 - type: integer 
+	Parameter din49_WIDTH bound to: 12 - type: integer 
+	Parameter din50_WIDTH bound to: 12 - type: integer 
+	Parameter din51_WIDTH bound to: 12 - type: integer 
+	Parameter din52_WIDTH bound to: 12 - type: integer 
+	Parameter din53_WIDTH bound to: 12 - type: integer 
+	Parameter din54_WIDTH bound to: 12 - type: integer 
+	Parameter din55_WIDTH bound to: 12 - type: integer 
+	Parameter din56_WIDTH bound to: 12 - type: integer 
+	Parameter din57_WIDTH bound to: 12 - type: integer 
+	Parameter din58_WIDTH bound to: 12 - type: integer 
+	Parameter din59_WIDTH bound to: 12 - type: integer 
+	Parameter din60_WIDTH bound to: 12 - type: integer 
+	Parameter din61_WIDTH bound to: 12 - type: integer 
+	Parameter din62_WIDTH bound to: 12 - type: integer 
+	Parameter din63_WIDTH bound to: 12 - type: integer 
+	Parameter din64_WIDTH bound to: 12 - type: integer 
+	Parameter din65_WIDTH bound to: 12 - type: integer 
+	Parameter din66_WIDTH bound to: 12 - type: integer 
+	Parameter din67_WIDTH bound to: 12 - type: integer 
+	Parameter din68_WIDTH bound to: 12 - type: integer 
+	Parameter din69_WIDTH bound to: 12 - type: integer 
+	Parameter din70_WIDTH bound to: 12 - type: integer 
+	Parameter din71_WIDTH bound to: 12 - type: integer 
+	Parameter din72_WIDTH bound to: 12 - type: integer 
+	Parameter din73_WIDTH bound to: 12 - type: integer 
+	Parameter din74_WIDTH bound to: 12 - type: integer 
+	Parameter din75_WIDTH bound to: 12 - type: integer 
+	Parameter din76_WIDTH bound to: 12 - type: integer 
+	Parameter din77_WIDTH bound to: 12 - type: integer 
+	Parameter din78_WIDTH bound to: 12 - type: integer 
+	Parameter din79_WIDTH bound to: 12 - type: integer 
+	Parameter din80_WIDTH bound to: 12 - type: integer 
+	Parameter din81_WIDTH bound to: 12 - type: integer 
+	Parameter din82_WIDTH bound to: 12 - type: integer 
+	Parameter din83_WIDTH bound to: 12 - type: integer 
+	Parameter din84_WIDTH bound to: 12 - type: integer 
+	Parameter din85_WIDTH bound to: 12 - type: integer 
+	Parameter din86_WIDTH bound to: 12 - type: integer 
+	Parameter din87_WIDTH bound to: 12 - type: integer 
+	Parameter din88_WIDTH bound to: 12 - type: integer 
+	Parameter din89_WIDTH bound to: 12 - type: integer 
+	Parameter din90_WIDTH bound to: 12 - type: integer 
+	Parameter din91_WIDTH bound to: 12 - type: integer 
+	Parameter din92_WIDTH bound to: 12 - type: integer 
+	Parameter din93_WIDTH bound to: 12 - type: integer 
+	Parameter din94_WIDTH bound to: 12 - type: integer 
+	Parameter din95_WIDTH bound to: 12 - type: integer 
+	Parameter din96_WIDTH bound to: 12 - type: integer 
+	Parameter din97_WIDTH bound to: 12 - type: integer 
+	Parameter din98_WIDTH bound to: 12 - type: integer 
+	Parameter din99_WIDTH bound to: 12 - type: integer 
+	Parameter din100_WIDTH bound to: 12 - type: integer 
+	Parameter din101_WIDTH bound to: 12 - type: integer 
+	Parameter din102_WIDTH bound to: 12 - type: integer 
+	Parameter din103_WIDTH bound to: 12 - type: integer 
+	Parameter din104_WIDTH bound to: 12 - type: integer 
+	Parameter din105_WIDTH bound to: 12 - type: integer 
+	Parameter din106_WIDTH bound to: 12 - type: integer 
+	Parameter din107_WIDTH bound to: 12 - type: integer 
+	Parameter din108_WIDTH bound to: 12 - type: integer 
+	Parameter din109_WIDTH bound to: 12 - type: integer 
+	Parameter din110_WIDTH bound to: 12 - type: integer 
+	Parameter din111_WIDTH bound to: 12 - type: integer 
+	Parameter din112_WIDTH bound to: 12 - type: integer 
+	Parameter din113_WIDTH bound to: 12 - type: integer 
+	Parameter din114_WIDTH bound to: 12 - type: integer 
+	Parameter din115_WIDTH bound to: 12 - type: integer 
+	Parameter din116_WIDTH bound to: 12 - type: integer 
+	Parameter din117_WIDTH bound to: 12 - type: integer 
+	Parameter din118_WIDTH bound to: 12 - type: integer 
+	Parameter din119_WIDTH bound to: 12 - type: integer 
+	Parameter din120_WIDTH bound to: 12 - type: integer 
+	Parameter din121_WIDTH bound to: 12 - type: integer 
+	Parameter din122_WIDTH bound to: 12 - type: integer 
+	Parameter din123_WIDTH bound to: 12 - type: integer 
+	Parameter din124_WIDTH bound to: 12 - type: integer 
+	Parameter din125_WIDTH bound to: 12 - type: integer 
+	Parameter din126_WIDTH bound to: 12 - type: integer 
+	Parameter din127_WIDTH bound to: 12 - type: integer 
+	Parameter din128_WIDTH bound to: 12 - type: integer 
+	Parameter din129_WIDTH bound to: 12 - type: integer 
+	Parameter din130_WIDTH bound to: 12 - type: integer 
+	Parameter din131_WIDTH bound to: 12 - type: integer 
+	Parameter din132_WIDTH bound to: 12 - type: integer 
+	Parameter din133_WIDTH bound to: 12 - type: integer 
+	Parameter din134_WIDTH bound to: 12 - type: integer 
+	Parameter din135_WIDTH bound to: 12 - type: integer 
+	Parameter din136_WIDTH bound to: 12 - type: integer 
+	Parameter din137_WIDTH bound to: 12 - type: integer 
+	Parameter din138_WIDTH bound to: 12 - type: integer 
+	Parameter din139_WIDTH bound to: 12 - type: integer 
+	Parameter din140_WIDTH bound to: 12 - type: integer 
+	Parameter din141_WIDTH bound to: 12 - type: integer 
+	Parameter din142_WIDTH bound to: 12 - type: integer 
+	Parameter din143_WIDTH bound to: 12 - type: integer 
+	Parameter din144_WIDTH bound to: 12 - type: integer 
+	Parameter din145_WIDTH bound to: 12 - type: integer 
+	Parameter din146_WIDTH bound to: 12 - type: integer 
+	Parameter din147_WIDTH bound to: 12 - type: integer 
+	Parameter din148_WIDTH bound to: 12 - type: integer 
+	Parameter din149_WIDTH bound to: 12 - type: integer 
+	Parameter din150_WIDTH bound to: 12 - type: integer 
+	Parameter din151_WIDTH bound to: 12 - type: integer 
+	Parameter din152_WIDTH bound to: 12 - type: integer 
+	Parameter din153_WIDTH bound to: 12 - type: integer 
+	Parameter din154_WIDTH bound to: 12 - type: integer 
+	Parameter din155_WIDTH bound to: 12 - type: integer 
+	Parameter din156_WIDTH bound to: 12 - type: integer 
+	Parameter din157_WIDTH bound to: 12 - type: integer 
+	Parameter din158_WIDTH bound to: 12 - type: integer 
+	Parameter din159_WIDTH bound to: 12 - type: integer 
+	Parameter din160_WIDTH bound to: 12 - type: integer 
+	Parameter din161_WIDTH bound to: 12 - type: integer 
+	Parameter din162_WIDTH bound to: 12 - type: integer 
+	Parameter din163_WIDTH bound to: 12 - type: integer 
+	Parameter din164_WIDTH bound to: 12 - type: integer 
+	Parameter din165_WIDTH bound to: 12 - type: integer 
+	Parameter din166_WIDTH bound to: 12 - type: integer 
+	Parameter din167_WIDTH bound to: 12 - type: integer 
+	Parameter din168_WIDTH bound to: 12 - type: integer 
+	Parameter din169_WIDTH bound to: 12 - type: integer 
+	Parameter din170_WIDTH bound to: 12 - type: integer 
+	Parameter din171_WIDTH bound to: 12 - type: integer 
+	Parameter din172_WIDTH bound to: 12 - type: integer 
+	Parameter din173_WIDTH bound to: 12 - type: integer 
+	Parameter din174_WIDTH bound to: 12 - type: integer 
+	Parameter din175_WIDTH bound to: 12 - type: integer 
+	Parameter din176_WIDTH bound to: 12 - type: integer 
+	Parameter din177_WIDTH bound to: 12 - type: integer 
+	Parameter din178_WIDTH bound to: 12 - type: integer 
+	Parameter din179_WIDTH bound to: 12 - type: integer 
+	Parameter din180_WIDTH bound to: 12 - type: integer 
+	Parameter din181_WIDTH bound to: 12 - type: integer 
+	Parameter din182_WIDTH bound to: 12 - type: integer 
+	Parameter din183_WIDTH bound to: 12 - type: integer 
+	Parameter din184_WIDTH bound to: 12 - type: integer 
+	Parameter din185_WIDTH bound to: 12 - type: integer 
+	Parameter din186_WIDTH bound to: 12 - type: integer 
+	Parameter din187_WIDTH bound to: 12 - type: integer 
+	Parameter din188_WIDTH bound to: 12 - type: integer 
+	Parameter din189_WIDTH bound to: 12 - type: integer 
+	Parameter din190_WIDTH bound to: 12 - type: integer 
+	Parameter din191_WIDTH bound to: 12 - type: integer 
+	Parameter din192_WIDTH bound to: 12 - type: integer 
+	Parameter din193_WIDTH bound to: 12 - type: integer 
+	Parameter din194_WIDTH bound to: 12 - type: integer 
+	Parameter din195_WIDTH bound to: 12 - type: integer 
+	Parameter din196_WIDTH bound to: 12 - type: integer 
+	Parameter din197_WIDTH bound to: 12 - type: integer 
+	Parameter din198_WIDTH bound to: 12 - type: integer 
+	Parameter din199_WIDTH bound to: 12 - type: integer 
+	Parameter din200_WIDTH bound to: 12 - type: integer 
+	Parameter din201_WIDTH bound to: 12 - type: integer 
+	Parameter din202_WIDTH bound to: 12 - type: integer 
+	Parameter din203_WIDTH bound to: 12 - type: integer 
+	Parameter din204_WIDTH bound to: 12 - type: integer 
+	Parameter din205_WIDTH bound to: 12 - type: integer 
+	Parameter din206_WIDTH bound to: 12 - type: integer 
+	Parameter din207_WIDTH bound to: 12 - type: integer 
+	Parameter din208_WIDTH bound to: 12 - type: integer 
+	Parameter din209_WIDTH bound to: 12 - type: integer 
+	Parameter din210_WIDTH bound to: 12 - type: integer 
+	Parameter din211_WIDTH bound to: 12 - type: integer 
+	Parameter din212_WIDTH bound to: 12 - type: integer 
+	Parameter din213_WIDTH bound to: 12 - type: integer 
+	Parameter din214_WIDTH bound to: 12 - type: integer 
+	Parameter din215_WIDTH bound to: 12 - type: integer 
+	Parameter din216_WIDTH bound to: 12 - type: integer 
+	Parameter din217_WIDTH bound to: 12 - type: integer 
+	Parameter din218_WIDTH bound to: 12 - type: integer 
+	Parameter din219_WIDTH bound to: 12 - type: integer 
+	Parameter din220_WIDTH bound to: 12 - type: integer 
+	Parameter din221_WIDTH bound to: 12 - type: integer 
+	Parameter din222_WIDTH bound to: 12 - type: integer 
+	Parameter din223_WIDTH bound to: 12 - type: integer 
+	Parameter din224_WIDTH bound to: 12 - type: integer 
+	Parameter din225_WIDTH bound to: 12 - type: integer 
+	Parameter din226_WIDTH bound to: 12 - type: integer 
+	Parameter din227_WIDTH bound to: 12 - type: integer 
+	Parameter din228_WIDTH bound to: 12 - type: integer 
+	Parameter din229_WIDTH bound to: 12 - type: integer 
+	Parameter din230_WIDTH bound to: 12 - type: integer 
+	Parameter din231_WIDTH bound to: 12 - type: integer 
+	Parameter din232_WIDTH bound to: 12 - type: integer 
+	Parameter din233_WIDTH bound to: 12 - type: integer 
+	Parameter din234_WIDTH bound to: 12 - type: integer 
+	Parameter din235_WIDTH bound to: 12 - type: integer 
+	Parameter din236_WIDTH bound to: 12 - type: integer 
+	Parameter din237_WIDTH bound to: 12 - type: integer 
+	Parameter din238_WIDTH bound to: 12 - type: integer 
+	Parameter din239_WIDTH bound to: 12 - type: integer 
+	Parameter din240_WIDTH bound to: 12 - type: integer 
+	Parameter din241_WIDTH bound to: 12 - type: integer 
+	Parameter din242_WIDTH bound to: 12 - type: integer 
+	Parameter din243_WIDTH bound to: 12 - type: integer 
+	Parameter din244_WIDTH bound to: 12 - type: integer 
+	Parameter din245_WIDTH bound to: 12 - type: integer 
+	Parameter din246_WIDTH bound to: 12 - type: integer 
+	Parameter din247_WIDTH bound to: 12 - type: integer 
+	Parameter din248_WIDTH bound to: 12 - type: integer 
+	Parameter din249_WIDTH bound to: 12 - type: integer 
+	Parameter din250_WIDTH bound to: 12 - type: integer 
+	Parameter din251_WIDTH bound to: 12 - type: integer 
+	Parameter din252_WIDTH bound to: 12 - type: integer 
+	Parameter din253_WIDTH bound to: 12 - type: integer 
+	Parameter din254_WIDTH bound to: 12 - type: integer 
+	Parameter din255_WIDTH bound to: 12 - type: integer 
+	Parameter din256_WIDTH bound to: 8 - type: integer 
+	Parameter dout_WIDTH bound to: 12 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame_bkb' (1#1) [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame_bkb.v:11]
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame_cud' [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame_cud.v:34]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 10 - type: integer 
+	Parameter din1_WIDTH bound to: 10 - type: integer 
+	Parameter din2_WIDTH bound to: 18 - type: integer 
+	Parameter dout_WIDTH bound to: 20 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame_cud_DSP48_0' [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame_cud.v:10]
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame_cud_DSP48_0' (2#1) [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame_cud.v:10]
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame_cud' (3#1) [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame_cud.v:34]
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame' (4#1) [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame.v:12]
+INFO: [Synth 8-256] done synthesizing module 'design_1_mandelbrot_frame_0_0' (5#1) [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ip/design_1_mandelbrot_frame_0_0/synth/design_1_mandelbrot_frame_0_0.v:56]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1282.371 ; gain = 119.535 ; free physical = 1873 ; free virtual = 6904
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1282.371 ; gain = 119.535 ; free physical = 1875 ; free virtual = 6906
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ip/design_1_mandelbrot_frame_0_0/constraints/mandelbrot_frame_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ip/design_1_mandelbrot_frame_0_0/constraints/mandelbrot_frame_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.runs/design_1_mandelbrot_frame_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.runs/design_1_mandelbrot_frame_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1640.750 ; gain = 0.004 ; free physical = 1395 ; free virtual = 6428
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:40 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1700 ; free virtual = 6733
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:40 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1700 ; free virtual = 6732
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.runs/design_1_mandelbrot_frame_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:40 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1702 ; free virtual = 6734
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "exitcond1_fu_296_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond_fu_333_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_last_V_fu_377_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_user_V_fu_371_p2" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1691 ; free virtual = 6724
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 255   
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module mandelbrot_frame_bkb 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 255   
+Module mandelbrot_frame 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'y_reg_261_reg[8:0]' into 'y_reg_261_reg[8:0]' [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame.v:677]
+INFO: [Synth 8-4471] merging register 'y_reg_261_reg[8:0]' into 'y_reg_261_reg[8:0]' [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame.v:677]
+WARNING: [Synth 8-6014] Unused sequential element y_reg_261_reg was removed.  [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame.v:677]
+WARNING: [Synth 8-6014] Unused sequential element y_reg_261_reg was removed.  [/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ipshared/962d/hdl/verilog/mandelbrot_frame.v:677]
+INFO: [Synth 8-5546] ROM "exitcond1_fu_296_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond_fu_333_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_user_V_fu_371_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_last_V_fu_377_p2" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP tmp_1_cast_reg_945_reg, operation Mode is: (A2*B2)'.
+DSP Report: register y_reg_261_reg is absorbed into DSP tmp_1_cast_reg_945_reg.
+DSP Report: register y_reg_261_reg is absorbed into DSP tmp_1_cast_reg_945_reg.
+DSP Report: register tmp_1_cast_reg_945_reg is absorbed into DSP tmp_1_cast_reg_945_reg.
+DSP Report: operator tmp_1_fu_308_p2 is absorbed into DSP tmp_1_cast_reg_945_reg.
+DSP Report: Generating DSP mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p, operation Mode is: PCIN+A2*B2.
+DSP Report: register x_reg_273_reg is absorbed into DSP mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p.
+DSP Report: register x_reg_273_reg is absorbed into DSP mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p.
+DSP Report: operator mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p is absorbed into DSP mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p.
+DSP Report: operator mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/m is absorbed into DSP mandelbrot_frame_cud_U2/mandelbrot_frame_cud_DSP48_0_U/p.
+INFO: [Synth 8-3886] merging instance 'inst/t_V_reg_927_reg[0]' (FDE) to 'inst/tmp_cast_reg_932_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/t_V_reg_927_reg[1]' (FDE) to 'inst/tmp_cast_reg_932_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/t_V_reg_927_reg[2]' (FDE) to 'inst/tmp_cast_reg_932_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/t_V_reg_927_reg[3]' (FDE) to 'inst/tmp_cast_reg_932_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/t_V_reg_927_reg[4]' (FDE) to 'inst/tmp_cast_reg_932_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/t_V_reg_927_reg[5]' (FDE) to 'inst/tmp_cast_reg_932_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/t_V_reg_927_reg[6]' (FDE) to 'inst/tmp_cast_reg_932_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/t_V_reg_927_reg[7]' (FDE) to 'inst/tmp_cast_reg_932_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_cast_reg_932_reg[19]' (FD) to 'inst/tmp_cast_reg_932_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_cast_reg_932_reg[18]' (FD) to 'inst/tmp_cast_reg_932_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_cast_reg_932_reg[17]' (FD) to 'inst/tmp_cast_reg_932_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_cast_reg_932_reg[16]' (FD) to 'inst/tmp_cast_reg_932_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_cast_reg_932_reg[15]' (FD) to 'inst/tmp_cast_reg_932_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_cast_reg_932_reg[14]' (FD) to 'inst/tmp_cast_reg_932_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_cast_reg_932_reg[13]' (FD) to 'inst/tmp_cast_reg_932_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_cast_reg_932_reg[12]' (FD) to 'inst/tmp_cast_reg_932_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_cast_reg_932_reg[11]' (FD) to 'inst/tmp_cast_reg_932_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_cast_reg_932_reg[8]' (FD) to 'inst/tmp_cast_reg_932_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_cast_reg_932_reg[9]' (FD) to 'inst/tmp_cast_reg_932_reg[10]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\tmp_cast_reg_932_reg[10] )
+WARNING: [Synth 8-3332] Sequential element (ap_reg_ioackin_video_out_TREADY_reg) is unused and will be removed from module mandelbrot_frame.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:42 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1682 ; free virtual = 6715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mandelbrot_frame | (A2*B2)'    | 9      | 9      | -      | -      | 18     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|mandelbrot_frame | PCIN+A2*B2  | 10     | 10     | -      | -      | 11     | 1    | 1    | -    | -    | -     | 0    | 0    | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1538 ; free virtual = 6571
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1536 ; free virtual = 6569
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1535 ; free virtual = 6568
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1535 ; free virtual = 6568
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1535 ; free virtual = 6568
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1535 ; free virtual = 6568
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1535 ; free virtual = 6568
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1535 ; free virtual = 6568
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1535 ; free virtual = 6568
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |     3|
+|2     |DSP48E1   |     1|
+|3     |DSP48E1_1 |     1|
+|4     |LUT1      |     4|
+|5     |LUT2      |    20|
+|6     |LUT3      |    11|
+|7     |LUT4      |    12|
+|8     |LUT5      |    20|
+|9     |LUT6      |    38|
+|10    |MUXF7     |    15|
+|11    |MUXF8     |     4|
+|12    |FDRE      |    67|
+|13    |FDSE      |     1|
++------+----------+------+
+
+Report Instance Areas: 
++------+-------------------------------------+-----------------------------+------+
+|      |Instance                             |Module                       |Cells |
++------+-------------------------------------+-----------------------------+------+
+|1     |top                                  |                             |   197|
+|2     |  inst                               |mandelbrot_frame             |   197|
+|3     |    mandelbrot_frame_cud_U2          |mandelbrot_frame_cud         |    15|
+|4     |      mandelbrot_frame_cud_DSP48_0_U |mandelbrot_frame_cud_DSP48_0 |    15|
++------+-------------------------------------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1535 ; free virtual = 6568
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 1640.750 ; gain = 119.535 ; free physical = 1600 ; free virtual = 6633
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:53 . Memory (MB): peak = 1640.750 ; gain = 477.914 ; free physical = 1600 ; free virtual = 6633
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+54 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:54 . Memory (MB): peak = 1662.781 ; gain = 513.316 ; free physical = 1599 ; free virtual = 6632
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+INFO: [Common 17-1381] The checkpoint '/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.runs/design_1_mandelbrot_frame_0_0_synth_1/design_1_mandelbrot_frame_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.srcs/sources_1/bd/design_1/ip/design_1_mandelbrot_frame_0_0/design_1_mandelbrot_frame_0_0.xci
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/trevor/mylab/experiments/20180311-tmc-mandelframe/vivado/mandelbrot_frame_1/mandelbrot_frame_1.runs/design_1_mandelbrot_frame_0_0_synth_1/design_1_mandelbrot_frame_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_mandelbrot_frame_0_0_utilization_synth.rpt -pb design_1_mandelbrot_frame_0_0_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1686.797 ; gain = 0.000 ; free physical = 1604 ; free virtual = 6637
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 11 23:26:57 2018...

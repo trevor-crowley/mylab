@@ -1,0 +1,9 @@
+<annotationInfo>
+<item  id="4" filename="example.cpp" linenumber="104" name="buff" contextFuncName="example" moduleName="example" rtlName="buff_U" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/trevor/mylab/experiments/20180303-tmc-hls/hls/axi_master"></item>
+<item  id="18" filename="example.cpp" linenumber="109" name="tmp" contextFuncName="example" moduleName="example" rtlName="tmp_fu_170_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/trevor/mylab/experiments/20180303-tmc-hls/hls/axi_master"></item>
+<item  id="28" filename="example.cpp" linenumber="111" name="exitcond" contextFuncName="example" moduleName="example" rtlName="exitcond_fu_175_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="11" fileDirectory="/home/trevor/mylab/experiments/20180303-tmc-hls/hls/axi_master"></item>
+<item  id="30" filename="example.cpp" linenumber="111" name="i_1" contextFuncName="example" moduleName="example" rtlName="i_1_fu_181_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="15" fileDirectory="/home/trevor/mylab/experiments/20180303-tmc-hls/hls/axi_master"></item>
+<item  id="33" filename="example.cpp" linenumber="112" name="tmp_1" contextFuncName="example" moduleName="example" rtlName="tmp_1_fu_187_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/trevor/mylab/experiments/20180303-tmc-hls/hls/axi_master"></item>
+<item  id="36" filename="example.cpp" linenumber="112" name="tmp_2" contextFuncName="example" moduleName="example" rtlName="tmp_2_fu_192_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="/home/trevor/mylab/experiments/20180303-tmc-hls/hls/axi_master"></item>
+<item  id="52" filename="example.cpp" linenumber="115" name="tmp_4" contextFuncName="example" moduleName="example" rtlName="tmp_4_fu_211_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/trevor/mylab/experiments/20180303-tmc-hls/hls/axi_master"></item>
+</annotationInfo>

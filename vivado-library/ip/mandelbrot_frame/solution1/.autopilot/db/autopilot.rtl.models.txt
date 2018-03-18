@@ -1,0 +1,4 @@
+mandelbrot_frame_bkb
+mandelbrot_frame_cud
+mandelbrot_frame_dEe
+mandelbrot_frame

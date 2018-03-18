@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Mar  5 21:30:14 2018
+# Process ID: 11388
+# Current directory: /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/impl_1
+# Command line: vivado -log main.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source main.tcl -notrace
+# Log file: /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/impl_1/main.vdi
+# Journal file: /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source main.tcl -notrace

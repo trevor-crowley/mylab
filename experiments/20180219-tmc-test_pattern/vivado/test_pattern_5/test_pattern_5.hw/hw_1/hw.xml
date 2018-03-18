@@ -10,7 +10,7 @@
       <Properties Property="FULL_PROBES.FILE" value="$_project_name_.runs/impl_1/main.ltx"/>
       <Properties Property="PROBES.FILE" value="$_project_name_.runs/impl_1/main.ltx"/>
       <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/main.bit"/>
-      <Properties Property="SLR.COUNT" value="/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/1"/>
+      <Properties Property="SLR.COUNT" value="/home/trevor/mylab/experiments/20180311-tmc-mandelframe/tcl/1"/>
     </Object>
   </ObjectList>
   <ObjectList object_type="hw_ila" gui_info="">
@@ -150,7 +150,7 @@
         <net name="design_1_wrapper_i/design_1_i/status[21]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>

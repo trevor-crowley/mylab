@@ -9,12 +9,12 @@ set PipelineFlag 0
 set DataflowTaskPipelineFlag  1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
-set FloatingPointFlag 0
+set FloatingPointFlag 1
 set FftOrFirFlag 0
 set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
-set HasDSPModule 0
+set HasDSPModule 1
 set ResetLevelFlag 0
 set ResetStyle "control"
 set ResetSyncFlag 1
@@ -44,12 +44,12 @@ set TargetInfo "xc7a200t:fbg676:-2"
 set SourceFiles {sc {} c ../../mandelbrot_frame.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {/home/trevor/mylab/experiments/20180303-tmc-hls/hls/mandelbrot_frame/mandelbrot_frame/solution1/solution1.directive}
-set TBFiles {verilog ../../mandelbrot_frame_tb.cpp bc ../../mandelbrot_frame_tb.cpp vhdl ../../mandelbrot_frame_tb.cpp sc ../../mandelbrot_frame_tb.cpp cas ../../mandelbrot_frame_tb.cpp c {}}
+set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
-set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBTops {bc "" c "" sc "" cas "" vhdl "" verilog ""}
+set TBInstNames {bc "" c "" sc "" cas "" vhdl "" verilog ""}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set PlatformFiles {{DefaultPlatform {xilinx/artix7/artix7 xilinx/artix7/artix7_fpv6}}}

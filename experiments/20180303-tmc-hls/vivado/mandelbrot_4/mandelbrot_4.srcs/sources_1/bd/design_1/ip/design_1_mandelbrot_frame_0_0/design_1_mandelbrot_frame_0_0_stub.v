@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Mon Mar  5 00:02:36 2018
+// Date        : Mon Mar  5 21:28:43 2018
 // Host        : luigilinux running 64-bit openSUSE Leap 42.3
-// Command     : write_verilog -force -mode synth_stub -rename_top design_1_mandelbrot_frame_0_0 -prefix
-//               design_1_mandelbrot_frame_0_0_ design_1_mandelbrot_frame_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ip/design_1_mandelbrot_frame_0_0/design_1_mandelbrot_frame_0_0_stub.v
 // Design      : design_1_mandelbrot_frame_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcpg236-1

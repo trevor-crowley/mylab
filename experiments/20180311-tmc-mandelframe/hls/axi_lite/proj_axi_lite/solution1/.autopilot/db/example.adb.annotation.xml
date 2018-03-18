@@ -1,0 +1,4 @@
+<annotationInfo>
+<item  id="15" filename="example.cpp" linenumber="102" name="tmp1" contextFuncName="example" moduleName="example" rtlName="tmp1_fu_53_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="8" fileDirectory="/home/trevor/mylab/experiments/20180311-tmc-mandelframe/hls/axi_lite"></item>
+<item  id="16" filename="example.cpp" linenumber="102" name="tmp_1" contextFuncName="example" moduleName="example" rtlName="tmp_1_fu_58_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="8" fileDirectory="/home/trevor/mylab/experiments/20180311-tmc-mandelframe/hls/axi_lite"></item>
+</annotationInfo>

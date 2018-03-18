@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Register 'pal_rot_V' is power-on initialization." projectName="mandelbrot_frame" solutionName="solution1" date="2018-03-12T00:26:40.407-0400" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'z_im_V' is power-on initialization." projectName="mandelbrot_frame" solutionName="solution1" date="2018-03-12T00:26:40.270-0400" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'z_re_V' is power-on initialization." projectName="mandelbrot_frame" solutionName="solution1" date="2018-03-12T00:26:40.269-0400" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'count_V' is power-on initialization." projectName="mandelbrot_frame" solutionName="solution1" date="2018-03-12T00:26:40.268-0400" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'z0_re_V' is power-on initialization." projectName="mandelbrot_frame" solutionName="solution1" date="2018-03-12T00:26:40.267-0400" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

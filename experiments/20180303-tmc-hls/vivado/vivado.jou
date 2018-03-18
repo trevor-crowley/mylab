@@ -2,37 +2,26 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun Mar  4 19:10:39 2018
-# Process ID: 10099
+# Start of session at: Mon Mar  5 21:24:19 2018
+# Process ID: 10440
 # Current directory: /home/trevor/mylab/experiments/20180303-tmc-hls/vivado
 # Command line: vivado
 # Log file: /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/vivado.log
 # Journal file: /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_1/mandelbrot_1.xpr
+open_project /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.xpr
 update_compile_order -fileset sources_1
-close_project
-open_project /home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_5/test_pattern_5.xpr
-update_compile_order -fileset sources_1
-save_project_as mandelbrot_2 /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_2 -force
-open_bd_design {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_2/mandelbrot_2.srcs/sources_1/bd/design_1/design_1.bd}
-close_project
-open_project /home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.xpr
-update_compile_order -fileset sources_1
-open_bd_design {/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.srcs/sources_1/bd/design_1/design_1.bd}
-save_project_as mandelbrot_3 /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_3 -force
-open_bd_design {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_3/mandelbrot_3.srcs/sources_1/bd/design_1/design_1.bd}
-delete_bd_objs [get_bd_nets xlconstant_0_dout] [get_bd_cells xlconstant_0]
-startgroup
-create_bd_port -dir I -from 11 -to 0 rgb_pData
-connect_bd_net [get_bd_pins /rgb2vga_0/rgb_pData] [get_bd_ports rgb_pData]
-endgroup
-regenerate_bd_layout
-save_bd_design
-make_wrapper -files [get_files /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_3/mandelbrot_3.srcs/sources_1/bd/design_1/design_1.bd] -top
-open_bd_design {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_3/mandelbrot_3.srcs/sources_1/bd/design_1/design_1.bd}
-open_bd_design {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_3/mandelbrot_3.srcs/sources_1/bd/design_1/design_1.bd}
+open_bd_design {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/design_1.bd}
+report_ip_status -name ip_status 
+upgrade_ip -vlnv tmc:hls:mandelbrot_frame:1.0 [get_ips  design_1_mandelbrot_frame_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_mandelbrot_frame_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/design_1.bd]
+catch { config_ip_cache -export [get_ips -all design_1_mandelbrot_frame_0_0] }
+export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs -jobs 4 design_1_mandelbrot_frame_0_0_synth_1
+export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
 validate_bd_design -force
 save_bd_design
 close_bd_design [get_bd_designs design_1]
@@ -46,22 +35,21 @@ wait_on_run impl_1
 open_hw
 connect_hw_server
 open_hw_target
-set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_3/mandelbrot_3.runs/impl_1/main.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/impl_1/main.bit} [get_hw_devices xc7a35t_0]
 current_hw_device [get_hw_devices xc7a35t_0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_3/mandelbrot_3.runs/impl_1/main.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/impl_1/main.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-open_run impl_1
-report_utilization -name utilization_1
-close_design
-open_run impl_1
-report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
-open_bd_design {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_3/mandelbrot_3.srcs/sources_1/bd/design_1/design_1.bd}
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:v_tpg:7.0 v_tpg_0
-endgroup
-delete_bd_objs [get_bd_cells v_tpg_0]
-close_bd_design [get_bd_designs design_1]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/impl_1/main.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/fancy.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
