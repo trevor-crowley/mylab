@@ -1,5 +1,0 @@
-<annotationInfo>
-<item  id="35" filename="example.cpp" linenumber="100" name="exitcond" contextFuncName="example" moduleName="example" rtlName="exitcond_fu_116_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="11" fileDirectory="/home/trevor/mylab/experiments/20180303-tmc-hls/hls/axi_stream_side_channel_data"></item>
-<item  id="37" filename="example.cpp" linenumber="100" name="i_1" contextFuncName="example" moduleName="example" rtlName="i_1_fu_122_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="15" fileDirectory="/home/trevor/mylab/experiments/20180303-tmc-hls/hls/axi_stream_side_channel_data"></item>
-<item  id="48" filename="example.cpp" linenumber="101" name="val_assign" contextFuncName="example" moduleName="example" rtlName="val_assign_fu_162_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="/home/trevor/mylab/experiments/20180303-tmc-hls/hls/axi_stream_side_channel_data"></item>
-</annotationInfo>

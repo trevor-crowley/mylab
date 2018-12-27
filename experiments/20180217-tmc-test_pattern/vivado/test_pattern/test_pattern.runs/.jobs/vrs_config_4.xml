@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<Runs Version="1" Minor="0">
-	<Run Id="design_1_v_tc_0_0_synth_1" LaunchDir="/home/trevor/mylab/experiments/20180217-tmc-test_pattern/vivado/test_pattern/test_pattern.runs/design_1_v_tc_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="design_1_xbar_0_synth_1" LaunchDir="/home/trevor/mylab/experiments/20180217-tmc-test_pattern/vivado/test_pattern/test_pattern.runs/design_1_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-</Runs>
-

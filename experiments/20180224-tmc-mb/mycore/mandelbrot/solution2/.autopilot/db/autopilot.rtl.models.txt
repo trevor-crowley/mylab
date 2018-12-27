@@ -1,2 +1,0 @@
-mandelbrot_fpext_bkb
-mandelbrot
