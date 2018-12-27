@@ -1,0 +1,158 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'mandel_calc'" level="0">
+<item name = "Date">Sun Mar  4 14:35:28 2018
+</item>
+<item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
+<item name = "Project">hls_train</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a35tcpg236-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">10.00</item>
+<item name = "Clock uncertainty (ns)">1.25</item>
+<item name = "Estimated clock period (ns)">7.87</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">766, 766, 766, 766, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- myloop">765, 765, 3, -, -, 255, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, 3, -, -</column>
+<column name="Expression">-, -, 0, 329</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, -, -, -</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 63</column>
+<column name="Register">-, -, 303, -</column>
+<specialColumn name="Available">100, 90, 41600, 20800</specialColumn>
+<specialColumn name="Utilization (%)">0, 3, ~0, 1</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+<column name="mandel_calc_mul_mbkb_U1">mandel_calc_mul_mbkb, i0 * i0</column>
+<column name="mandel_calc_mul_mbkb_U2">mandel_calc_mul_mbkb, i0 * i0</column>
+<column name="mandel_calc_mul_mbkb_U3">mandel_calc_mul_mbkb, i0 * i1</column>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="p_Val2_10_fu_287_p2">+, 0, 0, 46, 39, 39</column>
+<column name="p_Val2_12_fu_305_p2">+, 0, 0, 39, 32, 32</column>
+<column name="p_Val2_14_fu_317_p2">+, 0, 0, 32, 32, 32</column>
+<column name="p_Val2_3_fu_243_p2">+, 0, 0, 39, 32, 32</column>
+<column name="p_Val2_7_fu_251_p2">+, 0, 0, 39, 32, 32</column>
+<column name="r_V_fu_264_p2">+, 0, 0, 40, 33, 33</column>
+<column name="tmp_10_fu_167_p2">+, 0, 0, 15, 8, 1</column>
+<column name="tmp_6_fu_325_p2">+, 0, 0, 15, 8, 8</column>
+<column name="p_Val2_s_8_fu_311_p2">-, 0, 0, 32, 32, 32</column>
+<column name="tmp_5_fu_161_p2">icmp, 0, 0, 11, 8, 2</column>
+<column name="val_assign_fu_270_p2">icmp, 0, 0, 21, 33, 31</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">27, 5, 1, 5</column>
+<column name="count_V_reg_101">9, 2, 8, 16</column>
+<column name="p_Val2_4_reg_83">9, 2, 32, 64</column>
+<column name="p_Val2_s_reg_92">9, 2, 32, 64</column>
+<column name="t_V_reg_114">9, 2, 8, 16</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">4, 0, 4, 0</column>
+<column name="count_V_reg_101">8, 0, 8, 0</column>
+<column name="p_Val2_12_reg_413">32, 0, 32, 0</column>
+<column name="p_Val2_13_cast_reg_354">20, 0, 32, 12</column>
+<column name="p_Val2_14_reg_418">32, 0, 32, 0</column>
+<column name="p_Val2_2_reg_378">32, 0, 32, 0</column>
+<column name="p_Val2_4_reg_83">32, 0, 32, 0</column>
+<column name="p_Val2_6_reg_388">32, 0, 32, 0</column>
+<column name="p_Val2_s_reg_92">32, 0, 32, 0</column>
+<column name="r_V_1_reg_398">36, 0, 36, 0</column>
+<column name="t_V_reg_114">8, 0, 8, 0</column>
+<column name="tmp_10_reg_373">8, 0, 8, 0</column>
+<column name="tmp_12_reg_393">1, 0, 1, 0</column>
+<column name="tmp_13_reg_403">1, 0, 1, 0</column>
+<column name="tmp_15_cast_cast_reg_365">23, 0, 39, 16</column>
+<column name="tmp_reg_383">1, 0, 1, 0</column>
+<column name="val_assign_reg_408">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, mandel_calc, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, mandel_calc, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, mandel_calc, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, mandel_calc, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, mandel_calc, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, mandel_calc, return value</column>
+<column name="re_V">in, 18, ap_none, re_V, scalar</column>
+<column name="im_V">in, 18, ap_none, im_V, scalar</column>
+<column name="count_out_V">out, 8, ap_vld, count_out_V, pointer</column>
+<column name="count_out_V_ap_vld">out, 1, ap_vld, count_out_V, pointer</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">7.87</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+<column name="'tmp_8', mandel_calc.cpp:28">zext, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'__Val2__', mandel_calc.cpp:28">add, 2.70, 2.70, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'tmp_s', mandel_calc.cpp:31">sext, 0.00, 2.70, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'r.V', mandel_calc.cpp:31">add, 2.70, 5.40, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'val', mandel_calc.cpp:31">icmp, 2.46, 7.87, -, -, -, -, -, -, -, -, -, -, -</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="design_1_clk_wiz_0_0_synth_1" LaunchDir="/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.runs/design_1_clk_wiz_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_proc_sys_reset_0_0_synth_1" LaunchDir="/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.runs/design_1_proc_sys_reset_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_v_tc_0_0_synth_1" LaunchDir="/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.runs/design_1_v_tc_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_xlconstant_0_0_synth_1" LaunchDir="/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.runs/design_1_xlconstant_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/trevor/mylab/experiments/20180224-tmc-mb/vivado/video_digip_2/video_digip_2.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="design_1_clk_wiz_0_0_synth_1"/>
+		<Parent Id="design_1_proc_sys_reset_0_0_synth_1"/>
+		<Parent Id="design_1_v_tc_0_0_synth_1"/>
+		<Parent Id="design_1_xlconstant_0_0_synth_1"/>
+	</Run>
+</Runs>
+

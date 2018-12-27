@@ -1,0 +1,24 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.6.11  2017-06-12 bk=1.3860 VDI=40 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port Vsync -pg 1 -y 80 -defaultsOSRD
+preplace port sys_clock -pg 1 -y 70 -defaultsOSRD
+preplace port Hsync -pg 1 -y 60 -defaultsOSRD
+preplace port active_video_out_0 -pg 1 -y 40 -defaultsOSRD
+preplace port reset -pg 1 -y 50 -defaultsOSRD
+preplace inst v_tc_0 -pg 1 -lvl 2 -y 60 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 60 -defaultsOSRD
+preplace netloc clk_wiz_0_locked 1 1 1 N
+preplace netloc v_tc_0_vsync_out 1 2 1 N
+preplace netloc sys_clock_1 1 0 1 NJ
+preplace netloc clk_wiz_0_clk_out1 1 1 1 200
+preplace netloc v_tc_0_hsync_out 1 2 1 N
+preplace netloc reset_1 1 0 1 N
+preplace netloc v_tc_0_active_video_out 1 2 1 N
+levelinfo -pg 1 -40 110 470 630 -top -30 -bot 400
+",
+}
+{
+   da_board_cnt: "1",
+}

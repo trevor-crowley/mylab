@@ -1,0 +1,142 @@
+
+
+================================================================
+== Vivado HLS Report for 'example'
+================================================================
+* Date:           Sun Mar 11 20:20:28 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        proj_axi_lite
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  13.33|      4.97|        1.67|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    2|    2|    2|    2|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+
+* FSM state operations: 
+
+ <State 1> : 1.00ns
+ST_1 : Operation 4 [1/1] (1.00ns)   --->   "%a_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %a) nounwind" [example.cpp:102]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 5 [1/1] (1.00ns)   --->   "%b_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %b) nounwind" [example.cpp:102]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 6 [2/2] (1.00ns)   --->   "%c_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %c) nounwind" [example.cpp:102]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+
+ <State 2> : 4.97ns
+ST_2 : Operation 7 [1/2] (1.00ns)   --->   "%c_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %c) nounwind" [example.cpp:102]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 8 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp1 = add i8 %a_read, %c_read" [example.cpp:102]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 9 [1/1] (2.96ns) (root node of TernaryAdder)   --->   "%tmp_1 = add i8 %tmp1, %b_read" [example.cpp:102]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 10 [2/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i8P(i8* %c, i8 %tmp_1) nounwind" [example.cpp:102]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+
+ <State 3> : 1.00ns
+ST_3 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %a) nounwind, !map !7"
+ST_3 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %b) nounwind, !map !13"
+ST_3 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %c) nounwind, !map !17"
+ST_3 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @example_str) nounwind"
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %a, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [6 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [example.cpp:97]
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %b, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [6 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [example.cpp:98]
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %c, [10 x i8]* @p_str, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [6 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [example.cpp:99]
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [6 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [example.cpp:100]
+ST_3 : Operation 19 [1/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i8P(i8* %c, i8 %tmp_1) nounwind" [example.cpp:102]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "ret void" [example.cpp:103]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 13.3ns, clock uncertainty: 1.67ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'a' (example.cpp:102) [12]  (1 ns)
+
+ <State 2>: 4.97ns
+The critical path consists of the following:
+	s_axi read on port 'c' (example.cpp:102) [14]  (1 ns)
+	'add' operation ('tmp1', example.cpp:102) [15]  (0 ns)
+	'add' operation ('tmp_1', example.cpp:102) [16]  (2.97 ns)
+	s_axi write on port 'c' (example.cpp:102) [17]  (1 ns)
+
+ <State 3>: 1ns
+The critical path consists of the following:
+	s_axi write on port 'c' (example.cpp:102) [17]  (1 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

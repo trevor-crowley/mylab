@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sun Feb  4 17:47:35 2018
+# Process ID: 28240
+# Current directory: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.3
+# Command line: vivado
+# Log file: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.3/vivado.log
+# Journal file: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.3/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project synth2017_3 /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.3/synth2017_3 -part xc7a50tcsg324-1
+file mkdir /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.3/synth2017_3/synth2017_3.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.3/synth2017_3/synth2017_3.srcs/sim_1/new/top.v w ]
+add_files -fileset sim_1 /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado.3/synth2017_3/synth2017_3.srcs/sim_1/new/top.v
+launch_simulation

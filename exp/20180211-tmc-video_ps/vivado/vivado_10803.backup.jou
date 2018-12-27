@@ -1,0 +1,252 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Feb 11 10:00:31 2018
+# Process ID: 10803
+# Current directory: /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado
+# Command line: vivado
+# Log file: /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/vivado.log
+# Journal file: /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project video_ps_2 /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2 -part xc7a35tcpg236-1
+set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
+import_files -fileset constrs_1 -force -norecurse /home/trevor/mylab/Basys3/Basys3_Master.xdc
+create_bd_design "system"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.4 clk_wiz_0
+apply_board_connection -board_interface "sys_clock" -ip_intf "clk_wiz_0/clock_CLK_IN1" -diagram "system" 
+endgroup
+source /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/proj.tcl
+save_bd_design
+regenerate_bd_layout
+validate_bd_design -force
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -top
+add_files -norecurse /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/hdl/system_wrapper.v
+generate_target all [get_files  /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd]
+catch { config_ip_cache -export [get_ips -all system_clk_wiz_0_0] }
+catch { config_ip_cache -export [get_ips -all system_axi_gpio_0_0] }
+catch { config_ip_cache -export [get_ips -all system_axi_gpio_1_0] }
+catch { config_ip_cache -export [get_ips -all system_axi_gpio_2_0] }
+catch { config_ip_cache -export [get_ips -all system_axi_uartlite_0_0] }
+catch { config_ip_cache -export [get_ips -all system_microblaze_0_0] }
+catch { config_ip_cache -export [get_ips -all system_mdm_1_0] }
+catch { config_ip_cache -export [get_ips -all system_rst_clk_wiz_0_100M_0] }
+catch { config_ip_cache -export [get_ips -all system_v_tc_0_0] }
+catch { config_ip_cache -export [get_ips -all system_v_tpg_0_0] }
+catch { config_ip_cache -export [get_ips -all system_v_axi4s_vid_out_0_0] }
+catch { config_ip_cache -export [get_ips -all system_xlslice_0_0] }
+catch { config_ip_cache -export [get_ips -all system_xlslice_red_0] }
+catch { config_ip_cache -export [get_ips -all system_xlslice_red_1] }
+catch { config_ip_cache -export [get_ips -all system_xbar_0] }
+catch { config_ip_cache -export [get_ips -all system_dlmb_v10_0] }
+catch { config_ip_cache -export [get_ips -all system_ilmb_v10_0] }
+catch { config_ip_cache -export [get_ips -all system_dlmb_bram_if_cntlr_0] }
+catch { config_ip_cache -export [get_ips -all system_ilmb_bram_if_cntlr_0] }
+catch { config_ip_cache -export [get_ips -all system_lmb_bram_0] }
+export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd]
+launch_runs -jobs 4 {system_clk_wiz_0_0_synth_1 system_axi_gpio_0_0_synth_1 system_axi_gpio_1_0_synth_1 system_axi_gpio_2_0_synth_1 system_axi_uartlite_0_0_synth_1 system_microblaze_0_0_synth_1 system_mdm_1_0_synth_1 system_rst_clk_wiz_0_100M_0_synth_1 system_v_tc_0_0_synth_1 system_v_tpg_0_0_synth_1 system_v_axi4s_vid_out_0_0_synth_1 system_xlslice_0_0_synth_1 system_xlslice_red_0_synth_1 system_xlslice_red_1_synth_1 system_xbar_0_synth_1 system_dlmb_v10_0_synth_1 system_ilmb_v10_0_synth_1 system_dlmb_bram_if_cntlr_0_synth_1 system_ilmb_bram_if_cntlr_0_synth_1 system_lmb_bram_0_synth_1}
+export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -directory /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+close_project
+open_project /home/trevor/mylab/experiments/20180130-tmc-digalent/vivado/project_5.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/trevor/mylab/experiments/20180130-tmc-digalent/vivado/project_5.srcs/sources_1/bd/design_1/design_1.bd}
+close_project
+open_project /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd}
+delete_bd_objs [get_bd_nets v_axi4s_vid_out_0_locked] [get_bd_ports locked]
+delete_bd_objs [get_bd_nets v_axi4s_vid_out_0_overflow] [get_bd_ports overflow]
+delete_bd_objs [get_bd_nets v_axi4s_vid_out_0_status] [get_bd_ports status]
+delete_bd_objs [get_bd_nets v_axi4s_vid_out_0_underflow] [get_bd_ports underflow]
+delete_bd_objs [get_bd_nets v_axi4s_vid_out_0_vid_active_video] [get_bd_ports vid_active_video]
+save_bd_design
+regenerate_bd_layout
+save_bd_design
+reset_run system_ilmb_v10_0_synth_1
+reset_run system_dlmb_bram_if_cntlr_0_synth_1
+reset_run system_ilmb_bram_if_cntlr_0_synth_1
+reset_run system_lmb_bram_0_synth_1
+reset_run system_v_tpg_0_0_synth_1
+reset_run system_xlslice_red_1_synth_1
+reset_run system_xbar_0_synth_1
+reset_run system_dlmb_v10_0_synth_1
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -top
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_bd_design {/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd}
+close_bd_design [get_bd_designs system]
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+file mkdir /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.sdk
+file copy -force /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.runs/impl_1/system_wrapper.sysdef /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk/system_wrapper.hdf
+
+launch_sdk -workspace /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk -hwspec /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk/system_wrapper.hdf
+open_bd_design {/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd}
+startgroup
+set_property -dict [list CONFIG.VIDEO_MODE {800x600p} CONFIG.GEN_F0_VSYNC_VSTART {600} CONFIG.GEN_F1_VSYNC_VSTART {600} CONFIG.GEN_HACTIVE_SIZE {800} CONFIG.GEN_HSYNC_END {968} CONFIG.GEN_HFRAME_SIZE {1056} CONFIG.GEN_F0_VSYNC_HSTART {800} CONFIG.GEN_F1_VSYNC_HSTART {800} CONFIG.GEN_F0_VSYNC_HEND {800} CONFIG.GEN_F1_VSYNC_HEND {800} CONFIG.GEN_F0_VFRAME_SIZE {628} CONFIG.GEN_F1_VFRAME_SIZE {628} CONFIG.GEN_F0_VSYNC_VEND {604} CONFIG.GEN_F1_VSYNC_VEND {604} CONFIG.GEN_F0_VBLANK_HEND {800} CONFIG.GEN_F1_VBLANK_HEND {800} CONFIG.GEN_HSYNC_START {840} CONFIG.GEN_VACTIVE_SIZE {600} CONFIG.GEN_F0_VBLANK_HSTART {800} CONFIG.GEN_F1_VBLANK_HSTART {800}] [get_bd_cells v_tc_0]
+endgroup
+save_bd_design
+set_property range 4K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_0_Reg}]
+set_property range 4K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_1_Reg}]
+set_property range 64K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_0_Reg}]
+set_property range 64K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_1_Reg}]
+save_bd_design
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -top
+reset_run system_v_tc_0_0_synth_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file copy -force /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.runs/impl_1/system_wrapper.sysdef /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk/system_wrapper.hdf
+
+open_bd_design {/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd}
+startgroup
+endgroup
+startgroup
+endgroup
+startgroup
+set_property -dict [list CONFIG.USE_DYN_RECONFIG {true}] [get_bd_cells clk_wiz_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.USE_DYN_RECONFIG {false} CONFIG.AXI_DRP {false} CONFIG.PHASE_DUTY_CONFIG {false}] [get_bd_cells clk_wiz_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.HAS_AXI4S_SLAVE {0}] [get_bd_cells v_tpg_0]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config {Board_Interface "reset ( Reset Signal (BTNC) ) " }  [get_bd_pins clk_wiz_0/reset]
+set_property range 16K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_uartlite_0_Reg}]
+set_property offset 0x40030000 [get_bd_addr_segs {microblaze_0/Data/SEG_axi_uartlite_0_Reg}]
+set_property offset 0x40040000 [get_bd_addr_segs {microblaze_0/Data/SEG_v_tpg_0_Reg}]
+set_property offset 0x40040000 [get_bd_addr_segs {microblaze_0/Data/SEG_axi_uartlite_0_Reg}]
+set_property offset 0x40050000 [get_bd_addr_segs {microblaze_0/Data/SEG_v_tpg_0_Reg}]
+set_property offset 0x40040000 [get_bd_addr_segs {microblaze_0/Data/SEG_axi_uartlite_0_Reg}]
+set_property offset 0x40030000 [get_bd_addr_segs {microblaze_0/Data/SEG_v_tpg_0_Reg}]
+set_property range 4K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_0_Reg}]
+set_property range 4K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_1_Reg}]
+set_property range 4K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_2_Reg}]
+set_property range 4K [get_bd_addr_segs {microblaze_0/Data/SEG_v_tpg_0_Reg}]
+set_property range 8K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_0_Reg}]
+set_property range 16K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_0_Reg}]
+set_property range 64K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_0_Reg}]
+set_property range 64K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_1_Reg}]
+set_property range 64K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_gpio_2_Reg}]
+set_property range 64K [get_bd_addr_segs {microblaze_0/Data/SEG_v_tpg_0_Reg}]
+set_property range 64K [get_bd_addr_segs {microblaze_0/Data/SEG_axi_uartlite_0_Reg}]
+save_bd_design
+startgroup
+set_property -dict [list CONFIG.C_USE_INTERRUPT.VALUE_SRC USER] [get_bd_cells microblaze_0]
+set_property -dict [list CONFIG.C_USE_INTERRUPT {1}] [get_bd_cells microblaze_0]
+endgroup
+startgroup
+endgroup
+validate_bd_design
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0
+endgroup
+set_property location {3 717 152} [get_bd_cells xlconcat_0]
+set_property location {5 1618 861} [get_bd_cells xlconcat_0]
+connect_bd_net [get_bd_pins v_tpg_0/interrupt] [get_bd_pins xlconcat_0/In0]
+connect_bd_net [get_bd_pins axi_uartlite_0/interrupt] [get_bd_pins xlconcat_0/In1]
+startgroup
+set_property -dict [list CONFIG.NUM_PORTS {3}] [get_bd_cells xlconcat_0]
+endgroup
+connect_bd_net [get_bd_pins axi_gpio_0/ip2intc_irpt] [get_bd_pins xlconcat_0/In2]
+set_property location {3 864 771} [get_bd_cells xlconcat_0]
+connect_bd_net [get_bd_pins xlconcat_0/dout] [get_bd_pins microblaze_0/Interrupt]
+regenerate_bd_layout
+validate_bd_design
+save_bd_design
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -top
+generate_target all [get_files  /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd]
+catch { config_ip_cache -export [get_ips -all system_microblaze_0_0] }
+catch { config_ip_cache -export [get_ips -all system_xbar_0] }
+catch { config_ip_cache -export [get_ips -all system_xlconcat_0_0] }
+export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd]
+launch_runs -jobs 4 {system_microblaze_0_0_synth_1 system_xbar_0_synth_1 system_xlconcat_0_0_synth_1}
+export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -directory /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+close_bd_design [get_bd_designs system]
+reset_run system_microblaze_0_0_synth_1
+reset_run system_xbar_0_synth_1
+reset_run system_xlconcat_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_bd_design {/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd}
+reset_run synth_1
+reset_run system_microblaze_0_0_synth_1
+reset_run system_xbar_0_synth_1
+set_property location {-26 682} [get_bd_ports reset]
+delete_bd_objs [get_bd_nets reset_0_1] [get_bd_ports reset_0]
+connect_bd_net [get_bd_ports reset] [get_bd_pins clk_wiz_0/reset]
+validate_bd_design
+regenerate_bd_layout
+save_bd_design
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -top
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -top
+generate_target all [get_files  /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd]
+catch { config_ip_cache -export [get_ips -all system_microblaze_0_0] }
+catch { config_ip_cache -export [get_ips -all system_xbar_0] }
+export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd]
+launch_runs -jobs 4 {system_microblaze_0_0_synth_1 system_xbar_0_synth_1}
+export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -directory /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+close_bd_design [get_bd_designs system]
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+reset_run system_microblaze_0_0_synth_1
+reset_run system_xbar_0_synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file copy -force /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.runs/impl_1/system_wrapper.sysdef /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk/system_wrapper.hdf
+
+launch_sdk -workspace /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk -hwspec /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk/system_wrapper.hdf
+open_bd_design {/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd}
+delete_bd_objs [get_bd_nets v_tpg_0_interrupt] [get_bd_nets axi_gpio_0_ip2intc_irpt] [get_bd_nets xlconcat_0_dout] [get_bd_nets axi_uartlite_0_interrupt] [get_bd_cells xlconcat_0]
+startgroup
+set_property -dict [list CONFIG.C_USE_INTERRUPT.VALUE_SRC PROPAGATED] [get_bd_cells microblaze_0]
+endgroup
+regenerate_bd_layout
+validate_bd_design
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -top
+generate_target all [get_files  /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd]
+catch { config_ip_cache -export [get_ips -all system_microblaze_0_0] }
+catch { [ delete_ip_run [get_ips -all system_microblaze_0_0] ] }
+export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd]
+export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.srcs/sources_1/bd/system/system.bd] -directory /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+close_bd_design [get_bd_designs system]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file copy -force /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.runs/impl_1/system_wrapper.sysdef /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk/system_wrapper.hdf
+
+launch_sdk -workspace /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk -hwspec /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk/system_wrapper.hdf
+launch_sdk -workspace /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk -hwspec /home/trevor/mylab/experiments/20180211-tmc-video_ps/sdk/system_wrapper.hdf

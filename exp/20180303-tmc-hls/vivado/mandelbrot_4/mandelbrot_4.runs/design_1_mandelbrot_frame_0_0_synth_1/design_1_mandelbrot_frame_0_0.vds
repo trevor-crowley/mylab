@@ -1,0 +1,1018 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Mar  5 21:25:49 2018
+# Process ID: 10868
+# Current directory: /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/design_1_mandelbrot_frame_0_0_synth_1
+# Command line: vivado -log design_1_mandelbrot_frame_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_mandelbrot_frame_0_0.tcl
+# Log file: /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/design_1_mandelbrot_frame_0_0_synth_1/design_1_mandelbrot_frame_0_0.vds
+# Journal file: /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/design_1_mandelbrot_frame_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_mandelbrot_frame_0_0.tcl -notrace
+Command: synth_design -top design_1_mandelbrot_frame_0_0 -part xc7a35tcpg236-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10879 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1250.840 ; gain = 88.000 ; free physical = 398 ; free virtual = 9105
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_mandelbrot_frame_0_0' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ip/design_1_mandelbrot_frame_0_0/synth/design_1_mandelbrot_frame_0_0.v:56]
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:12]
+	Parameter ap_ST_fsm_state1 bound to: 55'b0000000000000000000000000000000000000000000000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 55'b0000000000000000000000000000000000000000000000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 55'b0000000000000000000000000000000000000000000000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 55'b0000000000000000000000000000000000000000000000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 55'b0000000000000000000000000000000000000000000000000010000 
+	Parameter ap_ST_fsm_state6 bound to: 55'b0000000000000000000000000000000000000000000000000100000 
+	Parameter ap_ST_fsm_state7 bound to: 55'b0000000000000000000000000000000000000000000000001000000 
+	Parameter ap_ST_fsm_state8 bound to: 55'b0000000000000000000000000000000000000000000000010000000 
+	Parameter ap_ST_fsm_state9 bound to: 55'b0000000000000000000000000000000000000000000000100000000 
+	Parameter ap_ST_fsm_state10 bound to: 55'b0000000000000000000000000000000000000000000001000000000 
+	Parameter ap_ST_fsm_state11 bound to: 55'b0000000000000000000000000000000000000000000010000000000 
+	Parameter ap_ST_fsm_state12 bound to: 55'b0000000000000000000000000000000000000000000100000000000 
+	Parameter ap_ST_fsm_state13 bound to: 55'b0000000000000000000000000000000000000000001000000000000 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 55'b0000000000000000000000000000000000000000010000000000000 
+	Parameter ap_ST_fsm_pp0_stage1 bound to: 55'b0000000000000000000000000000000000000000100000000000000 
+	Parameter ap_ST_fsm_pp0_stage2 bound to: 55'b0000000000000000000000000000000000000001000000000000000 
+	Parameter ap_ST_fsm_pp0_stage3 bound to: 55'b0000000000000000000000000000000000000010000000000000000 
+	Parameter ap_ST_fsm_pp0_stage4 bound to: 55'b0000000000000000000000000000000000000100000000000000000 
+	Parameter ap_ST_fsm_pp0_stage5 bound to: 55'b0000000000000000000000000000000000001000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage6 bound to: 55'b0000000000000000000000000000000000010000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage7 bound to: 55'b0000000000000000000000000000000000100000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage8 bound to: 55'b0000000000000000000000000000000001000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage9 bound to: 55'b0000000000000000000000000000000010000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage10 bound to: 55'b0000000000000000000000000000000100000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage11 bound to: 55'b0000000000000000000000000000001000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage12 bound to: 55'b0000000000000000000000000000010000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage13 bound to: 55'b0000000000000000000000000000100000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage14 bound to: 55'b0000000000000000000000000001000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage15 bound to: 55'b0000000000000000000000000010000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage16 bound to: 55'b0000000000000000000000000100000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage17 bound to: 55'b0000000000000000000000001000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage18 bound to: 55'b0000000000000000000000010000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage19 bound to: 55'b0000000000000000000000100000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage20 bound to: 55'b0000000000000000000001000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage21 bound to: 55'b0000000000000000000010000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage22 bound to: 55'b0000000000000000000100000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage23 bound to: 55'b0000000000000000001000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage24 bound to: 55'b0000000000000000010000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage25 bound to: 55'b0000000000000000100000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage26 bound to: 55'b0000000000000001000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage27 bound to: 55'b0000000000000010000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage28 bound to: 55'b0000000000000100000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage29 bound to: 55'b0000000000001000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state45 bound to: 55'b0000000000010000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state46 bound to: 55'b0000000000100000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state47 bound to: 55'b0000000001000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state48 bound to: 55'b0000000010000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state49 bound to: 55'b0000000100000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state50 bound to: 55'b0000001000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state51 bound to: 55'b0000010000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state52 bound to: 55'b0000100000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state53 bound to: 55'b0001000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state54 bound to: 55'b0010000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state55 bound to: 55'b0100000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state56 bound to: 55'b1000000000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:108]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:686]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:700]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:714]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:728]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:742]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:756]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:770]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:784]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:798]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:812]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:826]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:840]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:854]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:868]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:882]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:896]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:910]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:924]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:938]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:952]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:966]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:980]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:994]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:1008]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:1022]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:1036]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:1050]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:1064]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:1078]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:1092]
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame_bkb' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_bkb.v:11]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 5 - type: integer 
+	Parameter din0_WIDTH bound to: 64 - type: integer 
+	Parameter din1_WIDTH bound to: 64 - type: integer 
+	Parameter dout_WIDTH bound to: 64 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame_ap_dadd_3_full_dsp_64' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/ip/mandelbrot_frame_ap_dadd_3_full_dsp_64.vhd:72]
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_HAS_ADD bound to: 1 - type: integer 
+	Parameter C_HAS_SUBTRACT bound to: 0 - type: integer 
+	Parameter C_HAS_MULTIPLY bound to: 0 - type: integer 
+	Parameter C_HAS_DIVIDE bound to: 0 - type: integer 
+	Parameter C_HAS_SQRT bound to: 0 - type: integer 
+	Parameter C_HAS_COMPARE bound to: 0 - type: integer 
+	Parameter C_HAS_FIX_TO_FLT bound to: 0 - type: integer 
+	Parameter C_HAS_FLT_TO_FIX bound to: 0 - type: integer 
+	Parameter C_HAS_FLT_TO_FLT bound to: 0 - type: integer 
+	Parameter C_HAS_RECIP bound to: 0 - type: integer 
+	Parameter C_HAS_RECIP_SQRT bound to: 0 - type: integer 
+	Parameter C_HAS_ABSOLUTE bound to: 0 - type: integer 
+	Parameter C_HAS_LOGARITHM bound to: 0 - type: integer 
+	Parameter C_HAS_EXPONENTIAL bound to: 0 - type: integer 
+	Parameter C_HAS_FMA bound to: 0 - type: integer 
+	Parameter C_HAS_FMS bound to: 0 - type: integer 
+	Parameter C_HAS_ACCUMULATOR_A bound to: 0 - type: integer 
+	Parameter C_HAS_ACCUMULATOR_S bound to: 0 - type: integer 
+	Parameter C_A_WIDTH bound to: 64 - type: integer 
+	Parameter C_A_FRACTION_WIDTH bound to: 53 - type: integer 
+	Parameter C_B_WIDTH bound to: 64 - type: integer 
+	Parameter C_B_FRACTION_WIDTH bound to: 53 - type: integer 
+	Parameter C_C_WIDTH bound to: 64 - type: integer 
+	Parameter C_C_FRACTION_WIDTH bound to: 53 - type: integer 
+	Parameter C_RESULT_WIDTH bound to: 64 - type: integer 
+	Parameter C_RESULT_FRACTION_WIDTH bound to: 53 - type: integer 
+	Parameter C_COMPARE_OPERATION bound to: 8 - type: integer 
+	Parameter C_LATENCY bound to: 3 - type: integer 
+	Parameter C_OPTIMIZATION bound to: 1 - type: integer 
+	Parameter C_MULT_USAGE bound to: 2 - type: integer 
+	Parameter C_BRAM_USAGE bound to: 0 - type: integer 
+	Parameter C_RATE bound to: 1 - type: integer 
+	Parameter C_ACCUM_INPUT_MSB bound to: 32 - type: integer 
+	Parameter C_ACCUM_MSB bound to: 32 - type: integer 
+	Parameter C_ACCUM_LSB bound to: -31 - type: integer 
+	Parameter C_HAS_UNDERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_INVALID_OP bound to: 0 - type: integer 
+	Parameter C_HAS_DIVIDE_BY_ZERO bound to: 0 - type: integer 
+	Parameter C_HAS_ACCUM_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_ACCUM_INPUT_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 1 - type: integer 
+	Parameter C_HAS_ARESETN bound to: 0 - type: integer 
+	Parameter C_THROTTLE_SCHEME bound to: 3 - type: integer 
+	Parameter C_HAS_A_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_A_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_B bound to: 1 - type: integer 
+	Parameter C_HAS_B_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_B_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_C bound to: 0 - type: integer 
+	Parameter C_HAS_C_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_C_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_OPERATION bound to: 0 - type: integer 
+	Parameter C_HAS_OPERATION_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_OPERATION_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_RESULT_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_RESULT_TLAST bound to: 0 - type: integer 
+	Parameter C_TLAST_RESOLUTION bound to: 0 - type: integer 
+	Parameter C_A_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_A_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_B_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_B_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_C_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_C_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_OPERATION_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_OPERATION_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_RESULT_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_RESULT_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_FIXED_DATA_UNSIGNED bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'floating_point_v7_1_5' declared at '/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b20f/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_5' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/ip/mandelbrot_frame_ap_dadd_3_full_dsp_64.vhd:204]
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame_ap_dadd_3_full_dsp_64' (27#1) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/ip/mandelbrot_frame_ap_dadd_3_full_dsp_64.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame_bkb' (28#1) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_bkb.v:11]
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame_cud' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_cud.v:11]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 5 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 64 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame_ap_sitodp_3_no_dsp_32' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/ip/mandelbrot_frame_ap_sitodp_3_no_dsp_32.vhd:70]
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_HAS_ADD bound to: 0 - type: integer 
+	Parameter C_HAS_SUBTRACT bound to: 0 - type: integer 
+	Parameter C_HAS_MULTIPLY bound to: 0 - type: integer 
+	Parameter C_HAS_DIVIDE bound to: 0 - type: integer 
+	Parameter C_HAS_SQRT bound to: 0 - type: integer 
+	Parameter C_HAS_COMPARE bound to: 0 - type: integer 
+	Parameter C_HAS_FIX_TO_FLT bound to: 1 - type: integer 
+	Parameter C_HAS_FLT_TO_FIX bound to: 0 - type: integer 
+	Parameter C_HAS_FLT_TO_FLT bound to: 0 - type: integer 
+	Parameter C_HAS_RECIP bound to: 0 - type: integer 
+	Parameter C_HAS_RECIP_SQRT bound to: 0 - type: integer 
+	Parameter C_HAS_ABSOLUTE bound to: 0 - type: integer 
+	Parameter C_HAS_LOGARITHM bound to: 0 - type: integer 
+	Parameter C_HAS_EXPONENTIAL bound to: 0 - type: integer 
+	Parameter C_HAS_FMA bound to: 0 - type: integer 
+	Parameter C_HAS_FMS bound to: 0 - type: integer 
+	Parameter C_HAS_ACCUMULATOR_A bound to: 0 - type: integer 
+	Parameter C_HAS_ACCUMULATOR_S bound to: 0 - type: integer 
+	Parameter C_A_WIDTH bound to: 32 - type: integer 
+	Parameter C_A_FRACTION_WIDTH bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 32 - type: integer 
+	Parameter C_B_FRACTION_WIDTH bound to: 0 - type: integer 
+	Parameter C_C_WIDTH bound to: 32 - type: integer 
+	Parameter C_C_FRACTION_WIDTH bound to: 0 - type: integer 
+	Parameter C_RESULT_WIDTH bound to: 64 - type: integer 
+	Parameter C_RESULT_FRACTION_WIDTH bound to: 53 - type: integer 
+	Parameter C_COMPARE_OPERATION bound to: 8 - type: integer 
+	Parameter C_LATENCY bound to: 3 - type: integer 
+	Parameter C_OPTIMIZATION bound to: 1 - type: integer 
+	Parameter C_MULT_USAGE bound to: 0 - type: integer 
+	Parameter C_BRAM_USAGE bound to: 0 - type: integer 
+	Parameter C_RATE bound to: 1 - type: integer 
+	Parameter C_ACCUM_INPUT_MSB bound to: 32 - type: integer 
+	Parameter C_ACCUM_MSB bound to: 32 - type: integer 
+	Parameter C_ACCUM_LSB bound to: -31 - type: integer 
+	Parameter C_HAS_UNDERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_INVALID_OP bound to: 0 - type: integer 
+	Parameter C_HAS_DIVIDE_BY_ZERO bound to: 0 - type: integer 
+	Parameter C_HAS_ACCUM_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_ACCUM_INPUT_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 1 - type: integer 
+	Parameter C_HAS_ARESETN bound to: 0 - type: integer 
+	Parameter C_THROTTLE_SCHEME bound to: 3 - type: integer 
+	Parameter C_HAS_A_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_A_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_B bound to: 0 - type: integer 
+	Parameter C_HAS_B_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_B_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_C bound to: 0 - type: integer 
+	Parameter C_HAS_C_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_C_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_OPERATION bound to: 0 - type: integer 
+	Parameter C_HAS_OPERATION_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_OPERATION_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_RESULT_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_RESULT_TLAST bound to: 0 - type: integer 
+	Parameter C_TLAST_RESOLUTION bound to: 0 - type: integer 
+	Parameter C_A_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_A_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_B_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_B_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_C_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_C_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_OPERATION_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_OPERATION_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_RESULT_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_RESULT_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_FIXED_DATA_UNSIGNED bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'floating_point_v7_1_5' declared at '/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b20f/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_5' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/ip/mandelbrot_frame_ap_sitodp_3_no_dsp_32.vhd:199]
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame_ap_sitodp_3_no_dsp_32' (31#1) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/ip/mandelbrot_frame_ap_sitodp_3_no_dsp_32.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame_cud' (32#1) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_cud.v:11]
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame_dEe' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_dEe.v:14]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 18 - type: integer 
+	Parameter din1_WIDTH bound to: 18 - type: integer 
+	Parameter dout_WIDTH bound to: 36 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame_dEe_DSP48_0' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_dEe.v:4]
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame_dEe_DSP48_0' (33#1) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_dEe.v:4]
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame_dEe' (34#1) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_dEe.v:14]
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame_eOg' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_eOg.v:14]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 18 - type: integer 
+	Parameter din1_WIDTH bound to: 18 - type: integer 
+	Parameter dout_WIDTH bound to: 35 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'mandelbrot_frame_eOg_DSP48_1' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_eOg.v:4]
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame_eOg_DSP48_1' (35#1) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_eOg.v:4]
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame_eOg' (36#1) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame_eOg.v:14]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:4675]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:4677]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:4799]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:4801]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:5173]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:5179]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:5665]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:5737]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:5815]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:5817]
+INFO: [Synth 8-256] done synthesizing module 'mandelbrot_frame' (37#1) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:12]
+INFO: [Synth 8-256] done synthesizing module 'design_1_mandelbrot_frame_0_0' (38#1) [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ip/design_1_mandelbrot_frame_0_0/synth/design_1_mandelbrot_frame_0_0.v:56]
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized5 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized5 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized5 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized5 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized5 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized87 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized87 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized87 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized87 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized87 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized89 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized89 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized89 has unconnected port SINIT
+WARNING: [Synth 8-3331] design carry_chain__parameterized9 has unconnected port B[31]
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized3 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized3 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized3 has unconnected port SINIT
+WARNING: [Synth 8-3331] design flt_dec_op__parameterized0 has unconnected port DEC_OP_STATE[11]
+WARNING: [Synth 8-3331] design flt_dec_op__parameterized0 has unconnected port DEC_OP_STATE[10]
+WARNING: [Synth 8-3331] design flt_dec_op__parameterized0 has unconnected port DEC_OP_STATE[9]
+WARNING: [Synth 8-3331] design flt_dec_op__parameterized0 has unconnected port DEC_OP_STATE[8]
+WARNING: [Synth 8-3331] design flt_dec_op__parameterized0 has unconnected port DIVIDE_BY_ZERO_IN
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized83 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized83 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized83 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized67 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized67 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized67 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized67 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized67 has unconnected port SINIT
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[30]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[29]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[28]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[27]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[26]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[25]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[24]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[23]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[22]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[21]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[20]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[19]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[18]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[17]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[16]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[15]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[14]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[13]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[12]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[11]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[10]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[9]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[8]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[7]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[6]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[5]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[4]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[3]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[2]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[1]
+WARNING: [Synth 8-3331] design fix_to_flt_conv_exp has unconnected port A[0]
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized95 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized95 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized95 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized95 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized95 has unconnected port SINIT
+WARNING: [Synth 8-3331] design carry_chain__parameterized12 has unconnected port B[26]
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized93 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized93 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized93 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized93 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized93 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized15 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized15 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized15 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized15 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized15 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized63 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized63 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized63 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized63 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized63 has unconnected port SINIT
+WARNING: [Synth 8-3331] design flt_round_bit__parameterized0 has unconnected port NORMALIZE[1]
+WARNING: [Synth 8-3331] design flt_round_bit__parameterized0 has unconnected port FIXED_POINT
+WARNING: [Synth 8-3331] design flt_round_bit__parameterized0 has unconnected port FIX_MANT_SIGN
+WARNING: [Synth 8-3331] design flt_round_bit__parameterized0 has unconnected port SIGN
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized55 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized55 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized55 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized55 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized55 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized7 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized7 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized7 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized7 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized7 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized61 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized61 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized61 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_4_viv__parameterized61 has unconnected port SSET
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:27 . Memory (MB): peak = 1393.375 ; gain = 230.535 ; free physical = 341 ; free virtual = 9050
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:28 . Memory (MB): peak = 1393.375 ; gain = 230.535 ; free physical = 358 ; free virtual = 9067
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 419 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ip/design_1_mandelbrot_frame_0_0/constraints/mandelbrot_frame_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ip/design_1_mandelbrot_frame_0_0/constraints/mandelbrot_frame_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/design_1_mandelbrot_frame_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/design_1_mandelbrot_frame_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 5 instances were transformed.
+  FDE => FDRE: 5 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.05 . Memory (MB): peak = 1662.711 ; gain = 1.000 ; free physical = 206 ; free virtual = 8786
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:01:01 . Memory (MB): peak = 1662.711 ; gain = 499.871 ; free physical = 315 ; free virtual = 8895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:01:01 . Memory (MB): peak = 1662.711 ; gain = 499.871 ; free physical = 315 ; free virtual = 8895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/design_1_mandelbrot_frame_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:01:01 . Memory (MB): peak = 1662.711 ; gain = 499.871 ; free physical = 315 ; free virtual = 8895
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "exp_all_one_ip" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exp_all_zero_ip" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "lrg_almost_over" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "lrg_almost_over" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "det_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-4471] merging register 'tmp_76_mid2_reg_5398_reg[31:0]' into 'tmp_6_mid2_reg_5364_reg[31:0]' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:4671]
+INFO: [Synth 8-4471] merging register 'tmp_4_reg_5437_reg[31:0]' into 'tmp_6_mid2_reg_5364_reg[31:0]' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:4509]
+INFO: [Synth 8-4471] merging register 'tmp_s_reg_5471_reg[31:0]' into 'tmp_6_mid2_reg_5364_reg[31:0]' [/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ipshared/b054/hdl/verilog/mandelbrot_frame.v:4507]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "exitcond_flatten_fu_459_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "video_out_TUSER" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "video_out_TLAST" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_fu_581_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond6_fu_471_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_10_fu_1373_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_s_fu_1367_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_9_fu_1361_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_8_fu_1355_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_7_fu_1349_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_6_fu_1333_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_11_fu_1379_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_12_fu_1385_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_13_fu_1391_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_14_fu_1397_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_15_fu_1403_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_16_fu_1409_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_17_fu_1415_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_18_fu_1421_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_19_fu_1427_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_1_fu_682_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_20_fu_1433_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_21_fu_1439_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_22_fu_1445_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_23_fu_1451_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_24_fu_1457_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_25_fu_1463_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_26_fu_1469_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_27_fu_1475_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_28_fu_1481_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_2_fu_813_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_3_fu_943_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_4_fu_1073_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_5_fu_1203_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond_flatten_fu_459_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "video_out_TUSER" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "video_out_TLAST" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_fu_581_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond6_fu_471_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_10_fu_1373_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_s_fu_1367_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_9_fu_1361_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_8_fu_1355_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_7_fu_1349_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_6_fu_1333_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_11_fu_1379_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_12_fu_1385_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_13_fu_1391_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_14_fu_1397_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_15_fu_1403_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_16_fu_1409_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_17_fu_1415_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_18_fu_1421_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_19_fu_1427_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_1_fu_682_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_20_fu_1433_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_21_fu_1439_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_22_fu_1445_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_23_fu_1451_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_24_fu_1457_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_25_fu_1463_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_26_fu_1469_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_27_fu_1475_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_28_fu_1481_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_2_fu_813_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_3_fu_943_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_4_fu_1073_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_5_fu_1203_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "grp_fu_295_p1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:01:04 . Memory (MB): peak = 1662.711 ; gain = 499.871 ; free physical = 308 ; free virtual = 8888
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized1) to 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized1) to 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/SUB_DELAY' (delay__parameterized1) to 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/SUBTRACT_PREADD_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/YES_DIST_1.DIST_1_PREADD_DEL' (delay__parameterized1) to 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/YES_DIST_1.DIST_1_ADD_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/NORM/ROUND/EXTRA_LSB_BIT_DEL' (delay__parameterized1) to 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/NORM/ROUND/EXTRA_LSB_RND1_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/NORM/ROUND/EXP_INC_DELAY' (delay__parameterized1) to 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/NORM/ROUND/EXP_INC_RND1_DELAY'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/NORM/ROUND/NORMALIZE_DEL' (delay__parameterized7) to 'inst/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/NORM/ROUND/NORMALIZE_RND1_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/DELAY_INVALID_OP' (delay__parameterized1) to 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/DELAY_DIVIDE_BY_ZERO'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/DELAY_INVALID_OP' (delay__parameterized1) to 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/DELAY_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/DELAY_INVALID_OP' (delay__parameterized1) to 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/DELAY_UNDERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/DELAY_INVALID_OP' (delay__parameterized1) to 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/DELAY_INVALID_OP' (delay__parameterized1) to 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXTRA_LSB_BIT_DEL' (delay__parameterized1) to 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXTRA_LSB_RND1_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXP_INC_DELAY' (delay__parameterized1) to 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXP_INC_RND1_DELAY'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/NORMALIZE_DEL' (delay__parameterized7) to 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/NORMALIZE_RND1_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXP_IN_DELAY.EXP_IN_DEL' (delay__parameterized50) to 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXP_RND2_DELAY.EXP_RND_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXP_IN_DELAY.EXP_OFF_OP_DEL' (delay__parameterized50) to 'inst/mandelbrot_frame_cud_U2/mandelbrot_frame_ap_sitodp_3_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXP_RND2_DELAY.EXP_OFF_RND_DEL'
+
+Report RTL Partitions: 
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |mandelbrot_frame__GB0 |           1|     20759|
+|2     |mandelbrot_frame__GB1 |           1|      7077|
+|3     |mandelbrot_frame__GB2 |           1|      5551|
+|4     |mandelbrot_frame__GB3 |           1|      9809|
+|5     |mandelbrot_frame__GB4 |           1|     12116|
++------+----------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "LZE/enc_chunk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "COND_DET_A/exp_all_one_ip" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "COND_DET_A/exp_all_zero_ip" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "COND_DET_B/exp_all_one_ip" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "COND_DET_B/exp_all_zero_ip" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "lrg_almost_over" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "data21" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "exitcond6_fu_471_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "video_out_TUSER" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "video_out_TLAST" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_fu_581_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_28_fu_1481_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_27_fu_1475_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_26_fu_1469_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_25_fu_1463_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_24_fu_1457_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_23_fu_1451_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_22_fu_1445_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_21_fu_1439_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_20_fu_1433_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_19_fu_1427_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_18_fu_1421_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_17_fu_1415_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_16_fu_1409_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_15_fu_1403_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_14_fu_1397_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_13_fu_1391_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_12_fu_1385_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_11_fu_1379_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond7_10_fu_1373_p2" won't be mapped to RAM because it is too sparse
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'inst/i_0/tmp_s_reg_5471_reg[32]' (FDE) to 'inst/i_0/tmp_4_reg_5437_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/tmp_s_reg_5471_reg[33]' (FDE) to 'inst/i_0/tmp_4_reg_5437_reg[33]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[32]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[4]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[33] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[34] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[35]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[4]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[37] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[38]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[4]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[39] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[40] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[41]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[4]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[42] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[43]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[44]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[45]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[46]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[47] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[48]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[4]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[49] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[50] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[51]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[0]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[2]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[2]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[14]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[3] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[4]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[10]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[7] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[8]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[10]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[9] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[10]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[17]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[11] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[12]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[17]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[13]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[14]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[19]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[15] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[16]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[19]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[17]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[21]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[18]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[21]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[19]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[20]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[21]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[22]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[23]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[53]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[24] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[25] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[26] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[27] )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[28]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[53]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[29]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/din1_buf1_reg[52]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[63] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[54] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[55] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[56] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[57] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[58] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[59] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[60] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[61] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/din1_buf1_reg[62] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/ce_r_reg )
+INFO: [Synth 8-3886] merging instance 'inst/i_3/tmp_6_mid2_v_v_reg_5359_reg[0]' (FDE) to 'inst/i_3/tmp_76_mid2_reg_5398_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/tmp_6_mid2_v_v_reg_5359_reg[1]' (FDE) to 'inst/i_3/tmp_76_mid2_reg_5398_reg[33]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/tmp_6_mid2_v_v_reg_5359_reg[2]' (FDE) to 'inst/i_3/tmp_6_mid2_reg_5364_reg[34]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/tmp_6_mid2_v_v_reg_5359_reg[3]' (FDE) to 'inst/i_3/tmp_6_mid2_reg_5364_reg[35]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/tmp_76_mid2_reg_5398_reg[32]' (FDE) to 'inst/i_3/tmp_6_mid2_reg_5364_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/tmp_76_mid2_reg_5398_reg[33]' (FDE) to 'inst/i_3/tmp_6_mid2_reg_5364_reg[33]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/A_SIGN_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/SUB_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_SIGN_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[50]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[49]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[42]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[51]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[50]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[47]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[48]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[47]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[40]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[46]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[45]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[44]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[44]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[43]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[33]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[42]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[36]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[42]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[35]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[34]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[40]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[37]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[40]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[40]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[39]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[42]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[38]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[42]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[41]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[32]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[31]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[30]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[29]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[28]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[27]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[17]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[20]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[19]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[18]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[21]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[24]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[23]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[22]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[26]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[25]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[25]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[16]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[15]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[14]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[13]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[12]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[11]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[1]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[4]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[3]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[2]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[8]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[6]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[2]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[3]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[4]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[6]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[8]' (FDE) to 'inst/i_3/mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_3/\mandelbrot_frame_bkb_U1/mandelbrot_frame_ap_dadd_3_full_dsp_64_u/U0 /i_synth/\ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10] )
+INFO: [Synth 8-3332] Sequential element (i_nd_to_rdy/opt_has_pipe.i_pipe[2].pipe_reg[2][0]) is unused and will be removed from module floating_point_v7_1_5_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (i_nd_to_rdy/opt_has_pipe.i_pipe[3].pipe_reg[3][0]) is unused and will be removed from module floating_point_v7_1_5_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (FIX_TO_FLT_OP.SPD.OP/NORM_SHIFT/MUX_LOOP[1].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[0]) is unused and will be removed from module floating_point_v7_1_5_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (i_nd_to_rdy/opt_has_pipe.i_pipe[2].pipe_reg[2][0]) is unused and will be removed from module floating_point_v7_1_5_viv.
+INFO: [Synth 8-3332] Sequential element (i_nd_to_rdy/opt_has_pipe.i_pipe[3].pipe_reg[3][0]) is unused and will be removed from module floating_point_v7_1_5_viv.
+INFO: [Synth 8-3332] Sequential element (ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/INV_OP_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][0]) is unused and will be removed from module floating_point_v7_1_5_viv.
+INFO: [Synth 8-3332] Sequential element (ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/NORMAL_NORM_DIST.ADD_MANT_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]) is unused and will be removed from module floating_point_v7_1_5_viv.
+INFO: [Synth 8-3332] Sequential element (ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/B_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10]) is unused and will be removed from module floating_point_v7_1_5_viv.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/i_4/\tmp_6_mid2_reg_5364_reg[31] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:01:33 . Memory (MB): peak = 1662.715 ; gain = 499.875 ; free physical = 397 ; free virtual = 8770
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3323] Resources of type DSP have been overutilized. Used = 93, Available = 90. Use report_utilization command for details.
+
+Report RTL Partitions: 
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |mandelbrot_frame__GB0 |           1|     11605|
+|2     |mandelbrot_frame__GB1 |           1|      2538|
+|3     |mandelbrot_frame__GB2 |           1|      4397|
+|4     |mandelbrot_frame__GB3 |           1|      5888|
+|5     |mandelbrot_frame__GB4 |           1|      4271|
++------+----------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:06 ; elapsed = 00:01:45 . Memory (MB): peak = 1762.000 ; gain = 599.160 ; free physical = 239 ; free virtual = 8612
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:41 ; elapsed = 00:02:20 . Memory (MB): peak = 1850.777 ; gain = 687.938 ; free physical = 347 ; free virtual = 8601
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |mandelbrot_frame_GT0 |           1|     28699|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'inst/v_assign_mid2_reg_5354_reg[0]' (FDRE) to 'inst/tmp_4_reg_5437_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/v_assign_mid2_reg_5354_reg[1]' (FDRE) to 'inst/tmp_4_reg_5437_reg[33]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:51 ; elapsed = 00:02:29 . Memory (MB): peak = 1922.945 ; gain = 760.105 ; free physical = 331 ; free virtual = 8587
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:52 ; elapsed = 00:02:30 . Memory (MB): peak = 1922.949 ; gain = 760.109 ; free physical = 329 ; free virtual = 8585
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:52 ; elapsed = 00:02:30 . Memory (MB): peak = 1922.949 ; gain = 760.109 ; free physical = 329 ; free virtual = 8585
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:53 ; elapsed = 00:02:32 . Memory (MB): peak = 1922.949 ; gain = 760.109 ; free physical = 327 ; free virtual = 8582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:53 ; elapsed = 00:02:32 . Memory (MB): peak = 1922.949 ; gain = 760.109 ; free physical = 327 ; free virtual = 8582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:54 ; elapsed = 00:02:32 . Memory (MB): peak = 1922.949 ; gain = 760.109 ; free physical = 328 ; free virtual = 8584
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:54 ; elapsed = 00:02:32 . Memory (MB): peak = 1922.949 ; gain = 760.109 ; free physical = 328 ; free virtual = 8584
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |  1295|
+|2     |DSP48E1   |    87|
+|3     |DSP48E1_1 |     2|
+|4     |DSP48E1_2 |     1|
+|5     |LUT1      |   165|
+|6     |LUT2      |  3737|
+|7     |LUT3      |   575|
+|8     |LUT4      |   463|
+|9     |LUT5      |   534|
+|10    |LUT6      |  1836|
+|11    |MUXCY     |   233|
+|12    |MUXF7     |    15|
+|13    |MUXF8     |     1|
+|14    |SRL16E    |     3|
+|15    |XORCY     |   129|
+|16    |FDE       |     5|
+|17    |FDRE      |  4487|
+|18    |FDSE      |     1|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:54 ; elapsed = 00:02:32 . Memory (MB): peak = 1922.949 ; gain = 760.109 ; free physical = 328 ; free virtual = 8584
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:45 ; elapsed = 00:02:07 . Memory (MB): peak = 1922.949 ; gain = 490.773 ; free physical = 408 ; free virtual = 8664
+Synthesis Optimization Complete : Time (s): cpu = 00:01:54 ; elapsed = 00:02:33 . Memory (MB): peak = 1922.953 ; gain = 760.109 ; free physical = 408 ; free virtual = 8664
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1768 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 72 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 67 instances
+  FDE => FDRE: 5 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+403 Infos, 141 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:57 ; elapsed = 00:02:36 . Memory (MB): peak = 1954.965 ; gain = 805.496 ; free physical = 450 ; free virtual = 8706
+INFO: [Common 17-1381] The checkpoint '/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/design_1_mandelbrot_frame_0_0_synth_1/design_1_mandelbrot_frame_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.srcs/sources_1/bd/design_1/ip/design_1_mandelbrot_frame_0_0/design_1_mandelbrot_frame_0_0.xci
+INFO: [Coretcl 2-1174] Renamed 307 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/trevor/mylab/experiments/20180303-tmc-hls/vivado/mandelbrot_4/mandelbrot_4.runs/design_1_mandelbrot_frame_0_0_synth_1/design_1_mandelbrot_frame_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_mandelbrot_frame_0_0_utilization_synth.rpt -pb design_1_mandelbrot_frame_0_0_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1978.980 ; gain = 0.000 ; free physical = 446 ; free virtual = 8718
+INFO: [Common 17-206] Exiting Vivado at Mon Mar  5 21:28:44 2018...

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;top.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:20 ; elapsed = 00:00:10 . Memory (MB): peak = 348.676 ; gain = 13.586 ; free physical = 6081 ; free virtual = 11425" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:21 ; elapsed = 00:00:11 . Memory (MB): peak = 348.676 ; gain = 13.586 ; free physical = 6079 ; free virtual = 11424" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="889" content="Unrolling loop &apos;loop&apos; (top.cpp:13) in function &apos;myloop(ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;16&gt;*)&apos;: &apos;skip_exit_check&apos; option is unnecessary since loop trip count is constant (=33)." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;ap_fixed_base&lt;63, 39, false, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&lt;&lt;&apos; into &apos;generic_cast_IEEE754&lt;unsigned short, (ap_q_mode)6, float&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330)." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;ap_fixed_base&lt;1, 17, false, (ap_q_mode)5, (ap_o_mode)0, 0&gt;::overflow_adjust&apos; into &apos;ap_fixed_base&lt;1, 17, false, (ap_q_mode)5, (ap_o_mode)0, 0&gt;::ap_fixed_base&lt;63, 39, false, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&apos; ()." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:23 ; elapsed = 00:00:12 . Memory (MB): peak = 479.621 ; gain = 144.531 ; free physical = 6024 ; free virtual = 11382" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;float&gt;::mantissa&apos; into &apos;generic_cast_IEEE754&lt;unsigned short, (ap_q_mode)6, float&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:327) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;float&gt;::expv&apos; into &apos;generic_cast_IEEE754&lt;unsigned short, (ap_q_mode)6, float&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;float&gt;::__signbit&apos; into &apos;generic_cast_IEEE754&lt;unsigned short, (ap_q_mode)6, float&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:350) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned short, (ap_q_mode)6, float&gt;&apos; into &apos;generic_cast_IEEE754&lt;unsigned short, float&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned short, float&gt;&apos; into &apos;__hls_fptoui_float_i16&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;__hls_fptoui_float_i16&apos; into &apos;myloop&apos; (top.cpp:19) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:24 ; elapsed = 00:00:13 . Memory (MB): peak = 540.672 ; gain = 205.582 ; free physical = 5985 ; free virtual = 11347" tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="889" content="Unrolling loop &apos;loop&apos; (top.cpp:13) in function &apos;myloop&apos;: &apos;skip_exit_check&apos; option is unnecessary since loop trip count is constant (=33)." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="876" content="Unrolling loop &apos;loop&apos; (top.cpp:13) in function &apos;myloop&apos; partially with a factor of 2." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;float&gt;::mantissa&apos; into &apos;generic_cast_IEEE754&lt;unsigned short, (ap_q_mode)6, float&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:327) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;float&gt;::expv&apos; into &apos;generic_cast_IEEE754&lt;unsigned short, (ap_q_mode)6, float&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned short, (ap_q_mode)6, float&gt;&apos; into &apos;generic_cast_IEEE754&lt;unsigned short, float&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned short, float&gt;&apos; into &apos;__hls_fptoui_float_i16&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;__hls_fptoui_float_i16&apos; into &apos;myloop&apos; (top.cpp:19) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:24 ; elapsed = 00:00:14 . Memory (MB): peak = 543.094 ; gain = 208.004 ; free physical = 5898 ; free virtual = 11283" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:25 ; elapsed = 00:00:14 . Memory (MB): peak = 543.094 ; gain = 208.004 ; free physical = 5880 ; free virtual = 11269" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;myloop&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;myloop&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;loop&apos;." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0)
+   between &apos;fadd&apos; operation (&apos;tmp_1&apos;, top.cpp:16) and &apos;fadd&apos; operation (&apos;tmp1&apos;, top.cpp:16)." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0)
+   between &apos;fadd&apos; operation (&apos;tmp_1&apos;, top.cpp:16) and &apos;fadd&apos; operation (&apos;tmp1&apos;, top.cpp:16)." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0)
+   between &apos;fadd&apos; operation (&apos;tmp_1&apos;, top.cpp:16) and &apos;fadd&apos; operation (&apos;tmp1&apos;, top.cpp:16)." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0)
+   between &apos;fadd&apos; operation (&apos;tmp_1&apos;, top.cpp:16) and &apos;fadd&apos; operation (&apos;tmp1&apos;, top.cpp:16)." tag=""/>
+	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 0)
+   between &apos;fadd&apos; operation (&apos;tmp_1&apos;, top.cpp:16) and &apos;fadd&apos; operation (&apos;tmp1&apos;, top.cpp:16)." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 8, Depth = 9." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="137" content="Estimated clock period (13.028ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns)." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="135" content="The critical path consists of the following:
+	&apos;fadd&apos; operation (&apos;tmp1&apos;, top.cpp:16) (6.51 ns)
+	&apos;fadd&apos; operation (&apos;tmp_1&apos;, top.cpp:16) (6.51 ns)" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 14.33 seconds; current allocated memory: 187.342 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.04 seconds; current allocated memory: 187.613 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;myloop&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;myloop/a_V&apos; to &apos;ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;myloop/b_V&apos; to &apos;ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;myloop/outp_V&apos; to &apos;axis&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;myloop&apos; to &apos;ap_ctrl_hs&apos;." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;myloop_fadd_32ns_32ns_32_5_full_dsp_1&apos; to &apos;myloop_fadd_32ns_bkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="251" content="Port &apos;myloop/a_V&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="251" content="Port &apos;myloop/b_V&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;myloop_fadd_32ns_bkb&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;myloop&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.06 seconds; current allocated memory: 188.160 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:25 ; elapsed = 00:00:15 . Memory (MB): peak = 543.094 ; gain = 208.004 ; free physical = 5879 ; free virtual = 11269" tag=""/>
+	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for myloop." tag=""/>
+	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for myloop." tag=""/>
+	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for myloop." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 15.02 seconds; peak allocated memory: 188.160 MB." tag=""/>
+</Messages>

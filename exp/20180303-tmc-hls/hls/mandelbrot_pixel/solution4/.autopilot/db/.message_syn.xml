@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;mandel_calc.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:22 ; elapsed = 00:00:10 . Memory (MB): peak = 348.676 ; gain = 13.586 ; free physical = 4560 ; free virtual = 10401" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:23 ; elapsed = 00:00:11 . Memory (MB): peak = 348.676 ; gain = 13.586 ; free physical = 4556 ; free virtual = 10401" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;ap_fixed_base&lt;31, 4, true, (ap_q_mode)0, (ap_o_mode)3, 0&gt;::quantization_adjust&apos; into &apos;ap_fixed_base&lt;31, 4, true, (ap_q_mode)0, (ap_o_mode)3, 0&gt;::ap_fixed_base&lt;69, 37, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&apos; ()." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;ap_fixed_base&lt;31, 4, true, (ap_q_mode)0, (ap_o_mode)3, 0&gt;::quantization_adjust&apos; into &apos;ap_fixed_base&lt;31, 4, true, (ap_q_mode)0, (ap_o_mode)3, 0&gt;::ap_fixed_base&lt;36, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&apos; ()." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:24 ; elapsed = 00:00:12 . Memory (MB): peak = 349.219 ; gain = 14.129 ; free physical = 4541 ; free virtual = 10389" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:24 ; elapsed = 00:00:12 . Memory (MB): peak = 477.121 ; gain = 142.031 ; free physical = 4532 ; free virtual = 10381" tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="889" content="Unrolling loop &apos;myloop&apos; (mandel_calc.cpp:26) in function &apos;mandel_calc&apos;: &apos;skip_exit_check&apos; option is unnecessary since loop trip count is constant (=149)." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="876" content="Unrolling loop &apos;myloop&apos; (mandel_calc.cpp:26) in function &apos;mandel_calc&apos; partially with a factor of 30." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:25 ; elapsed = 00:00:14 . Memory (MB): peak = 477.121 ; gain = 142.031 ; free physical = 4497 ; free virtual = 10351" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:26 ; elapsed = 00:00:14 . Memory (MB): peak = 477.121 ; gain = 142.031 ; free physical = 4493 ; free virtual = 10348" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;mandel_calc&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;mandel_calc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;myloop&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 4." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="137" content="Estimated clock period (423.136ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns)." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="135" content="The critical path consists of the following:
+	&apos;add&apos; operation (&apos;p_Val2_5&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_10&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_11&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_1&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_1&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_1&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_1&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_2&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_2&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_2&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_2&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_3&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_3&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_3&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_3&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_4&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_4&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_4&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_4&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_5&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_5&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_5&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_5&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_6&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_6&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_6&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_6&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_7&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_7&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_7&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_7&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_8&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_8&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_8&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_8&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_9&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_9&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_9&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_9&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_s&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_s&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_s&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_s&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_10&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_10&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_10&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_10&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_11&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_11&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_11&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_11&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_12&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_12&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_12&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_12&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_13&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_13&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_13&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_13&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_14&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_14&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_14&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_14&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_15&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_15&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_15&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_15&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_16&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_16&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_16&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_16&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_17&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_17&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_17&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_17&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_18&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_18&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_18&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_18&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_19&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_19&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_19&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_19&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_20&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_20&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_20&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_20&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_21&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_21&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_21&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_21&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_22&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_22&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_22&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_22&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_23&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_23&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_23&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_23&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_24&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_24&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_24&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_24&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_25&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_25&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_25&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_25&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_26&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_26&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_26&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_26&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_27&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_27&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;sub&apos; operation (&apos;p_Val2_15_27&apos;, mandel_calc.cpp:33) (0 ns)
+	&apos;add&apos; operation (&apos;p_Val2_17_27&apos;, mandel_calc.cpp:33) (4.48 ns)
+	&apos;mul&apos; operation (&apos;p_Val2_3_28&apos;, mandel_calc.cpp:29) (7.18 ns)
+	&apos;add&apos; operation (&apos;p_Val2_5_28&apos;, mandel_calc.cpp:29) (2.67 ns)
+	&apos;add&apos; operation (&apos;p_Val2_18_28&apos;, mandel_calc.cpp:35) (2.67 ns)
+	&apos;icmp&apos; operation (&apos;op2_assign_28&apos;, mandel_calc.cpp:36) (2.43 ns)" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 15.69 seconds; current allocated memory: 98.685 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.53 seconds; current allocated memory: 102.023 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;mandel_calc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;mandel_calc/re_V&apos; to &apos;ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;mandel_calc/im_V&apos; to &apos;ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;mandel_calc/count_out_V&apos; to &apos;ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;mandel_calc&apos; to &apos;ap_ctrl_hs&apos;." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mandel_calc_mul_mul_18s_18s_36_1_1&apos; to &apos;mandel_calc_mul_mbkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mandel_calc_mul_mbkb&apos;: 90 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;mandel_calc&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.79 seconds; current allocated memory: 109.839 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 540.672 ; gain = 205.582 ; free physical = 4449 ; free virtual = 10318" tag=""/>
+	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for mandel_calc." tag=""/>
+	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for mandel_calc." tag=""/>
+	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for mandel_calc." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 20.26 seconds; peak allocated memory: 109.839 MB." tag=""/>
+</Messages>

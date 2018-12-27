@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Feb 11 10:11:19 2018
+# Process ID: 15187
+# Current directory: /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.runs/system_ilmb_v10_0_synth_1
+# Command line: vivado -log system_ilmb_v10_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_ilmb_v10_0.tcl
+# Log file: /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.runs/system_ilmb_v10_0_synth_1/system_ilmb_v10_0.vds
+# Journal file: /home/trevor/mylab/experiments/20180211-tmc-video_ps/vivado/video_ps_2/video_ps_2.runs/system_ilmb_v10_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source system_ilmb_v10_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_ilmb_v10_0, cache-ID = b1c25820bcefd7da.
+INFO: [Common 17-206] Exiting Vivado at Sun Feb 11 10:11:30 2018...

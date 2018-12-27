@@ -1,0 +1,149 @@
+
+
+================================================================
+== Vivado HLS Report for 'example'
+================================================================
+* Date:           Sun Mar 11 20:20:29 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        proj_axi_lite
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  13.33|      4.97|        1.67|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    2|    2|    2|    2|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     16|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        0|      -|      92|    104|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     21|
+|Register         |        -|      -|      36|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|     128|    141|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-----------------------+---------------------+---------+-------+----+-----+
+    |        Instance       |        Module       | BRAM_18K| DSP48E| FF | LUT |
+    +-----------------------+---------------------+---------+-------+----+-----+
+    |example_BUS_A_s_axi_U  |example_BUS_A_s_axi  |        0|      0|  92|  104|
+    +-----------------------+---------------------+---------+-------+----+-----+
+    |Total                  |                     |        0|      0|  92|  104|
+    +-----------------------+---------------------+---------+-------+----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------+----------+-------+---+----+------------+------------+
+    |  Variable Name | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------+----------+-------+---+----+------------+------------+
+    |tmp1_fu_53_p2   |     +    |      0|  0|   8|           8|           8|
+    |tmp_1_fu_58_p2  |     +    |      0|  0|   8|           8|           8|
+    +----------------+----------+-------+---+----+------------+------------+
+    |Total           |          |      0|  0|  16|          16|          16|
+    +----------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_NS_fsm  |  21|          4|    1|          4|
+    +-----------+----+-----------+-----+-----------+
+    |Total      |  21|          4|    1|          4|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------+---+----+-----+-----------+
+    |      Name     | FF| LUT| Bits| Const Bits|
+    +---------------+---+----+-----+-----------+
+    |a_read_reg_64  |  8|   0|    8|          0|
+    |ap_CS_fsm      |  3|   0|    3|          0|
+    |b_read_reg_69  |  8|   0|    8|          0|
+    |c_0_data_reg   |  8|   0|    8|          0|
+    |c_0_vld_reg    |  0|   0|    1|          1|
+    |c_1_data_reg   |  8|   0|    8|          0|
+    |c_1_vld_reg    |  1|   0|    1|          0|
+    +---------------+---+----+-----+-----------+
+    |Total          | 36|   0|   37|          1|
+    +---------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+--------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------------+-----+-----+------------+--------------+--------------+
+|s_axi_BUS_A_AWVALID  |  in |    1|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_AWREADY  | out |    1|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_AWADDR   |  in |    6|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_WVALID   |  in |    1|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_WREADY   | out |    1|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_WDATA    |  in |   32|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_WSTRB    |  in |    4|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_ARVALID  |  in |    1|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_ARREADY  | out |    1|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_ARADDR   |  in |    6|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_RVALID   | out |    1|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_RREADY   |  in |    1|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_RDATA    | out |   32|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_RRESP    | out |    2|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_BVALID   | out |    1|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_BREADY   |  in |    1|    s_axi   |     BUS_A    |    pointer   |
+|s_axi_BUS_A_BRESP    | out |    2|    s_axi   |     BUS_A    |    pointer   |
+|ap_clk               |  in |    1| ap_ctrl_hs |    example   | return value |
+|ap_rst_n             |  in |    1| ap_ctrl_hs |    example   | return value |
+|interrupt            | out |    1| ap_ctrl_hs |    example   | return value |
++---------------------+-----+-----+------------+--------------+--------------+
+

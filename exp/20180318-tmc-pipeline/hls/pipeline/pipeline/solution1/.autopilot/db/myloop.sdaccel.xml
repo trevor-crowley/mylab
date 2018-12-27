@@ -1,0 +1,138 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'myloop'" level="0">
+<item name = "Date">Sun Mar 18 17:01:40 2018
+</item>
+<item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
+<item name = "Project">pipeline</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a200tfbg676-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">10.00</item>
+<item name = "Clock uncertainty (ns)">1.25</item>
+<item name = "Estimated clock period (ns)">8.23</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">5, 5, 5, 5, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, 8, -, -</column>
+<column name="Expression">-, -, 0, 25</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, -, -, -</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 38</column>
+<column name="Register">-, -, 150, -</column>
+<specialColumn name="Available">730, 740, 269200, 129000</specialColumn>
+<specialColumn name="Utilization (%)">0, 1, ~0, ~0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+<column name="myloop_mul_mul_18bkb_U1">myloop_mul_mul_18bkb, i0 * i0</column>
+<column name="myloop_mul_mul_18bkb_U2">myloop_mul_mul_18bkb, i0 * i1</column>
+<column name="myloop_mul_mul_18bkb_U3">myloop_mul_mul_18bkb, i0 * i0</column>
+<column name="myloop_mul_mul_18bkb_U4">myloop_mul_mul_18bkb, i0 * i1</column>
+<column name="myloop_mul_mul_18bkb_U5">myloop_mul_mul_18bkb, i0 * i1</column>
+<column name="myloop_mul_mul_18bkb_U6">myloop_mul_mul_18bkb, i0 * i0</column>
+<column name="myloop_mul_mul_18bkb_U7">myloop_mul_mul_18bkb, i0 * i1</column>
+<column name="myloop_mul_mul_18cud_U8">myloop_mul_mul_18cud, i0 * i1</column>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="tmp_fu_35_p2">+, 0, 0, 25, 18, 18</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">38, 7, 1, 7</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">6, 0, 6, 0</column>
+<column name="r_V_s_reg_129">18, 0, 18, 0</column>
+<column name="tmp1_reg_119">18, 0, 18, 0</column>
+<column name="tmp2_reg_107">18, 0, 18, 0</column>
+<column name="tmp3_reg_94">18, 0, 18, 0</column>
+<column name="tmp5_reg_112">18, 0, 18, 0</column>
+<column name="tmp7_reg_102">18, 0, 18, 0</column>
+<column name="tmp9_reg_124">18, 0, 18, 0</column>
+<column name="tmp_reg_88">18, 0, 18, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, myloop, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, myloop, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, myloop, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, myloop, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, myloop, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, myloop, return value</column>
+<column name="a_V">in, 18, ap_none, a_V, scalar</column>
+<column name="b_V">in, 18, ap_none, b_V, scalar</column>
+<column name="outp">out, 64, ap_vld, outp, pointer</column>
+<column name="outp_ap_vld">out, 1, ap_vld, outp, pointer</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">8.23</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+<column name="'b_V_read'">read, 0.00, 0.00, -, -, -, wire, read, &apos;b_V&apos;, -, -, -, -, -</column>
+<column name="'tmp', top.cpp:13">add, 1.88, 1.88, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'tmp3', top.cpp:13">mul, 6.35, 8.23, -, -, -, -, -, -, -, -, -, -, -</column>
+</table>
+</item>
+</section>
+</profile>

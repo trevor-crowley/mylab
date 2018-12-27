@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/trevor/mylab/experiments/20180219-tmc-test_pattern/vivado/test_pattern_5/test_pattern_5.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="698556fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="415"></NameColumnWidth>
+      <ValueColumnWidth column_width="56"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject type="logic" fp_name="design_1_wrapper_i/design_1_i/microblaze_0_axi_periph_M01_AXI_BVALID">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_wrapper_i/design_1_i/microblaze_0_axi_periph_M01_AXI_BVALID</obj_property>
+      <obj_property name="ObjectShortName">microblaze_0_axi_periph_M01_AXI_BVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_wrapper_i/design_1_i/overflow">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_wrapper_i/design_1_i/overflow</obj_property>
+      <obj_property name="ObjectShortName">overflow</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="design_1_wrapper_i/design_1_i/status">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_wrapper_i/design_1_i/status[31:21]</obj_property>
+      <obj_property name="ObjectShortName">status[31:21]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_wrapper_i/design_1_i/v_tpg_0_m_axis_video_TLAST">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_wrapper_i/design_1_i/v_tpg_0_m_axis_video_TLAST</obj_property>
+      <obj_property name="ObjectShortName">v_tpg_0_m_axis_video_TLAST</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_wrapper_i/design_1_i/v_tpg_0_m_axis_video_TREADY">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_wrapper_i/design_1_i/v_tpg_0_m_axis_video_TREADY</obj_property>
+      <obj_property name="ObjectShortName">v_tpg_0_m_axis_video_TREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_wrapper_i/design_1_i/v_tpg_0_m_axis_video_TVALID">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_wrapper_i/design_1_i/v_tpg_0_m_axis_video_TVALID</obj_property>
+      <obj_property name="ObjectShortName">v_tpg_0_m_axis_video_TVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_wrapper_i/design_1_i/v_tpg_1_m_axis_video_TLAST">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_wrapper_i/design_1_i/v_tpg_1_m_axis_video_TLAST</obj_property>
+      <obj_property name="ObjectShortName">v_tpg_1_m_axis_video_TLAST</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_wrapper_i/design_1_i/v_tpg_1_m_axis_video_TREADY">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_wrapper_i/design_1_i/v_tpg_1_m_axis_video_TREADY</obj_property>
+      <obj_property name="ObjectShortName">v_tpg_1_m_axis_video_TREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_wrapper_i/design_1_i/v_tpg_1_m_axis_video_TUSER">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_wrapper_i/design_1_i/v_tpg_1_m_axis_video_TUSER</obj_property>
+      <obj_property name="ObjectShortName">v_tpg_1_m_axis_video_TUSER</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_wrapper_i/design_1_i/v_tpg_1_m_axis_video_TVALID">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_wrapper_i/design_1_i/v_tpg_1_m_axis_video_TVALID</obj_property>
+      <obj_property name="ObjectShortName">v_tpg_1_m_axis_video_TVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,954 @@
+
+
+================================================================
+== Vivado HLS Report for 'mandel_calc'
+================================================================
+* Date:           Sun Mar  4 20:27:41 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        mandelbrot_pixel
+* Solution:       solution6
+* Product family: artix7
+* Target device:  xc7a35tcpg236-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|    346.88|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   15|   15|   15|   15|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- myloop  |   12|   12|         5|          1|          1|     8|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 5
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 5, States = { 2 3 4 5 6 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / (!exitcond & exitcond_1) | (!exitcond & !exitcond_1 & exitcond_2) | (exitcond) | (!exitcond & !exitcond_1 & !exitcond_2 & exitcond_3) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & exitcond_4) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & exitcond_5) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & exitcond_6) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & exitcond_7) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & exitcond_8) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & exitcond_9) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & exitcond_s) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & exitcond_10) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & exitcond_11) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & exitcond_12) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & exitcond_13) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & exitcond_14) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & exitcond_15) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & exitcond_16) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & exitcond_17) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & exitcond_18) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & !exitcond_18 & exitcond_19) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & !exitcond_18 & !exitcond_19 & exitcond_20) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & !exitcond_18 & !exitcond_19 & !exitcond_20 & exitcond_21) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & !exitcond_18 & !exitcond_19 & !exitcond_20 & !exitcond_21 & exitcond_22) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & !exitcond_18 & !exitcond_19 & !exitcond_20 & !exitcond_21 & !exitcond_22 & exitcond_23) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & !exitcond_18 & !exitcond_19 & !exitcond_20 & !exitcond_21 & !exitcond_22 & !exitcond_23 & exitcond_24) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & !exitcond_18 & !exitcond_19 & !exitcond_20 & !exitcond_21 & !exitcond_22 & !exitcond_23 & !exitcond_24 & exitcond_25) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & !exitcond_18 & !exitcond_19 & !exitcond_20 & !exitcond_21 & !exitcond_22 & !exitcond_23 & !exitcond_24 & !exitcond_25 & exitcond_26) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & !exitcond_18 & !exitcond_19 & !exitcond_20 & !exitcond_21 & !exitcond_22 & !exitcond_23 & !exitcond_24 & !exitcond_25 & !exitcond_26 & exitcond_27) | (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & !exitcond_18 & !exitcond_19 & !exitcond_20 & !exitcond_21 & !exitcond_22 & !exitcond_23 & !exitcond_24 & !exitcond_25 & !exitcond_26 & !exitcond_27 & exitcond_28)
+	2  / (!exitcond & !exitcond_1 & !exitcond_2 & !exitcond_3 & !exitcond_4 & !exitcond_5 & !exitcond_6 & !exitcond_7 & !exitcond_8 & !exitcond_9 & !exitcond_s & !exitcond_10 & !exitcond_11 & !exitcond_12 & !exitcond_13 & !exitcond_14 & !exitcond_15 & !exitcond_16 & !exitcond_17 & !exitcond_18 & !exitcond_19 & !exitcond_20 & !exitcond_21 & !exitcond_22 & !exitcond_23 & !exitcond_24 & !exitcond_25 & !exitcond_26 & !exitcond_27 & !exitcond_28)
+7 --> 
+	8  / true
+8 --> 
+
+* FSM state operations: 
+
+ <State 1> : 1.66ns
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i18 %re_V), !map !80"
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i18 %im_V), !map !86"
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %count_out_V), !map !90"
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([12 x i8]* @mandel_calc_str) nounwind"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%im_V_read = call i18 @_ssdm_op_Read.ap_auto.i18(i18 %im_V)"
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%re_V_read = call i18 @_ssdm_op_Read.ap_auto.i18(i18 %re_V)"
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %count_out_V, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [mandelbrot_pixel/C/mandel_calc.cpp:14]
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %count_out_V, [5 x i8]* @p_str, i32 1, i32 1, [8 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [mandelbrot_pixel/C/mandel_calc.cpp:14]
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%z0_re_V = call i34 @_ssdm_op_BitConcatenate.i34.i18.i16(i18 %re_V_read, i16 0)" [mandelbrot_pixel/C/mandel_calc.cpp:23]
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%z0_re_V_cast = sext i34 %z0_re_V to i36" [mandelbrot_pixel/C/mandel_calc.cpp:23]
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%z0_im_V = call i34 @_ssdm_op_BitConcatenate.i34.i18.i16(i18 %im_V_read, i16 0)" [mandelbrot_pixel/C/mandel_calc.cpp:24]
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%z0_im_V_cast = sext i34 %z0_im_V to i36" [mandelbrot_pixel/C/mandel_calc.cpp:24]
+ST_1 : Operation 21 [1/1] (1.66ns)   --->   "br label %0" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+
+ <State 2> : 7.18ns
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%z_im_V = phi i36 [ %z0_im_V_cast, %codeRepl ], [ %p_Val2_8_28, %30 ]" [mandelbrot_pixel/C/mandel_calc.cpp:24]
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%z_re_V = phi i36 [ %z0_re_V_cast, %codeRepl ], [ %p_Val2_11_28, %30 ]" [mandelbrot_pixel/C/mandel_calc.cpp:23]
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%t_V = phi i8 [ 0, %codeRepl ], [ %tmp_19_1, %30 ]" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_2 : Operation 25 [1/1] (1.47ns)   --->   "%exitcond = icmp eq i8 %t_V, -17" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%tmp_7 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %z_re_V, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%OP1_V = sext i18 %tmp_7 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_2 : Operation 28 [1/1] (7.18ns)   --->   "%p_Val2_3 = mul nsw i36 %OP1_V, %OP1_V" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_8 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %z_im_V, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%OP1_V_1 = sext i18 %tmp_8 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_2 : Operation 31 [1/1] (7.18ns)   --->   "%p_Val2_5 = mul nsw i36 %OP1_V_1, %OP1_V_1" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_3 = sext i18 %tmp_8 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_4 = sext i18 %tmp_7 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_2 : Operation 34 [1/1] (7.18ns)   --->   "%r_V5 = mul i35 %tmp_3, %tmp_4" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 35 [1/1] (0.00ns) (grouped into LUT with out node exitcond_1)   --->   "%tmp_19_s = or i8 %t_V, 1" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_2 : Operation 36 [1/1] (1.47ns) (out node of the LUT)   --->   "%exitcond_1 = icmp eq i8 %tmp_19_s, -17" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 37 [1/1] (1.47ns)   --->   "%exitcond_2 = icmp eq i8 %t_V, -19" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 38 [1/1] (1.47ns)   --->   "%exitcond_3 = icmp eq i8 %t_V, -20" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 39 [1/1] (1.47ns)   --->   "%exitcond_4 = icmp eq i8 %t_V, -21" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 40 [1/1] (1.47ns)   --->   "%exitcond_5 = icmp eq i8 %t_V, -22" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 41 [1/1] (1.47ns)   --->   "%exitcond_6 = icmp eq i8 %t_V, -23" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 42 [1/1] (1.47ns)   --->   "%exitcond_7 = icmp eq i8 %t_V, -24" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 43 [1/1] (1.47ns)   --->   "%exitcond_8 = icmp eq i8 %t_V, -25" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 44 [1/1] (1.47ns)   --->   "%exitcond_9 = icmp eq i8 %t_V, -26" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 45 [1/1] (1.47ns)   --->   "%exitcond_s = icmp eq i8 %t_V, -27" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 46 [1/1] (1.47ns)   --->   "%exitcond_10 = icmp eq i8 %t_V, -28" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 47 [1/1] (1.47ns)   --->   "%exitcond_11 = icmp eq i8 %t_V, -29" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 48 [1/1] (1.47ns)   --->   "%exitcond_12 = icmp eq i8 %t_V, -30" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 49 [1/1] (1.47ns)   --->   "%exitcond_13 = icmp eq i8 %t_V, -31" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 50 [1/1] (1.47ns)   --->   "%exitcond_14 = icmp eq i8 %t_V, -32" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 51 [1/1] (1.47ns)   --->   "%exitcond_15 = icmp eq i8 %t_V, -33" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 52 [1/1] (1.47ns)   --->   "%exitcond_16 = icmp eq i8 %t_V, -34" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 53 [1/1] (1.47ns)   --->   "%exitcond_17 = icmp eq i8 %t_V, -35" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 54 [1/1] (1.47ns)   --->   "%exitcond_18 = icmp eq i8 %t_V, -36" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 55 [1/1] (1.47ns)   --->   "%exitcond_19 = icmp eq i8 %t_V, -37" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 56 [1/1] (1.47ns)   --->   "%exitcond_20 = icmp eq i8 %t_V, -38" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 57 [1/1] (1.47ns)   --->   "%exitcond_21 = icmp eq i8 %t_V, -39" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 58 [1/1] (1.47ns)   --->   "%exitcond_22 = icmp eq i8 %t_V, -40" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 59 [1/1] (1.47ns)   --->   "%exitcond_23 = icmp eq i8 %t_V, -41" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 60 [1/1] (1.47ns)   --->   "%exitcond_24 = icmp eq i8 %t_V, -42" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 61 [1/1] (1.47ns)   --->   "%exitcond_25 = icmp eq i8 %t_V, -43" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 62 [1/1] (1.47ns)   --->   "%exitcond_26 = icmp eq i8 %t_V, -44" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 63 [1/1] (1.47ns)   --->   "%exitcond_27 = icmp eq i8 %t_V, -45" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 64 [1/1] (1.47ns)   --->   "%exitcond_28 = icmp eq i8 %t_V, -46" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 65 [1/1] (2.11ns)   --->   "%tmp_19_1 = add i8 %t_V, 30" [mandelbrot_pixel/C/mandel_calc.cpp:27]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 3> : 346.88ns
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%p_Val2_7 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 67 [1/1] (2.79ns)   --->   "%p_Val2_8 = add i36 %z0_im_V_cast, %p_Val2_7" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_2 = sext i36 %p_Val2_3 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_3 : Operation 69 [1/1] (0.00ns)   --->   "%tmp_s = sext i36 %p_Val2_5 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_3 : Operation 70 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9 = sub i36 %p_Val2_3, %p_Val2_5" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 71 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_s = add i36 %z0_re_V_cast, %p_Val2_9" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 72 [1/1] (2.79ns)   --->   "%r_V_1 = add nsw i37 %tmp_s, %tmp_2" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 73 [1/1] (2.56ns)   --->   "%val_assign = icmp slt i37 %r_V_1, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%tmp_7_1 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_s, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%OP1_V_s = sext i18 %tmp_7_1 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 76 [1/1] (7.18ns)   --->   "%p_Val2_3_1 = mul nsw i36 %OP1_V_s, %OP1_V_s" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_8_1 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%OP1_V_1_1 = sext i18 %tmp_8_1 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 79 [1/1] (7.18ns)   --->   "%p_Val2_5_1 = mul nsw i36 %OP1_V_1_1, %OP1_V_1_1" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%tmp_5 = sext i18 %tmp_8_1 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%tmp_9 = sext i18 %tmp_7_1 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 82 [1/1] (7.18ns)   --->   "%r_V5_1 = mul i35 %tmp_5, %tmp_9" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%p_Val2_7_1 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_1, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 84 [1/1] (2.79ns)   --->   "%p_Val2_8_1 = add i36 %z0_im_V_cast, %p_Val2_7_1" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 85 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_1 = sub i36 %p_Val2_3_1, %p_Val2_5_1" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 86 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_1 = add i36 %z0_re_V_cast, %p_Val2_9_1" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_7_2 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_1, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%OP1_V_2 = sext i18 %tmp_7_2 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 89 [1/1] (7.18ns)   --->   "%p_Val2_3_2 = mul nsw i36 %OP1_V_2, %OP1_V_2" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 90 [1/1] (0.00ns)   --->   "%tmp_8_2 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_1, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 91 [1/1] (0.00ns)   --->   "%OP1_V_1_2 = sext i18 %tmp_8_2 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 92 [1/1] (7.18ns)   --->   "%p_Val2_5_2 = mul nsw i36 %OP1_V_1_2, %OP1_V_1_2" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_10 = sext i18 %tmp_8_2 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_11 = sext i18 %tmp_7_2 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 95 [1/1] (7.18ns)   --->   "%r_V5_2 = mul i35 %tmp_10, %tmp_11" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 96 [1/1] (0.00ns)   --->   "%p_Val2_7_2 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_2, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 97 [1/1] (2.79ns)   --->   "%p_Val2_8_2 = add i36 %z0_im_V_cast, %p_Val2_7_2" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 98 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_2 = sub i36 %p_Val2_3_2, %p_Val2_5_2" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 99 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_2 = add i36 %z0_re_V_cast, %p_Val2_9_2" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 100 [1/1] (0.00ns)   --->   "%tmp_7_3 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_2, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 101 [1/1] (0.00ns)   --->   "%OP1_V_3 = sext i18 %tmp_7_3 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 102 [1/1] (7.18ns)   --->   "%p_Val2_3_3 = mul nsw i36 %OP1_V_3, %OP1_V_3" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 103 [1/1] (0.00ns)   --->   "%tmp_8_3 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_2, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%OP1_V_1_3 = sext i18 %tmp_8_3 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 105 [1/1] (7.18ns)   --->   "%p_Val2_5_3 = mul nsw i36 %OP1_V_1_3, %OP1_V_1_3" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_13 = sext i18 %tmp_8_3 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 107 [1/1] (0.00ns)   --->   "%tmp_14 = sext i18 %tmp_7_3 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 108 [1/1] (7.18ns)   --->   "%r_V5_3 = mul i35 %tmp_13, %tmp_14" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 109 [1/1] (0.00ns)   --->   "%p_Val2_7_3 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_3, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 110 [1/1] (2.79ns)   --->   "%p_Val2_8_3 = add i36 %z0_im_V_cast, %p_Val2_7_3" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 111 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_3 = sub i36 %p_Val2_3_3, %p_Val2_5_3" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 112 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_3 = add i36 %z0_re_V_cast, %p_Val2_9_3" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 113 [1/1] (0.00ns)   --->   "%tmp_7_4 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_3, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 114 [1/1] (0.00ns)   --->   "%OP1_V_4 = sext i18 %tmp_7_4 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 115 [1/1] (7.18ns)   --->   "%p_Val2_3_4 = mul nsw i36 %OP1_V_4, %OP1_V_4" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 116 [1/1] (0.00ns)   --->   "%tmp_8_4 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_3, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 117 [1/1] (0.00ns)   --->   "%OP1_V_1_4 = sext i18 %tmp_8_4 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 118 [1/1] (7.18ns)   --->   "%p_Val2_5_4 = mul nsw i36 %OP1_V_1_4, %OP1_V_1_4" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 119 [1/1] (0.00ns)   --->   "%tmp_15 = sext i18 %tmp_8_4 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 120 [1/1] (0.00ns)   --->   "%tmp_16 = sext i18 %tmp_7_4 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 121 [1/1] (7.18ns)   --->   "%r_V5_4 = mul i35 %tmp_15, %tmp_16" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 122 [1/1] (0.00ns)   --->   "%p_Val2_7_4 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_4, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 123 [1/1] (2.79ns)   --->   "%p_Val2_8_4 = add i36 %z0_im_V_cast, %p_Val2_7_4" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 124 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_4 = sub i36 %p_Val2_3_4, %p_Val2_5_4" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 125 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_4 = add i36 %z0_re_V_cast, %p_Val2_9_4" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 126 [1/1] (0.00ns)   --->   "%tmp_7_5 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_4, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 127 [1/1] (0.00ns)   --->   "%OP1_V_5 = sext i18 %tmp_7_5 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 128 [1/1] (7.18ns)   --->   "%p_Val2_3_5 = mul nsw i36 %OP1_V_5, %OP1_V_5" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 129 [1/1] (0.00ns)   --->   "%tmp_8_5 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_4, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 130 [1/1] (0.00ns)   --->   "%OP1_V_1_5 = sext i18 %tmp_8_5 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 131 [1/1] (7.18ns)   --->   "%p_Val2_5_5 = mul nsw i36 %OP1_V_1_5, %OP1_V_1_5" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 132 [1/1] (0.00ns)   --->   "%tmp_17 = sext i18 %tmp_8_5 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 133 [1/1] (0.00ns)   --->   "%tmp_18 = sext i18 %tmp_7_5 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 134 [1/1] (7.18ns)   --->   "%r_V5_5 = mul i35 %tmp_17, %tmp_18" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 135 [1/1] (0.00ns)   --->   "%p_Val2_7_5 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_5, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 136 [1/1] (2.79ns)   --->   "%p_Val2_8_5 = add i36 %z0_im_V_cast, %p_Val2_7_5" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 137 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_5 = sub i36 %p_Val2_3_5, %p_Val2_5_5" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 138 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_5 = add i36 %z0_re_V_cast, %p_Val2_9_5" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 139 [1/1] (0.00ns)   --->   "%tmp_7_6 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_5, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 140 [1/1] (0.00ns)   --->   "%OP1_V_6 = sext i18 %tmp_7_6 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 141 [1/1] (7.18ns)   --->   "%p_Val2_3_6 = mul nsw i36 %OP1_V_6, %OP1_V_6" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 142 [1/1] (0.00ns)   --->   "%tmp_8_6 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_5, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 143 [1/1] (0.00ns)   --->   "%OP1_V_1_6 = sext i18 %tmp_8_6 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 144 [1/1] (7.18ns)   --->   "%p_Val2_5_6 = mul nsw i36 %OP1_V_1_6, %OP1_V_1_6" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 145 [1/1] (0.00ns)   --->   "%tmp_19 = sext i18 %tmp_8_6 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 146 [1/1] (0.00ns)   --->   "%tmp_20 = sext i18 %tmp_7_6 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 147 [1/1] (7.18ns)   --->   "%r_V5_6 = mul i35 %tmp_19, %tmp_20" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 148 [1/1] (0.00ns)   --->   "%p_Val2_7_6 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_6, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 149 [1/1] (2.79ns)   --->   "%p_Val2_8_6 = add i36 %z0_im_V_cast, %p_Val2_7_6" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 150 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_6 = sub i36 %p_Val2_3_6, %p_Val2_5_6" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 151 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_6 = add i36 %z0_re_V_cast, %p_Val2_9_6" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 152 [1/1] (0.00ns)   --->   "%tmp_7_7 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_6, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 153 [1/1] (0.00ns)   --->   "%OP1_V_7 = sext i18 %tmp_7_7 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 154 [1/1] (7.18ns)   --->   "%p_Val2_3_7 = mul nsw i36 %OP1_V_7, %OP1_V_7" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 155 [1/1] (0.00ns)   --->   "%tmp_8_7 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_6, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 156 [1/1] (0.00ns)   --->   "%OP1_V_1_7 = sext i18 %tmp_8_7 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 157 [1/1] (7.18ns)   --->   "%p_Val2_5_7 = mul nsw i36 %OP1_V_1_7, %OP1_V_1_7" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 158 [1/1] (0.00ns)   --->   "%tmp_21 = sext i18 %tmp_8_7 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 159 [1/1] (0.00ns)   --->   "%tmp_22 = sext i18 %tmp_7_7 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 160 [1/1] (7.18ns)   --->   "%r_V5_7 = mul i35 %tmp_21, %tmp_22" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 161 [1/1] (0.00ns)   --->   "%p_Val2_7_7 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_7, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 162 [1/1] (2.79ns)   --->   "%p_Val2_8_7 = add i36 %z0_im_V_cast, %p_Val2_7_7" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 163 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_7 = sub i36 %p_Val2_3_7, %p_Val2_5_7" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 164 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_7 = add i36 %z0_re_V_cast, %p_Val2_9_7" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 165 [1/1] (0.00ns)   --->   "%tmp_7_8 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_7, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 166 [1/1] (0.00ns)   --->   "%OP1_V_8 = sext i18 %tmp_7_8 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 167 [1/1] (7.18ns)   --->   "%p_Val2_3_8 = mul nsw i36 %OP1_V_8, %OP1_V_8" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 168 [1/1] (0.00ns)   --->   "%tmp_8_8 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_7, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 169 [1/1] (0.00ns)   --->   "%OP1_V_1_8 = sext i18 %tmp_8_8 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 170 [1/1] (7.18ns)   --->   "%p_Val2_5_8 = mul nsw i36 %OP1_V_1_8, %OP1_V_1_8" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 171 [1/1] (0.00ns)   --->   "%tmp_23 = sext i18 %tmp_8_8 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 172 [1/1] (0.00ns)   --->   "%tmp_24 = sext i18 %tmp_7_8 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 173 [1/1] (7.18ns)   --->   "%r_V5_8 = mul i35 %tmp_23, %tmp_24" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 174 [1/1] (0.00ns)   --->   "%p_Val2_7_8 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_8, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 175 [1/1] (2.79ns)   --->   "%p_Val2_8_8 = add i36 %z0_im_V_cast, %p_Val2_7_8" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 176 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_8 = sub i36 %p_Val2_3_8, %p_Val2_5_8" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 177 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_8 = add i36 %z0_re_V_cast, %p_Val2_9_8" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 178 [1/1] (0.00ns)   --->   "%tmp_7_9 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_8, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 179 [1/1] (0.00ns)   --->   "%OP1_V_9 = sext i18 %tmp_7_9 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 180 [1/1] (7.18ns)   --->   "%p_Val2_3_9 = mul nsw i36 %OP1_V_9, %OP1_V_9" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 181 [1/1] (0.00ns)   --->   "%tmp_8_9 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_8, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 182 [1/1] (0.00ns)   --->   "%OP1_V_1_9 = sext i18 %tmp_8_9 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 183 [1/1] (7.18ns)   --->   "%p_Val2_5_9 = mul nsw i36 %OP1_V_1_9, %OP1_V_1_9" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 184 [1/1] (0.00ns)   --->   "%tmp_25 = sext i18 %tmp_8_9 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 185 [1/1] (0.00ns)   --->   "%tmp_26 = sext i18 %tmp_7_9 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 186 [1/1] (7.18ns)   --->   "%r_V5_9 = mul i35 %tmp_25, %tmp_26" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 187 [1/1] (0.00ns)   --->   "%p_Val2_7_9 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_9, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 188 [1/1] (2.79ns)   --->   "%p_Val2_8_9 = add i36 %z0_im_V_cast, %p_Val2_7_9" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 189 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_9 = sub i36 %p_Val2_3_9, %p_Val2_5_9" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 190 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_9 = add i36 %z0_re_V_cast, %p_Val2_9_9" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 191 [1/1] (0.00ns)   --->   "%tmp_7_s = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_9, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 192 [1/1] (0.00ns)   --->   "%OP1_V_10 = sext i18 %tmp_7_s to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 193 [1/1] (7.18ns)   --->   "%p_Val2_3_s = mul nsw i36 %OP1_V_10, %OP1_V_10" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 194 [1/1] (0.00ns)   --->   "%tmp_8_s = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_9, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 195 [1/1] (0.00ns)   --->   "%OP1_V_1_s = sext i18 %tmp_8_s to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 196 [1/1] (7.18ns)   --->   "%p_Val2_5_s = mul nsw i36 %OP1_V_1_s, %OP1_V_1_s" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 197 [1/1] (0.00ns)   --->   "%tmp_27 = sext i18 %tmp_8_s to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 198 [1/1] (0.00ns)   --->   "%tmp_28 = sext i18 %tmp_7_s to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 199 [1/1] (7.18ns)   --->   "%r_V5_s = mul i35 %tmp_27, %tmp_28" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 200 [1/1] (0.00ns)   --->   "%p_Val2_7_s = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_s, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 201 [1/1] (2.79ns)   --->   "%p_Val2_8_s = add i36 %z0_im_V_cast, %p_Val2_7_s" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 202 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_s = sub i36 %p_Val2_3_s, %p_Val2_5_s" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 203 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_s = add i36 %z0_re_V_cast, %p_Val2_9_s" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 204 [1/1] (0.00ns)   --->   "%tmp_7_10 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_s, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 205 [1/1] (0.00ns)   --->   "%OP1_V_11 = sext i18 %tmp_7_10 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 206 [1/1] (7.18ns)   --->   "%p_Val2_3_10 = mul nsw i36 %OP1_V_11, %OP1_V_11" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 207 [1/1] (0.00ns)   --->   "%tmp_8_10 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_s, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 208 [1/1] (0.00ns)   --->   "%OP1_V_1_10 = sext i18 %tmp_8_10 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 209 [1/1] (7.18ns)   --->   "%p_Val2_5_10 = mul nsw i36 %OP1_V_1_10, %OP1_V_1_10" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 210 [1/1] (0.00ns)   --->   "%tmp_29 = sext i18 %tmp_8_10 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 211 [1/1] (0.00ns)   --->   "%tmp_30 = sext i18 %tmp_7_10 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 212 [1/1] (7.18ns)   --->   "%r_V5_10 = mul i35 %tmp_29, %tmp_30" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 213 [1/1] (0.00ns)   --->   "%p_Val2_7_10 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_10, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 214 [1/1] (2.79ns)   --->   "%p_Val2_8_10 = add i36 %z0_im_V_cast, %p_Val2_7_10" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 215 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_10 = sub i36 %p_Val2_3_10, %p_Val2_5_10" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 216 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_10 = add i36 %z0_re_V_cast, %p_Val2_9_10" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 217 [1/1] (0.00ns)   --->   "%tmp_7_11 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_10, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 218 [1/1] (0.00ns)   --->   "%OP1_V_12 = sext i18 %tmp_7_11 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 219 [1/1] (7.18ns)   --->   "%p_Val2_3_11 = mul nsw i36 %OP1_V_12, %OP1_V_12" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 220 [1/1] (0.00ns)   --->   "%tmp_8_11 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_10, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 221 [1/1] (0.00ns)   --->   "%OP1_V_1_11 = sext i18 %tmp_8_11 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 222 [1/1] (7.18ns)   --->   "%p_Val2_5_11 = mul nsw i36 %OP1_V_1_11, %OP1_V_1_11" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 223 [1/1] (0.00ns)   --->   "%tmp_31 = sext i18 %tmp_8_11 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 224 [1/1] (0.00ns)   --->   "%tmp_32 = sext i18 %tmp_7_11 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 225 [1/1] (7.18ns)   --->   "%r_V5_11 = mul i35 %tmp_31, %tmp_32" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 226 [1/1] (0.00ns)   --->   "%p_Val2_7_11 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_11, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 227 [1/1] (2.79ns)   --->   "%p_Val2_8_11 = add i36 %z0_im_V_cast, %p_Val2_7_11" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 228 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_11 = sub i36 %p_Val2_3_11, %p_Val2_5_11" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 229 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_11 = add i36 %z0_re_V_cast, %p_Val2_9_11" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 230 [1/1] (0.00ns)   --->   "%tmp_7_12 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_11, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 231 [1/1] (0.00ns)   --->   "%OP1_V_13 = sext i18 %tmp_7_12 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 232 [1/1] (7.18ns)   --->   "%p_Val2_3_12 = mul nsw i36 %OP1_V_13, %OP1_V_13" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 233 [1/1] (0.00ns)   --->   "%tmp_8_12 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_11, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 234 [1/1] (0.00ns)   --->   "%OP1_V_1_12 = sext i18 %tmp_8_12 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 235 [1/1] (7.18ns)   --->   "%p_Val2_5_12 = mul nsw i36 %OP1_V_1_12, %OP1_V_1_12" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 236 [1/1] (0.00ns)   --->   "%tmp_33 = sext i18 %tmp_8_12 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 237 [1/1] (0.00ns)   --->   "%tmp_34 = sext i18 %tmp_7_12 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 238 [1/1] (7.18ns)   --->   "%r_V5_12 = mul i35 %tmp_33, %tmp_34" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 239 [1/1] (0.00ns)   --->   "%p_Val2_7_12 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_12, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 240 [1/1] (2.79ns)   --->   "%p_Val2_8_12 = add i36 %z0_im_V_cast, %p_Val2_7_12" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 241 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_12 = sub i36 %p_Val2_3_12, %p_Val2_5_12" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 242 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_12 = add i36 %z0_re_V_cast, %p_Val2_9_12" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 243 [1/1] (0.00ns)   --->   "%tmp_7_13 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_12, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 244 [1/1] (0.00ns)   --->   "%OP1_V_14 = sext i18 %tmp_7_13 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 245 [1/1] (7.18ns)   --->   "%p_Val2_3_13 = mul nsw i36 %OP1_V_14, %OP1_V_14" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 246 [1/1] (0.00ns)   --->   "%tmp_8_13 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_12, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 247 [1/1] (0.00ns)   --->   "%OP1_V_1_13 = sext i18 %tmp_8_13 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 248 [1/1] (7.18ns)   --->   "%p_Val2_5_13 = mul nsw i36 %OP1_V_1_13, %OP1_V_1_13" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 249 [1/1] (0.00ns)   --->   "%tmp_35 = sext i18 %tmp_8_13 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 250 [1/1] (0.00ns)   --->   "%tmp_36 = sext i18 %tmp_7_13 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 251 [1/1] (7.18ns)   --->   "%r_V5_13 = mul i35 %tmp_35, %tmp_36" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 252 [1/1] (0.00ns)   --->   "%p_Val2_7_13 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_13, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 253 [1/1] (2.79ns)   --->   "%p_Val2_8_13 = add i36 %z0_im_V_cast, %p_Val2_7_13" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 254 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_13 = sub i36 %p_Val2_3_13, %p_Val2_5_13" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 255 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_13 = add i36 %z0_re_V_cast, %p_Val2_9_13" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 256 [1/1] (0.00ns)   --->   "%tmp_7_14 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_13, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 257 [1/1] (0.00ns)   --->   "%OP1_V_15 = sext i18 %tmp_7_14 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 258 [1/1] (7.18ns)   --->   "%p_Val2_3_14 = mul nsw i36 %OP1_V_15, %OP1_V_15" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 259 [1/1] (0.00ns)   --->   "%tmp_8_14 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_13, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 260 [1/1] (0.00ns)   --->   "%OP1_V_1_14 = sext i18 %tmp_8_14 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 261 [1/1] (7.18ns)   --->   "%p_Val2_5_14 = mul nsw i36 %OP1_V_1_14, %OP1_V_1_14" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 262 [1/1] (0.00ns)   --->   "%tmp_37 = sext i18 %tmp_8_14 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 263 [1/1] (0.00ns)   --->   "%tmp_38 = sext i18 %tmp_7_14 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 264 [1/1] (7.18ns)   --->   "%r_V5_14 = mul i35 %tmp_37, %tmp_38" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 265 [1/1] (0.00ns)   --->   "%p_Val2_7_14 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_14, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 266 [1/1] (2.79ns)   --->   "%p_Val2_8_14 = add i36 %z0_im_V_cast, %p_Val2_7_14" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 267 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_14 = sub i36 %p_Val2_3_14, %p_Val2_5_14" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 268 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_14 = add i36 %z0_re_V_cast, %p_Val2_9_14" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 269 [1/1] (0.00ns)   --->   "%tmp_7_15 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_14, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 270 [1/1] (0.00ns)   --->   "%OP1_V_16 = sext i18 %tmp_7_15 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 271 [1/1] (7.18ns)   --->   "%p_Val2_3_15 = mul nsw i36 %OP1_V_16, %OP1_V_16" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 272 [1/1] (0.00ns)   --->   "%tmp_8_15 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_14, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 273 [1/1] (0.00ns)   --->   "%OP1_V_1_15 = sext i18 %tmp_8_15 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 274 [1/1] (7.18ns)   --->   "%p_Val2_5_15 = mul nsw i36 %OP1_V_1_15, %OP1_V_1_15" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 275 [1/1] (0.00ns)   --->   "%tmp_39 = sext i18 %tmp_8_15 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 276 [1/1] (0.00ns)   --->   "%tmp_40 = sext i18 %tmp_7_15 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 277 [1/1] (7.18ns)   --->   "%r_V5_15 = mul i35 %tmp_39, %tmp_40" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 278 [1/1] (0.00ns)   --->   "%p_Val2_7_15 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_15, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 279 [1/1] (2.79ns)   --->   "%p_Val2_8_15 = add i36 %z0_im_V_cast, %p_Val2_7_15" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 280 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_15 = sub i36 %p_Val2_3_15, %p_Val2_5_15" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 281 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_15 = add i36 %z0_re_V_cast, %p_Val2_9_15" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 282 [1/1] (0.00ns)   --->   "%tmp_7_16 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_15, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 283 [1/1] (0.00ns)   --->   "%OP1_V_17 = sext i18 %tmp_7_16 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 284 [1/1] (7.18ns)   --->   "%p_Val2_3_16 = mul nsw i36 %OP1_V_17, %OP1_V_17" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 285 [1/1] (0.00ns)   --->   "%tmp_8_16 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_15, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 286 [1/1] (0.00ns)   --->   "%OP1_V_1_16 = sext i18 %tmp_8_16 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 287 [1/1] (7.18ns)   --->   "%p_Val2_5_16 = mul nsw i36 %OP1_V_1_16, %OP1_V_1_16" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 288 [1/1] (0.00ns)   --->   "%tmp_41 = sext i18 %tmp_8_16 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 289 [1/1] (0.00ns)   --->   "%tmp_42 = sext i18 %tmp_7_16 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 290 [1/1] (7.18ns)   --->   "%r_V5_16 = mul i35 %tmp_41, %tmp_42" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 291 [1/1] (0.00ns)   --->   "%p_Val2_7_16 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_16, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 292 [1/1] (2.79ns)   --->   "%p_Val2_8_16 = add i36 %z0_im_V_cast, %p_Val2_7_16" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 293 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_16 = sub i36 %p_Val2_3_16, %p_Val2_5_16" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 294 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_16 = add i36 %z0_re_V_cast, %p_Val2_9_16" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 295 [1/1] (0.00ns)   --->   "%tmp_7_17 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_16, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 296 [1/1] (0.00ns)   --->   "%OP1_V_18 = sext i18 %tmp_7_17 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 297 [1/1] (7.18ns)   --->   "%p_Val2_3_17 = mul nsw i36 %OP1_V_18, %OP1_V_18" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 298 [1/1] (0.00ns)   --->   "%tmp_8_17 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_16, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 299 [1/1] (0.00ns)   --->   "%OP1_V_1_17 = sext i18 %tmp_8_17 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 300 [1/1] (7.18ns)   --->   "%p_Val2_5_17 = mul nsw i36 %OP1_V_1_17, %OP1_V_1_17" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 301 [1/1] (0.00ns)   --->   "%tmp_43 = sext i18 %tmp_8_17 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 302 [1/1] (0.00ns)   --->   "%tmp_44 = sext i18 %tmp_7_17 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 303 [1/1] (7.18ns)   --->   "%r_V5_17 = mul i35 %tmp_43, %tmp_44" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 304 [1/1] (0.00ns)   --->   "%p_Val2_7_17 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_17, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 305 [1/1] (2.79ns)   --->   "%p_Val2_8_17 = add i36 %z0_im_V_cast, %p_Val2_7_17" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 306 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_17 = sub i36 %p_Val2_3_17, %p_Val2_5_17" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 307 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_17 = add i36 %z0_re_V_cast, %p_Val2_9_17" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 308 [1/1] (0.00ns)   --->   "%tmp_7_18 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_17, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 309 [1/1] (0.00ns)   --->   "%OP1_V_19 = sext i18 %tmp_7_18 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 310 [1/1] (7.18ns)   --->   "%p_Val2_3_18 = mul nsw i36 %OP1_V_19, %OP1_V_19" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 311 [1/1] (0.00ns)   --->   "%tmp_8_18 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_17, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 312 [1/1] (0.00ns)   --->   "%OP1_V_1_18 = sext i18 %tmp_8_18 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 313 [1/1] (7.18ns)   --->   "%p_Val2_5_18 = mul nsw i36 %OP1_V_1_18, %OP1_V_1_18" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 314 [1/1] (0.00ns)   --->   "%tmp_45 = sext i18 %tmp_8_18 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 315 [1/1] (0.00ns)   --->   "%tmp_46 = sext i18 %tmp_7_18 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 316 [1/1] (7.18ns)   --->   "%r_V5_18 = mul i35 %tmp_45, %tmp_46" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 317 [1/1] (0.00ns)   --->   "%p_Val2_7_18 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_18, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 318 [1/1] (2.79ns)   --->   "%p_Val2_8_18 = add i36 %z0_im_V_cast, %p_Val2_7_18" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 319 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_18 = sub i36 %p_Val2_3_18, %p_Val2_5_18" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 320 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_18 = add i36 %z0_re_V_cast, %p_Val2_9_18" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 321 [1/1] (0.00ns)   --->   "%tmp_7_19 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_18, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 322 [1/1] (0.00ns)   --->   "%OP1_V_20 = sext i18 %tmp_7_19 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 323 [1/1] (7.18ns)   --->   "%p_Val2_3_19 = mul nsw i36 %OP1_V_20, %OP1_V_20" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 324 [1/1] (0.00ns)   --->   "%tmp_8_19 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_18, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 325 [1/1] (0.00ns)   --->   "%OP1_V_1_19 = sext i18 %tmp_8_19 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 326 [1/1] (7.18ns)   --->   "%p_Val2_5_19 = mul nsw i36 %OP1_V_1_19, %OP1_V_1_19" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 327 [1/1] (0.00ns)   --->   "%tmp_47 = sext i18 %tmp_8_19 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 328 [1/1] (0.00ns)   --->   "%tmp_48 = sext i18 %tmp_7_19 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 329 [1/1] (7.18ns)   --->   "%r_V5_19 = mul i35 %tmp_47, %tmp_48" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 330 [1/1] (0.00ns)   --->   "%p_Val2_7_19 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_19, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 331 [1/1] (2.79ns)   --->   "%p_Val2_8_19 = add i36 %z0_im_V_cast, %p_Val2_7_19" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 332 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_19 = sub i36 %p_Val2_3_19, %p_Val2_5_19" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 333 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_19 = add i36 %z0_re_V_cast, %p_Val2_9_19" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 334 [1/1] (0.00ns)   --->   "%tmp_7_20 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_19, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 335 [1/1] (0.00ns)   --->   "%OP1_V_21 = sext i18 %tmp_7_20 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 336 [1/1] (7.18ns)   --->   "%p_Val2_3_20 = mul nsw i36 %OP1_V_21, %OP1_V_21" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 337 [1/1] (0.00ns)   --->   "%tmp_8_20 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_19, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 338 [1/1] (0.00ns)   --->   "%OP1_V_1_20 = sext i18 %tmp_8_20 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 339 [1/1] (7.18ns)   --->   "%p_Val2_5_20 = mul nsw i36 %OP1_V_1_20, %OP1_V_1_20" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 340 [1/1] (0.00ns)   --->   "%tmp_49 = sext i18 %tmp_8_20 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 341 [1/1] (0.00ns)   --->   "%tmp_50 = sext i18 %tmp_7_20 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 342 [1/1] (7.18ns)   --->   "%r_V5_20 = mul i35 %tmp_49, %tmp_50" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 343 [1/1] (0.00ns)   --->   "%p_Val2_7_20 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_20, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 344 [1/1] (2.79ns)   --->   "%p_Val2_8_20 = add i36 %z0_im_V_cast, %p_Val2_7_20" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 345 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_20 = sub i36 %p_Val2_3_20, %p_Val2_5_20" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 346 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_20 = add i36 %z0_re_V_cast, %p_Val2_9_20" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 347 [1/1] (0.00ns)   --->   "%tmp_7_21 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_20, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 348 [1/1] (0.00ns)   --->   "%OP1_V_22 = sext i18 %tmp_7_21 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 349 [1/1] (7.18ns)   --->   "%p_Val2_3_21 = mul nsw i36 %OP1_V_22, %OP1_V_22" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 350 [1/1] (0.00ns)   --->   "%tmp_8_21 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_20, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 351 [1/1] (0.00ns)   --->   "%OP1_V_1_21 = sext i18 %tmp_8_21 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 352 [1/1] (7.18ns)   --->   "%p_Val2_5_21 = mul nsw i36 %OP1_V_1_21, %OP1_V_1_21" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 353 [1/1] (0.00ns)   --->   "%tmp_51 = sext i18 %tmp_8_21 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 354 [1/1] (0.00ns)   --->   "%tmp_52 = sext i18 %tmp_7_21 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 355 [1/1] (7.18ns)   --->   "%r_V5_21 = mul i35 %tmp_51, %tmp_52" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 356 [1/1] (0.00ns)   --->   "%p_Val2_7_21 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_21, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 357 [1/1] (2.79ns)   --->   "%p_Val2_8_21 = add i36 %z0_im_V_cast, %p_Val2_7_21" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 358 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_21 = sub i36 %p_Val2_3_21, %p_Val2_5_21" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 359 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_21 = add i36 %z0_re_V_cast, %p_Val2_9_21" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 360 [1/1] (0.00ns)   --->   "%tmp_7_22 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_21, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 361 [1/1] (0.00ns)   --->   "%OP1_V_23 = sext i18 %tmp_7_22 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 362 [1/1] (7.18ns)   --->   "%p_Val2_3_22 = mul nsw i36 %OP1_V_23, %OP1_V_23" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 363 [1/1] (0.00ns)   --->   "%tmp_8_22 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_21, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 364 [1/1] (0.00ns)   --->   "%OP1_V_1_22 = sext i18 %tmp_8_22 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 365 [1/1] (7.18ns)   --->   "%p_Val2_5_22 = mul nsw i36 %OP1_V_1_22, %OP1_V_1_22" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 366 [1/1] (0.00ns)   --->   "%tmp_53 = sext i18 %tmp_8_22 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 367 [1/1] (0.00ns)   --->   "%tmp_54 = sext i18 %tmp_7_22 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 368 [1/1] (7.18ns)   --->   "%r_V5_22 = mul i35 %tmp_53, %tmp_54" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 369 [1/1] (0.00ns)   --->   "%p_Val2_7_22 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_22, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 370 [1/1] (2.79ns)   --->   "%p_Val2_8_22 = add i36 %z0_im_V_cast, %p_Val2_7_22" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 371 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_22 = sub i36 %p_Val2_3_22, %p_Val2_5_22" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 372 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_22 = add i36 %z0_re_V_cast, %p_Val2_9_22" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 373 [1/1] (0.00ns)   --->   "%tmp_7_23 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_22, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 374 [1/1] (0.00ns)   --->   "%OP1_V_24 = sext i18 %tmp_7_23 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 375 [1/1] (7.18ns)   --->   "%p_Val2_3_23 = mul nsw i36 %OP1_V_24, %OP1_V_24" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 376 [1/1] (0.00ns)   --->   "%tmp_8_23 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_22, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 377 [1/1] (0.00ns)   --->   "%OP1_V_1_23 = sext i18 %tmp_8_23 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 378 [1/1] (7.18ns)   --->   "%p_Val2_5_23 = mul nsw i36 %OP1_V_1_23, %OP1_V_1_23" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 379 [1/1] (0.00ns)   --->   "%tmp_55 = sext i18 %tmp_8_23 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 380 [1/1] (0.00ns)   --->   "%tmp_56 = sext i18 %tmp_7_23 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 381 [1/1] (7.18ns)   --->   "%r_V5_23 = mul i35 %tmp_55, %tmp_56" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 382 [1/1] (0.00ns)   --->   "%p_Val2_7_23 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_23, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 383 [1/1] (2.79ns)   --->   "%p_Val2_8_23 = add i36 %z0_im_V_cast, %p_Val2_7_23" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 384 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_23 = sub i36 %p_Val2_3_23, %p_Val2_5_23" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 385 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_23 = add i36 %z0_re_V_cast, %p_Val2_9_23" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 386 [1/1] (0.00ns)   --->   "%tmp_7_24 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_23, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 387 [1/1] (0.00ns)   --->   "%OP1_V_25 = sext i18 %tmp_7_24 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 388 [1/1] (7.18ns)   --->   "%p_Val2_3_24 = mul nsw i36 %OP1_V_25, %OP1_V_25" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 389 [1/1] (0.00ns)   --->   "%tmp_8_24 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_23, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 390 [1/1] (0.00ns)   --->   "%OP1_V_1_24 = sext i18 %tmp_8_24 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 391 [1/1] (7.18ns)   --->   "%p_Val2_5_24 = mul nsw i36 %OP1_V_1_24, %OP1_V_1_24" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 392 [1/1] (0.00ns)   --->   "%tmp_57 = sext i18 %tmp_8_24 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 393 [1/1] (0.00ns)   --->   "%tmp_58 = sext i18 %tmp_7_24 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 394 [1/1] (7.18ns)   --->   "%r_V5_24 = mul i35 %tmp_57, %tmp_58" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 395 [1/1] (0.00ns)   --->   "%p_Val2_7_24 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_24, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 396 [1/1] (2.79ns)   --->   "%p_Val2_8_24 = add i36 %z0_im_V_cast, %p_Val2_7_24" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 397 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_24 = sub i36 %p_Val2_3_24, %p_Val2_5_24" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 398 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_24 = add i36 %z0_re_V_cast, %p_Val2_9_24" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 399 [1/1] (0.00ns)   --->   "%tmp_7_25 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_24, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 400 [1/1] (0.00ns)   --->   "%OP1_V_26 = sext i18 %tmp_7_25 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 401 [1/1] (7.18ns)   --->   "%p_Val2_3_25 = mul nsw i36 %OP1_V_26, %OP1_V_26" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 402 [1/1] (0.00ns)   --->   "%tmp_8_25 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_24, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 403 [1/1] (0.00ns)   --->   "%OP1_V_1_25 = sext i18 %tmp_8_25 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 404 [1/1] (7.18ns)   --->   "%p_Val2_5_25 = mul nsw i36 %OP1_V_1_25, %OP1_V_1_25" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 405 [1/1] (0.00ns)   --->   "%tmp_59 = sext i18 %tmp_8_25 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 406 [1/1] (0.00ns)   --->   "%tmp_60 = sext i18 %tmp_7_25 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 407 [1/1] (7.18ns)   --->   "%r_V5_25 = mul i35 %tmp_59, %tmp_60" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 408 [1/1] (0.00ns)   --->   "%p_Val2_7_25 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_25, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 409 [1/1] (2.79ns)   --->   "%p_Val2_8_25 = add i36 %z0_im_V_cast, %p_Val2_7_25" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 410 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_25 = sub i36 %p_Val2_3_25, %p_Val2_5_25" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 411 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_25 = add i36 %z0_re_V_cast, %p_Val2_9_25" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 412 [1/1] (0.00ns)   --->   "%tmp_7_26 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_25, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 413 [1/1] (0.00ns)   --->   "%OP1_V_27 = sext i18 %tmp_7_26 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 414 [1/1] (7.18ns)   --->   "%p_Val2_3_26 = mul nsw i36 %OP1_V_27, %OP1_V_27" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 415 [1/1] (0.00ns)   --->   "%tmp_8_26 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_25, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 416 [1/1] (0.00ns)   --->   "%OP1_V_1_26 = sext i18 %tmp_8_26 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 417 [1/1] (7.18ns)   --->   "%p_Val2_5_26 = mul nsw i36 %OP1_V_1_26, %OP1_V_1_26" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 418 [1/1] (0.00ns)   --->   "%tmp_61 = sext i18 %tmp_8_26 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 419 [1/1] (0.00ns)   --->   "%tmp_62 = sext i18 %tmp_7_26 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 420 [1/1] (7.18ns)   --->   "%r_V5_26 = mul i35 %tmp_61, %tmp_62" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 421 [1/1] (0.00ns)   --->   "%p_Val2_7_26 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_26, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 422 [1/1] (2.79ns)   --->   "%p_Val2_8_26 = add i36 %z0_im_V_cast, %p_Val2_7_26" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 423 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_26 = sub i36 %p_Val2_3_26, %p_Val2_5_26" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 424 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_26 = add i36 %z0_re_V_cast, %p_Val2_9_26" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 425 [1/1] (0.00ns)   --->   "%tmp_7_27 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_26, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 426 [1/1] (0.00ns)   --->   "%OP1_V_28 = sext i18 %tmp_7_27 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 427 [1/1] (7.18ns)   --->   "%p_Val2_3_27 = mul nsw i36 %OP1_V_28, %OP1_V_28" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 428 [1/1] (0.00ns)   --->   "%tmp_8_27 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_26, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 429 [1/1] (0.00ns)   --->   "%OP1_V_1_27 = sext i18 %tmp_8_27 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 430 [1/1] (7.18ns)   --->   "%p_Val2_5_27 = mul nsw i36 %OP1_V_1_27, %OP1_V_1_27" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 431 [1/1] (0.00ns)   --->   "%tmp_63 = sext i18 %tmp_8_27 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 432 [1/1] (0.00ns)   --->   "%tmp_64 = sext i18 %tmp_7_27 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 433 [1/1] (7.18ns)   --->   "%r_V5_27 = mul i35 %tmp_63, %tmp_64" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 434 [1/1] (0.00ns)   --->   "%p_Val2_7_27 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_27, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 435 [1/1] (2.79ns)   --->   "%p_Val2_8_27 = add i36 %z0_im_V_cast, %p_Val2_7_27" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 436 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_27 = sub i36 %p_Val2_3_27, %p_Val2_5_27" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 437 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_27 = add i36 %z0_re_V_cast, %p_Val2_9_27" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 438 [1/1] (0.00ns)   --->   "%tmp_7_28 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_11_27, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 439 [1/1] (0.00ns)   --->   "%OP1_V_29 = sext i18 %tmp_7_28 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:30]
+ST_3 : Operation 440 [1/1] (7.18ns)   --->   "%p_Val2_3_28 = mul nsw i36 %OP1_V_29, %OP1_V_29" [mandelbrot_pixel/C/mandel_calc.cpp:30]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 441 [1/1] (0.00ns)   --->   "%tmp_8_28 = call i18 @_ssdm_op_PartSelect.i18.i36.i32.i32(i36 %p_Val2_8_27, i32 16, i32 33)" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 442 [1/1] (0.00ns)   --->   "%OP1_V_1_28 = sext i18 %tmp_8_28 to i36" [mandelbrot_pixel/C/mandel_calc.cpp:31]
+ST_3 : Operation 443 [1/1] (7.18ns)   --->   "%p_Val2_5_28 = mul nsw i36 %OP1_V_1_28, %OP1_V_1_28" [mandelbrot_pixel/C/mandel_calc.cpp:31]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 444 [1/1] (0.00ns)   --->   "%tmp_65 = sext i18 %tmp_8_28 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 445 [1/1] (0.00ns)   --->   "%tmp_66 = sext i18 %tmp_7_28 to i35" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 446 [1/1] (7.18ns)   --->   "%r_V5_28 = mul i35 %tmp_65, %tmp_66" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 447 [1/1] (0.00ns)   --->   "%p_Val2_7_28 = call i36 @_ssdm_op_BitConcatenate.i36.i35.i1(i35 %r_V5_28, i1 false)" [mandelbrot_pixel/C/mandel_calc.cpp:32]
+ST_3 : Operation 448 [1/1] (2.79ns)   --->   "%p_Val2_8_28 = add i36 %z0_im_V_cast, %p_Val2_7_28" [mandelbrot_pixel/C/mandel_calc.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 449 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%p_Val2_9_28 = sub i36 %p_Val2_3_28, %p_Val2_5_28" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 450 [1/1] (4.62ns) (root node of TernaryAdder)   --->   "%p_Val2_11_28 = add i36 %z0_re_V_cast, %p_Val2_9_28" [mandelbrot_pixel/C/mandel_calc.cpp:35]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.31> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+ <State 4> : 5.36ns
+ST_4 : Operation 451 [1/1] (0.00ns)   --->   "%tmp_12_1 = sext i36 %p_Val2_3_1 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 452 [1/1] (0.00ns)   --->   "%tmp_13_1 = sext i36 %p_Val2_5_1 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 453 [1/1] (2.79ns)   --->   "%r_V_1_1 = add nsw i37 %tmp_13_1, %tmp_12_1" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 454 [1/1] (2.56ns)   --->   "%val_assign_1 = icmp slt i37 %r_V_1_1, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 455 [1/1] (0.00ns)   --->   "%tmp_12_2 = sext i36 %p_Val2_3_2 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 456 [1/1] (0.00ns)   --->   "%tmp_13_2 = sext i36 %p_Val2_5_2 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 457 [1/1] (2.79ns)   --->   "%r_V_1_2 = add nsw i37 %tmp_13_2, %tmp_12_2" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 458 [1/1] (2.56ns)   --->   "%val_assign_2 = icmp slt i37 %r_V_1_2, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 459 [1/1] (0.00ns)   --->   "%tmp_12_3 = sext i36 %p_Val2_3_3 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 460 [1/1] (0.00ns)   --->   "%tmp_13_3 = sext i36 %p_Val2_5_3 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 461 [1/1] (2.79ns)   --->   "%r_V_1_3 = add nsw i37 %tmp_13_3, %tmp_12_3" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 462 [1/1] (2.56ns)   --->   "%val_assign_3 = icmp slt i37 %r_V_1_3, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 463 [1/1] (0.00ns)   --->   "%tmp_12_4 = sext i36 %p_Val2_3_4 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 464 [1/1] (0.00ns)   --->   "%tmp_13_4 = sext i36 %p_Val2_5_4 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 465 [1/1] (2.79ns)   --->   "%r_V_1_4 = add nsw i37 %tmp_13_4, %tmp_12_4" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 466 [1/1] (2.56ns)   --->   "%val_assign_4 = icmp slt i37 %r_V_1_4, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 467 [1/1] (0.00ns)   --->   "%tmp_12_5 = sext i36 %p_Val2_3_5 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 468 [1/1] (0.00ns)   --->   "%tmp_13_5 = sext i36 %p_Val2_5_5 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 469 [1/1] (2.79ns)   --->   "%r_V_1_5 = add nsw i37 %tmp_13_5, %tmp_12_5" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 470 [1/1] (2.56ns)   --->   "%val_assign_5 = icmp slt i37 %r_V_1_5, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 471 [1/1] (0.00ns)   --->   "%tmp_12_6 = sext i36 %p_Val2_3_6 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 472 [1/1] (0.00ns)   --->   "%tmp_13_6 = sext i36 %p_Val2_5_6 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 473 [1/1] (2.79ns)   --->   "%r_V_1_6 = add nsw i37 %tmp_13_6, %tmp_12_6" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 474 [1/1] (2.56ns)   --->   "%val_assign_6 = icmp slt i37 %r_V_1_6, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 475 [1/1] (0.00ns)   --->   "%tmp_12_7 = sext i36 %p_Val2_3_7 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 476 [1/1] (0.00ns)   --->   "%tmp_13_7 = sext i36 %p_Val2_5_7 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 477 [1/1] (2.79ns)   --->   "%r_V_1_7 = add nsw i37 %tmp_13_7, %tmp_12_7" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 478 [1/1] (2.56ns)   --->   "%val_assign_7 = icmp slt i37 %r_V_1_7, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 479 [1/1] (0.00ns)   --->   "%tmp_12_8 = sext i36 %p_Val2_3_8 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 480 [1/1] (0.00ns)   --->   "%tmp_13_8 = sext i36 %p_Val2_5_8 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 481 [1/1] (2.79ns)   --->   "%r_V_1_8 = add nsw i37 %tmp_13_8, %tmp_12_8" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 482 [1/1] (2.56ns)   --->   "%val_assign_8 = icmp slt i37 %r_V_1_8, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 483 [1/1] (0.00ns)   --->   "%tmp_12_9 = sext i36 %p_Val2_3_9 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 484 [1/1] (0.00ns)   --->   "%tmp_13_9 = sext i36 %p_Val2_5_9 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 485 [1/1] (2.79ns)   --->   "%r_V_1_9 = add nsw i37 %tmp_13_9, %tmp_12_9" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 486 [1/1] (2.56ns)   --->   "%val_assign_9 = icmp slt i37 %r_V_1_9, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 487 [1/1] (0.00ns)   --->   "%tmp_12_s = sext i36 %p_Val2_3_s to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 488 [1/1] (0.00ns)   --->   "%tmp_13_s = sext i36 %p_Val2_5_s to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 489 [1/1] (2.79ns)   --->   "%r_V_1_s = add nsw i37 %tmp_13_s, %tmp_12_s" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 490 [1/1] (2.56ns)   --->   "%val_assign_s = icmp slt i37 %r_V_1_s, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 491 [1/1] (0.00ns)   --->   "%tmp_12_10 = sext i36 %p_Val2_3_10 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 492 [1/1] (0.00ns)   --->   "%tmp_13_10 = sext i36 %p_Val2_5_10 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 493 [1/1] (2.79ns)   --->   "%r_V_1_10 = add nsw i37 %tmp_13_10, %tmp_12_10" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 494 [1/1] (2.56ns)   --->   "%val_assign_10 = icmp slt i37 %r_V_1_10, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 495 [1/1] (0.00ns)   --->   "%tmp_12_11 = sext i36 %p_Val2_3_11 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 496 [1/1] (0.00ns)   --->   "%tmp_13_11 = sext i36 %p_Val2_5_11 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 497 [1/1] (2.79ns)   --->   "%r_V_1_11 = add nsw i37 %tmp_13_11, %tmp_12_11" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 498 [1/1] (2.56ns)   --->   "%val_assign_11 = icmp slt i37 %r_V_1_11, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 499 [1/1] (0.00ns)   --->   "%tmp_12_12 = sext i36 %p_Val2_3_12 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 500 [1/1] (0.00ns)   --->   "%tmp_13_12 = sext i36 %p_Val2_5_12 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 501 [1/1] (2.79ns)   --->   "%r_V_1_12 = add nsw i37 %tmp_13_12, %tmp_12_12" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 502 [1/1] (2.56ns)   --->   "%val_assign_12 = icmp slt i37 %r_V_1_12, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 503 [1/1] (0.00ns)   --->   "%tmp_12_13 = sext i36 %p_Val2_3_13 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 504 [1/1] (0.00ns)   --->   "%tmp_13_13 = sext i36 %p_Val2_5_13 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 505 [1/1] (2.79ns)   --->   "%r_V_1_13 = add nsw i37 %tmp_13_13, %tmp_12_13" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 506 [1/1] (2.56ns)   --->   "%val_assign_13 = icmp slt i37 %r_V_1_13, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 507 [1/1] (0.00ns)   --->   "%tmp_12_14 = sext i36 %p_Val2_3_14 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 508 [1/1] (0.00ns)   --->   "%tmp_13_14 = sext i36 %p_Val2_5_14 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 509 [1/1] (2.79ns)   --->   "%r_V_1_14 = add nsw i37 %tmp_13_14, %tmp_12_14" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 510 [1/1] (2.56ns)   --->   "%val_assign_14 = icmp slt i37 %r_V_1_14, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 511 [1/1] (0.00ns)   --->   "%tmp_12_15 = sext i36 %p_Val2_3_15 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 512 [1/1] (0.00ns)   --->   "%tmp_13_15 = sext i36 %p_Val2_5_15 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 513 [1/1] (2.79ns)   --->   "%r_V_1_15 = add nsw i37 %tmp_13_15, %tmp_12_15" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 514 [1/1] (2.56ns)   --->   "%val_assign_15 = icmp slt i37 %r_V_1_15, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 515 [1/1] (0.00ns)   --->   "%tmp_12_16 = sext i36 %p_Val2_3_16 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 516 [1/1] (0.00ns)   --->   "%tmp_13_16 = sext i36 %p_Val2_5_16 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 517 [1/1] (2.79ns)   --->   "%r_V_1_16 = add nsw i37 %tmp_13_16, %tmp_12_16" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 518 [1/1] (2.56ns)   --->   "%val_assign_16 = icmp slt i37 %r_V_1_16, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 519 [1/1] (0.00ns)   --->   "%tmp_12_17 = sext i36 %p_Val2_3_17 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 520 [1/1] (0.00ns)   --->   "%tmp_13_17 = sext i36 %p_Val2_5_17 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 521 [1/1] (2.79ns)   --->   "%r_V_1_17 = add nsw i37 %tmp_13_17, %tmp_12_17" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 522 [1/1] (2.56ns)   --->   "%val_assign_17 = icmp slt i37 %r_V_1_17, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 523 [1/1] (0.00ns)   --->   "%tmp_12_18 = sext i36 %p_Val2_3_18 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 524 [1/1] (0.00ns)   --->   "%tmp_13_18 = sext i36 %p_Val2_5_18 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 525 [1/1] (2.79ns)   --->   "%r_V_1_18 = add nsw i37 %tmp_13_18, %tmp_12_18" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 526 [1/1] (2.56ns)   --->   "%val_assign_18 = icmp slt i37 %r_V_1_18, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 527 [1/1] (0.00ns)   --->   "%tmp_12_19 = sext i36 %p_Val2_3_19 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 528 [1/1] (0.00ns)   --->   "%tmp_13_19 = sext i36 %p_Val2_5_19 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 529 [1/1] (2.79ns)   --->   "%r_V_1_19 = add nsw i37 %tmp_13_19, %tmp_12_19" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 530 [1/1] (2.56ns)   --->   "%val_assign_19 = icmp slt i37 %r_V_1_19, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 531 [1/1] (0.00ns)   --->   "%tmp_12_20 = sext i36 %p_Val2_3_20 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 532 [1/1] (0.00ns)   --->   "%tmp_13_20 = sext i36 %p_Val2_5_20 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 533 [1/1] (2.79ns)   --->   "%r_V_1_20 = add nsw i37 %tmp_13_20, %tmp_12_20" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 534 [1/1] (2.56ns)   --->   "%val_assign_20 = icmp slt i37 %r_V_1_20, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 535 [1/1] (0.00ns)   --->   "%tmp_12_21 = sext i36 %p_Val2_3_21 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 536 [1/1] (0.00ns)   --->   "%tmp_13_21 = sext i36 %p_Val2_5_21 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 537 [1/1] (2.79ns)   --->   "%r_V_1_21 = add nsw i37 %tmp_13_21, %tmp_12_21" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 538 [1/1] (2.56ns)   --->   "%val_assign_21 = icmp slt i37 %r_V_1_21, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 539 [1/1] (0.00ns)   --->   "%tmp_12_22 = sext i36 %p_Val2_3_22 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 540 [1/1] (0.00ns)   --->   "%tmp_13_22 = sext i36 %p_Val2_5_22 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 541 [1/1] (2.79ns)   --->   "%r_V_1_22 = add nsw i37 %tmp_13_22, %tmp_12_22" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 542 [1/1] (2.56ns)   --->   "%val_assign_22 = icmp slt i37 %r_V_1_22, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 543 [1/1] (0.00ns)   --->   "%tmp_12_23 = sext i36 %p_Val2_3_23 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 544 [1/1] (0.00ns)   --->   "%tmp_13_23 = sext i36 %p_Val2_5_23 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 545 [1/1] (2.79ns)   --->   "%r_V_1_23 = add nsw i37 %tmp_13_23, %tmp_12_23" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 546 [1/1] (2.56ns)   --->   "%val_assign_23 = icmp slt i37 %r_V_1_23, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 547 [1/1] (0.00ns)   --->   "%tmp_12_24 = sext i36 %p_Val2_3_24 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 548 [1/1] (0.00ns)   --->   "%tmp_13_24 = sext i36 %p_Val2_5_24 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 549 [1/1] (2.79ns)   --->   "%r_V_1_24 = add nsw i37 %tmp_13_24, %tmp_12_24" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 550 [1/1] (2.56ns)   --->   "%val_assign_24 = icmp slt i37 %r_V_1_24, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 551 [1/1] (0.00ns)   --->   "%tmp_12_25 = sext i36 %p_Val2_3_25 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 552 [1/1] (0.00ns)   --->   "%tmp_13_25 = sext i36 %p_Val2_5_25 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 553 [1/1] (2.79ns)   --->   "%r_V_1_25 = add nsw i37 %tmp_13_25, %tmp_12_25" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 554 [1/1] (2.56ns)   --->   "%val_assign_25 = icmp slt i37 %r_V_1_25, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 555 [1/1] (0.00ns)   --->   "%tmp_12_26 = sext i36 %p_Val2_3_26 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 556 [1/1] (0.00ns)   --->   "%tmp_13_26 = sext i36 %p_Val2_5_26 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 557 [1/1] (2.79ns)   --->   "%r_V_1_26 = add nsw i37 %tmp_13_26, %tmp_12_26" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 558 [1/1] (2.56ns)   --->   "%val_assign_26 = icmp slt i37 %r_V_1_26, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 559 [1/1] (0.00ns)   --->   "%tmp_12_27 = sext i36 %p_Val2_3_27 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 560 [1/1] (0.00ns)   --->   "%tmp_13_27 = sext i36 %p_Val2_5_27 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 561 [1/1] (2.79ns)   --->   "%r_V_1_27 = add nsw i37 %tmp_13_27, %tmp_12_27" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 562 [1/1] (2.56ns)   --->   "%val_assign_27 = icmp slt i37 %r_V_1_27, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 563 [1/1] (0.00ns)   --->   "%tmp_12_28 = sext i36 %p_Val2_3_28 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 564 [1/1] (0.00ns)   --->   "%tmp_13_28 = sext i36 %p_Val2_5_28 to i37" [mandelbrot_pixel/C/mandel_calc.cpp:35]
+ST_4 : Operation 565 [1/1] (2.79ns)   --->   "%r_V_1_28 = add nsw i37 %tmp_13_28, %tmp_12_28" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 566 [1/1] (2.56ns)   --->   "%val_assign_28 = icmp slt i37 %r_V_1_28, 17179869185" [mandelbrot_pixel/C/mandel_calc.cpp:37]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+ <State 5> : 59.22ns
+ST_5 : Operation 567 [1/1] (0.00ns)   --->   "%count_V = phi i8 [ 0, %codeRepl ], [ %tmp_18_28, %30 ]" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 568 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"
+ST_5 : Operation 569 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str4) nounwind" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_5 : Operation 570 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([7 x i8]* @p_str4)" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_5 : Operation 571 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [mandelbrot_pixel/C/mandel_calc.cpp:28]
+ST_5 : Operation 572 [1/1] (0.00ns)   --->   "%tmp_6 = zext i1 %val_assign to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 573 [1/1] (2.11ns)   --->   "%tmp_12 = add i8 %tmp_6, %count_V" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 574 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecRegionEnd([7 x i8]* @p_str4, i32 %tmp_1)" [mandelbrot_pixel/C/mandel_calc.cpp:41]
+ST_5 : Operation 575 [1/1] (2.57ns)   --->   "br i1 %exitcond_1, label %31, label %2" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_5 : Operation 576 [1/1] (0.00ns)   --->   "%tmp_17_1 = zext i1 %val_assign_1 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 577 [1/1] (2.11ns)   --->   "%tmp_18_1 = add i8 %tmp_17_1, %tmp_12" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 578 [1/1] (2.57ns)   --->   "br i1 %exitcond_2, label %31, label %3" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_5 : Operation 579 [1/1] (0.00ns)   --->   "%tmp_17_2 = zext i1 %val_assign_2 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 580 [1/1] (2.11ns)   --->   "%tmp_18_2 = add i8 %tmp_17_2, %tmp_18_1" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 581 [1/1] (0.00ns)   --->   "%tmp_17_3 = zext i1 %val_assign_3 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 582 [1/1] (2.11ns)   --->   "%tmp_18_3 = add i8 %tmp_17_3, %tmp_18_2" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 583 [1/1] (0.00ns)   --->   "%tmp_17_4 = zext i1 %val_assign_4 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 584 [1/1] (2.11ns)   --->   "%tmp_18_4 = add i8 %tmp_17_4, %tmp_18_3" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 585 [1/1] (0.00ns)   --->   "%tmp_17_5 = zext i1 %val_assign_5 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 586 [1/1] (2.11ns)   --->   "%tmp_18_5 = add i8 %tmp_17_5, %tmp_18_4" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 587 [1/1] (0.00ns)   --->   "%tmp_17_6 = zext i1 %val_assign_6 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 588 [1/1] (2.11ns)   --->   "%tmp_18_6 = add i8 %tmp_17_6, %tmp_18_5" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 589 [1/1] (0.00ns)   --->   "%tmp_17_7 = zext i1 %val_assign_7 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 590 [1/1] (2.11ns)   --->   "%tmp_18_7 = add i8 %tmp_17_7, %tmp_18_6" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 591 [1/1] (0.00ns)   --->   "%tmp_17_8 = zext i1 %val_assign_8 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 592 [1/1] (2.11ns)   --->   "%tmp_18_8 = add i8 %tmp_17_8, %tmp_18_7" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 593 [1/1] (0.00ns)   --->   "%tmp_17_9 = zext i1 %val_assign_9 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 594 [1/1] (2.11ns)   --->   "%tmp_18_9 = add i8 %tmp_17_9, %tmp_18_8" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 595 [1/1] (0.00ns)   --->   "%tmp_17_s = zext i1 %val_assign_s to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 596 [1/1] (2.11ns)   --->   "%tmp_18_s = add i8 %tmp_17_s, %tmp_18_9" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 597 [1/1] (0.00ns)   --->   "%tmp_17_10 = zext i1 %val_assign_10 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 598 [1/1] (2.11ns)   --->   "%tmp_18_10 = add i8 %tmp_17_10, %tmp_18_s" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 599 [1/1] (0.00ns)   --->   "%tmp_17_11 = zext i1 %val_assign_11 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 600 [1/1] (2.11ns)   --->   "%tmp_18_11 = add i8 %tmp_17_11, %tmp_18_10" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 601 [1/1] (0.00ns)   --->   "%tmp_17_12 = zext i1 %val_assign_12 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 602 [1/1] (2.11ns)   --->   "%tmp_18_12 = add i8 %tmp_17_12, %tmp_18_11" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 603 [1/1] (0.00ns)   --->   "%tmp_17_13 = zext i1 %val_assign_13 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 604 [1/1] (2.11ns)   --->   "%tmp_18_13 = add i8 %tmp_17_13, %tmp_18_12" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 605 [1/1] (0.00ns)   --->   "%tmp_17_14 = zext i1 %val_assign_14 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 606 [1/1] (2.11ns)   --->   "%tmp_18_14 = add i8 %tmp_17_14, %tmp_18_13" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 607 [1/1] (0.00ns)   --->   "%tmp_17_15 = zext i1 %val_assign_15 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 608 [1/1] (2.11ns)   --->   "%tmp_18_15 = add i8 %tmp_17_15, %tmp_18_14" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 609 [1/1] (0.00ns)   --->   "%tmp_17_16 = zext i1 %val_assign_16 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 610 [1/1] (2.11ns)   --->   "%tmp_18_16 = add i8 %tmp_17_16, %tmp_18_15" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 611 [1/1] (0.00ns)   --->   "%tmp_17_17 = zext i1 %val_assign_17 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 612 [1/1] (2.11ns)   --->   "%tmp_18_17 = add i8 %tmp_17_17, %tmp_18_16" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 613 [1/1] (0.00ns)   --->   "%tmp_17_18 = zext i1 %val_assign_18 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 614 [1/1] (2.11ns)   --->   "%tmp_18_18 = add i8 %tmp_17_18, %tmp_18_17" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 615 [1/1] (0.00ns)   --->   "%tmp_17_19 = zext i1 %val_assign_19 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 616 [1/1] (2.11ns)   --->   "%tmp_18_19 = add i8 %tmp_17_19, %tmp_18_18" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 617 [1/1] (0.00ns)   --->   "%tmp_17_20 = zext i1 %val_assign_20 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 618 [1/1] (2.11ns)   --->   "%tmp_18_20 = add i8 %tmp_17_20, %tmp_18_19" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 619 [1/1] (0.00ns)   --->   "%tmp_17_21 = zext i1 %val_assign_21 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 620 [1/1] (2.11ns)   --->   "%tmp_18_21 = add i8 %tmp_17_21, %tmp_18_20" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 621 [1/1] (0.00ns)   --->   "%tmp_17_22 = zext i1 %val_assign_22 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 622 [1/1] (2.11ns)   --->   "%tmp_18_22 = add i8 %tmp_17_22, %tmp_18_21" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 623 [1/1] (0.00ns)   --->   "%tmp_17_23 = zext i1 %val_assign_23 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 624 [1/1] (2.11ns)   --->   "%tmp_18_23 = add i8 %tmp_17_23, %tmp_18_22" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 625 [1/1] (0.00ns)   --->   "%tmp_17_24 = zext i1 %val_assign_24 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 626 [1/1] (2.11ns)   --->   "%tmp_18_24 = add i8 %tmp_17_24, %tmp_18_23" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 627 [1/1] (0.00ns)   --->   "%tmp_17_25 = zext i1 %val_assign_25 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 628 [1/1] (2.11ns)   --->   "%tmp_18_25 = add i8 %tmp_17_25, %tmp_18_24" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 629 [1/1] (0.00ns)   --->   "%tmp_17_26 = zext i1 %val_assign_26 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_5 : Operation 630 [1/1] (2.11ns)   --->   "%tmp_18_26 = add i8 %tmp_17_26, %tmp_18_25" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 6> : 4.69ns
+ST_6 : Operation 631 [1/1] (2.57ns)   --->   "br i1 %exitcond, label %31, label %1" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 632 [1/1] (2.57ns)   --->   "br i1 %exitcond_3, label %31, label %4" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 633 [1/1] (2.57ns)   --->   "br i1 %exitcond_4, label %31, label %5" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 634 [1/1] (2.57ns)   --->   "br i1 %exitcond_5, label %31, label %6" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 635 [1/1] (2.57ns)   --->   "br i1 %exitcond_6, label %31, label %7" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 636 [1/1] (2.57ns)   --->   "br i1 %exitcond_7, label %31, label %8" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 637 [1/1] (2.57ns)   --->   "br i1 %exitcond_8, label %31, label %9" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 638 [1/1] (2.57ns)   --->   "br i1 %exitcond_9, label %31, label %10" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 639 [1/1] (2.57ns)   --->   "br i1 %exitcond_s, label %31, label %11" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 640 [1/1] (2.57ns)   --->   "br i1 %exitcond_10, label %31, label %12" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 641 [1/1] (2.57ns)   --->   "br i1 %exitcond_11, label %31, label %13" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 642 [1/1] (2.57ns)   --->   "br i1 %exitcond_12, label %31, label %14" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 643 [1/1] (2.57ns)   --->   "br i1 %exitcond_13, label %31, label %15" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 644 [1/1] (2.57ns)   --->   "br i1 %exitcond_14, label %31, label %16" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 645 [1/1] (2.57ns)   --->   "br i1 %exitcond_15, label %31, label %17" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 646 [1/1] (2.57ns)   --->   "br i1 %exitcond_16, label %31, label %18" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 647 [1/1] (2.57ns)   --->   "br i1 %exitcond_17, label %31, label %19" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 648 [1/1] (2.57ns)   --->   "br i1 %exitcond_18, label %31, label %20" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 649 [1/1] (2.57ns)   --->   "br i1 %exitcond_19, label %31, label %21" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 650 [1/1] (2.57ns)   --->   "br i1 %exitcond_20, label %31, label %22" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 651 [1/1] (2.57ns)   --->   "br i1 %exitcond_21, label %31, label %23" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 652 [1/1] (2.57ns)   --->   "br i1 %exitcond_22, label %31, label %24" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 653 [1/1] (2.57ns)   --->   "br i1 %exitcond_23, label %31, label %25" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 654 [1/1] (2.57ns)   --->   "br i1 %exitcond_24, label %31, label %26" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 655 [1/1] (2.57ns)   --->   "br i1 %exitcond_25, label %31, label %27" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 656 [1/1] (2.57ns)   --->   "br i1 %exitcond_26, label %31, label %28" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 657 [1/1] (2.57ns)   --->   "br i1 %exitcond_27, label %31, label %29" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 658 [1/1] (0.00ns)   --->   "%tmp_17_27 = zext i1 %val_assign_27 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_6 : Operation 659 [1/1] (2.11ns)   --->   "%tmp_18_27 = add i8 %tmp_17_27, %tmp_18_26" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 660 [1/1] (2.57ns)   --->   "br i1 %exitcond_28, label %31, label %30" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+ST_6 : Operation 661 [1/1] (0.00ns)   --->   "%tmp_17_28 = zext i1 %val_assign_28 to i8" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_6 : Operation 662 [1/1] (2.11ns)   --->   "%tmp_18_28 = add i8 %tmp_17_28, %tmp_18_27" [mandelbrot_pixel/C/mandel_calc.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 663 [1/1] (0.00ns)   --->   "br label %0" [mandelbrot_pixel/C/mandel_calc.cpp:27]
+
+ <State 7> : 0.00ns
+ST_7 : Operation 664 [1/1] (0.00ns)   --->   "%tmp_4_lcssa = phi i8 [ %count_V, %0 ], [ %tmp_12, %1 ], [ %tmp_18_1, %2 ], [ %tmp_18_2, %3 ], [ %tmp_18_3, %4 ], [ %tmp_18_4, %5 ], [ %tmp_18_5, %6 ], [ %tmp_18_6, %7 ], [ %tmp_18_7, %8 ], [ %tmp_18_8, %9 ], [ %tmp_18_9, %10 ], [ %tmp_18_s, %11 ], [ %tmp_18_10, %12 ], [ %tmp_18_11, %13 ], [ %tmp_18_12, %14 ], [ %tmp_18_13, %15 ], [ %tmp_18_14, %16 ], [ %tmp_18_15, %17 ], [ %tmp_18_16, %18 ], [ %tmp_18_17, %19 ], [ %tmp_18_18, %20 ], [ %tmp_18_19, %21 ], [ %tmp_18_20, %22 ], [ %tmp_18_21, %23 ], [ %tmp_18_22, %24 ], [ %tmp_18_23, %25 ], [ %tmp_18_24, %26 ], [ %tmp_18_25, %27 ], [ %tmp_18_26, %28 ], [ %tmp_18_27, %29 ]" [mandelbrot_pixel/C/mandel_calc.cpp:38]
+ST_7 : Operation 665 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.i8P(i8* %count_out_V, i8 %tmp_4_lcssa)" [mandelbrot_pixel/C/mandel_calc.cpp:43]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+ <State 8> : 0.00ns
+ST_8 : Operation 666 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.i8P(i8* %count_out_V, i8 %tmp_4_lcssa)" [mandelbrot_pixel/C/mandel_calc.cpp:43]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_8 : Operation 667 [1/1] (0.00ns)   --->   "ret void" [mandelbrot_pixel/C/mandel_calc.cpp:68]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.66ns
+The critical path consists of the following:
+	wire read on port 'im_V' [8]  (0 ns)
+	multiplexor before 'phi' operation ('z_im_V', mandelbrot_pixel/C/mandel_calc.cpp:24) with incoming values : ('z0_im_V_cast', mandelbrot_pixel/C/mandel_calc.cpp:24) ('p_Val2_8_28', mandelbrot_pixel/C/mandel_calc.cpp:32) [18]  (1.66 ns)
+
+ <State 2>: 7.18ns
+The critical path consists of the following:
+	'phi' operation ('z_im_V', mandelbrot_pixel/C/mandel_calc.cpp:24) with incoming values : ('z0_im_V_cast', mandelbrot_pixel/C/mandel_calc.cpp:24) ('p_Val2_8_28', mandelbrot_pixel/C/mandel_calc.cpp:32) [18]  (0 ns)
+	'mul' operation ('r_V5', mandelbrot_pixel/C/mandel_calc.cpp:32) [37]  (7.18 ns)
+
+ <State 3>: 347ns
+The critical path consists of the following:
+	'sub' operation ('p_Val2_9', mandelbrot_pixel/C/mandel_calc.cpp:35) [42]  (0 ns)
+	'add' operation ('p_Val2_s', mandelbrot_pixel/C/mandel_calc.cpp:35) [43]  (4.62 ns)
+	'mul' operation ('p_Val2_3_1', mandelbrot_pixel/C/mandel_calc.cpp:30) [55]  (7.18 ns)
+	'sub' operation ('p_Val2_9_1', mandelbrot_pixel/C/mandel_calc.cpp:35) [66]  (0 ns)
+	'add' operation ('p_Val2_11_1', mandelbrot_pixel/C/mandel_calc.cpp:35) [67]  (4.62 ns)
+	'mul' operation ('p_Val2_3_2', mandelbrot_pixel/C/mandel_calc.cpp:30) [77]  (7.18 ns)
+	'sub' operation ('p_Val2_9_2', mandelbrot_pixel/C/mandel_calc.cpp:35) [88]  (0 ns)
+	'add' operation ('p_Val2_11_2', mandelbrot_pixel/C/mandel_calc.cpp:35) [89]  (4.62 ns)
+	'mul' operation ('p_Val2_3_3', mandelbrot_pixel/C/mandel_calc.cpp:30) [99]  (7.18 ns)
+	'sub' operation ('p_Val2_9_3', mandelbrot_pixel/C/mandel_calc.cpp:35) [110]  (0 ns)
+	'add' operation ('p_Val2_11_3', mandelbrot_pixel/C/mandel_calc.cpp:35) [111]  (4.62 ns)
+	'mul' operation ('p_Val2_3_4', mandelbrot_pixel/C/mandel_calc.cpp:30) [121]  (7.18 ns)
+	'sub' operation ('p_Val2_9_4', mandelbrot_pixel/C/mandel_calc.cpp:35) [132]  (0 ns)
+	'add' operation ('p_Val2_11_4', mandelbrot_pixel/C/mandel_calc.cpp:35) [133]  (4.62 ns)
+	'mul' operation ('p_Val2_3_5', mandelbrot_pixel/C/mandel_calc.cpp:30) [143]  (7.18 ns)
+	'sub' operation ('p_Val2_9_5', mandelbrot_pixel/C/mandel_calc.cpp:35) [154]  (0 ns)
+	'add' operation ('p_Val2_11_5', mandelbrot_pixel/C/mandel_calc.cpp:35) [155]  (4.62 ns)
+	'mul' operation ('p_Val2_3_6', mandelbrot_pixel/C/mandel_calc.cpp:30) [165]  (7.18 ns)
+	'sub' operation ('p_Val2_9_6', mandelbrot_pixel/C/mandel_calc.cpp:35) [176]  (0 ns)
+	'add' operation ('p_Val2_11_6', mandelbrot_pixel/C/mandel_calc.cpp:35) [177]  (4.62 ns)
+	'mul' operation ('p_Val2_3_7', mandelbrot_pixel/C/mandel_calc.cpp:30) [187]  (7.18 ns)
+	'sub' operation ('p_Val2_9_7', mandelbrot_pixel/C/mandel_calc.cpp:35) [198]  (0 ns)
+	'add' operation ('p_Val2_11_7', mandelbrot_pixel/C/mandel_calc.cpp:35) [199]  (4.62 ns)
+	'mul' operation ('p_Val2_3_8', mandelbrot_pixel/C/mandel_calc.cpp:30) [209]  (7.18 ns)
+	'sub' operation ('p_Val2_9_8', mandelbrot_pixel/C/mandel_calc.cpp:35) [220]  (0 ns)
+	'add' operation ('p_Val2_11_8', mandelbrot_pixel/C/mandel_calc.cpp:35) [221]  (4.62 ns)
+	'mul' operation ('p_Val2_3_9', mandelbrot_pixel/C/mandel_calc.cpp:30) [231]  (7.18 ns)
+	'sub' operation ('p_Val2_9_9', mandelbrot_pixel/C/mandel_calc.cpp:35) [242]  (0 ns)
+	'add' operation ('p_Val2_11_9', mandelbrot_pixel/C/mandel_calc.cpp:35) [243]  (4.62 ns)
+	'mul' operation ('p_Val2_3_s', mandelbrot_pixel/C/mandel_calc.cpp:30) [253]  (7.18 ns)
+	'sub' operation ('p_Val2_9_s', mandelbrot_pixel/C/mandel_calc.cpp:35) [264]  (0 ns)
+	'add' operation ('p_Val2_11_s', mandelbrot_pixel/C/mandel_calc.cpp:35) [265]  (4.62 ns)
+	'mul' operation ('p_Val2_3_10', mandelbrot_pixel/C/mandel_calc.cpp:30) [275]  (7.18 ns)
+	'sub' operation ('p_Val2_9_10', mandelbrot_pixel/C/mandel_calc.cpp:35) [286]  (0 ns)
+	'add' operation ('p_Val2_11_10', mandelbrot_pixel/C/mandel_calc.cpp:35) [287]  (4.62 ns)
+	'mul' operation ('p_Val2_3_11', mandelbrot_pixel/C/mandel_calc.cpp:30) [297]  (7.18 ns)
+	'sub' operation ('p_Val2_9_11', mandelbrot_pixel/C/mandel_calc.cpp:35) [308]  (0 ns)
+	'add' operation ('p_Val2_11_11', mandelbrot_pixel/C/mandel_calc.cpp:35) [309]  (4.62 ns)
+	'mul' operation ('p_Val2_3_12', mandelbrot_pixel/C/mandel_calc.cpp:30) [319]  (7.18 ns)
+	'sub' operation ('p_Val2_9_12', mandelbrot_pixel/C/mandel_calc.cpp:35) [330]  (0 ns)
+	'add' operation ('p_Val2_11_12', mandelbrot_pixel/C/mandel_calc.cpp:35) [331]  (4.62 ns)
+	'mul' operation ('p_Val2_3_13', mandelbrot_pixel/C/mandel_calc.cpp:30) [341]  (7.18 ns)
+	'sub' operation ('p_Val2_9_13', mandelbrot_pixel/C/mandel_calc.cpp:35) [352]  (0 ns)
+	'add' operation ('p_Val2_11_13', mandelbrot_pixel/C/mandel_calc.cpp:35) [353]  (4.62 ns)
+	'mul' operation ('p_Val2_3_14', mandelbrot_pixel/C/mandel_calc.cpp:30) [363]  (7.18 ns)
+	'sub' operation ('p_Val2_9_14', mandelbrot_pixel/C/mandel_calc.cpp:35) [374]  (0 ns)
+	'add' operation ('p_Val2_11_14', mandelbrot_pixel/C/mandel_calc.cpp:35) [375]  (4.62 ns)
+	'mul' operation ('p_Val2_3_15', mandelbrot_pixel/C/mandel_calc.cpp:30) [385]  (7.18 ns)
+	'sub' operation ('p_Val2_9_15', mandelbrot_pixel/C/mandel_calc.cpp:35) [396]  (0 ns)
+	'add' operation ('p_Val2_11_15', mandelbrot_pixel/C/mandel_calc.cpp:35) [397]  (4.62 ns)
+	'mul' operation ('p_Val2_3_16', mandelbrot_pixel/C/mandel_calc.cpp:30) [407]  (7.18 ns)
+	'sub' operation ('p_Val2_9_16', mandelbrot_pixel/C/mandel_calc.cpp:35) [418]  (0 ns)
+	'add' operation ('p_Val2_11_16', mandelbrot_pixel/C/mandel_calc.cpp:35) [419]  (4.62 ns)
+	'mul' operation ('p_Val2_3_17', mandelbrot_pixel/C/mandel_calc.cpp:30) [429]  (7.18 ns)
+	'sub' operation ('p_Val2_9_17', mandelbrot_pixel/C/mandel_calc.cpp:35) [440]  (0 ns)
+	'add' operation ('p_Val2_11_17', mandelbrot_pixel/C/mandel_calc.cpp:35) [441]  (4.62 ns)
+	'mul' operation ('p_Val2_3_18', mandelbrot_pixel/C/mandel_calc.cpp:30) [451]  (7.18 ns)
+	'sub' operation ('p_Val2_9_18', mandelbrot_pixel/C/mandel_calc.cpp:35) [462]  (0 ns)
+	'add' operation ('p_Val2_11_18', mandelbrot_pixel/C/mandel_calc.cpp:35) [463]  (4.62 ns)
+	'mul' operation ('p_Val2_3_19', mandelbrot_pixel/C/mandel_calc.cpp:30) [473]  (7.18 ns)
+	'sub' operation ('p_Val2_9_19', mandelbrot_pixel/C/mandel_calc.cpp:35) [484]  (0 ns)
+	'add' operation ('p_Val2_11_19', mandelbrot_pixel/C/mandel_calc.cpp:35) [485]  (4.62 ns)
+	'mul' operation ('p_Val2_3_20', mandelbrot_pixel/C/mandel_calc.cpp:30) [495]  (7.18 ns)
+	'sub' operation ('p_Val2_9_20', mandelbrot_pixel/C/mandel_calc.cpp:35) [506]  (0 ns)
+	'add' operation ('p_Val2_11_20', mandelbrot_pixel/C/mandel_calc.cpp:35) [507]  (4.62 ns)
+	'mul' operation ('p_Val2_3_21', mandelbrot_pixel/C/mandel_calc.cpp:30) [517]  (7.18 ns)
+	'sub' operation ('p_Val2_9_21', mandelbrot_pixel/C/mandel_calc.cpp:35) [528]  (0 ns)
+	'add' operation ('p_Val2_11_21', mandelbrot_pixel/C/mandel_calc.cpp:35) [529]  (4.62 ns)
+	'mul' operation ('p_Val2_3_22', mandelbrot_pixel/C/mandel_calc.cpp:30) [539]  (7.18 ns)
+	'sub' operation ('p_Val2_9_22', mandelbrot_pixel/C/mandel_calc.cpp:35) [550]  (0 ns)
+	'add' operation ('p_Val2_11_22', mandelbrot_pixel/C/mandel_calc.cpp:35) [551]  (4.62 ns)
+	'mul' operation ('p_Val2_3_23', mandelbrot_pixel/C/mandel_calc.cpp:30) [561]  (7.18 ns)
+	'sub' operation ('p_Val2_9_23', mandelbrot_pixel/C/mandel_calc.cpp:35) [572]  (0 ns)
+	'add' operation ('p_Val2_11_23', mandelbrot_pixel/C/mandel_calc.cpp:35) [573]  (4.62 ns)
+	'mul' operation ('p_Val2_3_24', mandelbrot_pixel/C/mandel_calc.cpp:30) [583]  (7.18 ns)
+	'sub' operation ('p_Val2_9_24', mandelbrot_pixel/C/mandel_calc.cpp:35) [594]  (0 ns)
+	'add' operation ('p_Val2_11_24', mandelbrot_pixel/C/mandel_calc.cpp:35) [595]  (4.62 ns)
+	'mul' operation ('p_Val2_3_25', mandelbrot_pixel/C/mandel_calc.cpp:30) [605]  (7.18 ns)
+	'sub' operation ('p_Val2_9_25', mandelbrot_pixel/C/mandel_calc.cpp:35) [616]  (0 ns)
+	'add' operation ('p_Val2_11_25', mandelbrot_pixel/C/mandel_calc.cpp:35) [617]  (4.62 ns)
+	'mul' operation ('p_Val2_3_26', mandelbrot_pixel/C/mandel_calc.cpp:30) [627]  (7.18 ns)
+	'sub' operation ('p_Val2_9_26', mandelbrot_pixel/C/mandel_calc.cpp:35) [638]  (0 ns)
+	'add' operation ('p_Val2_11_26', mandelbrot_pixel/C/mandel_calc.cpp:35) [639]  (4.62 ns)
+	'mul' operation ('p_Val2_3_27', mandelbrot_pixel/C/mandel_calc.cpp:30) [649]  (7.18 ns)
+	'sub' operation ('p_Val2_9_27', mandelbrot_pixel/C/mandel_calc.cpp:35) [660]  (0 ns)
+	'add' operation ('p_Val2_11_27', mandelbrot_pixel/C/mandel_calc.cpp:35) [661]  (4.62 ns)
+	'mul' operation ('p_Val2_3_28', mandelbrot_pixel/C/mandel_calc.cpp:30) [671]  (7.18 ns)
+	'sub' operation ('p_Val2_9_28', mandelbrot_pixel/C/mandel_calc.cpp:35) [682]  (0 ns)
+	'add' operation ('p_Val2_11_28', mandelbrot_pixel/C/mandel_calc.cpp:35) [683]  (4.62 ns)
+
+ <State 4>: 5.36ns
+The critical path consists of the following:
+	'add' operation ('r_V_1_1', mandelbrot_pixel/C/mandel_calc.cpp:37) [68]  (2.79 ns)
+	'icmp' operation ('val_assign_1', mandelbrot_pixel/C/mandel_calc.cpp:37) [69]  (2.57 ns)
+
+ <State 5>: 59.2ns
+The critical path consists of the following:
+	'phi' operation ('count_V', mandelbrot_pixel/C/mandel_calc.cpp:38) with incoming values : ('tmp_18_28', mandelbrot_pixel/C/mandel_calc.cpp:38) [20]  (0 ns)
+	'add' operation ('tmp_12', mandelbrot_pixel/C/mandel_calc.cpp:38) [47]  (2.12 ns)
+	'add' operation ('tmp_18_1', mandelbrot_pixel/C/mandel_calc.cpp:38) [71]  (2.12 ns)
+	'add' operation ('tmp_18_2', mandelbrot_pixel/C/mandel_calc.cpp:38) [93]  (2.12 ns)
+	'add' operation ('tmp_18_3', mandelbrot_pixel/C/mandel_calc.cpp:38) [115]  (2.12 ns)
+	'add' operation ('tmp_18_4', mandelbrot_pixel/C/mandel_calc.cpp:38) [137]  (2.12 ns)
+	'add' operation ('tmp_18_5', mandelbrot_pixel/C/mandel_calc.cpp:38) [159]  (2.12 ns)
+	'add' operation ('tmp_18_6', mandelbrot_pixel/C/mandel_calc.cpp:38) [181]  (2.12 ns)
+	'add' operation ('tmp_18_7', mandelbrot_pixel/C/mandel_calc.cpp:38) [203]  (2.12 ns)
+	'add' operation ('tmp_18_8', mandelbrot_pixel/C/mandel_calc.cpp:38) [225]  (2.12 ns)
+	'add' operation ('tmp_18_9', mandelbrot_pixel/C/mandel_calc.cpp:38) [247]  (2.12 ns)
+	'add' operation ('tmp_18_s', mandelbrot_pixel/C/mandel_calc.cpp:38) [269]  (2.12 ns)
+	'add' operation ('tmp_18_10', mandelbrot_pixel/C/mandel_calc.cpp:38) [291]  (2.12 ns)
+	'add' operation ('tmp_18_11', mandelbrot_pixel/C/mandel_calc.cpp:38) [313]  (2.12 ns)
+	'add' operation ('tmp_18_12', mandelbrot_pixel/C/mandel_calc.cpp:38) [335]  (2.12 ns)
+	'add' operation ('tmp_18_13', mandelbrot_pixel/C/mandel_calc.cpp:38) [357]  (2.12 ns)
+	'add' operation ('tmp_18_14', mandelbrot_pixel/C/mandel_calc.cpp:38) [379]  (2.12 ns)
+	'add' operation ('tmp_18_15', mandelbrot_pixel/C/mandel_calc.cpp:38) [401]  (2.12 ns)
+	'add' operation ('tmp_18_16', mandelbrot_pixel/C/mandel_calc.cpp:38) [423]  (2.12 ns)
+	'add' operation ('tmp_18_17', mandelbrot_pixel/C/mandel_calc.cpp:38) [445]  (2.12 ns)
+	'add' operation ('tmp_18_18', mandelbrot_pixel/C/mandel_calc.cpp:38) [467]  (2.12 ns)
+	'add' operation ('tmp_18_19', mandelbrot_pixel/C/mandel_calc.cpp:38) [489]  (2.12 ns)
+	'add' operation ('tmp_18_20', mandelbrot_pixel/C/mandel_calc.cpp:38) [511]  (2.12 ns)
+	'add' operation ('tmp_18_21', mandelbrot_pixel/C/mandel_calc.cpp:38) [533]  (2.12 ns)
+	'add' operation ('tmp_18_22', mandelbrot_pixel/C/mandel_calc.cpp:38) [555]  (2.12 ns)
+	'add' operation ('tmp_18_23', mandelbrot_pixel/C/mandel_calc.cpp:38) [577]  (2.12 ns)
+	'add' operation ('tmp_18_24', mandelbrot_pixel/C/mandel_calc.cpp:38) [599]  (2.12 ns)
+	'add' operation ('tmp_18_25', mandelbrot_pixel/C/mandel_calc.cpp:38) [621]  (2.12 ns)
+	'add' operation ('tmp_18_26', mandelbrot_pixel/C/mandel_calc.cpp:38) [643]  (2.12 ns)
+
+ <State 6>: 4.69ns
+The critical path consists of the following:
+	'add' operation ('tmp_18_27', mandelbrot_pixel/C/mandel_calc.cpp:38) [665]  (2.12 ns)
+	multiplexor before 'phi' operation ('tmp_4_lcssa', mandelbrot_pixel/C/mandel_calc.cpp:38) with incoming values : ('tmp_12', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_1', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_2', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_3', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_4', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_5', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_6', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_7', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_8', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_9', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_s', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_10', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_11', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_12', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_13', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_14', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_15', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_16', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_17', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_18', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_19', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_20', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_21', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_22', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_23', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_24', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_25', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_26', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_27', mandelbrot_pixel/C/mandel_calc.cpp:38) ('tmp_18_28', mandelbrot_pixel/C/mandel_calc.cpp:38) [691]  (2.58 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

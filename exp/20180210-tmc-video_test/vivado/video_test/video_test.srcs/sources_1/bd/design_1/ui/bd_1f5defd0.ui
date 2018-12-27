@@ -1,0 +1,39 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.6.11  2017-06-12 bk=1.3860 VDI=40 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port Vsync -pg 1 -y 280 -defaultsOSRD
+preplace port sys_clock -pg 1 -y 360 -defaultsOSRD
+preplace port Hsync -pg 1 -y 260 -defaultsOSRD
+preplace port reset -pg 1 -y 340 -defaultsOSRD
+preplace portBus vgaBlue -pg 1 -y 130 -defaultsOSRD
+preplace portBus vgaRed -pg 1 -y 210 -defaultsOSRD
+preplace portBus vgaGreen -pg 1 -y 50 -defaultsOSRD
+preplace inst v_axi4s_vid_out_0 -pg 1 -lvl 4 -y 300 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 5 -y 130 -defaultsOSRD
+preplace inst v_tc_0 -pg 1 -lvl 2 -y 360 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 3 -y 510 -defaultsOSRD
+preplace inst xlslice_1 -pg 1 -lvl 5 -y 50 -defaultsOSRD
+preplace inst v_tpg_0 -pg 1 -lvl 2 -y 230 -defaultsOSRD
+preplace inst xlslice_2 -pg 1 -lvl 5 -y 210 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 350 -defaultsOSRD
+preplace netloc v_axi4s_vid_out_0_vid_data 1 4 1 970
+preplace netloc v_tpg_0_m_axis_video 1 2 2 N 220 N
+preplace netloc xlslice_1_Dout 1 5 1 NJ
+preplace netloc clk_wiz_0_locked 1 1 1 N
+preplace netloc v_axi4s_vid_out_0_vid_hsync 1 4 2 NJ 260 NJ
+preplace netloc sys_clock_1 1 0 1 NJ
+preplace netloc xlconstant_0_dout 1 3 1 690
+preplace netloc xlslice_2_Dout 1 5 1 NJ
+preplace netloc clk_wiz_0_clk_out1 1 1 3 200 440 550 340 N
+preplace netloc clk_wiz_0_clk_out2 1 1 3 210 160 N 160 690
+preplace netloc v_tc_0_vtiming_out 1 2 2 540 240 N
+preplace netloc v_axi4s_vid_out_0_vid_vsync 1 4 2 NJ 280 NJ
+preplace netloc reset_1 1 0 1 NJ
+preplace netloc xlslice_0_Dout 1 5 1 NJ
+levelinfo -pg 1 -10 110 380 620 830 1070 1190 -top 0 -bot 560
+",
+}
+{
+   da_board_cnt: "1",
+}

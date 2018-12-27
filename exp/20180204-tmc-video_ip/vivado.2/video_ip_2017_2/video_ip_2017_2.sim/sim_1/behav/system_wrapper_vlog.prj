@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../video_ip_2017_2.ip_user_files/bd/system/ipshared/68f7/hdl/sim_clk_gen.v"
+verilog xil_defaultlib  "../../../video_ip_2017_2.ip_user_files/bd/system/ip/system_sim_clk_gen_0_0/sim/system_sim_clk_gen_0_0.v"
+verilog xil_defaultlib  "../../../video_ip_2017_2.ip_user_files/bd/system/hdl/system.v"
+verilog xil_defaultlib  "../../../video_ip_2017_2.srcs/sim_1/bd/system/hdl/system_wrapper.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

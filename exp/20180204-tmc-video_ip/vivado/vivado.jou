@@ -1,0 +1,614 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Feb  4 21:13:18 2018
+# Process ID: 13937
+# Current directory: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado
+# Command line: vivado
+# Log file: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vivado.log
+# Journal file: /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project vga_out /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out -part xc7a35tcpg236-1
+set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
+import_files -fileset constrs_1 -force -norecurse /home/trevor/mylab/Basys3/Basys3_Master.xdc
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.4 clk_wiz_0
+apply_board_connection -board_interface "sys_clock" -ip_intf "clk_wiz_0/clock_CLK_IN1" -diagram "design_1" 
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config {Board_Interface "reset ( Reset Signal (BTNC) ) " }  [get_bd_pins clk_wiz_0/reset]
+startgroup
+set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {40} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKOUT0_DIVIDE_F {25.000} CONFIG.CLKOUT1_JITTER {159.371}] [get_bd_cells clk_wiz_0]
+endgroup
+startgroup
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:v_tc:6.1 v_tc_0
+endgroup
+set_property -dict [list CONFIG.HAS_AXI4_LITE {false} CONFIG.enable_detection {false} CONFIG.vertical_blank_generation {false} CONFIG.horizontal_blank_generation {false}] [get_bd_cells v_tc_0]
+set_property -dict [list CONFIG.VIDEO_MODE {800x600p} CONFIG.GEN_F0_VSYNC_VSTART {600} CONFIG.GEN_F1_VSYNC_VSTART {600} CONFIG.GEN_HACTIVE_SIZE {800} CONFIG.GEN_HSYNC_END {968} CONFIG.GEN_HFRAME_SIZE {1056} CONFIG.GEN_F0_VSYNC_HSTART {800} CONFIG.GEN_F1_VSYNC_HSTART {800} CONFIG.GEN_F0_VSYNC_HEND {800} CONFIG.GEN_F1_VSYNC_HEND {800} CONFIG.GEN_F0_VFRAME_SIZE {628} CONFIG.GEN_F1_VFRAME_SIZE {628} CONFIG.GEN_F0_VSYNC_VEND {604} CONFIG.GEN_F1_VSYNC_VEND {604} CONFIG.GEN_F0_VBLANK_HEND {800} CONFIG.GEN_F1_VBLANK_HEND {800} CONFIG.GEN_HSYNC_START {840} CONFIG.GEN_VACTIVE_SIZE {600} CONFIG.GEN_F0_VBLANK_HSTART {800} CONFIG.GEN_F1_VBLANK_HSTART {800}] [get_bd_cells v_tc_0]
+set_property location {2.5 469 55} [get_bd_cells v_tc_0]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins v_tc_0/clk]
+connect_bd_net [get_bd_pins clk_wiz_0/locked] [get_bd_pins v_tc_0/gen_clken]
+startgroup
+make_bd_pins_external  [get_bd_pins v_tc_0/fsync_out]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins v_tc_0/active_video_out]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins v_tc_0/hsync_out]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins v_tc_0/vsync_out]
+endgroup
+set_property name Hsync [get_bd_ports hsync_out_0]
+set_property name Vsync [get_bd_ports vsync_out_0]
+delete_bd_objs [get_bd_nets v_tc_0_fsync_out] [get_bd_ports fsync_out_0]
+save_bd_design
+validate_bd_design
+delete_bd_objs [get_bd_nets clk_wiz_0_locked]
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+generate_target all [get_files  /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd]
+catch { config_ip_cache -export [get_ips -all design_1_clk_wiz_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_v_tc_0_0] }
+export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs -jobs 4 {design_1_clk_wiz_0_0_synth_1 design_1_v_tc_0_0_synth_1}
+export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+connect_bd_net [get_bd_pins clk_wiz_0/locked] [get_bd_pins v_tc_0/gen_clken]
+save_bd_design
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd] -top
+generate_target all [get_files  /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd]
+export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd}
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+set_property -dict [list CONFIG.VIDEO_MODE {1024x768p} CONFIG.GEN_F0_VSYNC_VSTART {770} CONFIG.GEN_F1_VSYNC_VSTART {770} CONFIG.GEN_HACTIVE_SIZE {1024} CONFIG.GEN_HSYNC_END {1184} CONFIG.GEN_HFRAME_SIZE {1344} CONFIG.GEN_F0_VSYNC_HSTART {1024} CONFIG.GEN_F1_VSYNC_HSTART {1024} CONFIG.GEN_F0_VSYNC_HEND {1024} CONFIG.GEN_F1_VSYNC_HEND {1024} CONFIG.GEN_F0_VFRAME_SIZE {806} CONFIG.GEN_F1_VFRAME_SIZE {806} CONFIG.GEN_F0_VSYNC_VEND {776} CONFIG.GEN_F1_VSYNC_VEND {776} CONFIG.GEN_F0_VBLANK_HEND {1024} CONFIG.GEN_F1_VBLANK_HEND {1024} CONFIG.GEN_HSYNC_START {1048} CONFIG.GEN_VACTIVE_SIZE {768} CONFIG.GEN_F0_VBLANK_HSTART {1024} CONFIG.GEN_F1_VBLANK_HSTART {1024}] [get_bd_cells v_tc_0]
+endgroup
+startgroup
+endgroup
+save_bd_design
+reset_run design_1_v_tc_0_0_synth_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+close_bd_design [get_bd_designs design_1]
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd}
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd}
+close_bd_design [get_bd_designs design_1]
+open_run impl_1
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd] -top
+import_files -force -norecurse /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+generate_target all [get_files  /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd]
+export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+endgroup
+startgroup
+set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {78} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {9.750} CONFIG.MMCM_CLKOUT0_DIVIDE_F {12.500} CONFIG.CLKOUT1_JITTER {136.923} CONFIG.CLKOUT1_PHASE_ERROR {99.281}] [get_bd_cells clk_wiz_0]
+endgroup
+save_bd_design
+close_bd_design [get_bd_designs design_1]
+close_hw
+reset_run design_1_clk_wiz_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_project
+create_project filter /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/filter -part xc7a35tcpg236-1
+set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:fir_compiler:7.2 fir_compiler_0
+endgroup
+save_bd_design
+close_project
+open_project /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/video_ip/video_ip.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/video_ip/video_ip.srcs/sources_1/bd/design_1/design_1.bd}
+close_project
+open_project /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd}
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/vga_out/vga_out.srcs/sources_1/bd/design_1/design_1.bd}
+save_project_as video_test /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test -force
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:v_tpg:7.0 v_tpg_0
+endgroup
+set_property -dict [list CONFIG.SOLID_COLOR {0} CONFIG.RAMP {0} CONFIG.DISPLAY_PORT {0} CONFIG.COLOR_SWEEP {0} CONFIG.ZONE_PLATE {0} CONFIG.FOREGROUND {0}] [get_bd_cells v_tpg_0]
+set_property location {1.5 294 -166} [get_bd_cells v_tpg_0]
+set_property location {2 370 -177} [get_bd_cells v_tpg_0]
+startgroup
+set_property -dict [list CONFIG.CLKOUT2_USED {true} CONFIG.MMCM_DIVCLK_DIVIDE {3} CONFIG.MMCM_CLKFBOUT_MULT_F {30.125} CONFIG.MMCM_CLKOUT0_DIVIDE_F {12.875} CONFIG.MMCM_CLKOUT1_DIVIDE {10} CONFIG.NUM_OUT_CLKS {2} CONFIG.CLKOUT1_JITTER {198.550} CONFIG.CLKOUT1_PHASE_ERROR {203.151} CONFIG.CLKOUT2_JITTER {188.790} CONFIG.CLKOUT2_PHASE_ERROR {203.151}] [get_bd_cells clk_wiz_0]
+endgroup
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins v_tpg_0/ap_clk]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:v_axi4s_vid_out:4.0 v_axi4s_vid_out_0
+endgroup
+set_property -dict [list CONFIG.C_HAS_ASYNC_CLK {1}] [get_bd_cells v_axi4s_vid_out_0]
+set_property location {3 683 -172} [get_bd_cells v_axi4s_vid_out_0]
+set_property location {3 670 -171} [get_bd_cells v_axi4s_vid_out_0]
+set_property location {3 697 -159} [get_bd_cells v_axi4s_vid_out_0]
+connect_bd_intf_net [get_bd_intf_pins v_tpg_0/m_axis_video] [get_bd_intf_pins v_axi4s_vid_out_0/video_in]
+delete_bd_objs [get_bd_nets v_tc_0_active_video_out]
+delete_bd_objs [get_bd_nets v_tc_0_hsync_out]
+delete_bd_objs [get_bd_nets v_tc_0_vsync_out]
+connect_bd_net [get_bd_ports active_video_out_0] [get_bd_pins v_axi4s_vid_out_0/vid_active_video]
+connect_bd_intf_net [get_bd_intf_pins v_tc_0/vtiming_out] [get_bd_intf_pins v_axi4s_vid_out_0/vtiming_in]
+regenerate_bd_layout
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_clk]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins v_axi4s_vid_out_0/aclk]
+regenerate_bd_layout
+set_property location {930 152} [get_bd_ports Hsync]
+set_property location {913 173} [get_bd_ports Vsync]
+connect_bd_net [get_bd_ports Hsync] [get_bd_pins v_axi4s_vid_out_0/vid_hsync]
+connect_bd_net [get_bd_ports Vsync] [get_bd_pins v_axi4s_vid_out_0/vid_vsync]
+set_property location {881 174} [get_bd_ports Vsync]
+validate_bd_design
+connect_bd_net [get_bd_pins clk_wiz_0/locked] [get_bd_pins v_axi4s_vid_out_0/aclken]
+regenerate_bd_layout
+validate_bd_design
+startgroup
+make_bd_pins_external  [get_bd_pins v_axi4s_vid_out_0/vid_data]
+endgroup
+delete_bd_objs [get_bd_nets v_axi4s_vid_out_0_vid_data]
+set_property name vgaRed [get_bd_ports vid_data_0]
+delete_bd_objs [get_bd_ports vgaRed]
+create_bd_port -dir O -type data vgaRed
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0
+endgroup
+copy_bd_objs /  [get_bd_ports {vgaRed}]
+copy_bd_objs /  [get_bd_ports {vgaRed}]
+set_property location {894 -129} [get_bd_ports vgaRed2]
+set_property name vgaGreen [get_bd_ports vgaRed1]
+set_property name vgaBlue [get_bd_ports vgaRed2]
+set_property location {900 121} [get_bd_ports vgaRed]
+set_property location {910 93} [get_bd_ports vgaGreen]
+set_property location {888 23} [get_bd_ports active_video_out_0]
+set_property location {904 58} [get_bd_ports vgaBlue]
+set_property -dict [list CONFIG.DIN_TO {20} CONFIG.DIN_FROM {23} CONFIG.DIN_WIDTH {24} CONFIG.DIN_FROM {23} CONFIG.DOUT_WIDTH {4}] [get_bd_cells xlslice_0]
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+set_property location {3 767 -70} [get_bd_cells xlslice_2]
+set_property location {3.5 936 -137} [get_bd_cells xlslice_1]
+set_property location {3 779 -205} [get_bd_cells xlslice_0]
+set_property location {3 738 -135} [get_bd_cells xlslice_1]
+set_property -dict [list CONFIG.DIN_TO {4} CONFIG.DIN_FROM {7} CONFIG.DIN_FROM {7}] [get_bd_cells xlslice_2]
+set_property -dict [list CONFIG.DIN_TO {11} CONFIG.DIN_FROM {15} CONFIG.DIN_FROM {15} CONFIG.DOUT_WIDTH {5}] [get_bd_cells xlslice_1]
+set_property -dict [list CONFIG.DIN_TO {12} CONFIG.DIN_FROM {15} CONFIG.DOUT_WIDTH {4}] [get_bd_cells xlslice_1]
+connect_bd_net [get_bd_ports vgaRed] [get_bd_pins xlslice_2/Dout]
+connect_bd_net [get_bd_ports vgaGreen] [get_bd_pins xlslice_1/Dout]
+connect_bd_net [get_bd_ports vgaBlue] [get_bd_pins xlslice_0/Dout]
+connect_bd_net [get_bd_pins v_axi4s_vid_out_0/vid_data] [get_bd_pins xlslice_0/Din]
+connect_bd_net [get_bd_pins v_axi4s_vid_out_0/vid_data] [get_bd_pins xlslice_1/Din]
+connect_bd_net [get_bd_pins v_axi4s_vid_out_0/vid_data] [get_bd_pins xlslice_2/Din]
+regenerate_bd_layout
+save_bd_design
+regenerate_bd_layout
+disconnect_bd_net /clk_wiz_0_locked [get_bd_pins v_axi4s_vid_out_0/aclken]
+validate_bd_design
+startgroup
+endgroup
+startgroup
+set_property -dict [list CONFIG.vertical_blank_generation {true} CONFIG.horizontal_blank_generation {true}] [get_bd_cells v_tc_0]
+endgroup
+validate_bd_design
+regenerate_bd_layout
+save_bd_design
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/imports/hdl/design_1_wrapper.v] -no_script -reset -force -quiet
+remove_files  /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/imports/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v] -no_script -reset -force -quiet
+remove_files  /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+file delete -force /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+generate_target all [get_files  /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects [get_files /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs -jobs 4 {design_1_clk_wiz_0_0_synth_1 design_1_v_tc_0_0_synth_1 design_1_v_tpg_0_0_synth_1 design_1_v_axi4s_vid_out_0_0_synth_1 design_1_xlslice_0_0_synth_1 design_1_xlslice_0_1_synth_1 design_1_xlslice_0_2_synth_1}
+export_simulation -of_objects [get_files /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.ip_user_files/sim_scripts -ip_user_files_dir /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.ip_user_files -ipstatic_source_dir /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.cache/compile_simlib/modelsim} {questa=/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.cache/compile_simlib/questa} {ies=/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.cache/compile_simlib/ies} {vcs=/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.cache/compile_simlib/vcs} {riviera=/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+delete_bd_objs [get_bd_nets xlslice_0_Dout]
+delete_bd_objs [get_bd_nets xlslice_1_Dout]
+connect_bd_net [get_bd_ports vgaGreen] [get_bd_pins xlslice_0/Dout]
+connect_bd_net [get_bd_ports vgaBlue] [get_bd_pins xlslice_1/Dout]
+regenerate_bd_layout
+delete_bd_objs [get_bd_nets xlslice_0_Dout]
+delete_bd_objs [get_bd_nets xlslice_1_Dout]
+connect_bd_net [get_bd_ports vgaBlue] [get_bd_pins xlslice_0/Dout]
+connect_bd_net [get_bd_ports vgaGreen] [get_bd_pins xlslice_1/Dout]
+regenerate_bd_layout
+save_bd_design
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd] -top
+validate_bd_design -force
+save_bd_design
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd] -top
+close_bd_design [get_bd_designs design_1]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_bd_design {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_nets v_axi4s_vid_out_0_vid_active_video] [get_bd_ports active_video_out_0]
+regenerate_bd_layout
+save_bd_design
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd] -top
+open_bd_design {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd}
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+close_bd_design [get_bd_designs design_1]
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+open_bd_design {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+set_property -dict [list CONFIG.CONST_VAL {0}] [get_bd_cells xlconstant_0]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_ce]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins v_axi4s_vid_out_0/aclken]
+save_bd_design
+make_wrapper -files [get_files /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd] -top
+close_bd_design [get_bd_designs design_1]
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+close_hw
+open_bd_design {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd}
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_bd_design {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd}
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+open_bd_design {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd}
+open_run synth_1 -name synth_1
+set_property mark_debug true [get_nets [list Hsync_OBUF]]
+set_property mark_debug true [get_nets [list Vsync_OBUF]]
+set_property mark_debug true [get_nets [list {vgaBlue_OBUF[0]} {vgaBlue_OBUF[1]} {vgaBlue_OBUF[2]} {vgaBlue_OBUF[3]}]]
+set_property mark_debug false [get_nets [list {vgaBlue_OBUF[0]} {vgaBlue_OBUF[1]} {vgaBlue_OBUF[2]} {vgaBlue_OBUF[3]}]]
+set_property mark_debug true [get_nets [list {vgaBlue_OBUF[0]} {vgaBlue_OBUF[1]} {vgaBlue_OBUF[2]} {vgaBlue_OBUF[3]}]]
+set_property mark_debug true [get_nets [list {vgaGreen_OBUF[1]} {vgaGreen_OBUF[2]} {vgaGreen_OBUF[3]} {vgaGreen_OBUF[0]}]]
+set_property mark_debug true [get_nets [list {vgaRed_OBUF[1]} {vgaRed_OBUF[2]} {vgaRed_OBUF[0]} {vgaRed_OBUF[3]}]]
+set_property mark_debug true [get_nets [list design_1_i/v_axi4s_vid_out_0/inst/vtg_ce]]
+set_property mark_debug true [get_nets [list design_1_i/v_tpg_0_m_axis_video_TVALID]]
+set_property mark_debug true [get_nets [list design_1_i/v_tc_0_vtiming_out_ACTIVE_VIDEO]]
+set_property mark_debug true [get_nets [list design_1_i/v_tc_0_vtiming_out_VBLANK]]
+set_property mark_debug true [get_nets [list design_1_i/v_tc_0_vtiming_out_VSYNC]]
+set_property mark_debug true [get_nets [list design_1_i/v_tpg_0_m_axis_video_TLAST]]
+file mkdir /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/constrs_1/new
+close [ open /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/constrs_1/new/debug.xdc w ]
+add_files -fileset constrs_1 /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/constrs_1/new/debug.xdc
+set_property target_constrs_file /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/constrs_1/new/debug.xdc [current_fileset -constrset]
+save_constraints -force
+create_debug_core u_ila_0 ila
+set_property C_DATA_DEPTH 1024 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL false [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_0]
+create_debug_core u_ila_1 ila
+set_property C_DATA_DEPTH 1024 [get_debug_cores u_ila_1]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_1]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_1]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_1]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_1]
+set_property C_EN_STRG_QUAL false [get_debug_cores u_ila_1]
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_1]
+set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_1]
+set_property port_width 1 [get_debug_ports u_ila_0/clk]
+connect_debug_port u_ila_0/clk [get_nets [list design_1_i/clk_wiz_0/inst/clk_out1 ]]
+set_property port_width 1 [get_debug_ports u_ila_1/clk]
+connect_debug_port u_ila_1/clk [get_nets [list design_1_i/clk_wiz_0/inst/clk_out2 ]]
+set_property port_width 4 [get_debug_ports u_ila_0/probe0]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {vgaBlue_OBUF[0]} {vgaBlue_OBUF[1]} {vgaBlue_OBUF[2]} {vgaBlue_OBUF[3]} ]]
+create_debug_port u_ila_0 probe
+set_property port_width 4 [get_debug_ports u_ila_0/probe1]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {vgaRed_OBUF[0]} {vgaRed_OBUF[1]} {vgaRed_OBUF[2]} {vgaRed_OBUF[3]} ]]
+create_debug_port u_ila_0 probe
+set_property port_width 4 [get_debug_ports u_ila_0/probe2]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list {vgaGreen_OBUF[0]} {vgaGreen_OBUF[1]} {vgaGreen_OBUF[2]} {vgaGreen_OBUF[3]} ]]
+create_debug_port u_ila_0 probe
+set_property port_width 1 [get_debug_ports u_ila_0/probe3]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list Hsync_OBUF ]]
+create_debug_port u_ila_0 probe
+set_property port_width 1 [get_debug_ports u_ila_0/probe4]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list design_1_i/v_tc_0_vtiming_out_ACTIVE_VIDEO ]]
+create_debug_port u_ila_0 probe
+set_property port_width 1 [get_debug_ports u_ila_0/probe5]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
+connect_debug_port u_ila_0/probe5 [get_nets [list design_1_i/v_tc_0_vtiming_out_VBLANK ]]
+create_debug_port u_ila_0 probe
+set_property port_width 1 [get_debug_ports u_ila_0/probe6]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
+connect_debug_port u_ila_0/probe6 [get_nets [list design_1_i/v_tc_0_vtiming_out_VSYNC ]]
+create_debug_port u_ila_0 probe
+set_property port_width 1 [get_debug_ports u_ila_0/probe7]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe7]
+connect_debug_port u_ila_0/probe7 [get_nets [list Vsync_OBUF ]]
+create_debug_port u_ila_0 probe
+set_property port_width 1 [get_debug_ports u_ila_0/probe8]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe8]
+connect_debug_port u_ila_0/probe8 [get_nets [list design_1_i/v_axi4s_vid_out_0/inst/vtg_ce ]]
+set_property port_width 1 [get_debug_ports u_ila_1/probe0]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe0]
+connect_debug_port u_ila_1/probe0 [get_nets [list design_1_i/v_tpg_0_m_axis_video_TLAST ]]
+create_debug_port u_ila_1 probe
+set_property port_width 1 [get_debug_ports u_ila_1/probe1]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe1]
+connect_debug_port u_ila_1/probe1 [get_nets [list design_1_i/v_tpg_0_m_axis_video_TVALID ]]
+save_constraints
+reset_run impl_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+set_property needs_refresh false [get_runs synth_1]
+close_design
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+set_property PROBES.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.ltx} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.ltx} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.ltx} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.ltx} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_2 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_1"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_1"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_1"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_1"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes design_1_i/v_tc_0_vtiming_out_ACTIVE_VIDEO -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes design_1_i/v_tc_0_vtiming_out_ACTIVE_VIDEO -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes design_1_i/v_tc_0_vtiming_out_VSYNC -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b0 [get_hw_probes design_1_i/v_tc_0_vtiming_out_VSYNC -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes design_1_i/v_tc_0_vtiming_out_VSYNC -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes design_1_i/v_axi4s_vid_out_0/inst/vtg_ce -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes design_1_i/v_axi4s_vid_out_0/inst/vtg_ce -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+set_property TRIGGER_COMPARE_VALUE eq1'b0 [get_hw_probes design_1_i/v_tc_0_vtiming_out_ACTIVE_VIDEO -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes design_1_i/v_tc_0_vtiming_out_ACTIVE_VIDEO -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes design_1_i/v_tc_0_vtiming_out_ACTIVE_VIDEO -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes Vsync_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+set_property TRIGGER_COMPARE_VALUE eq1'b0 [get_hw_probes Vsync_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes Vsync_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes Vsync_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes design_1_i/v_axi4s_vid_out_0/inst/vtg_ce -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a35t_0] -filter {CELL_NAME=~"u_ila_0"}]
+save_wave_config {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+save_wave_config {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wcfg}
+open_project /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/synth_test/synth_test.xpr
+current_project video_test
+close_project
+update_compile_order -fileset sources_1
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/synth_test/synth_test.srcs/sources_1/bd/design_1/design_1.bd}
+close_project
+open_project /home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/video_ip/video_ip.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video_ip/vivado/video_ip/video_ip.srcs/sources_1/bd/design_1/design_1.bd}
+close_project
+open_project /home/trevor/mylab/experiments/20180203-tmc-video/vivado/video.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/trevor/mylab/experiments/20180203-tmc-video/vivado/video.srcs/sources_1/bd/system/system.bd}
+close_project
+open_project /home/trevor/mylab/experiments/20180204-tmc-video/vivado/video_from_digip.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/trevor/mylab/experiments/20180204-tmc-video/vivado/video_from_digip.srcs/sources_1/bd/system/system.bd}
+close_project
+open_project /home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/trevor/mylab/experiments/20180210-tmc-video_test/vivado/video_test/video_test.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+set_property -dict [list CONFIG.C_VTG_MASTER_SLAVE {1}] [get_bd_cells v_axi4s_vid_out_0]
+endgroup
