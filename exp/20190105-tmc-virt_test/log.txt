@@ -1,0 +1,30 @@
+# setup KVM on suse
+# prep for kubernetes
+
+# install KVM host on openSuse15
+docs = https://doc.opensuse.org/documentation/leap/virtualization/book.virt_color_en.pdf
+
+# install test guest VM to confirm KVM works
+virt-install --location  "http://download.opensuse.org/pub/opensuse/distribution/leap/15.0/repo/oss"  --extra-args="console=ttyS0 textmode=1" --name "Leap15" --memory 2048 --virt-type kvm  --connect qemu:///system --disk size=10 --graphics none
+
+# setup HD as 200MiB boot, rest root
+# works.  CTRL-SHIFT+] to exit
+
+#install kvm2 drivers for minikube
+docker-machine-driver-kvm2
+
+https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#kvm2-driver
+
+#install minicube
+
+URL = https://github.com/kubernetes/minikube
+
+# setup security
+
+URL = https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
+
+# setup Kubernetes cluster on KVM
+URL = https://blog.alexellis.io/kvm-kubernetes-primer/
+
+
+
