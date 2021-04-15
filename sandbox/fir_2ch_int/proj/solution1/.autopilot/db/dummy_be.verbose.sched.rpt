@@ -1,0 +1,141 @@
+
+
+================================================================
+== Vivado HLS Report for 'dummy_be'
+================================================================
+* Date:           Thu Apr 15 12:40:55 2021
+
+* Version:        2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)
+* Project:        proj
+* Solution:       solution1
+* Product family: kintex7
+* Target device:  xc7k160t-fbg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 4.00 ns | 3.500 ns |   0.50 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     5001|     5001| 20.004 us | 20.004 us |  5001|  5001|   none  |
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |     5000|     5000|         2|          -|          -|  2500|    no    |
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.06>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i40* %in_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 4 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i40* %dout_q_V, [8 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 5 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i40* %dout_i_V, [8 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 6 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.06ns)   --->   "br label %1" [fir_2ch_int.cpp:149]   --->   Operation 7 'br' <Predicate = true> <Delay = 1.06>
+
+State 2 <SV = 1> <Delay = 1.75>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%i_0 = phi i12 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 8 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (1.36ns)   --->   "%icmp_ln149 = icmp eq i12 %i_0, -1596" [fir_2ch_int.cpp:149]   --->   Operation 9 'icmp' 'icmp_ln149' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2500, i64 2500, i64 2500)"   --->   Operation 10 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (1.44ns)   --->   "%i = add i12 %i_0, 1" [fir_2ch_int.cpp:149]   --->   Operation 11 'add' 'i' <Predicate = true> <Delay = 1.44> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "br i1 %icmp_ln149, label %3, label %2" [fir_2ch_int.cpp:149]   --->   Operation 12 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (1.75ns)   --->   "%in_V_read = call i40 @_ssdm_op_Read.ap_fifo.volatile.i40P(i40* %in_V)" [fir_2ch_int.cpp:151]   --->   Operation 13 'read' 'in_V_read' <Predicate = (!icmp_ln149)> <Delay = 1.75> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.81> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 40> <Depth = 1> <FIFO>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "ret void" [fir_2ch_int.cpp:154]   --->   Operation 14 'ret' <Predicate = (icmp_ln149)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 3.50>
+ST_3 : Operation 15 [1/1] (1.75ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i40P(i40* %dout_i_V, i40 %in_V_read)" [fir_2ch_int.cpp:151]   --->   Operation 15 'write' <Predicate = true> <Delay = 1.75> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.81> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 40> <Depth = 1> <FIFO>
+ST_3 : Operation 16 [1/1] (1.75ns)   --->   "%in_V_read_1 = call i40 @_ssdm_op_Read.ap_fifo.volatile.i40P(i40* %in_V)" [fir_2ch_int.cpp:152]   --->   Operation 16 'read' 'in_V_read_1' <Predicate = true> <Delay = 1.75> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.81> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 40> <Depth = 1> <FIFO>
+ST_3 : Operation 17 [1/1] (1.75ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i40P(i40* %dout_q_V, i40 %in_V_read_1)" [fir_2ch_int.cpp:152]   --->   Operation 17 'write' <Predicate = true> <Delay = 1.75> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.81> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 40> <Depth = 1> <FIFO>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "br label %1" [fir_2ch_int.cpp:149]   --->   Operation 18 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 1.06ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', fir_2ch_int.cpp:149) [9]  (1.06 ns)
+
+ <State 2>: 1.75ns
+The critical path consists of the following:
+	fifo read on port 'in_V' (fir_2ch_int.cpp:151) [15]  (1.75 ns)
+
+ <State 3>: 3.5ns
+The critical path consists of the following:
+	fifo read on port 'in_V' (fir_2ch_int.cpp:152) [17]  (1.75 ns)
+	fifo write on port 'dout_q_V' (fir_2ch_int.cpp:152) [18]  (1.75 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

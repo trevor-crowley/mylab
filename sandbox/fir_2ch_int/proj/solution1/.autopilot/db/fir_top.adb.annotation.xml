@@ -1,0 +1,9 @@
+<annotationInfo>
+<item  id="10" filename="fir_2ch_int.cpp" linenumber="140" name="icmp_ln140" contextFuncName="dummy_fe" moduleName="dummy_fe" rtlName="icmp_ln140_fu_65_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="13" fileDirectory="/home/trevor/dev/mylab/sandbox/fir_2ch_int"&gt;&lt;\/item&gt;
+<item  id="12" filename="fir_2ch_int.cpp" linenumber="140" name="i" contextFuncName="dummy_fe" moduleName="dummy_fe" rtlName="i_fu_71_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="19" fileDirectory="/home/trevor/dev/mylab/sandbox/fir_2ch_int"&gt;&lt;\/item&gt;
+<item  id="10" filename="fir_2ch_int.cpp" linenumber="149" name="icmp_ln149" contextFuncName="dummy_be" moduleName="dummy_be" rtlName="icmp_ln149_fu_66_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="13" fileDirectory="/home/trevor/dev/mylab/sandbox/fir_2ch_int"&gt;&lt;\/item&gt;
+<item  id="12" filename="fir_2ch_int.cpp" linenumber="149" name="i" contextFuncName="dummy_be" moduleName="dummy_be" rtlName="i_fu_72_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="19" fileDirectory="/home/trevor/dev/mylab/sandbox/fir_2ch_int"&gt;&lt;\/item&gt;
+<item  id="21" filename="fir_2ch_int.cpp" linenumber="164" name="_ln164" contextFuncName="fir_top" moduleName="fir_top" rtlName="dummy_fe_U0" latency="1" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/trevor/dev/mylab/sandbox/fir_2ch_int"><\/item>
+<item  id="24" filename="fir_2ch_int.cpp" linenumber="165" name="_ln165" contextFuncName="fir_top" moduleName="fir_top" rtlName="run_U0" latency="1" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/trevor/dev/mylab/sandbox/fir_2ch_int"><\/item>
+<item  id="27" filename="fir_2ch_int.cpp" linenumber="166" name="_ln166" contextFuncName="fir_top" moduleName="fir_top" rtlName="dummy_be_U0" latency="1" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/trevor/dev/mylab/sandbox/fir_2ch_int"><\/item>
+</annotationInfo>

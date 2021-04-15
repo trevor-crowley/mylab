@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/trevor/dev/mylab/sandbox/fir_2ch_int/proj/solution1/./sim/autowrap/testbench/fir_2ch_int.cpp_pre.cpp.tb.cpp

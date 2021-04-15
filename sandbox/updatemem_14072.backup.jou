@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# updatemem v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# 
+# Start of session at: Sun Apr 11 18:09:55 2021
+# Process ID: 14072
+# Current directory: /home/trevor/dev/mylab/sandbox
+# Command line: updatemem -mode batch -source /opt/Xilinx/Vitis/Vitis/2020.1/scripts/updatemem/main.tcl -notrace -tclargs -meminfo /home/trevor/workspace/hello/_ide/bitstream/project4_platform.mmi -data /opt/Xilinx/Vitis/Vitis/2020.1/data/embeddedsw/lib/microblaze/mb_bootloop_le.elf -proc design_1_i/microblaze_0 -bit /home/trevor/workspace/hello/_ide/bitstream/project4_platform.bit -out /home/trevor/workspace/hello/_ide/bitstream/download.bit -force
+# Log file: /home/trevor/dev/mylab/sandbox/updatemem.log
+# Journal file: /home/trevor/dev/mylab/sandbox/updatemem.jou
+#-----------------------------------------------------------
+source /opt/Xilinx/Vitis/Vitis/2020.1/scripts/updatemem/main.tcl -notrace
