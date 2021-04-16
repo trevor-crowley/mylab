@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Feb  9 13:55:14 2020
+# Process ID: 5445
+# Current directory: /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution1_base/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/video_mandelbrot_generator/xsim_script.tcl}
+# Log file: /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution1_base/sim/verilog/xsim.log
+# Journal file: /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution1_base/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/video_mandelbrot_generator/xsim_script.tcl
+source video_mandelbrot_generator.tcl

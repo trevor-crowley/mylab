@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;src/cpp/video_mandelbrot_generator.cpp&apos; ..."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from src/cpp/video_mandelbrot_generator.cpp:1:
+src/cpp/video_mandelbrot_generator.h:4:11: fatal error: &apos;hls_video.h&apos; file not found
+        #include &lt;hls_video.h&gt;
+                 ^
+1 error generated."/>
+</Messages>

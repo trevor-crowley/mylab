@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Feb 16 12:17:51 2020
+# Process ID: 18823
+# Current directory: /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution6_test/sim/verilog
+# Command line: vivado -source open_wave.tcl
+# Log file: /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution6_test/sim/verilog/vivado.log
+# Journal file: /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution6_test/sim/verilog/vivado.jou
+#-----------------------------------------------------------
+start_gui
+source open_wave.tcl
+open_wave_config /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution6_test/sim/verilog/video_mandelbrot_generator.wcfg
+close_sim

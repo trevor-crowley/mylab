@@ -1,0 +1,6 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../proj_1.ip_user_files/bd/AXI4S_bd/ip/AXI4S_bd_v_tc_0_0/sim/AXI4S_bd_v_tc_0_0.vhd" \
+
+# Do not sort compile order
+nosort

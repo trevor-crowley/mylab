@@ -1,0 +1,11 @@
+sv work "glbl.v"
+sv xil_defaultlib "video_pattern_generator.autotb.v"
+sv xil_defaultlib "AESL_autofifo_m_axis_video_V_data_V.v"
+sv xil_defaultlib "AESL_autofifo_m_axis_video_V_keep_V.v"
+sv xil_defaultlib "AESL_autofifo_m_axis_video_V_strb_V.v"
+sv xil_defaultlib "AESL_autofifo_m_axis_video_V_user_V.v"
+sv xil_defaultlib "AESL_autofifo_m_axis_video_V_last_V.v"
+sv xil_defaultlib "AESL_autofifo_m_axis_video_V_id_V.v"
+sv xil_defaultlib "AESL_autofifo_m_axis_video_V_dest_V.v"
+sv xil_defaultlib "video_pattern_generator.v"
+

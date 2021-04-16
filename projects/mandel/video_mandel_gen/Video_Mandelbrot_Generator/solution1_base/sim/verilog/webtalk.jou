@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Feb  9 13:55:21 2020
+# Process ID: 5509
+# Current directory: /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution1_base/sim/verilog
+# Command line: wbtcv -mode batch -source /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution1_base/sim/verilog/xsim.dir/video_mandelbrot_generator/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution1_base/sim/verilog/webtalk.log
+# Journal file: /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution1_base/sim/verilog/webtalk.jou
+#-----------------------------------------------------------
+source /home/trevor/dev/myelect/video_mandel_gen/Video_Mandelbrot_Generator/solution1_base/sim/verilog/xsim.dir/video_mandelbrot_generator/webtalk/xsim_webtalk.tcl -notrace

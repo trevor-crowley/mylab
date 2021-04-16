@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Feb 16 14:28:34 2020
+# Process ID: 610
+# Current directory: /home/trevor/dev/myelect/video_mandel_gen/proj_1/proj_1.runs/mandel_bd_video_mandelbrot_gen_0_0_synth_1
+# Command line: vivado -log mandel_bd_video_mandelbrot_gen_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mandel_bd_video_mandelbrot_gen_0_0.tcl
+# Log file: /home/trevor/dev/myelect/video_mandel_gen/proj_1/proj_1.runs/mandel_bd_video_mandelbrot_gen_0_0_synth_1/mandel_bd_video_mandelbrot_gen_0_0.vds
+# Journal file: /home/trevor/dev/myelect/video_mandel_gen/proj_1/proj_1.runs/mandel_bd_video_mandelbrot_gen_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source mandel_bd_video_mandelbrot_gen_0_0.tcl -notrace

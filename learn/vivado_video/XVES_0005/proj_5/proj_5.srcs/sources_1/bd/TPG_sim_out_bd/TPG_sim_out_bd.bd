@@ -1,0 +1,188 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x3C79952D43002EA6",
+      "device": "xc7z020clg484-1",
+      "name": "TPG_sim_out_bd",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "axi_vip_0": "",
+      "v_tpg_0": ""
+    },
+    "ports": {
+      "aclk_50MHz": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "aresetn_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "TPG_sim_out_bd_aclk_50MHz",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "50000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "aresetn_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "tpg_tdata": {
+        "direction": "O",
+        "left": "23",
+        "right": "0"
+      },
+      "tpg_tlast": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "tpg_tready": {
+        "direction": "I"
+      },
+      "tpg_tuser": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "tpg_tvalid": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "axi_vip_0": {
+        "vlnv": "xilinx.com:ip:axi_vip:1.1",
+        "xci_name": "TPG_sim_out_bd_axi_vip_0_0",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "12"
+          },
+          "DATA_WIDTH": {
+            "value": "32"
+          },
+          "HAS_BRESP": {
+            "value": "1"
+          },
+          "HAS_PROT": {
+            "value": "1"
+          },
+          "HAS_RRESP": {
+            "value": "1"
+          },
+          "HAS_WSTRB": {
+            "value": "1"
+          },
+          "INTERFACE_MODE": {
+            "value": "MASTER"
+          },
+          "PROTOCOL": {
+            "value": "AXI4LITE"
+          },
+          "READ_WRITE_MODE": {
+            "value": "READ_WRITE"
+          }
+        }
+      },
+      "v_tpg_0": {
+        "vlnv": "xilinx.com:ip:v_tpg:8.0",
+        "xci_name": "TPG_sim_out_bd_v_tpg_0_0"
+      }
+    },
+    "interface_nets": {
+      "axi_vip_0_M_AXI": {
+        "interface_ports": [
+          "axi_vip_0/M_AXI",
+          "v_tpg_0/s_axi_CTRL"
+        ]
+      }
+    },
+    "nets": {
+      "aclk_0_1": {
+        "ports": [
+          "aclk_50MHz",
+          "axi_vip_0/aclk",
+          "v_tpg_0/ap_clk"
+        ]
+      },
+      "aresetn_0_1": {
+        "ports": [
+          "aresetn_0",
+          "axi_vip_0/aresetn",
+          "v_tpg_0/ap_rst_n"
+        ]
+      },
+      "tready_1": {
+        "ports": [
+          "tpg_tready",
+          "v_tpg_0/m_axis_video_TREADY"
+        ]
+      },
+      "v_tpg_0_m_axis_video_TDATA": {
+        "ports": [
+          "v_tpg_0/m_axis_video_TDATA",
+          "tpg_tdata"
+        ]
+      },
+      "v_tpg_0_m_axis_video_TLAST": {
+        "ports": [
+          "v_tpg_0/m_axis_video_TLAST",
+          "tpg_tlast"
+        ]
+      },
+      "v_tpg_0_m_axis_video_TUSER": {
+        "ports": [
+          "v_tpg_0/m_axis_video_TUSER",
+          "tpg_tuser"
+        ]
+      },
+      "v_tpg_0_m_axis_video_TVALID": {
+        "ports": [
+          "v_tpg_0/m_axis_video_TVALID",
+          "tpg_tvalid"
+        ]
+      }
+    },
+    "addressing": {
+      "/axi_vip_0": {
+        "address_spaces": {
+          "Master_AXI": {
+            "range": "4K",
+            "width": "32",
+            "segments": {
+              "SEG_v_tpg_0_Reg": {
+                "address_block": "/v_tpg_0/s_axi_CTRL/Reg",
+                "offset": "0x000",
+                "range": "4K"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

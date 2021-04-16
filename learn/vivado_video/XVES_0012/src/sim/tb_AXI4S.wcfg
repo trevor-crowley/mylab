@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_AXI4S_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_vip_pkg" />
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="std" />
+            <top_module name="tb_AXI4S" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="416075253256152fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="172"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject type="divider" fp_name="divider20">
+      <obj_property name="label">TPG AXI4-Stream Output</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_tpg_0/m_axis_video_TVALID" type="logic">
+      <obj_property name="ElementShortName">m_axis_video_TVALID</obj_property>
+      <obj_property name="ObjectShortName">m_axis_video_TVALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_tpg_0/m_axis_video_TREADY" type="logic">
+      <obj_property name="ElementShortName">m_axis_video_TREADY</obj_property>
+      <obj_property name="ObjectShortName">m_axis_video_TREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_tpg_0/m_axis_video_TDATA" type="array">
+      <obj_property name="ElementShortName">m_axis_video_TDATA[23:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_video_TDATA[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_tpg_0/m_axis_video_TKEEP" type="array">
+      <obj_property name="ElementShortName">m_axis_video_TKEEP[2:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_video_TKEEP[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_tpg_0/m_axis_video_TSTRB" type="array">
+      <obj_property name="ElementShortName">m_axis_video_TSTRB[2:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_video_TSTRB[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_tpg_0/m_axis_video_TUSER" type="array">
+      <obj_property name="ElementShortName">m_axis_video_TUSER[0:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_video_TUSER[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_tpg_0/m_axis_video_TLAST" type="array">
+      <obj_property name="ElementShortName">m_axis_video_TLAST[0:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_video_TLAST[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_tpg_0/m_axis_video_TID" type="array">
+      <obj_property name="ElementShortName">m_axis_video_TID[0:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_video_TID[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_tpg_0/m_axis_video_TDEST" type="array">
+      <obj_property name="ElementShortName">m_axis_video_TDEST[0:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_video_TDEST[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider38">
+      <obj_property name="label">AXI4S to Video Out input</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_axi4s_vid_out_0/s_axis_video_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_video_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_video_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_axi4s_vid_out_0/s_axis_video_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_video_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_video_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_axi4s_vid_out_0/s_axis_video_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_video_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_video_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_axi4s_vid_out_0/s_axis_video_tuser" type="logic">
+      <obj_property name="ElementShortName">s_axis_video_tuser</obj_property>
+      <obj_property name="ObjectShortName">s_axis_video_tuser</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4S/UUT/AXI4S_bd_i/v_axi4s_vid_out_0/s_axis_video_tlast" type="logic">
+      <obj_property name="ElementShortName">s_axis_video_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_video_tlast</obj_property>
+   </wvobject>
+</wave_config>

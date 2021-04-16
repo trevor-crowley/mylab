@@ -1,0 +1,16 @@
+video_mandelbrot_generator_mul_mul_17ns_7ns_24_1_1
+video_mandelbrot_generator_mul_mul_18s_18s_36_1_1
+video_mandelbrot_generator_mul_mul_19s_19s_38_1_1
+fifo_w18_d2_A
+fifo_w18_d2_A
+fifo_w18_d2_A
+fifo_w8_d2_A
+fifo_w8_d2_A
+fifo_w8_d2_A
+start_for_Loop_out_proc28_U0
+start_for_Mat2AXIvideo_U0
+video_mandelbrot_generator_cmd_s_axi
+video_mandelbrot_gen_1
+Loop_out_proc28
+Mat2AXIvideo
+video_mandelbrot_generator

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_VTC_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="tb_VTC" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="14400000000000fs"></ZoomStartTime>
+      <ZoomEndTime time="18360000000001fs"></ZoomEndTime>
+      <Cursor1Time time="16000000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="156"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/tb_VTC/clk_25_175MHz" type="logic">
+      <obj_property name="ElementShortName">clk_25_175MHz</obj_property>
+      <obj_property name="ObjectShortName">clk_25_175MHz</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_VTC/active_video_out" type="logic">
+      <obj_property name="ElementShortName">active_video_out</obj_property>
+      <obj_property name="ObjectShortName">active_video_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_VTC/hsync_out" type="logic">
+      <obj_property name="ElementShortName">hsync_out</obj_property>
+      <obj_property name="ObjectShortName">hsync_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_VTC/vsync_out" type="logic">
+      <obj_property name="ElementShortName">vsync_out</obj_property>
+      <obj_property name="ObjectShortName">vsync_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_VTC/hblank_out" type="logic">
+      <obj_property name="ElementShortName">hblank_out</obj_property>
+      <obj_property name="ObjectShortName">hblank_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_VTC/vblank_out" type="logic">
+      <obj_property name="ElementShortName">vblank_out</obj_property>
+      <obj_property name="ObjectShortName">vblank_out</obj_property>
+   </wvobject>
+</wave_config>

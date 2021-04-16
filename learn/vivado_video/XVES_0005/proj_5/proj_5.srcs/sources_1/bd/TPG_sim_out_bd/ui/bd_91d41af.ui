@@ -1,0 +1,26 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port aclk_50MHz -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
+preplace port aresetn_0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port tpg_tready -pg 1 -lvl 0 -x 0 -y 250 -defaultsOSRD
+preplace port tpg_tvalid -pg 1 -lvl 3 -x 640 -y 150 -defaultsOSRD
+preplace portBus tpg_tdata -pg 1 -lvl 3 -x 640 -y 70 -defaultsOSRD
+preplace portBus tpg_tlast -pg 1 -lvl 3 -x 640 -y 90 -defaultsOSRD
+preplace portBus tpg_tuser -pg 1 -lvl 3 -x 640 -y 130 -defaultsOSRD
+preplace inst axi_vip_0 -pg 1 -lvl 1 -x 120 -y 90 -defaultsOSRD
+preplace inst v_tpg_0 -pg 1 -lvl 2 -x 420 -y 120 -defaultsOSRD
+preplace netloc aclk_0_1 1 0 2 20 20 220J
+preplace netloc aresetn_0_1 1 0 2 20 160 220J
+preplace netloc tready_1 1 0 3 NJ 250 NJ 250 620
+preplace netloc v_tpg_0_m_axis_video_TDATA 1 2 1 NJ 70
+preplace netloc v_tpg_0_m_axis_video_TLAST 1 2 1 NJ 90
+preplace netloc v_tpg_0_m_axis_video_TUSER 1 2 1 NJ 130
+preplace netloc v_tpg_0_m_axis_video_TVALID 1 2 1 NJ 150
+preplace netloc axi_vip_0_M_AXI 1 1 1 N 90
+levelinfo -pg 1 0 120 420 640
+pagesize -pg 1 -db -bbox -sgen -130 0 790 270
+"
+}
+

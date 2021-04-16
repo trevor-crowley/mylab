@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Jan 26 14:15:38 2020
+# Process ID: 22665
+# Current directory: /home/trevor/dev/myelect/vivado_video/XVES_0014/Video_Pattern_Generator/solution1/sim/verilog
+# Command line: wbtcv -mode batch -source /home/trevor/dev/myelect/vivado_video/XVES_0014/Video_Pattern_Generator/solution1/sim/verilog/xsim.dir/video_pattern_generator/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/trevor/dev/myelect/vivado_video/XVES_0014/Video_Pattern_Generator/solution1/sim/verilog/webtalk.log
+# Journal file: /home/trevor/dev/myelect/vivado_video/XVES_0014/Video_Pattern_Generator/solution1/sim/verilog/webtalk.jou
+#-----------------------------------------------------------
+source /home/trevor/dev/myelect/vivado_video/XVES_0014/Video_Pattern_Generator/solution1/sim/verilog/xsim.dir/video_pattern_generator/webtalk/xsim_webtalk.tcl -notrace

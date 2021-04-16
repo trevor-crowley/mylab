@@ -1,0 +1,26 @@
+function T = mandel_type(dt)
+switch (dt)
+    case 'double'
+        T.x = double([]);
+        T.y = double([]);
+    case 'single'
+        T.x = single([]);
+        T.y = single([]);
+
+    case 'fixed'
+        F = fimath('RoundingMethod', 'Floor', ...
+            'OverflowAction', 'Saturate', ...
+            'ProductMode', 'SpecifyPrecision', ...
+            'ProductWordLength', 48, ...
+            'ProductFractionLength', 45, ...
+            'SumMode', 'SpecifyPrecision', ...
+            'SumWordLength', 48, ...
+            'SumFractionLength', 45, ...
+            'CastBeforeSum', true);
+        T.x = fi([], 1, 18, 15, F);
+        T.y = fi([], 1, 18, 15, F);
+    case 'scaled'
+        T.x = fi([], 1, 23, 20, 'DataType', 'ScaledDouble');
+        T.y = fi([], 1, 18, 15, 'DataType', 'ScaledDouble');
+       
+end

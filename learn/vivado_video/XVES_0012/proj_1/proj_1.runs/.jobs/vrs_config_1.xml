@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="AXI4S_bd_axi_vip_0_0_synth_1" LaunchDir="/home/trevor/dev/myelect/vivado_video/XVES_0012/proj_1/proj_1.runs/AXI4S_bd_axi_vip_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="AXI4S_bd_v_axi4s_vid_out_0_0_synth_1" LaunchDir="/home/trevor/dev/myelect/vivado_video/XVES_0012/proj_1/proj_1.runs/AXI4S_bd_v_axi4s_vid_out_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="AXI4S_bd_v_tc_0_0_synth_1" LaunchDir="/home/trevor/dev/myelect/vivado_video/XVES_0012/proj_1/proj_1.runs/AXI4S_bd_v_tc_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="AXI4S_bd_v_tpg_0_0_synth_1" LaunchDir="/home/trevor/dev/myelect/vivado_video/XVES_0012/proj_1/proj_1.runs/AXI4S_bd_v_tpg_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

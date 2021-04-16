@@ -1,0 +1,1066 @@
+
+
+================================================================
+== Vivado HLS Report for 'video_mandelbrot_generator'
+================================================================
+* Date:           Sun Feb 16 09:36:30 2020
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        Video_Mandelbrot_Generator
+* Solution:       solution5_partial_pipeline
+* Product family: artix7
+* Target device:  xc7a35t-cpg236-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.666|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+-----------+---------+-----------+----------+
+    |       Latency       |       Interval      | Pipeline |
+    |   min   |    max    |   min   |    max    |   Type   |
+    +---------+-----------+---------+-----------+----------+
+    |  6240002|  615840002|  6240002|  615840002| dataflow |
+    +---------+-----------+---------+-----------+----------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------+------------------------+---------+-----------+---------+-----------+---------+
+        |                           |                        |       Latency       |       Interval      | Pipeline|
+        |          Instance         |         Module         |   min   |    max    |   min   |    max    |   Type  |
+        +---------------------------+------------------------+---------+-----------+---------+-----------+---------+
+        |Loop_out_proc28_U0         |Loop_out_proc28         |  6240001|  615840001|  6240001|  615840001|   none  |
+        |Mat2AXIvideo_U0            |Mat2AXIvideo            |        1|     482401|        1|     482401|   none  |
+        |video_mandelbrot_gen_1_U0  |video_mandelbrot_gen_1  |        0|          0|        0|          0|   none  |
+        +---------------------------+------------------------+---------+-----------+---------+-----------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+-------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF  |  LUT  | URAM|
++-----------------+---------+-------+-------+-------+-----+
+|DSP              |        -|      -|      -|      -|    -|
+|Expression       |        -|      -|      0|      2|    -|
+|FIFO             |        0|      -|     30|    138|    -|
+|Instance         |        0|      6|   1245|   2904|    -|
+|Memory           |        -|      -|      -|      -|    -|
+|Multiplexer      |        -|      -|      -|      -|    -|
+|Register         |        -|      -|      -|      -|    -|
++-----------------+---------+-------+-------+-------+-----+
+|Total            |        0|      6|   1275|   3044|    0|
++-----------------+---------+-------+-------+-------+-----+
+|Available        |      100|     90|  41600|  20800|    0|
++-----------------+---------+-------+-------+-------+-----+
+|Utilization (%)  |        0|      6|      3|     14|    0|
++-----------------+---------+-------+-------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------------+--------------------------------------+---------+-------+------+------+-----+
+    |                Instance                |                Module                | BRAM_18K| DSP48E|  FF  |  LUT | URAM|
+    +----------------------------------------+--------------------------------------+---------+-------+------+------+-----+
+    |Loop_out_proc28_U0                      |Loop_out_proc28                       |        0|      6|  1016|  2325|    0|
+    |Mat2AXIvideo_U0                         |Mat2AXIvideo                          |        0|      0|   118|   384|    0|
+    |video_mandelbrot_gen_1_U0               |video_mandelbrot_gen_1                |        0|      0|     3|    47|    0|
+    |video_mandelbrot_generator_cmd_s_axi_U  |video_mandelbrot_generator_cmd_s_axi  |        0|      0|   108|   148|    0|
+    +----------------------------------------+--------------------------------------+---------+-------+------+------+-----+
+    |Total                                   |                                      |        0|      6|  1245|  2904|    0|
+    +----------------------------------------+--------------------------------------+---------+-------+------+------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +-------------------------+---------+---+----+-----+------+-----+---------+
+    |           Name          | BRAM_18K| FF| LUT| URAM| Depth| Bits| Size:D*B|
+    +-------------------------+---------+---+----+-----+------+-----+---------+
+    |im_V_c_U                 |        0|  5|   0|    -|     2|   18|       36|
+    |img_0_data_stream_V_1_U  |        0|  5|   0|    -|     2|    8|       16|
+    |img_0_data_stream_V_2_U  |        0|  5|   0|    -|     2|    8|       16|
+    |img_0_data_stream_V_s_U  |        0|  5|   0|    -|     2|    8|       16|
+    |re_V_c_U                 |        0|  5|   0|    -|     2|   18|       36|
+    |zoom_factor_V_c_U        |        0|  5|   0|    -|     2|   18|       36|
+    +-------------------------+---------+---+----+-----+------+-----+---------+
+    |Total                    |        0| 30|   0|    0|    12|   78|      156|
+    +-------------------------+---------+---+----+-----+------+-----+---------+
+
+    * Expression: 
+    +--------------+----------+-------+---+----+------------+------------+
+    | Variable Name| Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------+----------+-------+---+----+------------+------------+
+    |ap_idle       |    and   |      0|  0|   2|           1|           1|
+    +--------------+----------+-------+---+----+------------+------------+
+    |Total         |          |      0|  0|   2|           1|           1|
+    +--------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+----------------------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  |        Source Object       |    C Type    |
++---------------------+-----+-----+------------+----------------------------+--------------+
+|s_axi_cmd_AWVALID    |  in |    1|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_AWREADY    | out |    1|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_AWADDR     |  in |    6|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_WVALID     |  in |    1|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_WREADY     | out |    1|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_WDATA      |  in |   32|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_WSTRB      |  in |    4|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_ARVALID    |  in |    1|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_ARREADY    | out |    1|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_ARADDR     |  in |    6|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_RVALID     | out |    1|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_RREADY     |  in |    1|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_RDATA      | out |   32|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_RRESP      | out |    2|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_BVALID     | out |    1|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_BREADY     |  in |    1|    s_axi   |             cmd            |    scalar    |
+|s_axi_cmd_BRESP      | out |    2|    s_axi   |             cmd            |    scalar    |
+|ap_clk               |  in |    1| ap_ctrl_hs | video_mandelbrot_generator | return value |
+|ap_rst_n             |  in |    1| ap_ctrl_hs | video_mandelbrot_generator | return value |
+|interrupt            | out |    1| ap_ctrl_hs | video_mandelbrot_generator | return value |
+|m_axis_video_TDATA   | out |   24|    axis    |    m_axis_video_V_data_V   |    pointer   |
+|m_axis_video_TKEEP   | out |    3|    axis    |    m_axis_video_V_keep_V   |    pointer   |
+|m_axis_video_TSTRB   | out |    3|    axis    |    m_axis_video_V_strb_V   |    pointer   |
+|m_axis_video_TUSER   | out |    1|    axis    |    m_axis_video_V_user_V   |    pointer   |
+|m_axis_video_TLAST   | out |    1|    axis    |    m_axis_video_V_last_V   |    pointer   |
+|m_axis_video_TID     | out |    1|    axis    |     m_axis_video_V_id_V    |    pointer   |
+|m_axis_video_TDEST   | out |    1|    axis    |    m_axis_video_V_dest_V   |    pointer   |
+|m_axis_video_TVALID  | out |    1|    axis    |    m_axis_video_V_dest_V   |    pointer   |
+|m_axis_video_TREADY  |  in |    1|    axis    |    m_axis_video_V_dest_V   |    pointer   |
++---------------------+-----+-----+------------+----------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 6, States = { 1 2 3 4 5 6 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.90>
+ST_1 : Operation 7 [1/1] (1.00ns)   --->   "%zoom_factor_V_read = call i18 @_ssdm_op_Read.s_axilite.i18(i18 %zoom_factor_V)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 7 'read' 'zoom_factor_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 8 [1/1] (1.00ns)   --->   "%im_V_read = call i18 @_ssdm_op_Read.s_axilite.i18(i18 %im_V)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 8 'read' 'im_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 9 [1/1] (1.00ns)   --->   "%re_V_read = call i18 @_ssdm_op_Read.s_axilite.i18(i18 %re_V)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 9 'read' 're_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%zoom_factor_V_c = alloca i18, align 4" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 10 'alloca' 'zoom_factor_V_c' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%im_V_c = alloca i18, align 4" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 11 'alloca' 'im_V_c' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%re_V_c = alloca i18, align 4" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 12 'alloca' 're_V_c' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_1 : Operation 13 [1/1] (3.90ns)   --->   "call void @video_mandelbrot_gen.1(i18 %re_V_read, i18 %im_V_read, i18 %zoom_factor_V_read, i18* %re_V_c, i18* %im_V_c, i18* %zoom_factor_V_c)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 13 'call' <Predicate = true> <Delay = 3.90> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 14 [2/2] (0.00ns)   --->   "call fastcc void @Loop_out_proc28(i18* nocapture %im_V_c, i18* nocapture %re_V_c, i18* nocapture %zoom_factor_V_c)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 14 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 15 [1/2] (0.00ns)   --->   "call fastcc void @Loop_out_proc28(i18* nocapture %im_V_c, i18* nocapture %re_V_c, i18* nocapture %zoom_factor_V_c)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 15 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 16 [2/2] (0.00ns)   --->   "call fastcc void @Mat2AXIvideo(i24* %m_axis_video_V_data_V, i3* %m_axis_video_V_keep_V, i3* %m_axis_video_V_strb_V, i1* %m_axis_video_V_user_V, i1* %m_axis_video_V_last_V, i1* %m_axis_video_V_id_V, i1* %m_axis_video_V_dest_V)" [src/cpp/video_mandelbrot_generator.cpp:71]   --->   Operation 16 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 17 [1/2] (0.00ns)   --->   "call fastcc void @Mat2AXIvideo(i24* %m_axis_video_V_data_V, i3* %m_axis_video_V_keep_V, i3* %m_axis_video_V_strb_V, i1* %m_axis_video_V_user_V, i1* %m_axis_video_V_last_V, i1* %m_axis_video_V_id_V, i1* %m_axis_video_V_dest_V)" [src/cpp/video_mandelbrot_generator.cpp:71]   --->   Operation 17 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, i32 0, [1 x i8]* @p_str) nounwind" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 18 'specdataflowpipeline' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 19 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img_0_OC_data_stream_2, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i8* @img_0_data_stream_V_s, i8* @img_0_data_stream_V_s)"   --->   Operation 19 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @img_0_data_stream_V_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 20 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 21 [1/1] (0.00ns)   --->   "%empty_21 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img_0_OC_data_stream_1, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i8* @img_0_data_stream_V_1, i8* @img_0_data_stream_V_1)"   --->   Operation 21 'specchannel' 'empty_21' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @img_0_data_stream_V_1, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 22 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 23 [1/1] (0.00ns)   --->   "%empty_22 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img_0_OC_data_stream, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i8* @img_0_data_stream_V_2, i8* @img_0_data_stream_V_2)"   --->   Operation 23 'specchannel' 'empty_22' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @img_0_data_stream_V_2, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 24 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i24* %m_axis_video_V_data_V), !map !211"   --->   Operation 25 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %m_axis_video_V_keep_V), !map !215"   --->   Operation 26 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %m_axis_video_V_strb_V), !map !219"   --->   Operation 27 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %m_axis_video_V_user_V), !map !223"   --->   Operation 28 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %m_axis_video_V_last_V), !map !227"   --->   Operation 29 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %m_axis_video_V_id_V), !map !231"   --->   Operation 30 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %m_axis_video_V_dest_V), !map !235"   --->   Operation 31 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 32 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i18 %re_V), !map !239"   --->   Operation 32 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i18 %im_V), !map !245"   --->   Operation 33 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 34 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i18 %zoom_factor_V), !map !249"   --->   Operation 34 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([27 x i8]* @video_mandelbrot_gen) nounwind"   --->   Operation 35 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 36 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 37 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* %m_axis_video_V_data_V, i3* %m_axis_video_V_keep_V, i3* %m_axis_video_V_strb_V, i1* %m_axis_video_V_user_V, i1* %m_axis_video_V_last_V, i1* %m_axis_video_V_id_V, i1* %m_axis_video_V_dest_V, [5 x i8]* @p_str2, i32 1, i32 1, [5 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 37 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [4 x i8]* @p_str4, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [src/cpp/video_mandelbrot_generator.cpp:8]   --->   Operation 38 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i18 %re_V, [10 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [4 x i8]* @p_str4, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [src/cpp/video_mandelbrot_generator.cpp:9]   --->   Operation 39 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i18 %im_V, [10 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [4 x i8]* @p_str4, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [src/cpp/video_mandelbrot_generator.cpp:10]   --->   Operation 40 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i18 %zoom_factor_V, [10 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [4 x i8]* @p_str4, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [src/cpp/video_mandelbrot_generator.cpp:11]   --->   Operation 41 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore(i32* @img_0_rows_V, i32* @img_0_cols_V, i8* @img_0_data_stream_V_s, i8* @img_0_data_stream_V_1, i8* @img_0_data_stream_V_2, [1 x i8]* @p_str, [12 x i8]* @p_str5, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)" [src/cpp/video_mandelbrot_generator.cpp:14]   --->   Operation 42 'specmemcore' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 43 [1/1] (0.00ns)   --->   "%empty_23 = call i32 (...)* @_ssdm_op_SpecChannel([7 x i8]* @re_OC_V_c_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i18* %re_V_c, i18* %re_V_c)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 43 'specchannel' 'empty_23' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i18* %re_V_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 44 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "%empty_24 = call i32 (...)* @_ssdm_op_SpecChannel([7 x i8]* @im_OC_V_c_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i18* %im_V_c, i18* %im_V_c)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 45 'specchannel' 'empty_24' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i18* %im_V_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 46 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 47 [1/1] (0.00ns)   --->   "%empty_25 = call i32 (...)* @_ssdm_op_SpecChannel([16 x i8]* @zoom_factor_OC_V_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i18* %zoom_factor_V_c, i18* %zoom_factor_V_c)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 47 'specchannel' 'empty_25' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i18* %zoom_factor_V_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)" [src/cpp/video_mandelbrot_generator.cpp:7]   --->   Operation 48 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 49 [1/1] (0.00ns)   --->   "ret void" [src/cpp/video_mandelbrot_generator.cpp:73]   --->   Operation 49 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ m_axis_video_V_data_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=axis:ce=0
+Port [ m_axis_video_V_keep_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=axis:ce=0
+Port [ m_axis_video_V_strb_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=axis:ce=0
+Port [ m_axis_video_V_user_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=axis:ce=0
+Port [ m_axis_video_V_last_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=axis:ce=0
+Port [ m_axis_video_V_id_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=axis:ce=0
+Port [ m_axis_video_V_dest_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=axis:ce=0
+Port [ re_V]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ im_V]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ zoom_factor_V]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ img_0_data_stream_V_s]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ img_0_data_stream_V_1]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ img_0_data_stream_V_2]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ img_0_rows_V]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_none:ce=0
+Port [ img_0_cols_V]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_none:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+zoom_factor_V_read       (read                ) [ 0000000]
+im_V_read                (read                ) [ 0000000]
+re_V_read                (read                ) [ 0000000]
+zoom_factor_V_c          (alloca              ) [ 0111111]
+im_V_c                   (alloca              ) [ 0111111]
+re_V_c                   (alloca              ) [ 0111111]
+call_ln7                 (call                ) [ 0000000]
+call_ln7                 (call                ) [ 0000000]
+call_ln71                (call                ) [ 0000000]
+specdataflowpipeline_ln7 (specdataflowpipeline) [ 0000000]
+empty                    (specchannel         ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+empty_21                 (specchannel         ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+empty_22                 (specchannel         ) [ 0000000]
+specinterface_ln0        (specinterface       ) [ 0000000]
+specbitsmap_ln0          (specbitsmap         ) [ 0000000]
+specbitsmap_ln0          (specbitsmap         ) [ 0000000]
+specbitsmap_ln0          (specbitsmap         ) [ 0000000]
+specbitsmap_ln0          (specbitsmap         ) [ 0000000]
+specbitsmap_ln0          (specbitsmap         ) [ 0000000]
+specbitsmap_ln0          (specbitsmap         ) [ 0000000]
+specbitsmap_ln0          (specbitsmap         ) [ 0000000]
+specbitsmap_ln0          (specbitsmap         ) [ 0000000]
+specbitsmap_ln0          (specbitsmap         ) [ 0000000]
+specbitsmap_ln0          (specbitsmap         ) [ 0000000]
+spectopmodule_ln0        (spectopmodule       ) [ 0000000]
+specinterface_ln7        (specinterface       ) [ 0000000]
+specinterface_ln7        (specinterface       ) [ 0000000]
+specinterface_ln8        (specinterface       ) [ 0000000]
+specinterface_ln9        (specinterface       ) [ 0000000]
+specinterface_ln10       (specinterface       ) [ 0000000]
+specinterface_ln11       (specinterface       ) [ 0000000]
+specmemcore_ln14         (specmemcore         ) [ 0000000]
+empty_23                 (specchannel         ) [ 0000000]
+specinterface_ln7        (specinterface       ) [ 0000000]
+empty_24                 (specchannel         ) [ 0000000]
+specinterface_ln7        (specinterface       ) [ 0000000]
+empty_25                 (specchannel         ) [ 0000000]
+specinterface_ln7        (specinterface       ) [ 0000000]
+ret_ln73                 (ret                 ) [ 0000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="m_axis_video_V_data_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="m_axis_video_V_data_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="m_axis_video_V_keep_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="m_axis_video_V_keep_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="m_axis_video_V_strb_V">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="m_axis_video_V_strb_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="m_axis_video_V_user_V">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="m_axis_video_V_user_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="m_axis_video_V_last_V">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="m_axis_video_V_last_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="m_axis_video_V_id_V">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="m_axis_video_V_id_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="m_axis_video_V_dest_V">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="m_axis_video_V_dest_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="re_V">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="re_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="im_V">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="im_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="zoom_factor_V">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="zoom_factor_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="img_0_data_stream_V_s">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="img_0_data_stream_V_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="img_0_data_stream_V_1">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="img_0_data_stream_V_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="img_0_data_stream_V_2">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="img_0_data_stream_V_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="img_0_rows_V">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="img_0_rows_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1000" name="img_0_cols_V">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="img_0_cols_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.s_axilite.i18"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="video_mandelbrot_gen.1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Loop_out_proc28"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Mat2AXIvideo"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecChannel"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="img_0_OC_data_stream_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="img_0_OC_data_stream_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1001" name="const_64">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="img_0_OC_data_stream"/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1001" name="const_66">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1001" name="const_68">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1001" name="const_70">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="video_mandelbrot_gen"/></StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1001" name="const_72">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1001" name="const_74">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1001" name="const_76">
+<pin_list>
+<pin id="77" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="78" class="1001" name="const_78">
+<pin_list>
+<pin id="79" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="80" class="1001" name="const_80">
+<pin_list>
+<pin id="81" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecMemCore"/></StgValue>
+</bind>
+</comp>
+
+<comp id="82" class="1001" name="const_82">
+<pin_list>
+<pin id="83" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="84" class="1001" name="const_84">
+<pin_list>
+<pin id="85" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="re_OC_V_c_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="86" class="1001" name="const_86">
+<pin_list>
+<pin id="87" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="im_OC_V_c_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="88" class="1001" name="const_88">
+<pin_list>
+<pin id="89" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="zoom_factor_OC_V_c_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="90" class="1004" name="zoom_factor_V_c_fu_90">
+<pin_list>
+<pin id="91" dir="0" index="0" bw="1" slack="0"/>
+<pin id="92" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="zoom_factor_V_c/1 "/>
+</bind>
+</comp>
+
+<comp id="94" class="1004" name="im_V_c_fu_94">
+<pin_list>
+<pin id="95" dir="0" index="0" bw="1" slack="0"/>
+<pin id="96" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="im_V_c/1 "/>
+</bind>
+</comp>
+
+<comp id="98" class="1004" name="re_V_c_fu_98">
+<pin_list>
+<pin id="99" dir="0" index="0" bw="1" slack="0"/>
+<pin id="100" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="re_V_c/1 "/>
+</bind>
+</comp>
+
+<comp id="102" class="1004" name="zoom_factor_V_read_read_fu_102">
+<pin_list>
+<pin id="103" dir="0" index="0" bw="18" slack="0"/>
+<pin id="104" dir="0" index="1" bw="18" slack="0"/>
+<pin id="105" dir="1" index="2" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="zoom_factor_V_read/1 "/>
+</bind>
+</comp>
+
+<comp id="108" class="1004" name="im_V_read_read_fu_108">
+<pin_list>
+<pin id="109" dir="0" index="0" bw="18" slack="0"/>
+<pin id="110" dir="0" index="1" bw="18" slack="0"/>
+<pin id="111" dir="1" index="2" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="im_V_read/1 "/>
+</bind>
+</comp>
+
+<comp id="114" class="1004" name="re_V_read_read_fu_114">
+<pin_list>
+<pin id="115" dir="0" index="0" bw="18" slack="0"/>
+<pin id="116" dir="0" index="1" bw="18" slack="0"/>
+<pin id="117" dir="1" index="2" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="re_V_read/1 "/>
+</bind>
+</comp>
+
+<comp id="120" class="1004" name="grp_Loop_out_proc28_fu_120">
+<pin_list>
+<pin id="121" dir="0" index="0" bw="0" slack="0"/>
+<pin id="122" dir="0" index="1" bw="18" slack="1"/>
+<pin id="123" dir="0" index="2" bw="18" slack="1"/>
+<pin id="124" dir="0" index="3" bw="18" slack="1"/>
+<pin id="125" dir="0" index="4" bw="8" slack="0"/>
+<pin id="126" dir="0" index="5" bw="8" slack="0"/>
+<pin id="127" dir="0" index="6" bw="8" slack="0"/>
+<pin id="128" dir="1" index="7" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln7/2 "/>
+</bind>
+</comp>
+
+<comp id="133" class="1004" name="grp_Mat2AXIvideo_fu_133">
+<pin_list>
+<pin id="134" dir="0" index="0" bw="0" slack="0"/>
+<pin id="135" dir="0" index="1" bw="24" slack="0"/>
+<pin id="136" dir="0" index="2" bw="3" slack="0"/>
+<pin id="137" dir="0" index="3" bw="3" slack="0"/>
+<pin id="138" dir="0" index="4" bw="1" slack="0"/>
+<pin id="139" dir="0" index="5" bw="1" slack="0"/>
+<pin id="140" dir="0" index="6" bw="1" slack="0"/>
+<pin id="141" dir="0" index="7" bw="1" slack="0"/>
+<pin id="142" dir="0" index="8" bw="32" slack="0"/>
+<pin id="143" dir="0" index="9" bw="32" slack="0"/>
+<pin id="144" dir="0" index="10" bw="8" slack="0"/>
+<pin id="145" dir="0" index="11" bw="8" slack="0"/>
+<pin id="146" dir="0" index="12" bw="8" slack="0"/>
+<pin id="147" dir="1" index="13" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln71/4 "/>
+</bind>
+</comp>
+
+<comp id="161" class="1004" name="call_ln7_video_mandelbrot_gen_1_fu_161">
+<pin_list>
+<pin id="162" dir="0" index="0" bw="0" slack="0"/>
+<pin id="163" dir="0" index="1" bw="18" slack="0"/>
+<pin id="164" dir="0" index="2" bw="18" slack="0"/>
+<pin id="165" dir="0" index="3" bw="18" slack="0"/>
+<pin id="166" dir="0" index="4" bw="18" slack="0"/>
+<pin id="167" dir="0" index="5" bw="18" slack="0"/>
+<pin id="168" dir="0" index="6" bw="18" slack="0"/>
+<pin id="169" dir="1" index="7" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln7/1 "/>
+</bind>
+</comp>
+
+<comp id="174" class="1005" name="zoom_factor_V_c_reg_174">
+<pin_list>
+<pin id="175" dir="0" index="0" bw="18" slack="0"/>
+<pin id="176" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opset="zoom_factor_V_c "/>
+</bind>
+</comp>
+
+<comp id="180" class="1005" name="im_V_c_reg_180">
+<pin_list>
+<pin id="181" dir="0" index="0" bw="18" slack="0"/>
+<pin id="182" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opset="im_V_c "/>
+</bind>
+</comp>
+
+<comp id="186" class="1005" name="re_V_c_reg_186">
+<pin_list>
+<pin id="187" dir="0" index="0" bw="18" slack="0"/>
+<pin id="188" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opset="re_V_c "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="93"><net_src comp="32" pin="0"/><net_sink comp="90" pin=0"/></net>
+
+<net id="97"><net_src comp="32" pin="0"/><net_sink comp="94" pin=0"/></net>
+
+<net id="101"><net_src comp="32" pin="0"/><net_sink comp="98" pin=0"/></net>
+
+<net id="106"><net_src comp="30" pin="0"/><net_sink comp="102" pin=0"/></net>
+
+<net id="107"><net_src comp="18" pin="0"/><net_sink comp="102" pin=1"/></net>
+
+<net id="112"><net_src comp="30" pin="0"/><net_sink comp="108" pin=0"/></net>
+
+<net id="113"><net_src comp="16" pin="0"/><net_sink comp="108" pin=1"/></net>
+
+<net id="118"><net_src comp="30" pin="0"/><net_sink comp="114" pin=0"/></net>
+
+<net id="119"><net_src comp="14" pin="0"/><net_sink comp="114" pin=1"/></net>
+
+<net id="129"><net_src comp="36" pin="0"/><net_sink comp="120" pin=0"/></net>
+
+<net id="130"><net_src comp="20" pin="0"/><net_sink comp="120" pin=4"/></net>
+
+<net id="131"><net_src comp="22" pin="0"/><net_sink comp="120" pin=5"/></net>
+
+<net id="132"><net_src comp="24" pin="0"/><net_sink comp="120" pin=6"/></net>
+
+<net id="148"><net_src comp="38" pin="0"/><net_sink comp="133" pin=0"/></net>
+
+<net id="149"><net_src comp="0" pin="0"/><net_sink comp="133" pin=1"/></net>
+
+<net id="150"><net_src comp="2" pin="0"/><net_sink comp="133" pin=2"/></net>
+
+<net id="151"><net_src comp="4" pin="0"/><net_sink comp="133" pin=3"/></net>
+
+<net id="152"><net_src comp="6" pin="0"/><net_sink comp="133" pin=4"/></net>
+
+<net id="153"><net_src comp="8" pin="0"/><net_sink comp="133" pin=5"/></net>
+
+<net id="154"><net_src comp="10" pin="0"/><net_sink comp="133" pin=6"/></net>
+
+<net id="155"><net_src comp="12" pin="0"/><net_sink comp="133" pin=7"/></net>
+
+<net id="156"><net_src comp="26" pin="0"/><net_sink comp="133" pin=8"/></net>
+
+<net id="157"><net_src comp="28" pin="0"/><net_sink comp="133" pin=9"/></net>
+
+<net id="158"><net_src comp="20" pin="0"/><net_sink comp="133" pin=10"/></net>
+
+<net id="159"><net_src comp="22" pin="0"/><net_sink comp="133" pin=11"/></net>
+
+<net id="160"><net_src comp="24" pin="0"/><net_sink comp="133" pin=12"/></net>
+
+<net id="170"><net_src comp="34" pin="0"/><net_sink comp="161" pin=0"/></net>
+
+<net id="171"><net_src comp="114" pin="2"/><net_sink comp="161" pin=1"/></net>
+
+<net id="172"><net_src comp="108" pin="2"/><net_sink comp="161" pin=2"/></net>
+
+<net id="173"><net_src comp="102" pin="2"/><net_sink comp="161" pin=3"/></net>
+
+<net id="177"><net_src comp="90" pin="1"/><net_sink comp="174" pin=0"/></net>
+
+<net id="178"><net_src comp="174" pin="1"/><net_sink comp="161" pin=6"/></net>
+
+<net id="179"><net_src comp="174" pin="1"/><net_sink comp="120" pin=3"/></net>
+
+<net id="183"><net_src comp="94" pin="1"/><net_sink comp="180" pin=0"/></net>
+
+<net id="184"><net_src comp="180" pin="1"/><net_sink comp="161" pin=5"/></net>
+
+<net id="185"><net_src comp="180" pin="1"/><net_sink comp="120" pin=1"/></net>
+
+<net id="189"><net_src comp="98" pin="1"/><net_sink comp="186" pin=0"/></net>
+
+<net id="190"><net_src comp="186" pin="1"/><net_sink comp="161" pin=4"/></net>
+
+<net id="191"><net_src comp="186" pin="1"/><net_sink comp="120" pin=2"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: m_axis_video_V_data_V | {4 5 }
+	Port: m_axis_video_V_keep_V | {4 5 }
+	Port: m_axis_video_V_strb_V | {4 5 }
+	Port: m_axis_video_V_user_V | {4 5 }
+	Port: m_axis_video_V_last_V | {4 5 }
+	Port: m_axis_video_V_id_V | {4 5 }
+	Port: m_axis_video_V_dest_V | {4 5 }
+	Port: img_0_data_stream_V_s | {2 3 }
+	Port: img_0_data_stream_V_1 | {2 3 }
+	Port: img_0_data_stream_V_2 | {2 3 }
+ - Input state : 
+	Port: video_mandelbrot_generator : re_V | {1 }
+	Port: video_mandelbrot_generator : im_V | {1 }
+	Port: video_mandelbrot_generator : zoom_factor_V | {1 }
+	Port: video_mandelbrot_generator : img_0_data_stream_V_s | {4 5 }
+	Port: video_mandelbrot_generator : img_0_data_stream_V_1 | {4 5 }
+	Port: video_mandelbrot_generator : img_0_data_stream_V_2 | {4 5 }
+	Port: video_mandelbrot_generator : img_0_rows_V | {4 5 }
+	Port: video_mandelbrot_generator : img_0_cols_V | {4 5 }
+  - Chain level:
+	State 1
+		call_ln7 : 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|----------------------------------------|---------|---------|---------|---------|
+| Operation|             Functional Unit            |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|----------------------------------------|---------|---------|---------|---------|
+|          |       grp_Loop_out_proc28_fu_120       |    6    |  3.328  |   1111  |   2117  |
+|   call   |         grp_Mat2AXIvideo_fu_133        |    0    |  3.328  |   100   |   109   |
+|          | call_ln7_video_mandelbrot_gen_1_fu_161 |    0    |    0    |    0    |    0    |
+|----------|----------------------------------------|---------|---------|---------|---------|
+|          |     zoom_factor_V_read_read_fu_102     |    0    |    0    |    0    |    0    |
+|   read   |          im_V_read_read_fu_108         |    0    |    0    |    0    |    0    |
+|          |          re_V_read_read_fu_114         |    0    |    0    |    0    |    0    |
+|----------|----------------------------------------|---------|---------|---------|---------|
+|   Total  |                                        |    6    |  6.656  |   1211  |   2226  |
+|----------|----------------------------------------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-----------------------+--------+
+|                       |   FF   |
++-----------------------+--------+
+|     im_V_c_reg_180    |   18   |
+|     re_V_c_reg_186    |   18   |
+|zoom_factor_V_c_reg_174|   18   |
++-----------------------+--------+
+|         Total         |   54   |
++-----------------------+--------+
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+
+|           | DSP48E |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+
+|  Function |    6   |    6   |  1211  |  2226  |
+|   Memory  |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    -   |    -   |    -   |
+|  Register |    -   |    -   |   54   |    -   |
++-----------+--------+--------+--------+--------+
+|   Total   |    6   |    6   |  1265  |  2226  |
++-----------+--------+--------+--------+--------+

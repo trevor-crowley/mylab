@@ -1,0 +1,24 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port active_video_out -pg 1 -lvl 3 -x 460 -y 70 -defaultsOSRD
+preplace port clk_25_175MHz -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port hblank_out -pg 1 -lvl 3 -x 460 -y 90 -defaultsOSRD
+preplace port hsync_out -pg 1 -lvl 3 -x 460 -y 110 -defaultsOSRD
+preplace port vblank_out -pg 1 -lvl 3 -x 460 -y 130 -defaultsOSRD
+preplace port vsync_out -pg 1 -lvl 3 -x 460 -y 150 -defaultsOSRD
+preplace inst const_VCC -pg 1 -lvl 1 -x 100 -y 140 -defaultsOSRD
+preplace inst v_tc_0 -pg 1 -lvl 2 -x 310 -y 110 -defaultsOSRD
+preplace netloc clk_0_1 1 0 2 NJ 80 NJ
+preplace netloc v_tc_0_active_video_out 1 2 1 NJ 70
+preplace netloc v_tc_0_hblank_out 1 2 1 NJ 90
+preplace netloc v_tc_0_hsync_out 1 2 1 NJ 110
+preplace netloc v_tc_0_vblank_out 1 2 1 NJ 130
+preplace netloc v_tc_0_vsync_out 1 2 1 NJ 150
+preplace netloc xlconstant_0_dout 1 1 1 180 100n
+levelinfo -pg 1 0 100 310 460
+pagesize -pg 1 -db -bbox -sgen -150 0 620 230
+"
+}
+

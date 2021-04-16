@@ -1,0 +1,152 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'video_pattern_generator'" level="0">
+<item name = "Date">Sun Jan 26 14:13:48 2020
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">Video_Pattern_Generator</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 5.404, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">481201, 481201, 481201, 481201, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">481200, 481200, 802, -, -, 600, no</column>
+<column name=" + Loop 1.1">800, 800, 1, -, -, 800, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 94, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 102, -</column>
+<column name="Register">-, -, 33, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_fu_112_p2">+, 0, 0, 14, 10, 1</column>
+<column name="j_fu_124_p2">+, 0, 0, 14, 10, 1</column>
+<column name="ap_block_state3">and, 0, 0, 2, 1, 1</column>
+<column name="io_acc_block_signal_op36">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln13_fu_106_p2">icmp, 0, 0, 13, 10, 10</column>
+<column name="icmp_ln15_fu_118_p2">icmp, 0, 0, 13, 10, 9</column>
+<column name="m_axis_video_V_last_V_din">icmp, 0, 0, 13, 10, 9</column>
+<column name="m_axis_video_V_user_V_din">icmp, 0, 0, 13, 10, 1</column>
+<column name="or_ln18_fu_130_p2">or, 0, 0, 10, 10, 10</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">21, 4, 1, 4</column>
+<column name="i_0_reg_83">9, 2, 10, 20</column>
+<column name="j_0_reg_95">9, 2, 10, 20</column>
+<column name="m_axis_video_V_data_V_blk_n">9, 2, 1, 2</column>
+<column name="m_axis_video_V_dest_V_blk_n">9, 2, 1, 2</column>
+<column name="m_axis_video_V_id_V_blk_n">9, 2, 1, 2</column>
+<column name="m_axis_video_V_keep_V_blk_n">9, 2, 1, 2</column>
+<column name="m_axis_video_V_last_V_blk_n">9, 2, 1, 2</column>
+<column name="m_axis_video_V_strb_V_blk_n">9, 2, 1, 2</column>
+<column name="m_axis_video_V_user_V_blk_n">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">3, 0, 3, 0</column>
+<column name="i_0_reg_83">10, 0, 10, 0</column>
+<column name="i_reg_158">10, 0, 10, 0</column>
+<column name="j_0_reg_95">10, 0, 10, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, video_pattern_generator, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, video_pattern_generator, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, video_pattern_generator, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, video_pattern_generator, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, video_pattern_generator, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, video_pattern_generator, return value</column>
+<column name="m_axis_video_V_data_V_din">out, 24, ap_fifo, m_axis_video_V_data_V, pointer</column>
+<column name="m_axis_video_V_data_V_full_n">in, 1, ap_fifo, m_axis_video_V_data_V, pointer</column>
+<column name="m_axis_video_V_data_V_write">out, 1, ap_fifo, m_axis_video_V_data_V, pointer</column>
+<column name="m_axis_video_V_keep_V_din">out, 3, ap_fifo, m_axis_video_V_keep_V, pointer</column>
+<column name="m_axis_video_V_keep_V_full_n">in, 1, ap_fifo, m_axis_video_V_keep_V, pointer</column>
+<column name="m_axis_video_V_keep_V_write">out, 1, ap_fifo, m_axis_video_V_keep_V, pointer</column>
+<column name="m_axis_video_V_strb_V_din">out, 3, ap_fifo, m_axis_video_V_strb_V, pointer</column>
+<column name="m_axis_video_V_strb_V_full_n">in, 1, ap_fifo, m_axis_video_V_strb_V, pointer</column>
+<column name="m_axis_video_V_strb_V_write">out, 1, ap_fifo, m_axis_video_V_strb_V, pointer</column>
+<column name="m_axis_video_V_user_V_din">out, 1, ap_fifo, m_axis_video_V_user_V, pointer</column>
+<column name="m_axis_video_V_user_V_full_n">in, 1, ap_fifo, m_axis_video_V_user_V, pointer</column>
+<column name="m_axis_video_V_user_V_write">out, 1, ap_fifo, m_axis_video_V_user_V, pointer</column>
+<column name="m_axis_video_V_last_V_din">out, 1, ap_fifo, m_axis_video_V_last_V, pointer</column>
+<column name="m_axis_video_V_last_V_full_n">in, 1, ap_fifo, m_axis_video_V_last_V, pointer</column>
+<column name="m_axis_video_V_last_V_write">out, 1, ap_fifo, m_axis_video_V_last_V, pointer</column>
+<column name="m_axis_video_V_id_V_din">out, 1, ap_fifo, m_axis_video_V_id_V, pointer</column>
+<column name="m_axis_video_V_id_V_full_n">in, 1, ap_fifo, m_axis_video_V_id_V, pointer</column>
+<column name="m_axis_video_V_id_V_write">out, 1, ap_fifo, m_axis_video_V_id_V, pointer</column>
+<column name="m_axis_video_V_dest_V_din">out, 1, ap_fifo, m_axis_video_V_dest_V, pointer</column>
+<column name="m_axis_video_V_dest_V_full_n">in, 1, ap_fifo, m_axis_video_V_dest_V, pointer</column>
+<column name="m_axis_video_V_dest_V_write">out, 1, ap_fifo, m_axis_video_V_dest_V, pointer</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../bd/AXI4S_to_Vid_Out_bd/ip/AXI4S_to_Vid_Out_bd_v_tc_0_1/sim/AXI4S_to_Vid_Out_bd_v_tc_0_1.vhd" \
+
+nosort

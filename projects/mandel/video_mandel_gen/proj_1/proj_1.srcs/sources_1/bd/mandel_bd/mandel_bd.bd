@@ -1,0 +1,207 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x1E34284BD97FA288",
+      "device": "xc7a35tcpg236-1",
+      "name": "mandel_bd",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "axi_vip_0": "",
+      "video_mandelbrot_gen_0": ""
+    },
+    "interface_ports": {
+      "AXIS_out": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "mandel_bd_aclk_40MHz",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "40000000"
+          },
+          "HAS_TKEEP": {
+            "value": "1",
+            "value_src": "const_prop"
+          },
+          "HAS_TLAST": {
+            "value": "1",
+            "value_src": "const_prop"
+          },
+          "HAS_TREADY": {
+            "value": "1",
+            "value_src": "const_prop"
+          },
+          "HAS_TSTRB": {
+            "value": "1",
+            "value_src": "const_prop"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "3",
+            "value_src": "const_prop"
+          },
+          "TDEST_WIDTH": {
+            "value": "1",
+            "value_src": "const_prop"
+          },
+          "TID_WIDTH": {
+            "value": "1",
+            "value_src": "const_prop"
+          },
+          "TUSER_WIDTH": {
+            "value": "1",
+            "value_src": "const_prop"
+          }
+        }
+      }
+    },
+    "ports": {
+      "aclk_40MHz": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_BUSIF": {
+            "value": "AXIS_out"
+          },
+          "ASSOCIATED_RESET": {
+            "value": "aresetn_0"
+          },
+          "CLK_DOMAIN": {
+            "value": "mandel_bd_aclk_40MHz",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "40000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "ap_start": {
+        "direction": "I"
+      },
+      "aresetn_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "axi_vip_0": {
+        "vlnv": "xilinx.com:ip:axi_vip:1.1",
+        "xci_name": "mandel_bd_axi_vip_0_0",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "12"
+          },
+          "DATA_WIDTH": {
+            "value": "32"
+          },
+          "HAS_BRESP": {
+            "value": "1"
+          },
+          "HAS_PROT": {
+            "value": "1"
+          },
+          "HAS_RRESP": {
+            "value": "1"
+          },
+          "HAS_WSTRB": {
+            "value": "1"
+          },
+          "INTERFACE_MODE": {
+            "value": "MASTER"
+          },
+          "PROTOCOL": {
+            "value": "AXI4LITE"
+          },
+          "READ_WRITE_MODE": {
+            "value": "READ_WRITE"
+          }
+        }
+      },
+      "video_mandelbrot_gen_0": {
+        "vlnv": "xilinx.com:hls:video_mandelbrot_generator:1.1",
+        "xci_name": "mandel_bd_video_mandelbrot_gen_0_0"
+      }
+    },
+    "interface_nets": {
+      "axi_vip_0_M_AXI": {
+        "interface_ports": [
+          "axi_vip_0/M_AXI",
+          "video_mandelbrot_gen_0/s_axi_cmd"
+        ]
+      },
+      "video_mandelbrot_gen_0_m_axis_video": {
+        "interface_ports": [
+          "AXIS_out",
+          "video_mandelbrot_gen_0/m_axis_video"
+        ]
+      }
+    },
+    "nets": {
+      "aclk_40MHz_1": {
+        "ports": [
+          "aclk_40MHz",
+          "video_mandelbrot_gen_0/ap_clk",
+          "axi_vip_0/aclk"
+        ]
+      },
+      "aresetn_0_1": {
+        "ports": [
+          "aresetn_0",
+          "video_mandelbrot_gen_0/ap_rst_n",
+          "axi_vip_0/aresetn"
+        ]
+      }
+    },
+    "addressing": {
+      "/axi_vip_0": {
+        "address_spaces": {
+          "Master_AXI": {
+            "range": "4K",
+            "width": "32",
+            "segments": {
+              "SEG_video_mandelbrot_gen_0_Reg": {
+                "address_block": "/video_mandelbrot_gen_0/s_axi_cmd/Reg",
+                "offset": "0x000",
+                "range": "4K"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

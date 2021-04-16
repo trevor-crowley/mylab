@@ -1,0 +1,24 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../proj_1.srcs/sources_1/bd/mandel_bd/ipshared/ec67/hdl" --include "/opt/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../proj_1.ip_user_files/bd/mandel_bd/ip/mandel_bd_axi_vip_0_0/sim/mandel_bd_axi_vip_0_0_pkg.sv" \
+"../../../../proj_1.ip_user_files/bd/mandel_bd/ip/mandel_bd_axi_vip_0_0/sim/mandel_bd_axi_vip_0_0.sv" \
+
+verilog xil_defaultlib  --include "../../../../proj_1.srcs/sources_1/bd/mandel_bd/ipshared/ec67/hdl" --include "/opt/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../proj_1.srcs/sources_1/bd/mandel_bd/ipshared/9061/hdl/verilog/fifo_w8_d2_A.v" \
+"../../../../proj_1.srcs/sources_1/bd/mandel_bd/ipshared/9061/hdl/verilog/Loop_out_proc24.v" \
+"../../../../proj_1.srcs/sources_1/bd/mandel_bd/ipshared/9061/hdl/verilog/Mat2AXIvideo.v" \
+"../../../../proj_1.srcs/sources_1/bd/mandel_bd/ipshared/9061/hdl/verilog/start_for_Mat2AXIvideo_U0.v" \
+"../../../../proj_1.srcs/sources_1/bd/mandel_bd/ipshared/9061/hdl/verilog/video_mandelbrot_generator_cmd_s_axi.v" \
+"../../../../proj_1.srcs/sources_1/bd/mandel_bd/ipshared/9061/hdl/verilog/video_mandelbrot_generator.v" \
+"../../../../proj_1.ip_user_files/bd/mandel_bd/ip/mandel_bd_video_mandelbrot_gen_0_0/sim/mandel_bd_video_mandelbrot_gen_0_0.v" \
+"../../../../proj_1.ip_user_files/bd/mandel_bd/sim/mandel_bd.v" \
+"../../../../proj_1.srcs/sources_1/bd/mandel_bd/hdl/mandel_bd_wrapper.v" \
+
+sv xil_defaultlib  --include "../../../../proj_1.srcs/sources_1/bd/mandel_bd/ipshared/ec67/hdl" --include "/opt/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../proj_1.srcs/sim_1/imports/sim/mandel_bd.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

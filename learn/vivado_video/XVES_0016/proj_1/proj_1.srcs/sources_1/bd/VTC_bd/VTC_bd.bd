@@ -1,0 +1,136 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x9BD7FFDC363ED7B7",
+      "device": "xc7z020clg484-1",
+      "name": "VTC_bd",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "const_VCC": "",
+      "v_tc_0": ""
+    },
+    "ports": {
+      "active_video_out": {
+        "direction": "O"
+      },
+      "clk_25_175MHz": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "VTC_bd_clk_25_175MHz",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "74250000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "hblank_out": {
+        "direction": "O"
+      },
+      "hsync_out": {
+        "direction": "O"
+      },
+      "vblank_out": {
+        "direction": "O"
+      },
+      "vsync_out": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "const_VCC": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "VTC_bd_const_VCC_0"
+      },
+      "v_tc_0": {
+        "vlnv": "xilinx.com:ip:v_tc:6.1",
+        "xci_name": "VTC_bd_v_tc_0_0",
+        "parameters": {
+          "HAS_AXI4_LITE": {
+            "value": "false"
+          },
+          "HAS_INTC_IF": {
+            "value": "false"
+          },
+          "SYNC_EN": {
+            "value": "false"
+          },
+          "VIDEO_MODE": {
+            "value": "640x480p"
+          },
+          "enable_detection": {
+            "value": "false"
+          },
+          "enable_generation": {
+            "value": "true"
+          },
+          "horizontal_blank_generation": {
+            "value": "true"
+          },
+          "vertical_blank_generation": {
+            "value": "true"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_0_1": {
+        "ports": [
+          "clk_25_175MHz",
+          "v_tc_0/clk"
+        ]
+      },
+      "v_tc_0_active_video_out": {
+        "ports": [
+          "v_tc_0/active_video_out",
+          "active_video_out"
+        ]
+      },
+      "v_tc_0_hblank_out": {
+        "ports": [
+          "v_tc_0/hblank_out",
+          "hblank_out"
+        ]
+      },
+      "v_tc_0_hsync_out": {
+        "ports": [
+          "v_tc_0/hsync_out",
+          "hsync_out"
+        ]
+      },
+      "v_tc_0_vblank_out": {
+        "ports": [
+          "v_tc_0/vblank_out",
+          "vblank_out"
+        ]
+      },
+      "v_tc_0_vsync_out": {
+        "ports": [
+          "v_tc_0/vsync_out",
+          "vsync_out"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "const_VCC/dout",
+          "v_tc_0/clken",
+          "v_tc_0/gen_clken",
+          "v_tc_0/resetn"
+        ]
+      }
+    }
+  }
+}

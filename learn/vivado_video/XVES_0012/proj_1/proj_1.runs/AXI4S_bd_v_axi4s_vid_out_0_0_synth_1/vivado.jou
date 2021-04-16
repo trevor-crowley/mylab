@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jan 24 13:54:02 2020
+# Process ID: 5829
+# Current directory: /home/trevor/dev/myelect/vivado_video/XVES_0012/proj_1/proj_1.runs/AXI4S_bd_v_axi4s_vid_out_0_0_synth_1
+# Command line: vivado -log AXI4S_bd_v_axi4s_vid_out_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source AXI4S_bd_v_axi4s_vid_out_0_0.tcl
+# Log file: /home/trevor/dev/myelect/vivado_video/XVES_0012/proj_1/proj_1.runs/AXI4S_bd_v_axi4s_vid_out_0_0_synth_1/AXI4S_bd_v_axi4s_vid_out_0_0.vds
+# Journal file: /home/trevor/dev/myelect/vivado_video/XVES_0012/proj_1/proj_1.runs/AXI4S_bd_v_axi4s_vid_out_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source AXI4S_bd_v_axi4s_vid_out_0_0.tcl -notrace
