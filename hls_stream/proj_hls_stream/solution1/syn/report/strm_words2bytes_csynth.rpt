@@ -1,0 +1,154 @@
+
+
+================================================================
+== Vivado HLS Report for 'strm_words2bytes'
+================================================================
+* Date:           Sun Aug 23 11:10:18 2020
+
+* Version:        2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)
+* Project:        proj_hls_stream
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35t-cpg236-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 3.851 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        1|      745| 5.000 ns | 3.725 us |    1|  745|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  |   Trip  |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  |  Count  | Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |- WORDS2BYTES_LOOP  |        0|      744|         2|          -|          -| 0 ~ 372 |    no    |
+        +--------------------+---------+---------+----------+-----------+-----------+---------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+-------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF  |  LUT  | URAM|
++-----------------+---------+-------+-------+-------+-----+
+|DSP              |        -|      -|      -|      -|    -|
+|Expression       |        -|      -|      0|     50|    -|
+|FIFO             |        -|      -|      -|      -|    -|
+|Instance         |        -|      -|      -|      -|    -|
+|Memory           |        -|      -|      -|      -|    -|
+|Multiplexer      |        -|      -|      -|     81|    -|
+|Register         |        -|      -|     70|      -|    -|
++-----------------+---------+-------+-------+-------+-----+
+|Total            |        0|      0|     70|    131|    0|
++-----------------+---------+-------+-------+-------+-----+
+|Available        |      100|     90|  41600|  20800|    0|
++-----------------+---------+-------+-------+-------+-----+
+|Utilization (%)  |        0|      0|   ~0  |   ~0  |    0|
++-----------------+---------+-------+-------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------------+----------+-------+---+----+------------+------------+
+    |         Variable Name         | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------------+----------+-------+---+----+------------+------------+
+    |i_fu_141_p2                    |     +    |      0|  0|  21|           1|          14|
+    |ap_block_state2_io             |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op23_read_state2  |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln144_fu_136_p2           |   icmp   |      0|  0|  13|          14|          14|
+    |icmp_ln146_fu_147_p2           |   icmp   |      0|  0|   8|           2|           1|
+    |ap_block_state1                |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state2                |    or    |      0|  0|   2|           1|           1|
+    +-------------------------------+----------+-------+---+----+------------+------------+
+    |Total                          |          |      0|  0|  50|          21|          33|
+    +-------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------+----+-----------+-----+-----------+
+    |                Name                | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                           |  21|          4|    1|          4|
+    |ap_done                             |   9|          2|    1|          2|
+    |ap_phi_mux_p_0_1_i_i_phi_fu_117_p4  |  15|          3|   32|         96|
+    |bytes_out_V_TDATA_blk_n             |   9|          2|    1|          2|
+    |bytes_out_len_loc_blk_n             |   9|          2|    1|          2|
+    |i_0_i_i_reg_103                     |   9|          2|   14|         28|
+    |words_in_V_blk_n                    |   9|          2|    1|          2|
+    +------------------------------------+----+-----------+-----+-----------+
+    |Total                               |  81|         17|   51|        136|
+    +------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------+----+----+-----+-----------+
+    |             Name             | FF | LUT| Bits| Const Bits|
+    +------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                     |   3|   0|    3|          0|
+    |ap_done_reg                   |   1|   0|    1|          0|
+    |bytes_out_len_loc_re_reg_179  |  14|   0|   14|          0|
+    |i_0_i_i_reg_103               |  14|   0|   14|          0|
+    |i_reg_187                     |  14|   0|   14|          0|
+    |p_0_0_i_i_fu_80               |  24|   0|   24|          0|
+    +------------------------------+----+----+-----+-----------+
+    |Total                         |  70|   0|   70|          0|
+    +------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+-------------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
++---------------------------+-----+-----+------------+-------------------+--------------+
+|ap_clk                     |  in |    1| ap_ctrl_hs |  strm_words2bytes | return value |
+|ap_rst                     |  in |    1| ap_ctrl_hs |  strm_words2bytes | return value |
+|ap_start                   |  in |    1| ap_ctrl_hs |  strm_words2bytes | return value |
+|ap_done                    | out |    1| ap_ctrl_hs |  strm_words2bytes | return value |
+|ap_continue                |  in |    1| ap_ctrl_hs |  strm_words2bytes | return value |
+|ap_idle                    | out |    1| ap_ctrl_hs |  strm_words2bytes | return value |
+|ap_ready                   | out |    1| ap_ctrl_hs |  strm_words2bytes | return value |
+|bytes_out_V_TDATA          | out |    8|    axis    |    bytes_out_V    |    pointer   |
+|bytes_out_V_TVALID         | out |    1|    axis    |    bytes_out_V    |    pointer   |
+|bytes_out_V_TREADY         |  in |    1|    axis    |    bytes_out_V    |    pointer   |
+|words_in_V_dout            |  in |   32|   ap_fifo  |     words_in_V    |    pointer   |
+|words_in_V_empty_n         |  in |    1|   ap_fifo  |     words_in_V    |    pointer   |
+|words_in_V_read            | out |    1|   ap_fifo  |     words_in_V    |    pointer   |
+|bytes_out_len_loc_dout     |  in |   14|   ap_fifo  | bytes_out_len_loc |    pointer   |
+|bytes_out_len_loc_empty_n  |  in |    1|   ap_fifo  | bytes_out_len_loc |    pointer   |
+|bytes_out_len_loc_read     | out |    1|   ap_fifo  | bytes_out_len_loc |    pointer   |
++---------------------------+-----+-----+------------+-------------------+--------------+
+

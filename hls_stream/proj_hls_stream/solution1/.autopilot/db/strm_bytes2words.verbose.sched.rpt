@@ -1,0 +1,144 @@
+
+
+================================================================
+== Vivado HLS Report for 'strm_bytes2words'
+================================================================
+* Date:           Sun Aug 23 11:10:18 2020
+
+* Version:        2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)
+* Project:        proj_hls_stream
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35t-cpg236-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 2.380 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+------+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval  | Pipeline|
+    |   min   |   max   |    min   |    max   | min |  max |   Type  |
+    +---------+---------+----------+----------+-----+------+---------+
+    |        1|     1489| 5.000 ns | 7.445 us |    1|  1489|   none  |
+    +---------+---------+----------+----------+-----+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+----------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  |   Trip   |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  |   Count  | Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+----------+----------+
+        |- BYTES2WORDS_LOOP  |        0|     1488|         1|          -|          -| 0 ~ 1488 |    no    |
+        +--------------------+---------+---------+----------+-----------+-----------+----------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.18>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %words_out_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str9, [1 x i8]* @p_str10, [1 x i8]* @p_str11, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str12, [1 x i8]* @p_str13)"   --->   Operation 3 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %bytes_in_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind"   --->   Operation 4 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %bytestrm_len, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str69, i32 0, i32 0, [1 x i8]* @p_str70, [1 x i8]* @p_str71, [1 x i8]* @p_str72, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str73, [11 x i8]* @ScalarProp_str)"   --->   Operation 5 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (2.18ns)   --->   "%bytestrm_len_read = call i16 @_ssdm_op_Read.ap_fifo.i16P(i16* %bytestrm_len)" [./bytestrm_util.h:111]   --->   Operation 6 'read' 'bytestrm_len_read' <Predicate = true> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %bytes_in_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind"   --->   Operation 7 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (1.66ns)   --->   "br label %0" [./bytestrm_util.h:117]   --->   Operation 8 'br' <Predicate = true> <Delay = 1.66>
+
+State 2 <SV = 1> <Delay = 2.38>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%r_V = phi i24 [ 0, %entry ], [ %trunc_ln117_1, %BYTES2WORDS_LOOP_end ]" [./bytestrm_util.h:117]   --->   Operation 9 'phi' 'r_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%i_0_i = phi i16 [ 0, %entry ], [ %i, %BYTES2WORDS_LOOP_end ]"   --->   Operation 10 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%trunc_ln117 = trunc i16 %i_0_i to i2" [./bytestrm_util.h:117]   --->   Operation 11 'trunc' 'trunc_ln117' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (2.38ns)   --->   "%icmp_ln117 = icmp eq i16 %i_0_i, %bytestrm_len_read" [./bytestrm_util.h:117]   --->   Operation 12 'icmp' 'icmp_ln117' <Predicate = true> <Delay = 2.38> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 13 [1/1] (2.14ns)   --->   "%i = add i16 1, %i_0_i" [./bytestrm_util.h:117]   --->   Operation 13 'add' 'i' <Predicate = true> <Delay = 2.14> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "br i1 %icmp_ln117, label %.exit, label %BYTES2WORDS_LOOP_begin" [./bytestrm_util.h:117]   --->   Operation 14 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str4) nounwind" [./bytestrm_util.h:117]   --->   Operation 15 'specloopname' <Predicate = (!icmp_ln117)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_4_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str4)" [./bytestrm_util.h:117]   --->   Operation 16 'specregionbegin' 'tmp_4_i' <Predicate = (!icmp_ln117)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 1488, i32 744, [1 x i8]* @p_str2) nounwind" [./bytestrm_util.h:118]   --->   Operation 17 'speclooptripcount' <Predicate = (!icmp_ln117)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%tmp_2 = call i8 @_ssdm_op_Read.axis.volatile.i8P(i8* %bytes_in_V)" [./bytestrm_util.h:119]   --->   Operation 18 'read' 'tmp_2' <Predicate = (!icmp_ln117)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%ret_V = call i32 @_ssdm_op_BitConcatenate.i32.i8.i24(i8 %tmp_2, i24 %r_V)" [./bytestrm_util.h:122]   --->   Operation 19 'bitconcatenate' 'ret_V' <Predicate = (!icmp_ln117)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.93ns)   --->   "%icmp_ln126 = icmp eq i2 %trunc_ln117, -1" [./bytestrm_util.h:126]   --->   Operation 20 'icmp' 'icmp_ln126' <Predicate = (!icmp_ln117)> <Delay = 0.93> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "br i1 %icmp_ln126, label %1, label %BYTES2WORDS_LOOP_end" [./bytestrm_util.h:126]   --->   Operation 21 'br' <Predicate = (!icmp_ln117)> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (2.18ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %words_out_V, i32 %ret_V)" [./bytestrm_util.h:127]   --->   Operation 22 'write' <Predicate = (!icmp_ln117 & icmp_ln126)> <Delay = 2.18> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "br label %BYTES2WORDS_LOOP_end" [./bytestrm_util.h:127]   --->   Operation 23 'br' <Predicate = (!icmp_ln117 & icmp_ln126)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str4, i32 %tmp_4_i)" [./bytestrm_util.h:128]   --->   Operation 24 'specregionend' 'empty' <Predicate = (!icmp_ln117)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%tmp_5 = call i16 @_ssdm_op_PartSelect.i16.i24.i32.i32(i24 %r_V, i32 8, i32 23)" [./bytestrm_util.h:117]   --->   Operation 25 'partselect' 'tmp_5' <Predicate = (!icmp_ln117)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%trunc_ln117_1 = call i24 @_ssdm_op_BitConcatenate.i24.i8.i16(i8 %tmp_2, i16 %tmp_5)" [./bytestrm_util.h:117]   --->   Operation 26 'bitconcatenate' 'trunc_ln117_1' <Predicate = (!icmp_ln117)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "br label %0" [./bytestrm_util.h:117]   --->   Operation 27 'br' <Predicate = (!icmp_ln117)> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 28 'ret' <Predicate = (icmp_ln117)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 2.19ns
+The critical path consists of the following:
+	fifo read on port 'bytestrm_len' (./bytestrm_util.h:111) [7]  (2.19 ns)
+
+ <State 2>: 2.38ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ./bytestrm_util.h:117) [12]  (0 ns)
+	'icmp' operation ('icmp_ln117', ./bytestrm_util.h:117) [14]  (2.38 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,27 @@
+<stg><name>run</name>
+
+
+<trans_list>
+</trans_list>
+
+
+
+<state_list>
+</state_list>
+
+
+<ports>
+<port id="1" name="in_V" dir="0" iftype="3">
+<core>NULL</core><StgValue><ssdm name="in_V"/></StgValue>
+</port>
+<port id="2" name="out_V" dir="1" iftype="3">
+<core>NULL</core><StgValue><ssdm name="out_V"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>
